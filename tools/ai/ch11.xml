@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ai>
+<preview>
+<exploration xml:id="w11-preview">
+  <title>Хэлбэлзлүүдийг "шүүж" салгах (AI)</title>
+  <introduction>
+    <p>Хөгжмийн аккорд нь хэд хэдэн цэвэр авиа буюу <m>\cos nx</m>, <m>\sin nx</m> хэлбэлзлүүдийн нийлбэр юм. Нийлбэр функц нь өгөгдсөн бол түүнд аль хэлбэлзэл ямар "хүч"-тэй орсныг яаж олох вэ? Түлхүүр нь интеграл юм.</p>
+  </introduction>
+  <task>
+    <statement><p><m>\displaystyle\int_{-\pi}^{\pi}\sin2x\sin3x\,dx</m> ба <m>\displaystyle\int_{-\pi}^{\pi}\sin^23x\,dx</m>-ийг бод.</p></statement>
+    <hint><p><m>\sin\alpha\sin\beta=\frac12[\cos(\alpha-\beta)-\cos(\alpha+\beta)]</m>.</p></hint>
+    <answer><p><m>0</m> ба <m>\pi</m>.</p></answer>
+  </task>
+  <task>
+    <statement><p><m>f(x)=3+2\cos x-5\sin4x</m> гэе. <m>\displaystyle\frac1\pi\int_{-\pi}^{\pi}f(x)\cos x\,dx</m>, <m>\displaystyle\frac1\pi\int_{-\pi}^{\pi}f(x)\sin4x\,dx</m>, <m>\displaystyle\frac1\pi\int_{-\pi}^{\pi}f(x)\,dx</m>-ийг ол. Юу ажиглагдав?</p></statement>
+    <answer><p><m>2</m>, <m>-5</m>, <m>6</m>. Интеграл бүр зөвхөн харгалзах хэлбэлзлийн коэффициентыг "шүүж" гаргана (тогтмол гишүүний хувьд <m>2\cdot3</m> гарна).</p></answer>
+  </task>
+  <task>
+    <statement><p>"Тэгш өнцөгт долгион"-ыг <m>S_m(x)=\frac4\pi\left(\sin x+\frac{\sin3x}{3}+\cdots+\frac{\sin(2m-1)x}{2m-1}\right)</m> нийлбэрүүдээр ойролцоолъё. <m>S_1\bigl(\frac\pi2\bigr)</m>, <m>S_2\bigl(\frac\pi2\bigr)</m>-ийг бод. <m>m\to\infty</m> үед <m>S_m\bigl(\frac\pi2\bigr)</m> юу руу тэмүүлэх вэ?</p></statement>
+    <answer><p><m>S_1=\frac4\pi\approx1{,}27</m>, <m>S_2=\frac4\pi\cdot\frac23\approx0{,}85</m>. <m>S_m\bigl(\frac\pi2\bigr)=\frac4\pi\left(1-\frac13+\frac15-\cdots\right)\to\frac4\pi\cdot\frac\pi4=1</m>.</p></answer>
+  </task>
+</exploration>
+</preview>
+
+<section ref="w11-s1">
+<exercise>
+  <statement><p><m>f(x)=\cos^3x</m>-ийн Фурьегийн цувааг ол.</p></statement>
+  <hint><p><m>\cos3x=4\cos^3x-3\cos x</m>. Тригонометр олон гишүүнт нь өөрийн Фурьегийн цуваа юм.</p></hint>
+  <answer><p><m>\cos^3x=\frac34\cos x+\frac14\cos3x</m>: <m>a_1=\frac34</m>, <m>a_3=\frac14</m>, бусад бүх коэффициент <m>0</m>.</p></answer>
+  <solution><p><m>\cos3x=4\cos^3x-3\cos x</m>-ээс <m>\cos^3x=\frac34\cos x+\frac14\cos3x</m>. Ортогональ чанараар, жишээ нь <m>a_n=\frac1\pi\int_{-\pi}^{\pi}\bigl(\frac34\cos x+\frac14\cos3x\bigr)\cos nx\,dx</m> нь <m>n=1</m> үед <m>\frac34</m>, <m>n=3</m> үед <m>\frac14</m>, бусад үед <m>0</m>; <m>f</m> тэгш тул <m>b_n=0</m>. Иймд Фурьегийн цуваа нь төгсгөлөг нийлбэр <m>\frac34\cos x+\frac14\cos3x</m>.</p></solution>
+</exercise>
+<exercise>
+  <statement><p><m>f(x)=1-x^2</m>, <m>-1\le x\le1</m> функцийг <m>2</m> үетэйгээр үргэлжлүүлээд Фурьегийн цуваанд задал.</p></statement>
+  <hint><p><m>l=1</m>, <m>f</m> тэгш. <m>\int_0^1x^2\cos n\pi x\,dx=\frac{2(-1)^n}{n^2\pi^2}</m>.</p></hint>
+  <answer><p><m>1-x^2\sim\dfrac23+\dfrac{4}{\pi^2}\displaystyle\sum_{n=1}^\infty\frac{(-1)^{n+1}}{n^2}\cos n\pi x</m>.</p></answer>
+  <solution><p><m>l=1</m>, тэгш тул <m>b_n=0</m>, <m>a_0=2\int_0^1(1-x^2)dx=\frac43</m>. <m>n\ge1</m> үед <m>\int_0^1\cos n\pi x\,dx=0</m> ба хоёр удаа хэсэгчлэн интегралчилбал <m>\int_0^1x^2\cos n\pi x\,dx=\frac{2(-1)^n}{n^2\pi^2}</m>, иймд
+  <md>a_n=2\int_0^1(1-x^2)\cos n\pi x\,dx=-\frac{4(-1)^n}{n^2\pi^2}=\frac{4(-1)^{n+1}}{n^2\pi^2}.</md></p></solution>
+</exercise>
+<exercise>
+  <statement><p>Бодит утгатай <m>f</m>-ийн комплекс коэффициентууд <m>c_{-n}=\overline{c_n}</m> нөхцлийг хангадгийг батал. <m>f(x)=x</m> (<m>-\pi&lt;x&lt;\pi</m>)-ийн <m>c_n</m>-ийг шууд бод.</p></statement>
+  <hint><p><m>\overline{e^{-inx}}=e^{inx}</m>. <m>n\ne0</m> үед <m>\int x e^{-inx}dx</m>-ийг хэсэгчлэн интегралчил.</p></hint>
+  <answer><p><m>c_0=0</m>, <m>c_n=\dfrac{i(-1)^n}{n}</m> (<m>n\ne0</m>).</p></answer>
+  <solution><p><m>f</m> бодит бол <m>\overline{c_n}=\frac1{2\pi}\int_{-\pi}^{\pi}f(x)\overline{e^{-inx}}dx=\frac1{2\pi}\int_{-\pi}^{\pi}f(x)e^{inx}dx=c_{-n}</m>. <m>f(x)=x</m>: <m>c_0=\frac1{2\pi}\int x\,dx=0</m>; <m>n\ne0</m> үед
+  <md>c_n=\frac1{2\pi}\Bigl[\frac{xe^{-inx}}{-in}\Bigr]_{-\pi}^{\pi}+\frac{1}{2\pi in}\int_{-\pi}^{\pi}e^{-inx}dx=\frac{1}{2\pi}\cdot\frac{\pi(-1)^n+\pi(-1)^n}{-in}=\frac{i(-1)^n}{n}.</md>
+  Шалгалт: <m>c_n=\frac{a_n-ib_n}{2}=-\frac i2\cdot\frac{2(-1)^{n+1}}{n}=\frac{i(-1)^n}{n}</m> (<m>n\ge1</m>).</p></solution>
+</exercise>
+</section>
+
+<section ref="w11-s2">
+<exercise>
+  <statement><p>Хичээлийн <m>x</m> ба <m>|x|</m>-ийн задаргааг ашиглан <m>f(x)=x+|x|</m> (<m>-\pi&lt;x&lt;\pi</m>)-ийн Фурьегийн цувааг бич. <m>x=\pi</m> цэгт цуваа ямар утга руу нийлэх вэ?</p></statement>
+  <hint><p>Фурьегийн коэффициент нь функцээс шугаман хамаарна.</p></hint>
+  <answer><p><m>f(x)\sim\dfrac\pi2-\dfrac4\pi\displaystyle\sum_{k=1}^\infty\frac{\cos(2k-1)x}{(2k-1)^2}+2\sum_{n=1}^\infty\frac{(-1)^{n+1}\sin nx}{n}</m>; <m>x=\pi</m> үед <m>\pi</m>.</p></answer>
+  <solution><p>Коэффициентын томьёо шугаман тул <m>x+|x|</m>-ийн цуваа нь хоёр цувааны нийлбэр. <m>x=\pi</m>: <m>\sin n\pi=0</m> тул синусын хэсэг <m>0</m>, косинусын хэсэг нь <m>|x|</m>-ийн <m>\pi</m> дээрх утга <m>\pi</m>. Энэ нь <m>\frac{f(\pi-0)+f(-\pi+0)}{2}=\frac{2\pi+0}{2}=\pi</m>-тэй таарна.</p></solution>
+</exercise>
+<exercise>
+  <statement><p><m>f(x)=\sin\frac x2</m>, <m>-\pi&lt;x&lt;\pi</m> функцийн Фурьегийн цувааг ол.</p></statement>
+  <hint><p>Сондгой функц. <m>\sin\frac x2\sin nx=\frac12\bigl[\cos(n-\frac12)x-\cos(n+\frac12)x\bigr]</m>.</p></hint>
+  <answer><p><m>\sin\dfrac x2\sim\dfrac8\pi\displaystyle\sum_{n=1}^\infty\frac{(-1)^{n+1}n}{4n^2-1}\sin nx</m>.</p></answer>
+  <solution><p><m>a_n=0</m>. <m>\int_0^\pi\cos(m\pm\tfrac12)x\,dx=\frac{\sin(m\pm\frac12)\pi}{m\pm\frac12}</m> ба <m>\sin(n-\frac12)\pi=(-1)^{n+1}</m>, <m>\sin(n+\frac12)\pi=(-1)^n</m> тул
+  <md>b_n=\frac2\pi\cdot\frac12\Bigl[\frac{(-1)^{n+1}}{n-\frac12}-\frac{(-1)^n}{n+\frac12}\Bigr]=\frac{(-1)^{n+1}}{\pi}\Bigl[\frac{2}{2n-1}+\frac{2}{2n+1}\Bigr]=\frac{8(-1)^{n+1}n}{\pi(4n^2-1)}.</md></p></solution>
+</exercise>
+</section>
+
+<section ref="w11-s3">
+<exercise>
+  <statement><p><m>T(x)=\frac{\alpha_0}{2}+\alpha_1\cos x+\beta_1\sin x</m> хэлбэрийн бүх тригонометр олон гишүүнтээс <m>\displaystyle\int_{-\pi}^{\pi}\bigl(x-T(x)\bigr)^2dx</m>-ийг хамгийн бага болгодгийг ол. Хамгийн бага утга хэд вэ?</p></statement>
+  <hint><p>Хамгийн сайн ойролцоолол нь Фурьегийн хэсгийн нийлбэр <m>S_1</m>. <m>x</m>-ийн хувьд <m>b_1=2</m>.</p></hint>
+  <answer><p><m>T(x)=2\sin x</m>; хамгийн бага утга <m>\dfrac{2\pi^3}{3}-4\pi\approx8{,}10</m>.</p></answer>
+  <solution><p>Бесселийн теоремоор хамгийн бага утгыг <m>T=S_1</m> өгнө. <m>x</m>-ийн хувьд <m>a_0=a_1=0</m>, <m>b_1=2</m> тул <m>S_1=2\sin x</m> ба
+  <md>\int_{-\pi}^{\pi}(x-S_1)^2dx=\int_{-\pi}^{\pi}x^2dx-\pi b_1^2=\frac{2\pi^3}{3}-4\pi.</md></p></solution>
+</exercise>
+<exercise>
+  <statement><p><m>f(x)=x</m> (<m>-\pi&lt;x&lt;\pi</m>)-ийн хувьд Бесселийн тэнцэтгэл бишийг бичиж, <m>\displaystyle\sum_{n=1}^\infty\frac1{n^2}\le\frac{\pi^2}{6}</m> гэж дүгнэ.</p></statement>
+  <hint><p><m>b_n=\frac{2(-1)^{n+1}}{n}</m>, <m>\frac1\pi\int_{-\pi}^{\pi}x^2dx=\frac{2\pi^2}{3}</m>.</p></hint>
+  <solution><p><m>a_n=0</m>, <m>b_n^2=\frac4{n^2}</m> тул Бесселийн тэнцэтгэл бишээр <m>\sum_{n\ge1}\frac{4}{n^2}\le\frac1\pi\int_{-\pi}^{\pi}x^2dx=\frac{2\pi^2}{3}</m>, өөрөөр хэлбэл <m>\sum\frac1{n^2}\le\frac{\pi^2}{6}</m>. (Парсевалийн тэнцэтгэлээр жинхэнэдээ тэнцэтгэл биелнэ.)</p></solution>
+</exercise>
+<exercise>
+  <statement><p><m>\displaystyle\int_0^1t\sin\lambda t\,dt</m>-ийг шууд бодож, Риман–Лебегийн лемм энд биелэхийг шалга. Интеграл ямар хурдтай <m>0</m> руу тэмүүлэх вэ?</p></statement>
+  <answer><p><m>\dfrac{\sin\lambda-\lambda\cos\lambda}{\lambda^2}</m>; модуль нь <m>\le\frac{1}{\lambda}+\frac1{\lambda^2}</m>, өөрөөр хэлбэл <m>O\bigl(\frac1\lambda\bigr)</m>.</p></answer>
+  <solution><p>Хэсэгчлэн интегралчилбал
+  <md>\int_0^1t\sin\lambda t\,dt=\Bigl[-\frac{t\cos\lambda t}{\lambda}\Bigr]_0^1+\frac1\lambda\int_0^1\cos\lambda t\,dt=-\frac{\cos\lambda}{\lambda}+\frac{\sin\lambda}{\lambda^2}.</md>
+  Модуль нь <m>\le\frac1\lambda+\frac1{\lambda^2}\to0</m>. (<m>\lambda=2\pi k</m> үед утга нь яг <m>-\frac1\lambda</m> тул <m>\frac1\lambda</m>-ээс хурдан буурахгүй.)</p></solution>
+</exercise>
+</section>
+
+<section ref="w11-s4">
+<exercise>
+  <statement><p><m>\displaystyle\frac1\pi\int_{-\pi}^{\pi}D_n^2(t)\,dt=n+\frac12</m> ба <m>\max_t|D_n(t)|=D_n(0)=n+\frac12</m> гэж батал.</p></statement>
+  <hint><p><m>D_n=\frac12+\sum_{k=1}^n\cos kt</m> ба ортогональ чанар.</p></hint>
+  <solution><p>Ортогональ чанараар холимог гишүүдийн интеграл <m>0</m>, иймд
+  <md>\int_{-\pi}^{\pi}D_n^2\,dt=\frac14\cdot2\pi+\sum_{k=1}^n\int_{-\pi}^{\pi}\cos^2kt\,dt=\frac\pi2+n\pi=\pi\Bigl(n+\frac12\Bigr).</md>
+  Мөн <m>|D_n(t)|\le\frac12+\sum_{k=1}^n|\cos kt|\le\frac12+n=D_n(0)</m>.</p></solution>
+</exercise>
+<exercise>
+  <statement><p><m>t\ne2\pi m</m> үед
+  <md>\sum_{k=1}^n\sin kt=\frac{\cos\frac t2-\cos\bigl(n+\frac12\bigr)t}{2\sin\frac t2}</md>
+  гэж баталж, эндээс <m>\Bigl|\sum_{k=1}^n\sin kt\Bigr|\le\dfrac{1}{|\sin\frac t2|}</m> гэж дүгнэ.</p></statement>
+  <hint><p><m>2\sin\frac t2\sin kt=\cos\bigl(k-\frac12\bigr)t-\cos\bigl(k+\frac12\bigr)t</m> — телескоп.</p></hint>
+  <solution><p>Зааврын адилтгалыг <m>k=1,\dots,n</m>-ээр нийлбэрлэвэл <m>2\sin\frac t2\sum_{k=1}^n\sin kt=\cos\frac t2-\cos\bigl(n+\frac12\bigr)t</m>. <m>\sin\frac t2\ne0</m> тул хуваана. Хүртвэрийн модуль <m>\le2</m> тул <m>\bigl|\sum\sin kt\bigr|\le\frac{2}{2|\sin\frac t2|}</m>. (Энэ үнэлгээ <m>\sum\frac{\sin nx}{n}</m> гэх мэт цувааны нийлэлтийг Дирихлегийн шинжүүрээр батлахад хэрэглэгддэг.)</p></solution>
+</exercise>
+</section>
+
+<section ref="w11-s5">
+<exercise>
+  <statement><p><m>2\pi</m> үетэй <m>f</m> нь <m>-\pi&lt;x&lt;0</m> үед <m>-1</m>, <m>0&lt;x&lt;\pi</m> үед <m>2</m> байг. <m>f</m>-ийн Фурьегийн цуваа <m>x=0</m>, <m>x=\frac\pi2</m>, <m>x=\pi</m>, <m>x=3\pi</m> цэгүүдэд ямар утга руу нийлэх вэ? (Коэффициент бодох шаардлагагүй.)</p></statement>
+  <hint><p><m>f</m> хэсэгчлэн гөлгөр тул Дирихлегийн теорем бүх цэгт хэрэглэгдэнэ.</p></hint>
+  <answer><p><m>\frac12</m>, <m>2</m>, <m>\frac12</m>, <m>\frac12</m>.</p></answer>
+  <solution><p>Дирихлегийн теоремоор нийлбэр нь <m>\frac{f(x+0)+f(x-0)}2</m>. <m>x=0</m>: <m>\frac{2+(-1)}2=\frac12</m>. <m>x=\frac\pi2</m> — тасралтгүй цэг: <m>2</m>. <m>x=\pi</m>: <m>f(\pi-0)=2</m>, үетэй чанараар <m>f(\pi+0)=f(-\pi+0)=-1</m>, иймд <m>\frac12</m>. <m>x=3\pi</m> нь <m>\pi</m>-ээс <m>2\pi</m>-ээр ялгаатай тул мөн <m>\frac12</m>.</p></solution>
+</exercise>
+<exercise>
+  <statement><p>Тэгш өнцөгт долгионы задаргаанд <m>x=\frac\pi3</m> орлуулж
+  <md>1-\frac15+\frac17-\frac1{11}+\frac1{13}-\frac1{17}+\cdots=\frac{\pi}{2\sqrt3}</md>
+  гэж батал.</p></statement>
+  <hint><p><m>\sin\frac{(2k+1)\pi}{3}</m>-ийн утгууд <m>\frac{\sqrt3}2, 0, -\frac{\sqrt3}2</m> гэж давтагдана.</p></hint>
+  <solution><p><m>\operatorname{sign}x</m> нь <m>x=\frac\pi3</m> цэгт тасралтгүй, хэсэгчлэн гөлгөр тул Дирихлегийн теоремоор
+  <md>1=\frac4\pi\sum_{k=0}^\infty\frac{\sin\frac{(2k+1)\pi}3}{2k+1}.</md>
+  <m>2k+1=1,3,5,7,9,11,\dots</m> үед синусын утгууд <m>\frac{\sqrt3}2,0,-\frac{\sqrt3}2,\frac{\sqrt3}2,0,-\frac{\sqrt3}2,\dots</m> тул
+  <md>1=\frac4\pi\cdot\frac{\sqrt3}{2}\Bigl(1-\frac15+\frac17-\frac1{11}+\cdots\Bigr),</md>
+  эндээс нийлбэр <m>\frac{\pi}{2\sqrt3}</m>. (Цувааны гишүүдийг 0 гишүүдийг хасаж бүлэглэх нь хэсгийн нийлбэрийн дэд дарааллыг авахтай адил тул зөв.)</p></solution>
+</exercise>
+</section>
+
+<section ref="w11-s6">
+<exercise>
+  <statement><p><m>|x|</m>-ийн Фурьегийн задаргаанд Парсевалийн тэнцэтгэлийг хэрэглэж <m>\displaystyle\sum_{k=1}^\infty\frac{1}{(2k-1)^4}=\frac{\pi^4}{96}</m> гэж батал. Эндээс <m>\sum\frac1{n^4}=\frac{\pi^4}{90}</m>-тэй нийцэхийг шалга.</p></statement>
+  <hint><p><m>a_0=\pi</m>, <m>a_{2k-1}=-\frac{4}{\pi(2k-1)^2}</m>, тэгш <m>n\ge2</m>-д <m>a_n=0</m>.</p></hint>
+  <solution><p>Парсевалаар <m>\frac{\pi^2}{2}+\frac{16}{\pi^2}\sum_k\frac{1}{(2k-1)^4}=\frac1\pi\int_{-\pi}^{\pi}x^2dx=\frac{2\pi^2}{3}</m>, иймд <m>\frac{16}{\pi^2}\sum\frac1{(2k-1)^4}=\frac{\pi^2}{6}</m>, <m>\sum\frac1{(2k-1)^4}=\frac{\pi^4}{96}</m>. Шалгалт: <m>\sum\frac1{n^4}=\sum\frac1{(2k-1)^4}+\frac1{16}\sum\frac1{n^4}</m> тул <m>\sum\frac1{n^4}=\frac{16}{15}\cdot\frac{\pi^4}{96}=\frac{\pi^4}{90}</m>.</p></solution>
+</exercise>
+<exercise>
+  <statement><p><m>\sin\frac x2</m>-ийн задаргааг (энэ бүлгийн 2-р хэсгийн AI дасгал) ашиглан <m>\displaystyle\sum_{n=1}^\infty\frac{n^2}{(4n^2-1)^2}=\frac{\pi^2}{64}</m> гэж батал.</p></statement>
+  <hint><p><m>b_n=\frac{8(-1)^{n+1}n}{\pi(4n^2-1)}</m>, <m>\frac1\pi\int_{-\pi}^{\pi}\sin^2\frac x2\,dx=1</m>.</p></hint>
+  <solution><p>Парсевалаар <m>\sum b_n^2=\frac{64}{\pi^2}\sum\frac{n^2}{(4n^2-1)^2}=\frac1\pi\int_{-\pi}^{\pi}\frac{1-\cos x}{2}dx=1</m>. Иймд <m>\sum\frac{n^2}{(4n^2-1)^2}=\frac{\pi^2}{64}</m>.</p></solution>
+</exercise>
+<exercise>
+  <statement><p>(a) <m>x^2</m>-ийн задаргаа <m>\frac{\pi^2}3+4\sum\frac{(-1)^n\cos nx}{n^2}</m> нь <m>\R</m> дээр жигд нийлдгийг шууд харуул. (b) Тэгш өнцөгт долгионы цуваа <m>\frac4\pi\sum\frac{\sin(2k-1)x}{2k-1}</m> нь <m>[-\pi,\pi]</m> дээр жигд нийлэх үү?</p></statement>
+  <answer><p>(a) M-шинжүүрээр жигд. (b) Үгүй.</p></answer>
+  <solution><p>(a) <m>\left|\frac{4(-1)^n\cos nx}{n^2}\right|\le\frac4{n^2}</m>, <m>\sum\frac4{n^2}</m> нийлэх тул Вейерштрассын M-шинжүүрээр жигд. (b) Хэсгийн нийлбэрүүд тасралтгүй. Хэрэв жигд нийлдэг байсан бол хязгаар функц тасралтгүй байх ёстой. Гэтэл Дирихлегийн теоремоор хязгаар нь <m>0&lt;x&lt;\pi</m> үед <m>1</m>, <m>x=0</m> үед <m>0</m> — тасралттай. Иймд жигд нийлэхгүй (Гиббсийн үзэгдэл).</p></solution>
+</exercise>
+</section>
+
+<section ref="w11-s7">
+<exercise>
+  <statement><p><m>\displaystyle\int_0^{+\infty}\frac{\sin(x^2)}{x}\,dx</m>-ийг ол.</p></statement>
+  <hint><p><m>u=x^2</m> орлуул.</p></hint>
+  <answer><p><m>\dfrac\pi4</m>.</p></answer>
+  <solution><p><m>u=x^2</m>, <m>du=2x\,dx</m>, <m>\frac{dx}{x}=\frac{du}{2u}</m>. <m>0&lt;\varepsilon&lt;A</m> үед <m>\int_\varepsilon^A\frac{\sin x^2}{x}dx=\frac12\int_{\varepsilon^2}^{A^2}\frac{\sin u}{u}du</m>; <m>\varepsilon\to0</m>, <m>A\to\infty</m> гэвэл Дирихлегийн интегралаар <m>\frac12\cdot\frac\pi2=\frac\pi4</m>.</p></solution>
+</exercise>
+<exercise>
+  <statement><p><m>\displaystyle\int_0^{+\infty}\frac{|\sin x|}{x}\,dx</m> сарнидгийг батал. Ингэснээр Дирихлегийн интеграл зөвхөн нөхцөлт нийлдэг.</p></statement>
+  <hint><p><m>[k\pi,(k+1)\pi]</m> дээр <m>\frac1x\ge\frac1{(k+1)\pi}</m> ба <m>\int_{k\pi}^{(k+1)\pi}|\sin x|dx=2</m>.</p></hint>
+  <solution><p><m>k\ge0</m> бүрд
+  <md>\int_{k\pi}^{(k+1)\pi}\frac{|\sin x|}{x}dx\ge\frac{1}{(k+1)\pi}\int_{k\pi}^{(k+1)\pi}|\sin x|\,dx=\frac{2}{(k+1)\pi}.</md>
+  Иймд <m>\int_0^{N\pi}\frac{|\sin x|}{x}dx\ge\frac2\pi\sum_{k=1}^N\frac1k\to\infty</m> (гармоник цуваа). Интеграл доорх функц сөрөг биш тул интеграл сарнина.</p></solution>
+</exercise>
+</section>
+
+<section ref="w11-s8">
+<exercise>
+  <statement><p><m>f(x)=e^{-x}</m> (<m>x&gt;0</m>), <m>f(x)=0</m> (<m>x\le0</m>) функцийн Фурьегийн хувиргалтыг ол. <m>|\hat f(\xi)|\le\int|f|</m> ба <m>\hat f(\xi)\to0</m> (<m>|\xi|\to\infty</m>) гэдгийг шалгаад, урвуу томьёо <m>x=0</m> цэгт юу өгөхийг шууд бодож шалга.</p></statement>
+  <hint><p><m>\int_0^\infty e^{-(1+i\xi)x}dx=\frac{1}{1+i\xi}</m>. <m>\frac{1}{1+i\xi}=\frac{1-i\xi}{1+\xi^2}</m>.</p></hint>
+  <answer><p><m>\hat f(\xi)=\dfrac{1}{1+i\xi}</m>; <m>x=0</m>-д урвуу томьёо <m>\frac12</m> өгнө.</p></answer>
+  <solution><p><m>\hat f(\xi)=\int_0^\infty e^{-x}e^{-i\xi x}dx=\Bigl[\frac{-e^{-(1+i\xi)x}}{1+i\xi}\Bigr]_0^\infty=\frac1{1+i\xi}</m> (<m>|e^{-(1+i\xi)x}|=e^{-x}\to0</m>). <m>|\hat f(\xi)|=\frac1{\sqrt{1+\xi^2}}\le1=\int|f|</m> ба <m>\to0</m>. <m>x=0</m>-д
+  <md>\frac1{2\pi}\int_{-A}^{A}\frac{d\xi}{1+i\xi}=\frac1{2\pi}\int_{-A}^{A}\frac{1-i\xi}{1+\xi^2}d\xi=\frac{1}{2\pi}\cdot2\arctan A\to\frac12</md>
+  (сондгой хуурмаг хэсгийн интеграл <m>0</m>). Энэ нь <m>\frac{f(0+0)+f(0-0)}{2}=\frac{1+0}{2}</m>-тэй таарна.</p></solution>
+</exercise>
+<exercise>
+  <statement><p>Хувиргалтын чанарууд ба <m>\widehat{e^{-|x|}}=\frac{2}{1+\xi^2}</m>-ийг ашиглан (a) <m>e^{-|x-2|}</m>; (b) <m>e^{-|x|}\cos x</m>-ийн Фурьегийн хувиргалтыг ол.</p></statement>
+  <hint><p>(a) шилжилт; (b) <m>\cos x=\frac{e^{ix}+e^{-ix}}2</m> ба модуляц.</p></hint>
+  <answer><p>(a) <m>\dfrac{2e^{-2i\xi}}{1+\xi^2}</m>; (b) <m>\dfrac{1}{1+(\xi-1)^2}+\dfrac{1}{1+(\xi+1)^2}=\dfrac{2(\xi^2+2)}{\xi^4+4}</m>.</p></answer>
+  <solution><p>(a) Шилжилтийн чанараар (<m>a=2</m>) <m>e^{-2i\xi}\hat f(\xi)</m>. (b) Шугаман ба модуляцын чанараар <m>\frac12\bigl(\hat f(\xi-1)+\hat f(\xi+1)\bigr)=\frac{1}{1+(\xi-1)^2}+\frac{1}{1+(\xi+1)^2}</m>. Нийтлэг хуваарьт оруулбал <m>(\xi^2-2\xi+2)(\xi^2+2\xi+2)=\xi^4+4</m>, хүртвэр <m>2\xi^2+4</m>.</p></solution>
+</exercise>
+<exercise>
+  <statement><p><m>f(x)=e^{-|x|}</m> бол <m>(f*f)(x)=(1+|x|)e^{-|x|}</m> гэж шууд бодож, нугалаасын теоремоор <md>\int_{-\infty}^{+\infty}(1+|x|)e^{-|x|}e^{-i\xi x}\,dx=\frac{4}{(1+\xi^2)^2}</md> гэж дүгнэ.</p></statement>
+  <hint><p><m>f*f</m> тэгш тул <m>x\ge0</m> үед бодоход хангалттай; интегралыг <m>t&lt;0</m>, <m>0\le t\le x</m>, <m>t&gt;x</m> гэж хуваа.</p></hint>
+  <solution><p><m>x\ge0</m> гэе.
+  <md><mrow>(f*f)(x)&amp;=\int_{-\infty}^0e^{-(x-t)}e^{t}dt+\int_0^xe^{-(x-t)}e^{-t}dt+\int_x^\infty e^{-(t-x)}e^{-t}dt</mrow><mrow>&amp;=\frac{e^{-x}}{2}+xe^{-x}+\frac{e^{-x}}{2}=(1+x)e^{-x}.</mrow></md>
+  <m>f*f</m> тэгш (<m>t\to-t</m> орлуулга) тул <m>(1+|x|)e^{-|x|}</m>. <m>f</m> абсолют интегралчлагдах, зааглагдсан, тасралтгүй тул нугалаасын теоремоор <m>\widehat{f*f}=\hat f^2=\frac{4}{(1+\xi^2)^2}</m>.</p></solution>
+</exercise>
+</section>
+
+<homework>
+<exercise>
+  <statement><p><m>f(x)=x\sin x</m>, <m>-\pi\le x\le\pi</m>-ийн Фурьегийн цувааг олж, <m>\displaystyle\sum_{n=2}^\infty\frac{(-1)^n}{n^2-1}=\frac14</m> гэж батал.</p></statement>
+  <hint><p>Тэгш функц. <m>2\sin x\cos nx=\sin(n+1)x-\sin(n-1)x</m>; <m>n=1</m>-ийг тусад нь бод.</p></hint>
+  <answer><p><m>x\sin x=1-\dfrac{\cos x}{2}+2\displaystyle\sum_{n=2}^\infty\frac{(-1)^{n+1}}{n^2-1}\cos nx</m>, <m>|x|\le\pi</m>.</p></answer>
+  <solution><p><m>b_n=0</m>. <m>a_n=\frac2\pi\int_0^\pi x\sin x\cos nx\,dx=\frac1\pi\int_0^\pi x\bigl[\sin(n+1)x-\sin(n-1)x\bigr]dx</m>. <m>m\ge1</m> үед <m>\int_0^\pi x\sin mx\,dx=\frac{\pi(-1)^{m+1}}{m}</m> тул <m>n\ge2</m> үед
+  <md>a_n=\frac{(-1)^{n}}{n+1}-\frac{(-1)^{n}}{n-1}=\frac{-2(-1)^n}{n^2-1}=\frac{2(-1)^{n+1}}{n^2-1}.</md>
+  <m>n=0</m>: <m>a_0=\frac2\pi\int_0^\pi x\sin x\,dx=2</m>; <m>n=1</m>: <m>a_1=\frac1\pi\int_0^\pi x\sin2x\,dx=-\frac12</m>. <m>f</m>-ийн <m>2\pi</m> үетэй үргэлжлэл тасралтгүй (<m>f(-\pi)=f(\pi)=0</m>), хэсэгчлэн гөлгөр тул тэнцэтгэл бүх цэгт биелнэ. <m>x=0</m>: <m>0=1-\frac12+2\sum_{n\ge2}\frac{(-1)^{n+1}}{n^2-1}</m>, иймд <m>\sum_{n\ge2}\frac{(-1)^n}{n^2-1}=\frac14</m>.</p></solution>
+</exercise>
+<exercise>
+  <statement><p>(Фейерийн цөм) <m>F_n(t)=\dfrac{1}{n+1}\displaystyle\sum_{k=0}^nD_k(t)</m> бол <m>t\ne2\pi m</m> үед
+  <md>F_n(t)=\frac{\sin^2\frac{(n+1)t}{2}}{2(n+1)\sin^2\frac t2}</md>
+  гэж батал. Эндээс <m>F_n\ge0</m> ба <m>\frac1\pi\int_{-\pi}^{\pi}F_n=1</m> гэж дүгнэ.</p></statement>
+  <hint><p><m>D_k(t)=\frac{\sin(k+\frac12)t}{2\sin\frac t2}</m> ба <m>2\sin\frac t2\sin\bigl(k+\frac12\bigr)t=\cos kt-\cos(k+1)t</m>.</p></hint>
+  <solution><p>Зааврын адилтгалыг <m>k=0,\dots,n</m>-ээр нийлбэрлэвэл телескоп болж <m>2\sin\frac t2\sum_{k=0}^n\sin\bigl(k+\frac12\bigr)t=1-\cos(n+1)t=2\sin^2\frac{(n+1)t}2</m>. Иймд
+  <md>\sum_{k=0}^nD_k(t)=\frac{1}{2\sin\frac t2}\sum_{k=0}^n\sin\Bigl(k+\frac12\Bigr)t=\frac{2\sin^2\frac{(n+1)t}{2}}{4\sin^2\frac t2},</md>
+  <m>n+1</m>-д хуваахад томьёо гарна. Энэ нь илэрхий <m>\ge0</m>. <m>\frac1\pi\int_{-\pi}^\pi D_k=1</m> бүх <m>k</m>-д тул тэдгээрийн арифметик дундаж <m>F_n</m>-ийн хувьд ч <m>1</m>.</p></solution>
+</exercise>
+<exercise>
+  <statement><p><m>g(x)=\dfrac{3x^2-6\pi x+2\pi^2}{12}</m>, <m>0\le x\le2\pi</m>-ийг <m>2\pi</m> үетэйгээр үргэлжлүүлэв. <m>g</m>-ийн Фурьегийн цуваа нь <m>\displaystyle\sum_{n=1}^\infty\frac{\cos nx}{n^2}</m> бөгөөд энэ нь бүх <m>x</m>-д <m>g(x)</m> руу нийлдгийг батал. <m>x=\pi</m> дээр юу гарах вэ?</p></statement>
+  <hint><p>Коэффициентыг <m>[0,2\pi]</m> дээр бод. <m>g(0)=g(2\pi)</m> эсэхийг шалга.</p></hint>
+  <answer><p><m>x=\pi</m>: <m>\displaystyle\sum_{n=1}^\infty\frac{(-1)^n}{n^2}=-\frac{\pi^2}{12}</m>.</p></answer>
+  <solution><p><m>g(x)=\frac{(x-\pi)^2}{4}-\frac{\pi^2}{12}</m> нь <m>x=\pi</m>-ийн хувьд тэгш хэмтэй тул <m>b_n=\frac1\pi\int_0^{2\pi}g\sin nx\,dx=0</m> (<m>x\to2\pi-x</m> орлуулга). <m>a_0=\frac1\pi\int_0^{2\pi}g\,dx=\frac1\pi\Bigl(\frac{2\pi^3}{12}-\frac{2\pi^3}{12}\Bigr)=0</m>. <m>n\ge1</m> үед <m>\int_0^{2\pi}\cos nx\,dx=0</m> ба <m>\int_0^{2\pi}(x-\pi)^2\cos nx\,dx=\frac{4\pi}{n^2}</m> (хоёр удаа хэсэгчлэн интегралчилж) тул <m>a_n=\frac1\pi\cdot\frac14\cdot\frac{4\pi}{n^2}=\frac1{n^2}</m>. <m>g(0)=g(2\pi)=\frac{\pi^2}6</m> тул үетэй үргэлжлэл тасралтгүй, хэсэгчлэн гөлгөр; Теорем <xref ref="thm-fourier-uniform" text="global"/>-аар цуваа бүх цэгт (жигд) <m>g</m> руу нийлнэ. <m>x=\pi</m>: <m>\sum\frac{(-1)^n}{n^2}=g(\pi)=-\frac{\pi^2}{12}</m>. (<m>x=0</m> дээр <m>\sum\frac{1}{n^2}=\frac{\pi^2}{6}</m> гарна.)</p></solution>
+</exercise>
+<exercise>
+  <statement><p><m>f(x)=e^{-|x|}</m>-д Планшерелийн тэнцэтгэлийг хэрэглэж <m>\displaystyle\int_{-\infty}^{+\infty}\frac{d\xi}{(1+\xi^2)^2}=\frac\pi2</m> гэж гарга. Нөхцлүүд биелэх эсэхийг шалга.</p></statement>
+  <hint><p><m>\hat f(\xi)=\frac{2}{1+\xi^2}</m>, <m>\int_{-\infty}^\infty e^{-2|x|}dx=1</m>.</p></hint>
+  <solution><p><m>f</m> тасралтгүй, <m>f</m> ба <m>\hat f=\frac2{1+\xi^2}</m> хоёулаа абсолют интегралчлагдах тул Планшерелээр
+  <md>1=\int_{-\infty}^{+\infty}e^{-2|x|}dx=\frac1{2\pi}\int_{-\infty}^{+\infty}\frac{4}{(1+\xi^2)^2}d\xi,</md>
+  иймд <m>\int\frac{d\xi}{(1+\xi^2)^2}=\frac{2\pi}{4}=\frac\pi2</m>. (Шалгалт: <m>\xi=\tan\theta</m> орлуулгаар <m>\int_{-\pi/2}^{\pi/2}\cos^2\theta\,d\theta=\frac\pi2</m>.)</p></solution>
+</exercise>
+<exercise>
+  <statement><p>(Гиббсийн үзэгдэл) Тэгш өнцөгт долгионы хэсгийн нийлбэр <m>S(x)=\frac4\pi\sum_{k=1}^m\frac{\sin(2k-1)x}{2k-1}</m>-ийн хувьд
+  <ol marker="(a)">
+    <li><p><m>S'(x)=\dfrac{2}{\pi}\cdot\dfrac{\sin2mx}{\sin x}</m> (<m>0&lt;x&lt;\pi</m>) гэж батал;</p></li>
+    <li><p><m>S</m> нь <m>(0,\pi)</m> дээрх эхний локал максимумаа <m>x_m=\frac{\pi}{2m}</m> цэгт авахыг харуул;</p></li>
+    <li><p><m>\displaystyle\lim_{m\to\infty}S(x_m)=\frac2\pi\int_0^\pi\frac{\sin t}{t}\,dt\approx1{,}179</m> гэж батал.</p></li>
+  </ol></p></statement>
+  <hint><p>(a) <m>2\sin x\cos(2k-1)x=\sin2kx-\sin(2k-2)x</m>. (c) <m>S(x_m)=\int_0^{x_m}S'(x)\,dx</m>-д <m>t=2mx</m> орлуулаад <m>\frac{t/(2m)}{\sin(t/(2m))}\to1</m> жигд гэдгийг ашигла.</p></hint>
+  <solution><p>(a) <m>S'(x)=\frac4\pi\sum_{k=1}^m\cos(2k-1)x</m>. Зааврын адилтгалыг нийлбэрлэвэл телескоп: <m>2\sin x\sum_{k=1}^m\cos(2k-1)x=\sin2mx</m>, иймд <m>S'(x)=\frac{2\sin2mx}{\pi\sin x}</m>.</p>
+  <p>(b) <m>0&lt;x&lt;\pi</m> үед <m>\sin x&gt;0</m> тул <m>S'</m>-ийн тэмдэг нь <m>\sin2mx</m>-ийнх: <m>(0,\frac\pi{2m})</m> дээр эерэг, <m>(\frac\pi{2m},\frac{\pi}{m})</m> дээр сөрөг. Иймд эхний локал максимум <m>x_m=\frac\pi{2m}</m>.</p>
+  <p>(c) <m>S(0)=0</m> тул <m>t=2mx</m> орлуулгаар
+  <md>S(x_m)=\frac2\pi\int_0^{\pi/(2m)}\frac{\sin2mx}{\sin x}dx=\frac2\pi\int_0^\pi\frac{\sin t}{t}\cdot\frac{t/(2m)}{\sin(t/(2m))}\,dt.</md>
+  <m>0&lt;s\le\frac{\pi}{2m}</m> үед <m>1\le\frac{s}{\sin s}\le\frac{\pi/(2m)}{\sin(\pi/(2m))}\to1</m> тул сүүлийн үржигдэхүүн <m>[0,\pi]</m> дээр жигд <m>1</m> руу тэмүүлнэ, <m>\frac{\sin t}{t}</m> зааглагдсан. Иймд <m>S(x_m)\to\frac2\pi\int_0^\pi\frac{\sin t}{t}dt\approx1{,}1790</m>, харин <m>f(x_m)=1</m>: хэсгийн нийлбэрүүд үсрэлтийн (<m>2</m>) хэмжээний <m>\approx9\%</m>-иар хэтэрнэ.</p></solution>
+</exercise>
+</homework>
+</ai>

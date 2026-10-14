@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ai>
+<preview>
+<exploration xml:id="w08-preview">
+  <title>Хязгааргүй дүрсийн төгсгөлөг талбай (AI)</title>
+  <introduction>
+    <p>Хязгааргүй урттай дүрс төгсгөлөг талбайтай байж болох уу? <m>x\ge1</m> үед <m>y=\frac1{x^2}</m> ба <m>y=\frac1x</m> муруйн доорх “хязгааргүй сүүл”-тэй мужуудыг харьцуулъя. Санаа нь энгийн: эхлээд <m>[1,b]</m> дээрх ердийн интегралыг олоод, дараа нь <m>b\to+\infty</m> гэж хязгаарт шилжинэ.</p>
+  </introduction>
+  <task>
+    <statement><p><m>\int_1^b\frac{dx}{x^2}</m>-ийг олж, <m>b=10,\ 100,\ 1000</m> үед утгыг бич. <m>b\to+\infty</m> үед юу болох вэ?</p></statement>
+    <answer><p><m>\int_1^b\frac{dx}{x^2}=1-\frac1b</m>: <m>0{,}9</m>; <m>0{,}99</m>; <m>0{,}999</m>. Хязгаар нь <m>1</m> — муж хязгааргүй боловч “талбай” нь <m>1</m>.</p></answer>
+  </task>
+  <task>
+    <statement><p>Мөн адил <m>\int_1^b\frac{dx}{x}</m>-ийг олж, <m>b\to+\infty</m> үеийн хязгаарыг ол.</p></statement>
+    <answer><p><m>\int_1^b\frac{dx}x=\ln b\to+\infty</m>. Энэ мужийн талбай төгсгөлгүй.</p></answer>
+  </task>
+  <task>
+    <statement><p>(Габриелийн бүрээ) <m>y=\frac1x</m>, <m>x\ge1</m> муруйг <m>Ox</m> тэнхлэгийг тойруулан эргүүлэхэд үүсэх биеийн эзлэхүүн <m>V=\pi\int_1^{\infty}\frac{dx}{x^2}</m>-ийг ол. Гадаргуун талбай <m>A=2\pi\int_1^\infty\frac1x\sqrt{1+\frac1{x^4}}\,dx</m> төгсгөлөг үү?</p></statement>
+    <hint><p><m>\sqrt{1+\frac1{x^4}}\ge1</m>.</p></hint>
+    <answer><p><m>V=\pi</m>. Харин <m>A\ge2\pi\int_1^b\frac{dx}x=2\pi\ln b\to\infty</m>, гадаргуу нь төгсгөлгүй. “Будгаар дүүргэж болох боловч гадна талыг нь будаж чадахгүй” бүрээ!</p></answer>
+  </task>
+</exploration>
+</preview>
+
+<section ref="w08-s1">
+<exercise>
+  <statement><p><m>\displaystyle\int_0^{+\infty}\frac{dx}{e^x+e^{-x}}</m>-ийг тооцоол.</p></statement>
+  <hint><p>Хүртвэр, хуваарийг <m>e^x</m>-ээр үржүүлээд <m>u=e^x</m> гэж орлуул.</p></hint>
+  <answer><p><m>\dfrac\pi4</m>.</p></answer>
+  <solution><p><m>\frac{1}{e^x+e^{-x}}=\frac{e^x}{e^{2x}+1}</m> тул <m>\int_0^b\frac{e^x\,dx}{e^{2x}+1}=\bigl[\arctan e^x\bigr]_0^b=\arctan e^b-\frac\pi4</m>. <m>b\to+\infty</m> үед <m>\arctan e^b\to\frac\pi2</m> тул интеграл <m>\frac\pi2-\frac\pi4=\frac\pi4</m>.</p></solution>
+</exercise>
+<exercise>
+  <statement><p><m>\displaystyle\int_1^{+\infty}\frac{dx}{x(x+1)}</m>-ийг тооцоол.</p></statement>
+  <hint><p><m>\frac1{x(x+1)}=\frac1x-\frac1{x+1}</m>. Хоёр интегралыг тусад нь бичиж болохгүй (хоёулаа сарнина) — эхлээд <m>[1,b]</m> дээр бод.</p></hint>
+  <answer><p><m>\ln2</m>.</p></answer>
+  <solution><p><md>\int_1^b\Bigl(\frac1x-\frac1{x+1}\Bigr)dx=\Bigl[\ln\frac{x}{x+1}\Bigr]_1^b=\ln\frac{b}{b+1}-\ln\frac12\to0+\ln2=\ln2.</md></p></solution>
+</exercise>
+<exercise>
+  <statement><p><m>\displaystyle\int_{-\infty}^{+\infty}\frac{x\,dx}{1+x^2}</m> сарнихыг батал. Харин түүний Кошийн гол утга <m>\displaystyle\lim_{R\to\infty}\int_{-R}^{R}\frac{x\,dx}{1+x^2}</m>-ийг ол.</p></statement>
+  <answer><p>Сарнина; гол утга нь <m>0</m>.</p></answer>
+  <solution><p><m>\int_0^b\frac{x\,dx}{1+x^2}=\frac12\ln(1+b^2)\to+\infty</m> тул <m>\int_0^{+\infty}</m> сарнина. Тодорхойлолтоор <m>\int_{-\infty}^{+\infty}</m> нь <m>\int_{-\infty}^0</m> ба <m>\int_0^{+\infty}</m> хоёулаа нийлэх үед л нийлдэг тул сарнина. Харин функц сондгой тул <m>\int_{-R}^R\frac{x\,dx}{1+x^2}=0</m> бүх <m>R</m>-д, иймд гол утга <m>0</m>.</p></solution>
+</exercise>
+</section>
+
+<section ref="w08-s2">
+<exercise>
+  <statement><p><m>\displaystyle\int_0^2\frac{dx}{\sqrt[3]{(x-1)^2}}</m>-ийг тооцоол.</p></statement>
+  <hint><p>Онцгой цэг <m>x=1</m> нь завсрын дотор байна: <m>\int_0^2=\int_0^1+\int_1^2</m>.</p></hint>
+  <answer><p><m>6</m>.</p></answer>
+  <solution><p><m>\int_0^{1-\eta}(1-x)^{-2/3}dx=\bigl[-3(1-x)^{1/3}\bigr]_0^{1-\eta}=3-3\eta^{1/3}\to3</m>. Мөн адил <m>\int_{1+\eta}^2(x-1)^{-2/3}dx=3-3\eta^{1/3}\to3</m>. Хоёулаа нийлэх тул интеграл <m>3+3=6</m>.</p></solution>
+</exercise>
+<exercise>
+  <statement><p><m>\displaystyle\int_0^1\frac{\ln x}{\sqrt x}\,dx</m>-ийг тооцоол.</p></statement>
+  <hint><p>Хэсэгчлэн интегралчлах: <m>u=\ln x</m>, <m>dv=x^{-1/2}dx</m>. <m>\sqrt\eta\ln\eta\to0</m>.</p></hint>
+  <answer><p><m>-4</m>.</p></answer>
+  <solution><p><m>\left(2\sqrt x\ln x-4\sqrt x\right)'=\frac{\ln x}{\sqrt x}+\frac{2}{\sqrt x}-\frac2{\sqrt x}=\frac{\ln x}{\sqrt x}</m>. Иймд
+  <md>\int_\eta^1\frac{\ln x}{\sqrt x}\,dx=-4-\bigl(2\sqrt\eta\ln\eta-4\sqrt\eta\bigr)\to-4,</md>
+  учир нь <m>\sqrt\eta\ln\eta\to0</m> (<m>\eta\to0^+</m>).</p></solution>
+</exercise>
+<exercise>
+  <statement><p>Ньютон-Лейбницийн томьёог шууд хэрэглэвэл <m>\displaystyle\int_0^3\frac{dx}{x-1}=\bigl[\ln|x-1|\bigr]_0^3=\ln2</m> гэж гарна. Энэ яагаад буруу вэ? Интеграл нийлэх эсэхийг тогтоо.</p></statement>
+  <answer><p>Буруу; интеграл сарнина.</p></answer>
+  <solution><p>Интеграл доорх функц <m>x=1\in(0,3)</m> цэгийн орчинд зааглагдаагүй тул энэ нь өргөтгөсөн интеграл бөгөөд Ньютон-Лейбницийн томьёог тасралтгүй биш функцэд <m>[0,3]</m> дээр хэрэглэж болохгүй. Тодорхойлолтоор <m>\int_0^1</m> ба <m>\int_1^3</m> хоёулаа нийлэх ёстой. Гэтэл <m>\int_{1+\eta}^3\frac{dx}{x-1}=\ln2-\ln\eta\to+\infty</m> тул интеграл сарнина.</p></solution>
+</exercise>
+</section>
+
+<section ref="w08-s3">
+<exercise>
+  <statement><p><m>\displaystyle\int_0^1\frac{\arcsin x}{\sqrt{1-x^2}}\,dx</m>-ийг тооцоол.</p></statement>
+  <hint><p><m>u=\arcsin x</m> орлуулга, эсвэл <m>\left(\frac{\arcsin^2x}{2}\right)'</m>-ийг ол.</p></hint>
+  <answer><p><m>\dfrac{\pi^2}8</m>.</p></answer>
+  <solution><p>Онцгой цэг <m>x=1</m>. <m>F(x)=\frac{\arcsin^2x}{2}</m> бол <m>F'(x)=\frac{\arcsin x}{\sqrt{1-x^2}}</m> (<m>0\le x&lt;1</m>), <m>F(1^-)=\frac{(\pi/2)^2}{2}=\frac{\pi^2}{8}</m> төгсгөлөг. Ньютон-Лейбницийн томьёогоор (Теорем <xref ref="thm-impr-prop" text="global"/>) интеграл <m>\frac{\pi^2}8-0=\frac{\pi^2}8</m>.</p></solution>
+</exercise>
+<exercise>
+  <statement><p><m>\displaystyle\int_0^{+\infty}\frac{\ln x}{1+x^2}\,dx</m> нийлэхийг батлаад, <m>x=\frac1t</m> орлуулгаар утга нь <m>0</m> гэж харуул.</p></statement>
+  <hint><p>Интегралыг <m>\int_0^1+\int_1^\infty</m> гэж хувааж, <m>x=\frac1t</m> нь <m>[1,\infty)</m>-ийг <m>(0,1]</m> руу буулгана.</p></hint>
+  <solution><p><em>Нийлэлт.</em> <m>x\to0^+</m>: <m>\left|\frac{\ln x}{1+x^2}\right|\le|\ln x|</m> ба <m>\int_0^1|\ln x|\,dx=1</m>. <m>x\to\infty</m>: <m>\frac{\ln x}{1+x^2}\le\frac{\ln x}{x^2}</m> ба <m>\frac{\ln x}{x^2}\cdot x^{3/2}=\frac{\ln x}{\sqrt x}\to0</m> тул <m>x^{-3/2}</m>-тэй жишвэл нийлнэ.</p>
+  <p><em>Утга.</em> <m>I_2=\int_1^\infty\frac{\ln x}{1+x^2}dx</m>-д <m>x=\frac1t</m>, <m>dx=-\frac{dt}{t^2}</m>:
+  <md>I_2=\int_1^0\frac{-\ln t}{1+t^{-2}}\cdot\Bigl(-\frac{dt}{t^2}\Bigr)=-\int_0^1\frac{\ln t}{t^2+1}\,dt=-I_1.</md>
+  Иймд <m>\int_0^\infty=I_1+I_2=0</m>.</p></solution>
+</exercise>
+<exercise>
+  <statement><p>Хэсэгчлэн интегралчлах замаар <m>\displaystyle\int_1^{+\infty}\frac{\ln x}{x^2}\,dx</m>-ийг ол.</p></statement>
+  <hint><p><m>u=\ln x</m>, <m>dv=\frac{dx}{x^2}</m>; <m>\frac{\ln x}{x}\to0</m>.</p></hint>
+  <answer><p><m>1</m>.</p></answer>
+  <solution><p><m>u=\ln x</m>, <m>v=-\frac1x</m>: <m>uv=-\frac{\ln x}{x}\to0</m> (<m>x\to\infty</m>) тул Теорем <xref ref="thm-impr-prop" text="global"/>-ийн 4-р чанараар
+  <md>\int_1^\infty\frac{\ln x}{x^2}dx=\Bigl[-\frac{\ln x}x\Bigr]_1^\infty+\int_1^\infty\frac{dx}{x^2}=0+1=1.</md></p></solution>
+</exercise>
+</section>
+
+<section ref="w08-s4">
+<exercise>
+  <statement><p>Кошийн шинжүүрийг ашиглан <m>\displaystyle\int_1^{+\infty}\frac{|\sin x|}{x}\,dx</m> сарнихыг батал.</p></statement>
+  <hint><p><m>\xi_1=n\pi</m>, <m>\xi_2=2n\pi</m> гэж ав. <m>\int_{k\pi}^{(k+1)\pi}|\sin x|\,dx=2</m>.</p></hint>
+  <solution><p><m>n\ge1</m> бүрд <m>[n\pi,2n\pi]</m> дээр <m>\frac1x\ge\frac1{2n\pi}</m> тул
+  <md>\int_{n\pi}^{2n\pi}\frac{|\sin x|}{x}\,dx\ge\frac{1}{2n\pi}\int_{n\pi}^{2n\pi}|\sin x|\,dx=\frac{1}{2n\pi}\cdot2n=\frac1\pi.</md>
+  <m>\varepsilon=\frac1\pi</m> үед ямар ч <m>B</m>-д <m>n\pi&gt;B</m> байх <m>n</m> олдох тул Кошийн нөхцөл зөрчигдөнө — интеграл сарнина.</p></solution>
+</exercise>
+<exercise>
+  <statement><p><m>\int_a^{+\infty}f(x)\,dx</m> нийлдэг бөгөөд <m>\displaystyle\lim_{x\to+\infty}f(x)=L</m> оршин байвал <m>L=0</m> гэж батал.</p></statement>
+  <hint><p><m>L&gt;0</m> гэж үзээд <m>\int_\xi^{\xi+1}f</m>-ийг доороос үнэл.</p></hint>
+  <solution><p><m>L&gt;0</m> гэж үзье. Ямар нэг <m>B</m>-ээс хойш <m>f(x)&gt;\frac L2</m>. Тэгвэл дурын <m>\xi&gt;B</m>-д <m>\int_\xi^{\xi+1}f\,dx\ge\frac L2</m>, энэ нь <m>\varepsilon=\frac L2</m>-д Кошийн нөхцөлийг зөрчинө — зөрчил. <m>L&lt;0</m> бол <m>-f</m>-д ижил аргыг хэрэглэнэ. Иймд <m>L=0</m>. (<m>L=\pm\infty</m> тохиолдол ч мөн адил үгүйсгэгдэнэ.)</p></solution>
+</exercise>
+</section>
+
+<section ref="w08-s5">
+<exercise>
+  <statement><p><m>\displaystyle\int_0^{+\infty}\frac{dx}{\sqrt{x^3+x}}</m> нийлэх үү?</p></statement>
+  <hint><p>Хоёр онцгой “төгсгөл” бий: <m>0</m> ба <m>+\infty</m>. Аль алинд нь эквивалент функц ол.</p></hint>
+  <answer><p>Нийлнэ.</p></answer>
+  <solution><p><m>\int_0^1</m>: <m>x\to0^+</m> үед <m>\sqrt{x^3+x}=\sqrt x\sqrt{1+x^2}\sim\sqrt x</m>, <m>\frac{1}{\sqrt{x^3+x}}\sim\frac{1}{x^{1/2}}</m>, <m>p=\frac12&lt;1</m> — нийлнэ. <m>\int_1^\infty</m>: <m>\frac1{\sqrt{x^3+x}}\sim\frac{1}{x^{3/2}}</m>, <m>p=\frac32&gt;1</m> — нийлнэ. Хязгаар хэлбэрийн жиших шинжүүрээр хоёулаа нийлэх тул интеграл нийлнэ.</p></solution>
+</exercise>
+<exercise>
+  <statement><p><m>\displaystyle\int_0^1\frac{dx}{\sqrt[3]{x-\sin x}}</m> нийлэх үү?</p></statement>
+  <hint><p>Тейлорын томьёо: <m>x-\sin x=\frac{x^3}6+o(x^3)</m>.</p></hint>
+  <answer><p>Сарнина.</p></answer>
+  <solution><p><m>x&gt;0</m> үед <m>x-\sin x&gt;0</m> ба <m>x\to0^+</m> үед <m>x-\sin x\sim\frac{x^3}6</m>, иймд
+  <md>\frac{1}{\sqrt[3]{x-\sin x}}\sim\frac{\sqrt[3]6}{x}.</md>
+  <m>\int_0^1\frac{dx}{x}</m> сарних (<m>p=1</m>) тул хязгаар хэлбэрийн жиших шинжүүрээр интеграл сарнина.</p></solution>
+</exercise>
+<exercise>
+  <statement><p><m>\alpha</m>-ийн ямар утгад <m>\displaystyle\int_0^{+\infty}\frac{1-e^{-x}}{x^\alpha}\,dx</m> нийлэх вэ?</p></statement>
+  <hint><p><m>x\to0^+</m> үед <m>1-e^{-x}\sim x</m>; <m>x\to\infty</m> үед <m>1-e^{-x}\to1</m>.</p></hint>
+  <answer><p><m>1&lt;\alpha&lt;2</m>.</p></answer>
+  <solution><p>Интеграл доорх функц эерэг. <m>\int_0^1</m>: <m>\frac{1-e^{-x}}{x^\alpha}\sim\frac{1}{x^{\alpha-1}}</m>, нийлэх <m>\iff\alpha-1&lt;1\iff\alpha&lt;2</m>. <m>\int_1^\infty</m>: <m>\frac{1-e^{-x}}{x^\alpha}\sim\frac1{x^\alpha}</m>, нийлэх <m>\iff\alpha&gt;1</m>. Хоёулаа нийлэх нөхцөл: <m>1&lt;\alpha&lt;2</m>.</p></solution>
+</exercise>
+</section>
+
+<section ref="w08-s6">
+<exercise>
+  <statement><p><m>\displaystyle\int_0^{+\infty}\frac{\sin x}{x^{3/2}}\,dx</m> абсолют нийлэхийг батал.</p></statement>
+  <hint><p><m>0</m> орчимд <m>|\sin x|\le x</m>, <m>\infty</m> орчимд <m>|\sin x|\le1</m>.</p></hint>
+  <solution><p><m>(0,1]</m> дээр <m>\left|\frac{\sin x}{x^{3/2}}\right|\le\frac{x}{x^{3/2}}=\frac1{x^{1/2}}</m>, <m>p=\frac12&lt;1</m> тул <m>\int_0^1</m> абсолют нийлнэ. <m>[1,\infty)</m> дээр <m>\left|\frac{\sin x}{x^{3/2}}\right|\le\frac1{x^{3/2}}</m>, <m>p=\frac32&gt;1</m>. Иймд <m>\int_0^\infty\left|\frac{\sin x}{x^{3/2}}\right|dx</m> нийлнэ.</p></solution>
+</exercise>
+<exercise>
+  <statement><p><m>\int_a^{+\infty}f\,dx</m> абсолют нийлдэг, <m>g</m> нь дурын <m>[a,b]</m> дээр интегралчлагдах ба <m>|g(x)|\le M</m> бол <m>\int_a^{+\infty}f(x)g(x)\,dx</m> абсолют нийлэхийг батал.</p></statement>
+  <hint><p><m>|fg|\le M|f|</m> ба жиших шинжүүр.</p></hint>
+  <solution><p>Дурын <m>[a,b]</m> дээр <m>f,g</m> интегралчлагдах тул <m>fg</m> ба <m>|fg|</m> интегралчлагдана. <m>0\le|f(x)g(x)|\le M|f(x)|</m> ба <m>\int_a^\infty M|f|</m> нийлэх тул жиших шинжүүрээр (Теорем <xref ref="thm-impr-comp" text="global"/>) <m>\int_a^\infty|fg|</m> нийлнэ.</p></solution>
+</exercise>
+<exercise>
+  <statement><p><m>f(x)=\frac{\sin x}{\sqrt x}</m> гэе. <m>\int_1^{+\infty}f\,dx</m> нийлдэг боловч <m>\int_1^{+\infty}f^2\,dx</m> сарних гэж батал.</p></statement>
+  <hint><p><m>\sin^2x=\frac{1-\cos2x}{2}</m>.</p></hint>
+  <solution><p><m>\left|\int_1^x\sin t\,dt\right|\le2</m>, <m>\frac1{\sqrt x}\downarrow0</m> тул Дирихлегийн шинжүүрээр <m>\int_1^\infty\frac{\sin x}{\sqrt x}dx</m> нийлнэ. Харин
+  <md>f^2(x)=\frac{\sin^2x}{x}=\frac1{2x}-\frac{\cos2x}{2x}.</md>
+  <m>\int_1^\infty\frac{\cos2x}{2x}dx</m> Дирихлегээр нийлэх, <m>\int_1^\infty\frac{dx}{2x}</m> сарних тул <m>\int_1^\infty f^2</m> сарнина. (Цувааны хувьд ч <m>\sum\frac{(-1)^n}{\sqrt n}</m> нийлэх ба <m>\sum\frac1n</m> сарнидагтай адил.)</p></solution>
+</exercise>
+</section>
+
+<section ref="w08-s7">
+<exercise>
+  <statement><p><m>\displaystyle\int_2^{+\infty}\frac{\sin x}{\ln x}\,dx</m> нөхцөлт нийлэхийг батал.</p></statement>
+  <hint><p>Дирихлегийн шинжүүр; абсолют биш гэдгийг <m>\frac{|\sin x|}{\ln x}\ge\frac{|\sin x|}{x}</m>-ээр харуул.</p></hint>
+  <solution><p><m>\left|\int_2^x\sin t\,dt\right|=|\cos2-\cos x|\le2</m>, <m>g(x)=\frac1{\ln x}</m> тасралтгүй дифференциалчлагдах, буурах ба <m>\to0</m> тул Дирихлегийн шинжүүрээр интеграл нийлнэ. <m>x\ge2</m> үед <m>\ln x&lt;x</m> тул <m>\frac{|\sin x|}{\ln x}\ge\frac{|\sin x|}{x}</m>, харин <m>\int_2^\infty\frac{|\sin x|}{x}dx=+\infty</m> (Жишээ <xref ref="ex-sinx-x" text="global"/>). Иймд нөхцөлт нийлнэ.</p></solution>
+</exercise>
+<exercise>
+  <statement><p><m>\displaystyle\int_0^{+\infty}\sin\left(e^x\right)dx</m> нийлэхийг батал.</p></statement>
+  <hint><p><m>t=e^x</m> орлуулга.</p></hint>
+  <solution><p><m>x=\ln t</m>, <m>t\in[1,\infty)</m> өсөх тасралтгүй дифференциалчлагдах орлуулга, <m>dx=\frac{dt}t</m>:
+  <md>\int_0^{\infty}\sin(e^x)\,dx=\int_1^\infty\frac{\sin t}{t}\,dt.</md>
+  Баруун тал Дирихлегийн шинжүүрээр нийлэх тул (Теорем <xref ref="thm-impr-prop" text="global"/>-ийн 5-р чанар) зүүн тал нийлнэ. Интеграл доорх функц <m>0</m> руу тэмүүлэхгүй ч интеграл нийлж байна.</p></solution>
+</exercise>
+<exercise>
+  <statement><p><m>\displaystyle\int_1^{+\infty}x\sin\left(x^3\right)dx</m> нийлэхийг батал. Интеграл доорх функц зааглагдаагүй гэдгийг анхаар.</p></statement>
+  <hint><p><m>t=x^3</m> гэвэл <m>x\,dx=\frac13t^{-1/3}dt</m>.</p></hint>
+  <solution><p><m>x=t^{1/3}</m>, <m>dx=\frac13t^{-2/3}dt</m> тул <m>x\,dx=\frac13t^{-1/3}dt</m> ба
+  <md>\int_1^\infty x\sin(x^3)\,dx=\frac13\int_1^\infty\frac{\sin t}{t^{1/3}}\,dt.</md>
+  <m>\left|\int_1^t\sin s\,ds\right|\le2</m>, <m>t^{-1/3}\downarrow0</m> тул Дирихлегийн шинжүүрээр нийлнэ. Гэтэл <m>x_k=\sqrt[3]{\frac\pi2+2\pi k}</m> цэгүүдэд <m>x_k\sin(x_k^3)=x_k\to\infty</m>, өөрөөр хэлбэл функц зааглагдаагүй.</p></solution>
+</exercise>
+</section>
+
+<section ref="w08-s8">
+<exercise>
+  <statement><p><m>R_N=\displaystyle\sum_{n=N+1}^\infty\frac1{n^3}</m> үлдэгдлийн хувьд
+  <md>\frac{1}{2(N+1)^2}\le R_N\le\frac1{2N^2}</md>
+  гэж батал. <m>N=10</m> үед <m>\zeta(3)=\sum\frac1{n^3}</m>-ийг агуулах завсар бич (<m>S_{10}\approx1{,}19753</m>).</p></statement>
+  <hint><p><m>f(x)=\frac1{x^3}</m> буурах тул <m>\int_{n}^{n+1}f\le f(n)\le\int_{n-1}^nf</m>.</p></hint>
+  <answer><p><m>1{,}20166\le\zeta(3)\le1{,}20254</m>.</p></answer>
+  <solution><p><m>f</m> буурах тул <m>\int_n^{n+1}f\le f(n)\le\int_{n-1}^nf</m>. <m>n=N+1,N+2,\dots</m>-ээр нийлбэрлэвэл
+  <md>\int_{N+1}^\infty\frac{dx}{x^3}\le R_N\le\int_N^\infty\frac{dx}{x^3},\qquad\text{өөрөөр хэлбэл}\qquad\frac1{2(N+1)^2}\le R_N\le\frac1{2N^2}.</md>
+  <m>N=10</m>: <m>\frac1{242}\approx0{,}00413\le R_{10}\le0{,}005</m>, иймд <m>1{,}20166\le\zeta(3)\le1{,}20254</m>. (Жинхэнэ утга <m>\zeta(3)\approx1{,}20206</m>.)</p></solution>
+</exercise>
+<exercise>
+  <statement><p><m>\displaystyle\lim_{N\to\infty}\Bigl(1+\frac1{\sqrt2}+\frac1{\sqrt3}+\cdots+\frac1{\sqrt N}-2\sqrt N\Bigr)</m> хязгаар оршин байхыг батал.</p></statement>
+  <hint><p>Теорем <xref ref="thm-int-series" text="global"/>-ийг <m>f(x)=\frac1{\sqrt x}</m>-д хэрэглэ.</p></hint>
+  <solution><p><m>f(x)=\frac1{\sqrt x}\ge0</m> буурах тул Теорем <xref ref="thm-int-series" text="global"/>-аар <m>d_N=\sum_{n=1}^N\frac1{\sqrt n}-\int_1^N\frac{dx}{\sqrt x}</m> нь <m>[0,1]</m>-д төгсгөлөг хязгаартай. <m>\int_1^N\frac{dx}{\sqrt x}=2\sqrt N-2</m> тул
+  <md>\sum_{n=1}^N\frac1{\sqrt n}-2\sqrt N=d_N-2</md>
+  мөн хязгаартай (хязгаар нь <m>[-2,-1]</m>-д орших ба ойролцоогоор <m>-1{,}46</m>).</p></solution>
+</exercise>
+</section>
+
+<homework>
+<exercise>
+  <statement><p><m>\displaystyle\int_0^{+\infty}\frac{dx}{1+x^3}</m>-ийг тооцоол.</p></statement>
+  <hint><p><m>\frac{1}{1+x^3}=\frac13\cdot\frac1{x+1}-\frac13\cdot\frac{x-2}{x^2-x+1}</m>.</p></hint>
+  <answer><p><m>\dfrac{2\pi}{3\sqrt3}</m>.</p></answer>
+  <solution><p>Задаргаанаас эх функц
+  <md>F(x)=\frac13\ln(x+1)-\frac16\ln(x^2-x+1)+\frac1{\sqrt3}\arctan\frac{2x-1}{\sqrt3}=\frac16\ln\frac{(x+1)^2}{x^2-x+1}+\frac1{\sqrt3}\arctan\frac{2x-1}{\sqrt3}.</md>
+  <m>x\to+\infty</m> үед <m>\frac{(x+1)^2}{x^2-x+1}\to1</m> тул <m>F(+\infty)=\frac{\pi}{2\sqrt3}</m>; <m>F(0)=\frac1{\sqrt3}\arctan\left(-\frac1{\sqrt3}\right)=-\frac{\pi}{6\sqrt3}</m>. Иймд интеграл <m>\frac\pi{2\sqrt3}+\frac\pi{6\sqrt3}=\frac{2\pi}{3\sqrt3}</m>.</p></solution>
+</exercise>
+<exercise>
+  <statement><p><m>a&gt;0</m>, <m>b\in\R</m> бол <m>\displaystyle\int_0^{+\infty}e^{-ax}\cos bx\,dx=\frac{a}{a^2+b^2}</m> гэж батал.</p></statement>
+  <hint><p>Абсолют нийлэлт: <m>|e^{-ax}\cos bx|\le e^{-ax}</m>. Утгыг хоёр удаа хэсэгчлэн интегралчлах эсвэл <m>\left(e^{-ax}\frac{b\sin bx-a\cos bx}{a^2+b^2}\right)'</m>-ийг шалгах замаар ол.</p></hint>
+  <solution><p><m>|e^{-ax}\cos bx|\le e^{-ax}</m> тул интеграл абсолют нийлнэ. <m>F(x)=e^{-ax}\frac{b\sin bx-a\cos bx}{a^2+b^2}</m> гэвэл
+  <md>F'(x)=\frac{e^{-ax}}{a^2+b^2}\bigl(-ab\sin bx+a^2\cos bx+b^2\cos bx+ab\sin bx\bigr)=e^{-ax}\cos bx.</md>
+  <m>F(+\infty)=0</m> (<m>|F|\le\frac{(|a|+|b|)e^{-ax}}{a^2+b^2}</m>), <m>F(0)=-\frac{a}{a^2+b^2}</m> тул интеграл <m>\frac{a}{a^2+b^2}</m>.</p></solution>
+</exercise>
+<exercise>
+  <statement><p><m>p&gt;0</m>-ийн утгаас хамааруулан <m>\displaystyle\int_0^{+\infty}\frac{\sin x}{x^p}\,dx</m>-ийн абсолют ба нөхцөлт нийлэлтийг шинжил.</p></statement>
+  <hint><p><m>\int_0^1</m> ба <m>\int_1^\infty</m>-ийг тусад нь шинжил. <m>x\to0^+</m> үед <m>\frac{\sin x}{x^p}\sim x^{1-p}</m>.</p></hint>
+  <answer><p><m>1&lt;p&lt;2</m> — абсолют; <m>0&lt;p\le1</m> — нөхцөлт; <m>p\ge2</m> — сарнина.</p></answer>
+  <solution><p><m>\int_0^1</m>: <m>(0,1]</m> дээр <m>\sin x&gt;0</m> ба <m>\frac{\sin x}{x^p}\sim\frac1{x^{p-1}}</m>, нийлэх <m>\iff p-1&lt;1\iff p&lt;2</m> (энд абсолют ба ердийн нийлэлт ижил). <m>p\ge2</m> үед интеграл сарнина.</p>
+  <p><m>\int_1^\infty</m>: <m>p&gt;1</m> үед <m>\left|\frac{\sin x}{x^p}\right|\le\frac1{x^p}</m> — абсолют. <m>0&lt;p\le1</m> үед Дирихлегээр нийлэх ба <m>\frac{|\sin x|}{x^p}\ge\frac{\sin^2x}{x^p}=\frac1{2x^p}-\frac{\cos2x}{2x^p}</m>-ээс абсолют сарнина.</p>
+  <p>Нэгтгэвэл: <m>1&lt;p&lt;2</m> үед абсолют, <m>0&lt;p\le1</m> үед нөхцөлт нийлнэ, <m>p\ge2</m> үед сарнина.</p></solution>
+</exercise>
+<exercise>
+  <statement><p><m>\displaystyle\int_0^{+\infty}e^{-x^2}\,dx</m> нийлэхийг батлаад, <m>\displaystyle\int_0^{+\infty}e^{-x^2}\,dx\le1+\frac{1}{2e}</m> гэж үнэл.</p></statement>
+  <hint><p><m>[1,\infty)</m> дээр <m>e^{-x^2}\le xe^{-x^2}</m>.</p></hint>
+  <solution><p><m>[0,1]</m> дээр <m>e^{-x^2}\le1</m> тул <m>\int_0^1e^{-x^2}dx\le1</m>. <m>x\ge1</m> үед <m>0&lt;e^{-x^2}\le xe^{-x^2}</m> ба
+  <md>\int_1^\infty xe^{-x^2}dx=\Bigl[-\frac12e^{-x^2}\Bigr]_1^\infty=\frac1{2e}.</md>
+  Жиших шинжүүрээр <m>\int_1^\infty e^{-x^2}</m> нийлэх ба <m>\le\frac1{2e}</m>. Нийлбэр нь <m>\le1+\frac1{2e}\approx1{,}184</m>. (Жинхэнэ утга <m>\frac{\sqrt\pi}2\approx0{,}886</m>.)</p></solution>
+</exercise>
+<exercise>
+  <statement><p>(Фруллани) <m>0&lt;a&lt;b</m> бол <m>\displaystyle\int_0^{+\infty}\frac{e^{-ax}-e^{-bx}}{x}\,dx=\ln\frac ba</m> гэж батал.</p></statement>
+  <hint><p><m>0&lt;\varepsilon&lt;R</m> үед <m>\int_\varepsilon^R\frac{e^{-ax}}x\,dx=\int_{a\varepsilon}^{aR}\frac{e^{-t}}t\,dt</m>. Ялгаврыг <m>\int_{a\varepsilon}^{b\varepsilon}-\int_{aR}^{bR}</m> болгоод тус бүрийг үнэл.</p></hint>
+  <solution><p>Интеграл доорх функц <m>(0,\infty)</m> дээр тасралтгүй, <m>x\to0^+</m> үед <m>\to b-a</m> төгсгөлөг. <m>t=ax</m> ба <m>t=bx</m> орлуулгаар
+  <md>\int_\varepsilon^R\frac{e^{-ax}-e^{-bx}}x\,dx=\int_{a\varepsilon}^{aR}\frac{e^{-t}}t\,dt-\int_{b\varepsilon}^{bR}\frac{e^{-t}}t\,dt=\int_{a\varepsilon}^{b\varepsilon}\frac{e^{-t}}t\,dt-\int_{aR}^{bR}\frac{e^{-t}}t\,dt.</md>
+  <m>[a\varepsilon,b\varepsilon]</m> дээр <m>e^{-b\varepsilon}\le e^{-t}\le1</m> тул эхний интеграл <m>e^{-b\varepsilon}\ln\frac ba</m> ба <m>\ln\frac ba</m>-ийн хооронд оршиж, <m>\varepsilon\to0^+</m> үед <m>\ln\frac ba</m> руу тэмүүлнэ. <m>[aR,bR]</m> дээр <m>e^{-t}\le e^{-aR}</m> тул хоёр дахь нь <m>0\le\cdot\le e^{-aR}\ln\frac ba\to0</m>. Иймд интеграл <m>\ln\frac ba</m>.</p></solution>
+</exercise>
+</homework>
+</ai>

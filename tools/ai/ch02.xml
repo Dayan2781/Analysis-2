@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ai>
+<preview>
+<exploration xml:id="w02-preview">
+  <title>Бутархайг задлах нь яагаад хэрэгтэй вэ? (AI)</title>
+  <introduction>
+    <p>Бутархайг нэмэхэд ерөнхий хуваарьт оруулдаг. Интеграл бодоход эсрэг үйлдэл буюу нэг бутархайг хэд хэдэн <q>энгийн</q> бутархайд задлах нь их хэрэг болно.</p>
+  </introduction>
+  <task>
+    <statement><p><m>\dfrac{1}{x-1}-\dfrac{1}{x+1}</m>-ийг нэг бутархай болго.</p></statement>
+    <answer><p><m>\dfrac{2}{x^2-1}</m>.</p></answer>
+  </task>
+  <task>
+    <statement><p>Өмнөх үр дүнг ашиглан <m>\displaystyle\int\frac{2\,dx}{x^2-1}</m>-ийг ол.</p></statement>
+    <answer><p><m>\ln|x-1|-\ln|x+1|+C=\ln\left|\dfrac{x-1}{x+1}\right|+C</m>.</p></answer>
+  </task>
+  <task>
+    <statement><p><m>\dfrac{x+5}{(x-1)(x+2)}=\dfrac{A}{x-1}+\dfrac{B}{x+2}</m> байх <m>A, B</m> тоог ол.</p></statement>
+    <hint><p>Хоёр талыг <m>(x-1)(x+2)</m>-оор үржүүлээд <m>x=1</m>, <m>x=-2</m> утгыг орлуул.</p></hint>
+    <answer><p><m>A=2</m>, <m>B=-1</m>.</p></answer>
+  </task>
+</exploration>
+</preview>
+
+<section ref="w02-s1">
+<exercise>
+  <statement><p><m>\displaystyle\int\frac{3x+1}{x^2-x-2}\,dx</m>.</p></statement>
+  <hint><p><m>x^2-x-2=(x-2)(x+1)</m>.</p></hint>
+  <answer><p><m>\dfrac73\ln|x-2|+\dfrac23\ln|x+1|+C</m>.</p></answer>
+  <solution><p><m>\frac{3x+1}{(x-2)(x+1)}=\frac{A}{x-2}+\frac{B}{x+1}</m>, <m>3x+1=A(x+1)+B(x-2)</m>. <m>x=2</m>: <m>7=3A</m>; <m>x=-1</m>: <m>-2=-3B</m>. Иймд <m>A=\frac73</m>, <m>B=\frac23</m> ба
+  <md>\int\frac{3x+1}{x^2-x-2}\,dx=\frac73\ln|x-2|+\frac23\ln|x+1|+C.</md></p></solution>
+</exercise>
+<exercise>
+  <statement><p><m>\displaystyle\int\frac{dx}{x^3+x}</m>.</p></statement>
+  <hint><p><m>\frac{1}{x(x^2+1)}=\frac Ax+\frac{Bx+C}{x^2+1}</m>.</p></hint>
+  <answer><p><m>\ln|x|-\dfrac12\ln(x^2+1)+C</m>.</p></answer>
+  <solution><p><m>1=A(x^2+1)+(Bx+C)x</m>. <m>x=0</m>: <m>A=1</m>; <m>x^2</m>-ийн коэффициент: <m>A+B=0\Rightarrow B=-1</m>; <m>x</m>-ийн коэффициент: <m>C=0</m>. Иймд
+  <md>\int\left(\frac1x-\frac{x}{x^2+1}\right)dx=\ln|x|-\frac12\ln(x^2+1)+C.</md></p></solution>
+</exercise>
+<exercise>
+  <statement><p><m>\displaystyle\int\frac{x^2+1}{(x-1)^3}\,dx</m>.</p></statement>
+  <hint><p><m>t=x-1</m> гэвэл <m>x^2+1=t^2+2t+2</m>.</p></hint>
+  <answer><p><m>\ln|x-1|-\dfrac{2}{x-1}-\dfrac{1}{(x-1)^2}+C</m>.</p></answer>
+  <solution><p><m>t=x-1</m>: <m>\frac{t^2+2t+2}{t^3}=\frac1t+\frac2{t^2}+\frac2{t^3}</m>. Интегралчилбал <m>\ln|t|-\frac2t-\frac1{t^2}+C</m>.</p></solution>
+</exercise>
+<exercise>
+  <statement><p><m>\displaystyle\int\frac{dx}{x^2+2x+5}</m>.</p></statement>
+  <hint><p>Бүтэн квадрат ялга: <m>x^2+2x+5=(x+1)^2+4</m>.</p></hint>
+  <answer><p><m>\dfrac12\arctan\dfrac{x+1}{2}+C</m>.</p></answer>
+  <solution><p><m>u=x+1</m>: <m>\int\frac{du}{u^2+4}=\frac12\arctan\frac u2+C</m>.</p></solution>
+</exercise>
+</section>
+
+<section ref="w02-s2">
+<exercise>
+  <statement><p><m>\displaystyle\int\frac{dx}{\sqrt x+\sqrt[3]x}</m>.</p></statement>
+  <hint><p><m>x=t^6</m> орлуулга (<m>6</m> нь <m>2</m> ба <m>3</m>-ын хамгийн бага ерөнхий хуваагдагч).</p></hint>
+  <answer><p><m>2\sqrt x-3\sqrt[3]x+6\sqrt[6]x-6\ln\left(1+\sqrt[6]x\right)+C</m>.</p></answer>
+  <solution><p><m>x=t^6</m>, <m>t&gt;0</m>: <m>dx=6t^5dt</m>, <m>\sqrt x=t^3</m>, <m>\sqrt[3]x=t^2</m>.
+  <md>\int\frac{6t^5\,dt}{t^3+t^2}=6\int\frac{t^3}{t+1}\,dt=6\int\left(t^2-t+1-\frac1{t+1}\right)dt=2t^3-3t^2+6t-6\ln(1+t)+C.</md></p></solution>
+</exercise>
+<exercise>
+  <statement><p><m>\displaystyle\int\sqrt{\frac{1-x}{1+x}}\,dx</m>, <m>|x|&lt;1</m>.</p></statement>
+  <hint><p>Хүртвэр ба хуваарийг <m>\sqrt{1-x}</m>-ээр үржүүл.</p></hint>
+  <answer><p><m>\arcsin x+\sqrt{1-x^2}+C</m>.</p></answer>
+  <solution><p><m>\sqrt{\frac{1-x}{1+x}}=\frac{1-x}{\sqrt{1-x^2}}</m> тул
+  <md>\int\frac{dx}{\sqrt{1-x^2}}-\int\frac{x\,dx}{\sqrt{1-x^2}}=\arcsin x+\sqrt{1-x^2}+C.</md></p></solution>
+</exercise>
+<exercise>
+  <statement><p>Чебышёвын теоремын аль тохиолдол болохыг тогтоож, <m>\displaystyle\int\frac{dx}{x\sqrt{1+x^2}}</m> (<m>x&gt;0</m>)-ийг ол.</p></statement>
+  <hint><p><m>m=-1</m>, <m>n=2</m>, <m>p=-\frac12</m>. <m>\frac{m+1}{n}=0</m> бүхэл тоо. <m>1+x^2=t^2</m> орлуулга.</p></hint>
+  <answer><p><m>\ln\dfrac{x}{1+\sqrt{1+x^2}}+C</m>.</p></answer>
+  <solution><p>2-р тохиолдол. <m>t=\sqrt{1+x^2}</m> гэвэл <m>x\,dx=t\,dt</m>, <m>x^2=t^2-1</m>:
+  <md>\int\frac{dx}{x\sqrt{1+x^2}}=\int\frac{x\,dx}{x^2\sqrt{1+x^2}}=\int\frac{dt}{t^2-1}=\frac12\ln\frac{t-1}{t+1}+C.</md>
+  <m>\frac{t-1}{t+1}=\frac{(t-1)(t+1)}{(t+1)^2}=\frac{x^2}{(1+t)^2}</m> тул хариу <m>\ln\frac{x}{1+\sqrt{1+x^2}}+C</m>.</p></solution>
+</exercise>
+</section>
+
+<homework>
+<exercise>
+  <statement><p><m>\displaystyle\int\frac{x^4}{x^2+1}\,dx</m>.</p></statement>
+  <hint><p>Эхлээд олон гишүүнтийг хуваа (бутархай буруу).</p></hint>
+  <answer><p><m>\dfrac{x^3}{3}-x+\arctan x+C</m>.</p></answer>
+  <solution><p><m>x^4=(x^2+1)(x^2-1)+1</m> тул <m>\frac{x^4}{x^2+1}=x^2-1+\frac{1}{x^2+1}</m>.</p></solution>
+</exercise>
+<exercise>
+  <statement><p><m>\displaystyle\int\frac{dx}{x^2(x+1)}</m>.</p></statement>
+  <answer><p><m>-\dfrac1x-\ln|x|+\ln|x+1|+C</m>.</p></answer>
+  <solution><p><m>\frac{1}{x^2(x+1)}=-\frac1x+\frac{1}{x^2}+\frac{1}{x+1}</m> (<m>1=Ax(x+1)+B(x+1)+Cx^2</m>; <m>x=0\Rightarrow B=1</m>, <m>x=-1\Rightarrow C=1</m>, <m>x^2</m>: <m>A+C=0</m>).</p></solution>
+</exercise>
+<exercise>
+  <statement><p><m>\displaystyle\int\frac{dx}{1+\sqrt{x+1}}</m>.</p></statement>
+  <hint><p><m>t=\sqrt{x+1}</m>.</p></hint>
+  <answer><p><m>2\sqrt{x+1}-2\ln\left(1+\sqrt{x+1}\right)+C</m>.</p></answer>
+  <solution><p><m>x=t^2-1</m>, <m>dx=2t\,dt</m>: <m>\int\frac{2t\,dt}{1+t}=\int\left(2-\frac{2}{1+t}\right)dt=2t-2\ln(1+t)+C</m>.</p></solution>
+</exercise>
+<exercise>
+  <statement><p><m>\displaystyle\int\sin^3x\cos^2x\,dx</m>.</p></statement>
+  <hint><p><m>\sin^3x=(1-\cos^2x)\sin x</m>, <m>u=\cos x</m>.</p></hint>
+  <answer><p><m>-\dfrac{\cos^3x}{3}+\dfrac{\cos^5x}{5}+C</m>.</p></answer>
+  <solution><p><m>u=\cos x</m>, <m>du=-\sin x\,dx</m>: <m>-\int(1-u^2)u^2\,du=-\frac{u^3}3+\frac{u^5}5+C</m>.</p></solution>
+</exercise>
+<exercise>
+  <statement><p><m>a&gt;0</m> үед
+  <md>\int\frac{dx}{(x^2+a^2)^2}=\frac{x}{2a^2(x^2+a^2)}+\frac{1}{2a^3}\arctan\frac xa+C</md>
+  гэдгийг баталж, <m>\displaystyle\int\frac{dx}{(x^2+4)^2}</m>-ийг ол.</p></statement>
+  <hint><p><m>J_1=\int\frac{dx}{x^2+a^2}</m>-д хэсэгчлэн интегралчлалыг (<m>f=\frac{1}{x^2+a^2}</m>, <m>g'=1</m>) хэрэглэ, эсвэл баруун талын уламжлалыг шууд ол.</p></hint>
+  <answer><p><m>\dfrac{x}{8(x^2+4)}+\dfrac{1}{16}\arctan\dfrac x2+C</m>.</p></answer>
+  <solution><p><m>J_k=\int\frac{dx}{(x^2+a^2)^k}</m> гэе. Хэсэгчлэн интегралчилбал
+  <md>J_1=\frac{x}{x^2+a^2}+2\int\frac{x^2\,dx}{(x^2+a^2)^2}=\frac{x}{x^2+a^2}+2J_1-2a^2J_2,</md>
+  эндээс <m>J_2=\frac{1}{2a^2}\left(\frac{x}{x^2+a^2}+J_1\right)</m>, <m>J_1=\frac1a\arctan\frac xa</m>. <m>a=2</m> үед <m>\frac{x}{8(x^2+4)}+\frac1{16}\arctan\frac x2+C</m>.</p></solution>
+</exercise>
+</homework>
+</ai>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: default-modern                 *-->
+<!--*  Palette:                              *-->
+<!--******************************************-->
+
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="theorem theorem-like"><h2 class="heading">
+<span class="type">Теорем</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">13.22</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Фубини.</span>
+</h2>
+<div class="para logical">
+<div class="para">
+<span class="process-math">\(f: A\times B\to\R\)</span> интегралчлагдах байг. <span class="process-math">\(x\in A\)</span> бүрд <span class="process-math">\(f_x(y) = f(x,y)\)</span> гэж</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\mathcal L(x) = \underline{\int_B} f(x,y)\,dy, \qquad \mathcal U(x) = \overline{\int_B} f(x,y)\,dy
+\end{equation*}
+</div>
+<div class="para">гэе. Тэгвэл <span class="process-math">\(\mathcal L\text{,}\)</span> <span class="process-math">\(\mathcal U\)</span> хоёулаа <span class="process-math">\(A\)</span> дээр интегралчлагдах бөгөөд</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\int_{A\times B} f = \int_A\mathcal L(x)\,dx = \int_A\mathcal U(x)\,dx.
+\end{equation*}
+</div>
+<div class="para">Ялангуяа <span class="process-math">\(x\)</span> бүрд <span class="process-math">\(f_x\)</span> нь <span class="process-math">\(B\)</span> дээр интегралчлагддаг бол</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\int_{A\times B}f(x,y)\,dx\,dy = \int_A\Bigl(\int_B f(x,y)\,dy\Bigr)dx.
+\end{equation*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#w13-thm-fubini-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Теорем 13.22: Фубини"><a tabindex="-1" href="#w13-thm-fubini" title="Copy heading and permalink for Теорем 13.22: Фубини" aria-label="Copy heading and permalink for Теорем 13.22: Фубини">🔗</a></div>
+</article>
+<details class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h2 class="heading"><span class="type">Баталгаа<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h2></summary>
+<article class="hiddenproof knowl__content">
+<div class="para logical">
+<div class="para">
+<span class="process-math">\(P = P_A\times P_B\)</span> дурын хуваалт, <span class="process-math">\(S_A\)</span> нь <span class="process-math">\(P_A\)</span>-ийн дэд брус, <span class="process-math">\(x\in S_A\)</span> байг. <span class="process-math">\(P_B\)</span>-ийн дэд брус <span class="process-math">\(S_B\)</span> бүрд <span class="process-math">\(m_{S_A\times S_B}(f)\le m_{S_B}(f_x)\)</span> тул</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/w13-thm-criterion.html">
+\begin{equation*}
+\sum_{S_B} m_{S_A\times S_B}(f)\,|S_B| \le L(P_B, f_x) \le \mathcal L(x).
+\end{equation*}
+</div>
+<div class="para">Энэ нь <span class="process-math">\(S_A\)</span>-ийн бүх <span class="process-math">\(x\)</span>-д биелэх тул зүүн тал нь <span class="process-math">\(m_{S_A}(\mathcal L)\)</span>-ээс хэтрэхгүй. <span class="process-math">\(|S_A|\)</span>-аар үржүүлж <span class="process-math">\(S_A\)</span>-аар нийлбэрлэвэл</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/w13-thm-criterion.html">
+\begin{equation*}
+L(P,f) = \sum_{S_A}\Bigl(\sum_{S_B}m_{S_A\times S_B}(f)|S_B|\Bigr)|S_A| \le \sum_{S_A}m_{S_A}(\mathcal L)|S_A| = L(P_A,\mathcal L).
+\end{equation*}
+</div>
+<div class="para">Яг адилаар <span class="process-math">\(U(P_A,\mathcal U)\le U(P,f)\text{.}\)</span> <span class="process-math">\(\mathcal L\le\mathcal U\)</span> тул</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/w13-thm-criterion.html">
+\begin{equation*}
+L(P,f)\le L(P_A,\mathcal L)\le U(P_A,\mathcal L)\le U(P_A,\mathcal U)\le U(P,f),
+\end{equation*}
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/w13-thm-criterion.html">
+\begin{equation*}
+L(P,f)\le L(P_A,\mathcal L)\le L(P_A,\mathcal U)\le U(P_A,\mathcal U)\le U(P,f).
+\end{equation*}
+</div>
+<div class="para">
+<span class="process-math">\(f\)</span> интегралчлагдах тул <span class="process-math">\(U(P,f) - L(P,f)&lt;\varepsilon\)</span> байх <span class="process-math">\(P\)</span> олдоно. Тэгвэл <span class="process-math">\(U(P_A,\mathcal L) - L(P_A,\mathcal L)&lt;\varepsilon\text{,}\)</span> <span class="process-math">\(U(P_A,\mathcal U) - L(P_A,\mathcal U)&lt;\varepsilon\)</span> — Теорем <a href="w13-s1.html#w13-thm-criterion" class="xref" data-knowl="./knowl/xref/w13-thm-criterion.html" data-reveal-label="Харуулах" data-close-label="Хаах" title="Теорем 13.7: Риманы шинжүүр">13.7</a>-аар <span class="process-math">\(\mathcal L\text{,}\)</span> <span class="process-math">\(\mathcal U\)</span> интегралчлагдана. Мөн <span class="process-math">\(\int_A\mathcal L\text{,}\)</span> <span class="process-math">\(\int_A\mathcal U\)</span> ба <span class="process-math">\(\int_I f\)</span> гурвуулаа бүх <span class="process-math">\(P\)</span>-ийн хувьд <span class="process-math">\([L(P,f), U(P,f)]\)</span> завсарт орших тул тэнцүү.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#w13-thm-fubini-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Баталгаа 13.22.1"><a tabindex="-1" href="#w13-thm-fubini-3" title="Copy heading and permalink for Баталгаа 13.22.1" aria-label="Copy heading and permalink for Баталгаа 13.22.1">🔗</a></div>
+</article></details><span class="incontext"><a class="internal" href="w13-s5.html#w13-thm-fubini">In Context</a></span>
+</body>
+</html>

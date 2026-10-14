@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ai>
+<preview>
+<exploration xml:id="w06-preview">
+  <title>Төгсгөлгүй нийлбэрийг хэрхэн ойлгох вэ (AI)</title>
+  <introduction>
+    <p>Төгсгөлгүй олон тоог «нэг нэгээр нь нэмж дуусгах» боломжгүй. Тиймээс эхний <m>n</m> гишүүний нийлбэрийг бодоод, <m>n\to\infty</m> үед юу болохыг ажиглана. Гурван жишээ авч үзье.</p>
+  </introduction>
+  <task>
+    <statement><p><m>\frac12+\frac14+\frac18+\cdots</m> нийлбэрийн эхний <m>n</m> гишүүний нийлбэр <m>S_n</m>-ийг олж, <m>n\to\infty</m> үеийн хязгаарыг ол.</p></statement>
+    <answer><p><m>S_n=1-\frac1{2^n}\to1</m>.</p></answer>
+  </task>
+  <task>
+    <statement><p>Бөмбөгийг <m>1</m> м өндрөөс унагахад газар мөргөсөн бүрдээ өмнөх өндрийнхөө <m>\frac23</m>-т хүртэл ойно. Бөмбөг нийт хэдэн метр зам туулах вэ?</p></statement>
+    <hint><p>Анхны уналтаас хойш ойлт бүрд дээш, доош ижил зай туулна: <m>1+2\left(\frac23+\left(\frac23\right)^2+\cdots\right)</m>.</p></hint>
+    <answer><p><m>1+2\cdot\dfrac{2/3}{1-2/3}=5</m> м.</p></answer>
+  </task>
+  <task>
+    <statement><p><m>\displaystyle\sum_{n=1}^\infty\ln\left(1+\frac1n\right)</m>-ийн хэсгийн нийлбэр <m>S_n</m>-ийг ол. Гишүүд <m>0</m> руу тэмүүлж байхад <m>S_n</m> юу болох вэ?</p></statement>
+    <hint><p><m>\ln\left(1+\frac1k\right)=\ln(k+1)-\ln k</m>.</p></hint>
+    <answer><p><m>S_n=\ln(n+1)\to+\infty</m>. Гишүүд <m>0</m> руу тэмүүлэх нь нийлбэр төгсгөлөг байхад хангалтгүй.</p></answer>
+  </task>
+</exploration>
+</preview>
+
+<section ref="w06-s1">
+<exercise>
+  <statement><p><m>\displaystyle\sum_{n=1}^\infty\frac1{n(n+1)(n+2)}</m>-ийн нийлбэрийг ол.</p></statement>
+  <hint><p><m>\frac1{n(n+1)(n+2)}=\frac12\left(\frac1{n(n+1)}-\frac1{(n+1)(n+2)}\right)</m>.</p></hint>
+  <answer><p><m>\dfrac14</m>.</p></answer>
+  <solution><p>Зааврын задаргааг ерөнхий хуваарьт оруулж шалгана: <m>\frac{(n+2)-n}{2n(n+1)(n+2)}=\frac{1}{n(n+1)(n+2)}</m>. Телескоп нийлбэрээр
+  <md>S_n=\frac12\left(\frac1{1\cdot2}-\frac1{(n+1)(n+2)}\right)\to\frac14.</md></p></solution>
+</exercise>
+<exercise>
+  <statement><p><m>\displaystyle\sum_{n=1}^\infty\frac{n}{2^n}</m>-ийн нийлбэрийг ол.</p></statement>
+  <hint><p><m>S_n-\frac12S_n</m>-ийг бод.</p></hint>
+  <answer><p><m>2</m>.</p></answer>
+  <solution><p><m>S_n=\sum_{k=1}^n\frac k{2^k}</m> гэвэл
+  <md>S_n-\frac12S_n=\sum_{k=1}^n\frac1{2^k}-\frac{n}{2^{n+1}}=1-\frac1{2^n}-\frac{n}{2^{n+1}}.</md>
+  Иймд <m>S_n=2-\frac{2}{2^n}-\frac{n}{2^n}\to2</m>, учир нь <m>\frac{n}{2^n}\to0</m>.</p></solution>
+</exercise>
+<exercise>
+  <statement><p><m>\displaystyle\sum_{n=1}^\infty\left(\sqrt{n+1}-\sqrt n\right)</m> цуваа нийлэх үү? Нийлбэрчилж болох уу?</p></statement>
+  <answer><p>Сарнина, гэхдээ нийлбэрчилж болно (<m>S_n\to+\infty</m>).</p></answer>
+  <solution><p>Телескоп: <m>S_n=\sqrt{n+1}-1\to+\infty</m>. Хязгаар төгсгөлөг биш тул цуваа сарнина; харин <m>\lim S_n=+\infty</m> өргөтгөсөн <m>\R</m>-д оршин байгаа тул нийлбэрчилж болох цуваа юм.</p></solution>
+</exercise>
+</section>
+
+<section ref="w06-s2">
+<exercise>
+  <statement><p>Нийлэлтийн зайлшгүй нөхцлийг ашиглан дараах цуваанууд сарнина гэж харуул:
+  <ol marker="(a)">
+    <li><p><m>\displaystyle\sum_{n=1}^\infty n\sin\frac1n</m>;</p></li>
+    <li><p><m>\displaystyle\sum_{n=1}^\infty\left(1-\frac1n\right)^n</m>.</p></li>
+  </ol></p></statement>
+  <solution><p>(a) <m>n\sin\frac1n=\frac{\sin(1/n)}{1/n}\to1\ne0</m>. (b) <m>\left(1-\frac1n\right)^n\to e^{-1}\ne0</m>. Аль алинд нь ерөнхий гишүүн <m>0</m> руу тэмүүлэхгүй тул цуваа сарнина.</p></solution>
+</exercise>
+<exercise>
+  <statement><p><m>\displaystyle\sum_{n=1}^\infty\frac1{\sqrt n}</m> цувааны хувьд <m>S_n\ge\sqrt n</m> гэж баталж, цуваа сарнина гэж дүгнэ.</p></statement>
+  <hint><p><m>k\le n</m> үед <m>\frac1{\sqrt k}\ge\frac1{\sqrt n}</m>.</p></hint>
+  <solution><p><m>S_n=\sum_{k=1}^n\frac1{\sqrt k}\ge n\cdot\frac1{\sqrt n}=\sqrt n\to\infty</m>. Иймд <m>\{S_n\}</m> зааглагдаагүй, цуваа сарнина. (Ерөнхий гишүүн <m>0</m> руу тэмүүлдэг тул энэ нь зайлшгүй нөхцлийн урвуу худал байх бас нэг жишээ.)</p></solution>
+</exercise>
+<exercise>
+  <statement><p><m>\sum a_n</m> нийлдэг бол түүний үлдэгдэл <m>r_n=\sum_{k=n+1}^\infty a_k</m> нь <m>n\to\infty</m> үед <m>0</m> руу тэмүүлнэ гэж батал.</p></statement>
+  <solution><p>Эхний <m>n</m> гишүүнийг хасахад нийлэлт өөрчлөгдөхгүй тул <m>r_n</m> тодорхойлогдоно, мөн <m>S=S_n+r_n</m> (<m>S_m=S_n+\sum_{k=n+1}^ma_k</m>-д <m>m\to\infty</m> гэж хязгаарт шилжинэ). Иймд <m>r_n=S-S_n\to S-S=0</m>.</p></solution>
+</exercise>
+</section>
+
+<section ref="w06-s3">
+<exercise>
+  <statement><p>Кошийн шинжүүрийг ашиглан <m>\displaystyle\sum_{n=1}^\infty\frac1{n^2}</m> нийлнэ гэж батал.</p></statement>
+  <hint><p><m>k\ge2</m> үед <m>\frac1{k^2}&lt;\frac1{k(k-1)}=\frac1{k-1}-\frac1k</m>.</p></hint>
+  <solution><p><m>n&gt;m\ge1</m> үед
+  <md>\sum_{k=m+1}^n\frac1{k^2}&lt;\sum_{k=m+1}^n\left(\frac1{k-1}-\frac1k\right)=\frac1m-\frac1n&lt;\frac1m.</md>
+  <m>\varepsilon&gt;0</m>-т <m>N&gt;\frac1\varepsilon</m> гэж авбал <m>n&gt;m\ge N</m> үед дээрх нийлбэр <m>&lt;\varepsilon</m>. Кошийн шинжүүрээр цуваа нийлнэ.</p></solution>
+</exercise>
+<exercise>
+  <statement><p><m>\displaystyle\sum_{n=1}^\infty\left(\frac3{2^n}-\frac2{3^n}\right)</m>-ийн нийлбэрийг ол.</p></statement>
+  <answer><p><m>2</m>.</p></answer>
+  <solution><p><m>\sum_{n=1}^\infty\frac1{2^n}=1</m>, <m>\sum_{n=1}^\infty\frac1{3^n}=\frac{1/3}{1-1/3}=\frac12</m> хоёулаа нийлэх тул шугаман чанараар нийлбэр <m>3\cdot1-2\cdot\frac12=2</m>.</p></solution>
+</exercise>
+<exercise>
+  <statement><p><m>\sum a_n</m> нийлдэг, <m>\sum b_n</m> сарнидаг бол <m>\sum(a_n+b_n)</m> сарнина гэж батал. Хоёулаа сарнидаг <m>\sum a_n</m>, <m>\sum b_n</m>-ийн хувьд <m>\sum(a_n+b_n)</m> нийлж болох жишээ гарга.</p></statement>
+  <solution><p><m>\sum(a_n+b_n)</m> нийлдэг гэж үзвэл шугаман чанараар <m>\sum b_n=\sum\bigl((a_n+b_n)-a_n\bigr)</m> нийлэх ёстой — зөрчил. Жишээ: <m>a_n=1</m>, <m>b_n=-1</m>; хоёулаа сарнина, харин <m>\sum(a_n+b_n)=\sum0=0</m> нийлнэ.</p></solution>
+</exercise>
+</section>
+
+<section ref="w06-s4">
+<exercise>
+  <statement><p><m>n!\ge2^{n-1}</m> (<m>n\ge1</m>) гэдгийг ашиглан <m>\displaystyle\sum_{n=0}^\infty\frac1{n!}</m> нийлэх ба нийлбэр нь <m>3</m>-аас хэтрэхгүй гэж батал.</p></statement>
+  <hint><p>Эерэг цувааны хэсгийн нийлбэрийг дээрээс зааглахад хангалттай.</p></hint>
+  <solution><p><m>n!=1\cdot2\cdot3\cdots n\ge1\cdot2\cdot2\cdots2=2^{n-1}</m>. Иймд
+  <md>S_n=1+\sum_{k=1}^n\frac1{k!}\le1+\sum_{k=1}^n\frac1{2^{k-1}}&lt;1+2=3.</md>
+  Гишүүд эерэг тул <m>\{S_n\}</m> өсөх, дээрээс <m>3</m>-аар зааглагдсан; иймд цуваа нийлэх ба нийлбэр <m>\le3</m>. (Энэ нийлбэр нь <m>e</m> гэдгийг хожим үзнэ.)</p></solution>
+</exercise>
+<exercise>
+  <statement><p><m>a_n\ge0</m>, <m>\sum a_n</m> нийлдэг бол <m>\displaystyle\sum_{n=1}^\infty\sqrt{a_na_{n+1}}</m> нийлнэ гэж батал.</p></statement>
+  <hint><p>Арифметик-геометр дунджийн тэнцэтгэл биш: <m>\sqrt{xy}\le\frac{x+y}2</m>.</p></hint>
+  <solution><p><m>\sum a_n=S</m> гэе. <m>\sqrt{a_ka_{k+1}}\le\frac{a_k+a_{k+1}}2</m> тул
+  <md>\sum_{k=1}^n\sqrt{a_ka_{k+1}}\le\frac12\sum_{k=1}^na_k+\frac12\sum_{k=2}^{n+1}a_k\le\frac S2+\frac S2=S.</md>
+  Сөрөг биш гишүүнтэй цувааны хэсгийн нийлбэрүүд зааглагдсан тул цуваа нийлнэ.</p></solution>
+</exercise>
+</section>
+
+<section ref="w06-s5">
+<exercise>
+  <statement><p>Нийлэх эсэхийг шинжил:
+  <ol marker="(a)">
+    <li><p><m>\displaystyle\sum_{n=1}^\infty\frac{2+\sin n}{n}</m>;</p></li>
+    <li><p><m>\displaystyle\sum_{n=1}^\infty\frac{n^2+1}{n^4+n+5}</m>;</p></li>
+    <li><p><m>\displaystyle\sum_{n=1}^\infty\arcsin\frac1{\sqrt n}</m>.</p></li>
+  </ol></p></statement>
+  <answer><p>(a) сарнина; (b) нийлнэ; (c) сарнина.</p></answer>
+  <solution><p>(a) <m>\frac{2+\sin n}n\ge\frac1n</m> ба гармоник цуваа сарних тул харьцуулах I шинжүүрээр сарнина.</p>
+  <p>(b) <m>b_n=\frac1{n^2}</m>: <m>\frac{a_n}{b_n}=\frac{n^4+n^2}{n^4+n+5}\to1</m>, <m>\sum\frac1{n^2}</m> нийлэх тул хязгаарын харьцуулах шинжүүрээр нийлнэ.</p>
+  <p>(c) <m>t\to0</m> үед <m>\frac{\arcsin t}{t}\to1</m> тул <m>b_n=\frac1{\sqrt n}</m>-тэй харьцуулахад хязгаар <m>1</m>. <m>\sum\frac1{\sqrt n}</m> сарних тул цуваа сарнина.</p></solution>
+</exercise>
+<exercise>
+  <statement><p><m>a_n\ge0</m> ба <m>\sum a_n</m> нийлдэг бол <m>\displaystyle\sum_{n=1}^\infty\frac{\sqrt{a_n}}{n}</m> нийлнэ гэж батал.</p></statement>
+  <hint><p><m>\sqrt{xy}\le\frac{x+y}2</m>-д <m>x=a_n</m>, <m>y=\frac1{n^2}</m> ав.</p></hint>
+  <solution><p><m>0\le\frac{\sqrt{a_n}}n=\sqrt{a_n\cdot\frac1{n^2}}\le\frac12\left(a_n+\frac1{n^2}\right)</m>. Баруун талын цуваа нь нийлэх хоёр цувааны шугаман эвлүүлэг тул нийлнэ; харьцуулах I шинжүүрээр <m>\sum\frac{\sqrt{a_n}}n</m> нийлнэ.</p></solution>
+</exercise>
+</section>
+
+<section ref="w06-s6">
+<exercise>
+  <statement><p><m>p</m>-ийн ямар утгад <m>\displaystyle\sum_{n=1}^\infty\frac{\sqrt{n^2+1}-n}{n^p}</m> нийлэх вэ?</p></statement>
+  <hint><p><m>\sqrt{n^2+1}-n=\frac1{\sqrt{n^2+1}+n}</m>.</p></hint>
+  <answer><p><m>p&gt;0</m>.</p></answer>
+  <solution><p>Ерөнхий гишүүн <m>a_n=\frac{1}{n^p\left(\sqrt{n^2+1}+n\right)}&gt;0</m> ба <m>b_n=\frac1{n^{p+1}}</m> гэвэл <m>\frac{a_n}{b_n}=\frac{n}{\sqrt{n^2+1}+n}\to\frac12</m>. Хязгаарын харьцуулах шинжүүр ба <m>p</m>-цувааны теоремоор цуваа <m>p+1&gt;1</m>, өөрөөр хэлбэл <m>p&gt;0</m> үед л нийлнэ.</p></solution>
+</exercise>
+<exercise>
+  <statement><p><m>\displaystyle\sum_{n=1}^\infty\left(\frac1n-\sin\frac1n\right)</m> нийлэх эсэхийг шинжил.</p></statement>
+  <hint><p><m>t\to0</m> үед <m>t-\sin t\sim\frac{t^3}6</m>.</p></hint>
+  <answer><p>Нийлнэ.</p></answer>
+  <solution><p><m>t&gt;0</m> үед <m>\sin t&lt;t</m> тул гишүүд эерэг. Лопиталын дүрмээр <m>\lim_{t\to0}\frac{t-\sin t}{t^3}=\lim_{t\to0}\frac{1-\cos t}{3t^2}=\frac16</m>. Иймд <m>b_n=\frac1{n^3}</m>-тэй харьцуулахад хязгаар <m>\frac16</m>, <m>\sum\frac1{n^3}</m> нийлэх (<m>p=3&gt;1</m>) тул цуваа нийлнэ.</p></solution>
+</exercise>
+</section>
+
+<section ref="w06-s7">
+<exercise>
+  <statement><p>Даламбертын шинжүүрээр шинжил:
+  <ol marker="(a)">
+    <li><p><m>\displaystyle\sum_{n=1}^\infty\frac{n^2}{2^n}</m>;</p></li>
+    <li><p><m>\displaystyle\sum_{n=1}^\infty\frac{n^n}{n!\,3^n}</m>;</p></li>
+    <li><p><m>\displaystyle\sum_{n=1}^\infty\frac{n^n}{n!\,2^n}</m>.</p></li>
+  </ol></p></statement>
+  <answer><p>(a) нийлнэ (<m>L=\frac12</m>); (b) нийлнэ (<m>L=\frac e3</m>); (c) сарнина (<m>L=\frac e2</m>).</p></answer>
+  <solution><p>(a) <m>\frac{a_{n+1}}{a_n}=\frac12\left(\frac{n+1}n\right)^2\to\frac12&lt;1</m>.</p>
+  <p>(b), (c) <m>a_n=\frac{n^n}{n!\,c^n}</m> бол
+  <md>\frac{a_{n+1}}{a_n}=\frac{(n+1)^{n+1}}{(n+1)\,n^n\,c}=\frac1c\left(1+\frac1n\right)^n\to\frac ec.</md>
+  <m>c=3</m> үед <m>\frac e3&lt;1</m> — нийлнэ; <m>c=2</m> үед <m>\frac e2&gt;1</m> — сарнина.</p></solution>
+</exercise>
+<exercise>
+  <statement><p><m>\sum\frac1n</m> ба <m>\sum\frac1{n^2}</m> цуваануудын хувьд <m>\lim\frac{a_{n+1}}{a_n}</m>-ийг олж, <m>L=1</m> үед Даламбертын шинжүүр яагаад хариу өгдөггүйг тайлбарла.</p></statement>
+  <solution><p><m>\frac{n}{n+1}\to1</m> ба <m>\frac{n^2}{(n+1)^2}\to1</m>; хоёуланд <m>L=1</m>. Гэтэл эхнийх нь сарнидаг, хоёр дахь нь нийлдэг. Иймд <m>L=1</m> гэдэг мэдээллээс нийлэлтийн талаар дүгнэлт хийх боломжгүй.</p></solution>
+</exercise>
+</section>
+
+<section ref="w06-s8">
+<exercise>
+  <statement><p>Кошийн шинжүүрээр шинжил:
+  <ol marker="(a)">
+    <li><p><m>\displaystyle\sum_{n=1}^\infty\frac{n^5}{2^n}</m>;</p></li>
+    <li><p><m>\displaystyle\sum_{n=1}^\infty\frac1{3^n}\left(1+\frac1n\right)^{n^2}</m>.</p></li>
+  </ol></p></statement>
+  <hint><p><m>\sqrt[n]n\to1</m>.</p></hint>
+  <answer><p>(a) нийлнэ (<m>L=\frac12</m>); (b) нийлнэ (<m>L=\frac e3</m>).</p></answer>
+  <solution><p>(a) <m>\sqrt[n]{a_n}=\frac{\left(\sqrt[n]n\right)^5}{2}\to\frac12&lt;1</m>. (b) <m>\sqrt[n]{a_n}=\frac13\left(1+\frac1n\right)^n\to\frac e3&lt;1</m>. Хоёулаа нийлнэ.</p></solution>
+</exercise>
+<exercise>
+  <statement><p><m>\displaystyle\sum_{n=1}^\infty\frac{1}{e^n}\left(1+\frac1n\right)^{n^2}</m> цувааны хувьд Кошийн шинжүүр хариу өгөхгүйг харуулж, цуваа сарнина гэж батал.</p></statement>
+  <hint><p><m>\ln a_n=n^2\ln\left(1+\frac1n\right)-n</m>-ийг <m>\ln(1+t)=t-\frac{t^2}2+O(t^3)</m> задаргаагаар үнэл.</p></hint>
+  <solution><p><m>\sqrt[n]{a_n}=\frac1e\left(1+\frac1n\right)^n\to1</m> тул шинжүүр хариу өгөхгүй. Харин
+  <md>\ln a_n=n^2\left(\frac1n-\frac1{2n^2}+O\left(\frac1{n^3}\right)\right)-n=-\frac12+O\left(\frac1n\right)\to-\frac12,</md>
+  тул <m>a_n\to e^{-1/2}\ne0</m>. Нийлэлтийн зайлшгүй нөхцөл биелэхгүй тул цуваа сарнина.</p></solution>
+</exercise>
+</section>
+
+<section ref="w06-s9">
+<exercise>
+  <statement><p>Интеграл шинжүүрээр <m>\displaystyle\sum_{n=1}^\infty ne^{-n^2}</m> нийлэх эсэхийг шинжил.</p></statement>
+  <hint><p><m>f(x)=xe^{-x^2}</m> нь <m>[1,\infty)</m> дээр буурдаг эсэхийг уламжлалаар шалга.</p></hint>
+  <answer><p>Нийлнэ.</p></answer>
+  <solution><p><m>f(x)=xe^{-x^2}\ge0</m> тасралтгүй, <m>f'(x)=e^{-x^2}(1-2x^2)&lt;0</m> (<m>x\ge1</m>) тул буурна.
+  <md>\int_1^Axe^{-x^2}\,dx=\frac12\left(e^{-1}-e^{-A^2}\right)\to\frac1{2e}\quad(A\to\infty),</md>
+  интеграл нийлэх тул цуваа нийлнэ.</p></solution>
+</exercise>
+<exercise>
+  <statement><p><m>r_N=\displaystyle\sum_{n=N+1}^\infty\frac1{n^2}</m> үлдэгдлийн хувьд <m>\dfrac1{N+1}&lt;r_N&lt;\dfrac1N</m> гэж батал. <m>\sum\frac1{n^2}</m>-ийг эхний <m>N</m> гишүүний нийлбэрээр <m>0.01</m>-ээс бага алдаатай ойролцоолоход хамгийн багадаа хэдэн гишүүн авах вэ?</p></statement>
+  <hint><p>Интеграл шинжүүрийн баталгаан дахь <m>a_{n+1}\le\int_n^{n+1}f\le a_n</m> тэнцэтгэл бишийг <m>n\ge N</m>-ээр нийлбэрлэ.</p></hint>
+  <answer><p><m>N=100</m>.</p></answer>
+  <solution><p><m>f(x)=\frac1{x^2}</m> хатуу буурах тул <m>\frac1{(n+1)^2}&lt;\int_n^{n+1}\frac{dx}{x^2}&lt;\frac1{n^2}</m>. <m>n=N,N+1,\dots</m>-ээр нийлбэрлэвэл <m>r_N&lt;\int_N^\infty\frac{dx}{x^2}=\frac1N</m>; <m>n=N+1,N+2,\dots</m>-ээр нийлбэрлэвэл <m>r_N&gt;\int_{N+1}^\infty\frac{dx}{x^2}=\frac1{N+1}</m>. <m>N=100</m> үед <m>r_N&lt;0.01</m>, харин <m>N=99</m> үед <m>r_{99}&gt;\frac1{100}</m>. Иймд хамгийн багадаа <m>100</m> гишүүн хэрэгтэй.</p></solution>
+</exercise>
+<exercise>
+  <statement><p><m>H_n=1+\frac12+\cdots+\frac1n</m> бол <m>\ln(n+1)\le H_n\le1+\ln n</m> гэж батал.</p></statement>
+  <hint><p><m>f(x)=\frac1x</m>-д интеграл шинжүүрийн баталгааны тэнцэтгэл бишийг хэрэглэ.</p></hint>
+  <solution><p><m>[k,k+1]</m> дээр <m>\frac1{k+1}\le\frac1x\le\frac1k</m> тул <m>\frac1{k+1}\le\int_k^{k+1}\frac{dx}x\le\frac1k</m>. <m>k=1,\dots,n</m>-ээр нийлбэрлэвэл <m>\ln(n+1)=\int_1^{n+1}\frac{dx}x\le H_n</m>. <m>k=1,\dots,n-1</m>-ээр нийлбэрлэвэл <m>H_n-1\le\int_1^n\frac{dx}x=\ln n</m>. (Эндээс <m>H_n\to\infty</m> бөгөөд <m>H_n</m> нь <m>\ln n</m> шиг удаан өсдөг.)</p></solution>
+</exercise>
+</section>
+
+<homework>
+<exercise>
+  <statement><p><m>\displaystyle\sum_{n=1}^\infty\frac{2n+1}{n^2(n+1)^2}</m>-ийн нийлбэрийг ол.</p></statement>
+  <hint><p><m>(n+1)^2-n^2=2n+1</m>.</p></hint>
+  <answer><p><m>1</m>.</p></answer>
+  <solution><p><m>\frac{2n+1}{n^2(n+1)^2}=\frac{(n+1)^2-n^2}{n^2(n+1)^2}=\frac1{n^2}-\frac1{(n+1)^2}</m>. Телескоп: <m>S_n=1-\frac1{(n+1)^2}\to1</m>.</p></solution>
+</exercise>
+<exercise>
+  <statement><p><m>\displaystyle\sum_{n=2}^\infty\ln\frac{n^2}{n^2-1}</m>-ийн нийлбэрийг ол.</p></statement>
+  <hint><p><m>\ln\frac{n^2}{(n-1)(n+1)}=\bigl(\ln n-\ln(n-1)\bigr)-\bigl(\ln(n+1)-\ln n\bigr)</m>.</p></hint>
+  <answer><p><m>\ln2</m>.</p></answer>
+  <solution><p>Зааврын задаргаагаар
+  <md>S_N=\sum_{n=2}^N\bigl(\ln n-\ln(n-1)\bigr)-\sum_{n=2}^N\bigl(\ln(n+1)-\ln n\bigr)=\ln N-\bigl(\ln(N+1)-\ln2\bigr)=\ln2+\ln\frac N{N+1}\to\ln2.</md></p></solution>
+</exercise>
+<exercise>
+  <statement><p><m>a&gt;0</m> параметрийн ямар утгад <m>\displaystyle\sum_{n=1}^\infty\frac{a^n\,n!}{n^n}</m> нийлэх вэ? <m>a=e</m> тохиолдлыг тусад нь шинжил.</p></statement>
+  <hint><p><m>a=e</m> үед Даламбертын шинжүүр хариу өгөхгүй. <m>\left(1+\frac1n\right)^n&lt;e</m> гэдгийг ашиглан <m>\{a_n\}</m> өсөх дараалал гэж харуул.</p></hint>
+  <answer><p><m>0&lt;a&lt;e</m> үед нийлнэ, <m>a\ge e</m> үед сарнина.</p></answer>
+  <solution><p><m>\frac{a_{n+1}}{a_n}=\frac{a\,(n+1)\,n^n}{(n+1)^{n+1}}=\frac{a}{\left(1+\frac1n\right)^n}\to\frac ae</m>. Даламбертаар <m>a&lt;e</m> үед нийлнэ, <m>a&gt;e</m> үед сарнина. <m>a=e</m> үед <m>\left(1+\frac1n\right)^n&lt;e</m> (энэ дараалал хатуу өсөж <m>e</m> руу тэмүүлдэг) тул <m>\frac{a_{n+1}}{a_n}&gt;1</m>; иймд <m>a_n\ge a_1=e</m> ба <m>a_n\not\to0</m>, цуваа сарнина.</p></solution>
+</exercise>
+<exercise>
+  <statement><p><m>\{a_n\}</m> сөрөг биш, монотон буурах бөгөөд <m>\sum a_n</m> нийлдэг бол <m>na_n\to0</m> гэж батал. Монотон гэсэн нөхцлийг орхиж болохгүйг жишээгээр харуул.</p></statement>
+  <hint><p><m>a_{n+1}+\cdots+a_{2n}\ge na_{2n}</m> ба Кошийн шинжүүр. Жишээнд: <m>n</m> нь бүтэн квадрат үед <m>a_n=\frac1n</m>, бусад үед <m>a_n=\frac1{n^2}</m>.</p></hint>
+  <solution><p>Кошийн шинжүүрээр <m>\varepsilon&gt;0</m>-т <m>N</m> олдож <m>n\ge N</m> үед <m>\sum_{k=n+1}^{2n}a_k&lt;\varepsilon</m>. Буурах чанараар <m>\sum_{k=n+1}^{2n}a_k\ge na_{2n}</m>, иймд <m>2na_{2n}&lt;2\varepsilon</m>. Мөн <m>(2n+1)a_{2n+1}\le(2n+1)a_{2n}\le 3na_{2n}&lt;3\varepsilon</m>. Иймд <m>ma_m\to0</m>.</p>
+  <p>Эсрэг жишээ: <m>n=k^2</m> үед <m>a_n=\frac1n</m>, бусад үед <m>a_n=\frac1{n^2}</m>. Тэгвэл <m>\sum a_n\le\sum_k\frac1{k^2}+\sum_n\frac1{n^2}&lt;\infty</m>, харин <m>n=k^2</m> үед <m>na_n=1</m> тул <m>na_n\not\to0</m>. (Энэ дараалал монотон биш.)</p></solution>
+</exercise>
+<exercise>
+  <statement><p><m>\displaystyle\sum_{n=2}^\infty\frac1{n^{1+1/\ln n}}</m> нийлэх эсэхийг шинжил. Энэ цувааны илтгэгч <m>1+\frac1{\ln n}&gt;1</m> байгаа ч <m>p</m>-цувааны теоремыг яагаад шууд хэрэглэж болохгүй вэ?</p></statement>
+  <hint><p><m>n^{1/\ln n}=e^{\ln n/\ln n}</m>.</p></hint>
+  <answer><p>Сарнина: ерөнхий гишүүн нь <m>\dfrac1{en}</m>.</p></answer>
+  <solution><p><m>n^{1/\ln n}=e^{\frac{\ln n}{\ln n}}=e</m> тул <m>\frac1{n^{1+1/\ln n}}=\frac1{en}</m>; гармоник цуваатай пропорциональ тул сарнина. <m>p</m>-цувааны теоремд <m>p</m> нь <m>n</m>-ээс хамаарахгүй <em>тогтмол</em> байх ёстой; энд илтгэгч <m>n</m>-ээс хамаарч <m>1</m> руу тэмүүлдэг тул хэрэглэгдэхгүй.</p></solution>
+</exercise>
+</homework>
+</ai>

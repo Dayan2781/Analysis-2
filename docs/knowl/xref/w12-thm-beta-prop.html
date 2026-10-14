@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: default-modern                 *-->
+<!--*  Palette:                              *-->
+<!--******************************************-->
+
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="theorem theorem-like"><h2 class="heading">
+<span class="type">Теорем</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">12.39</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Бета функцийн чанарууд.</span>
+</h2>
+<div class="para logical">
+<ol class="decimal" id="w12-thm-beta-prop-2-1-1">
+<li>
+<div class="para"><span class="process-math">\(B(x,y) = B(y,x)\text{.}\)</span></div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 1"><a tabindex="-1" href="#w12-thm-beta-prop-2-1-1-1" title="Copy heading and permalink for Item 1" aria-label="Copy heading and permalink for Item 1">🔗</a></div>
+</li>
+<li>
+<div class="para">
+<span class="process-math">\(B(x+1,y) = \dfrac{x}{x+y}B(x,y)\text{,}\)</span> <span class="process-math">\(B(x,1) = \dfrac1x\text{;}\)</span> иймд <span class="process-math">\(m,n\in\N\)</span> үед <span class="process-math">\(B(m,n) = \dfrac{(m-1)!\,(n-1)!}{(m+n-1)!}\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 2"><a tabindex="-1" href="#w12-thm-beta-prop-2-1-1-2" title="Copy heading and permalink for Item 2" aria-label="Copy heading and permalink for Item 2">🔗</a></div>
+</li>
+<li>
+<div class="para">
+<dfn class="terminology">Тригонометр хэлбэр:</dfn> <span class="process-math">\(\displaystyle B(x,y) = 2\int_0^{\pi/2}\sin^{2x-1}\varphi\cos^{2y-1}\varphi\,d\varphi\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 3"><a tabindex="-1" href="#w12-thm-beta-prop-2-1-1-3" title="Copy heading and permalink for Item 3" aria-label="Copy heading and permalink for Item 3">🔗</a></div>
+</li>
+<li>
+<div class="para">
+<dfn class="terminology">Хагас шулууны хэлбэр:</dfn> <span class="process-math">\(\displaystyle B(x,y) = \int_0^\infty\frac{u^{x-1}}{(1+u)^{x+y}}\,du\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 4"><a tabindex="-1" href="#w12-thm-beta-prop-2-1-1-4" title="Copy heading and permalink for Item 4" aria-label="Copy heading and permalink for Item 4">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#w12-thm-beta-prop-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Теорем 12.39: Бета функцийн чанарууд"><a tabindex="-1" href="#w12-thm-beta-prop" title="Copy heading and permalink for Теорем 12.39: Бета функцийн чанарууд" aria-label="Copy heading and permalink for Теорем 12.39: Бета функцийн чанарууд">🔗</a></div>
+</article>
+<details class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h2 class="heading"><span class="type">Баталгаа<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h2></summary>
+<article class="hiddenproof knowl__content">
+<div class="para">1. <span class="process-math">\(t = 1-s\text{.}\)</span> 3. <span class="process-math">\(t = \sin^2\varphi\text{,}\)</span> <span class="process-math">\(dt = 2\sin\varphi\cos\varphi\,d\varphi\text{.}\)</span> 4. <span class="process-math">\(t = \frac{u}{1+u}\text{,}\)</span> <span class="process-math">\(1 - t = \frac{1}{1+u}\text{,}\)</span> <span class="process-math">\(dt = \frac{du}{(1+u)^2}\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#w12-thm-beta-prop-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical">
+<div class="para">2. Хэсэгчлэн интегралчилбал</div>
+<div class="displaymath process-math">
+\begin{equation*}
+B(x+1,y) = \Bigl[-\frac{t^x(1-t)^y}{y}\Bigr]_0^1 + \frac xy\int_0^1t^{x-1}(1-t)^y\,dt = \frac xyB(x,y+1).
+\end{equation*}
+</div>
+<div class="para">
+<span class="process-math">\((1-t)^y = (1-t)^{y-1} - t(1-t)^{y-1}\)</span> тул <span class="process-math">\(B(x,y+1) = B(x,y) - B(x+1,y)\text{.}\)</span> Орлуулбал <span class="process-math">\(B(x+1,y)\bigl(1 + \frac xy\bigr) = \frac xyB(x,y)\text{.}\)</span> Мөн <span class="process-math">\(B(x,1) = \int_0^1t^{x-1}dt = \frac1x\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#w12-thm-beta-prop-3-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Баталгаа 12.39.1"><a tabindex="-1" href="#w12-thm-beta-prop-3" title="Copy heading and permalink for Баталгаа 12.39.1" aria-label="Copy heading and permalink for Баталгаа 12.39.1">🔗</a></div>
+</article></details><span class="incontext"><a class="internal" href="w12-s6.html#w12-thm-beta-prop">In Context</a></span>
+</body>
+</html>

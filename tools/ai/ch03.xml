@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ai>
+<preview>
+<exploration xml:id="w03-preview">
+  <title>Тэгш өнцөгтүүдээр талбай ойролцоолох (AI)</title>
+  <introduction>
+    <p><m>y=x</m> шулуун, <m>x</m> тэнхлэг, <m>x=1</m> шулуунаар хүрээлэгдсэн гурвалжны талбай <m>\frac12</m> гэдгийг мэднэ. Энэ талбайг тэгш өнцөгтүүдийн талбайн нийлбэрээр ойролцоолж, хуваалтыг нарийсгахад юу болохыг ажиглая.</p>
+  </introduction>
+  <task>
+    <statement><p><m>[0,1]</m>-ийг <m>4</m> тэнцүү хэсэгт хуваа. Хэсэг бүр дээр функцийн хамгийн бага утгаар өндөр нь тодорхойлогдох тэгш өнцөгтүүдийн талбайн нийлбэр <m>L_4</m>, хамгийн их утгаар тодорхойлогдох нийлбэр <m>U_4</m>-ийг ол.</p></statement>
+    <answer><p><m>L_4=\frac14\left(0+\frac14+\frac12+\frac34\right)=\frac38</m>, <m>U_4=\frac14\left(\frac14+\frac12+\frac34+1\right)=\frac58</m>.</p></answer>
+  </task>
+  <task>
+    <statement><p><m>n</m> тэнцүү хэсэгт хуваахад <m>L_n</m>, <m>U_n</m>-ийг <m>n</m>-ээр илэрхийл.</p></statement>
+    <hint><p><m>1+2+\dots+k=\frac{k(k+1)}{2}</m>.</p></hint>
+    <answer><p><m>L_n=\dfrac{n-1}{2n}</m>, <m>U_n=\dfrac{n+1}{2n}</m>.</p></answer>
+  </task>
+  <task>
+    <statement><p><m>U_n-L_n</m> ба <m>n\to\infty</m> үеийн <m>L_n</m>, <m>U_n</m>-ийн хязгаарыг ол. Гурвалжны талбайтай харьцуул.</p></statement>
+    <answer><p><m>U_n-L_n=\frac1n\to0</m>, хоёр нийлбэр хоёулаа <m>\frac12</m> руу тэмүүлнэ. Энэ санаа нь энэ хичээлийн Дарбугийн нийлбэрүүдийн үндэс юм.</p></answer>
+  </task>
+</exploration>
+</preview>
+
+<section ref="w03-s1">
+<exercise>
+  <statement><p><m>f(x)=x^3</m>, <m>[0,1]</m> хэрчмийн <m>n</m> тэнцүү хэсэгт хуваах <m>P_n</m> хуваалтын хувьд <m>U(P_n,f)</m>, <m>L(P_n,f)</m>-ийг олж, <m>f\in\mathcal R[0,1]</m> ба <m>\int_0^1x^3\,dx=\frac14</m> болохыг харуул.</p></statement>
+  <hint><p><m>\sum_{i=1}^n i^3=\left(\frac{n(n+1)}{2}\right)^2</m>. Интегралчлагдах шинжүүрийг ашигла.</p></hint>
+  <answer><p><m>U=\dfrac{(n+1)^2}{4n^2}</m>, <m>L=\dfrac{(n-1)^2}{4n^2}</m>, <m>U-L=\dfrac1n</m>.</p></answer>
+  <solution><p><m>f</m> өсөх тул <m>M_i=\frac{i^3}{n^3}</m>, <m>m_i=\frac{(i-1)^3}{n^3}</m>, <m>\Delta x_i=\frac1n</m>:
+  <md>U(P_n,f)=\frac1{n^4}\sum_{i=1}^ni^3=\frac{(n+1)^2}{4n^2},\qquad L(P_n,f)=\frac1{n^4}\sum_{i=0}^{n-1}i^3=\frac{(n-1)^2}{4n^2}.</md>
+  <m>U-L=\frac{(n+1)^2-(n-1)^2}{4n^2}=\frac1n&lt;\varepsilon</m> хангалттай их <m>n</m>-д тул шинжүүрээр <m>f\in\mathcal R</m>. <m>L\le\int_0^1x^3dx\le U</m> ба хоёулаа <m>\frac14</m> руу тэмүүлэх тул интеграл <m>\frac14</m>.</p></solution>
+</exercise>
+<exercise>
+  <statement><p><m>f</m> нь <m>[a,b]</m> дээр монотон буурах бол <m>n</m> тэнцүү хэсэгт хуваах <m>P_n</m>-ийн хувьд
+  <md>U(P_n,f)-L(P_n,f)=\frac{(f(a)-f(b))(b-a)}{n}</md>
+  болохыг батал.</p></statement>
+  <hint><p>Буурах функцийн хувьд <m>M_i=f(x_{i-1})</m>, <m>m_i=f(x_i)</m>. Телескоп нийлбэр.</p></hint>
+  <solution><p><m>M_i-m_i=f(x_{i-1})-f(x_i)</m>, <m>\Delta x_i=\frac{b-a}{n}</m> тул
+  <md>U-L=\frac{b-a}{n}\sum_{i=1}^n\bigl(f(x_{i-1})-f(x_i)\bigr)=\frac{b-a}{n}\bigl(f(x_0)-f(x_n)\bigr)=\frac{(f(a)-f(b))(b-a)}{n}.</md></p></solution>
+</exercise>
+<exercise>
+  <statement><p><m>f(x)=e^x</m>, <m>[0,1]</m>-ийн тэнцүү <m>P_n</m> хуваалтын хувьд
+  <md>L(P_n,f)=\frac{e-1}{n\left(e^{1/n}-1\right)}</md>
+  болохыг харуулж, <m>\int_0^1e^x\,dx=e-1</m> гэж дүгнэ.</p></statement>
+  <hint><p>Геометр прогрессийн нийлбэр. <m>\lim_{h\to0}\frac{e^h-1}{h}=1</m>.</p></hint>
+  <solution><p><m>m_i=e^{(i-1)/n}</m> тул <m>L=\frac1n\sum_{i=0}^{n-1}q^i</m>, <m>q=e^{1/n}</m>: <m>L=\frac1n\cdot\frac{q^n-1}{q-1}=\frac{e-1}{n(e^{1/n}-1)}\to e-1</m>. Мөн <m>U=e^{1/n}L\to e-1</m>, <m>f</m> тасралтгүй тул интегралчлагдана, иймд <m>\int_0^1e^xdx=e-1</m>.</p></solution>
+</exercise>
+</section>
+
+<section ref="w03-s2">
+<exercise>
+  <statement><p>Интегралын монотон чанарыг ашиглан
+  <md>\frac23\le\int_0^1e^{-x^2}\,dx\le1</md>
+  гэж батал.</p></statement>
+  <hint><p><m>e^{-t}\ge1-t</m> (<m>t\ge0</m>) ба <m>e^{-x^2}\le1</m>. <m>\int_0^1x^2dx=\frac13</m> (семинарын 1-р бодлого).</p></hint>
+  <solution><p><m>[0,1]</m> дээр <m>1-x^2\le e^{-x^2}\le1</m>. Монотон чанараар <m>\int_0^1(1-x^2)dx=1-\frac13=\frac23\le\int_0^1e^{-x^2}dx\le1</m>.</p></solution>
+</exercise>
+<exercise>
+  <statement><p><m>0\le\displaystyle\int_0^1\frac{x^n}{1+x}\,dx\le\frac1{n+1}</m> гэж баталж, <m>\displaystyle\lim_{n\to\infty}\int_0^1\frac{x^n}{1+x}\,dx</m>-ийг ол.</p></statement>
+  <hint><p><m>[0,1]</m> дээр <m>0\le\frac{x^n}{1+x}\le x^n</m>.</p></hint>
+  <answer><p><m>0</m>.</p></answer>
+  <solution><p>Монотон чанараар <m>0\le\int_0^1\frac{x^n}{1+x}dx\le\int_0^1x^ndx=\frac1{n+1}</m> (<m>\int_0^1 x^n dx</m>-ийг Дарбугийн нийлбэрээр эсвэл 4-р хичээлийн Ньютон-Лейбницийн томьёогоор олно). Хавчих зарчмаар хязгаар <m>0</m>.</p></solution>
+</exercise>
+<exercise>
+  <statement><p><m>f\in\mathcal R[a,b]</m> ба бүх <m>x</m>-д <m>f(x)\ge0</m> бөгөөд <m>f</m> нь ямар нэг <m>x_0</m> цэгт тасралтгүй, <m>f(x_0)&gt;0</m> бол <m>\int_a^bf&gt;0</m> гэж батал.</p></statement>
+  <hint><p><m>x_0</m>-ийн орчинд <m>f\ge\frac{f(x_0)}2</m>; бусад хэсэгт <m>f\ge0</m>.</p></hint>
+  <solution><p>Тасралтгүй чанараар <m>[\alpha,\beta]\ni x_0</m>, <m>\alpha&lt;\beta</m> хэрчим олдох ба түүн дээр <m>f\ge\frac{f(x_0)}2</m>. Аддитив ба монотон чанараар
+  <md>\int_a^bf=\int_a^\alpha f+\int_\alpha^\beta f+\int_\beta^bf\ge0+\frac{f(x_0)}{2}(\beta-\alpha)+0&gt;0.</md></p></solution>
+</exercise>
+</section>
+
+<section ref="w03-s3">
+<exercise>
+  <statement><p><m>f(x)=\sin\frac1x</m> (<m>0&lt;x\le1</m>), <m>f(0)=0</m> функц <m>[0,1]</m> дээр интегралчлагдах уу?</p></statement>
+  <hint><p><m>f</m> зааглагдсан. <m>[0,\delta]</m> дээрх хэсгийн нөлөөг <m>2\delta</m>-оор зааглаад, <m>[\delta,1]</m> дээр <m>f</m> тасралтгүй гэдгийг ашигла.</p></hint>
+  <answer><p>Тийм.</p></answer>
+  <solution><p><m>\varepsilon&gt;0</m> өгөгдсөн, <m>\delta=\frac\varepsilon4</m> гэе. <m>[\delta,1]</m> дээр <m>f</m> тасралтгүй тул <m>U(P',f)-L(P',f)&lt;\frac\varepsilon2</m> байх <m>P'</m> хуваалт олдоно. <m>P=\{0\}\cup P'</m> гэвэл <m>[0,\delta]</m> хэсгийн хувь нэмэр <m>(M-m)\delta\le2\delta=\frac\varepsilon2</m>. Иймд <m>U(P,f)-L(P,f)&lt;\varepsilon</m>.</p></solution>
+</exercise>
+<exercise>
+  <statement><p>(Томегийн функц) <m>[0,1]</m> дээр <m>f(x)=\frac1q</m>, хэрэв <m>x=\frac pq</m> үл хураагдах бутархай (<m>q\ge1</m>), <m>x</m> иррационал бол <m>f(x)=0</m> гэе. <m>f\in\mathcal R[0,1]</m> ба <m>\int_0^1f=0</m> гэж батал.</p></statement>
+  <hint><p>Өгөгдсөн <m>\varepsilon</m>-д <m>f(x)\ge\frac\varepsilon2</m> байх цэгүүд төгсгөлөг тоотой.</p></hint>
+  <solution><p>Дурын хэсэгт иррационал тоо байх тул <m>m_i=0</m>, <m>L(P,f)=0</m>. <m>\varepsilon&gt;0</m> өгөгдсөн гэе. <m>f(x)\ge\frac\varepsilon2</m> байх цэгүүд нь <m>q\le\frac2\varepsilon</m> хуваарьтай бутархайнууд тул төгсгөлөг <m>N</m> ширхэг. Эдгээр цэг бүрийг нийт урт нь <m>\frac{\varepsilon}{2}</m>-оос бага хэсгүүдээр бүрхэх <m>P</m> хуваалт авъя. Тэдгээр хэсэгт <m>M_i\le1</m>, бусад хэсэгт <m>M_i&lt;\frac\varepsilon2</m> тул
+  <md>U(P,f)&lt;1\cdot\frac\varepsilon2+\frac\varepsilon2\cdot1=\varepsilon.</md>
+  Иймд <m>U-L&lt;\varepsilon</m>, <m>f\in\mathcal R</m> ба <m>0\le\int_0^1f\le U(P,f)&lt;\varepsilon</m> бүх <m>\varepsilon</m>-д тул <m>\int_0^1f=0</m>.</p></solution>
+</exercise>
+</section>
+
+<section ref="w03-s4">
+<exercise>
+  <statement><p><m>f(x)=x^2</m> функцийн <m>[0,1]</m> дээрх дундаж утгыг олж, дундаж утгын I теоремын <m>c</m> цэгийг ол.</p></statement>
+  <hint><p><m>\int_0^1x^2dx=\frac13</m>.</p></hint>
+  <answer><p>Дундаж утга <m>\frac13</m>, <m>c=\frac{1}{\sqrt3}</m>.</p></answer>
+  <solution><p><m>\frac{1}{1-0}\int_0^1x^2dx=\frac13</m>. <m>c^2=\frac13</m>, <m>c\in[0,1]</m> тул <m>c=\frac1{\sqrt3}</m>.</p></solution>
+</exercise>
+<exercise>
+  <statement><p>Жинлэгдсэн дундаж утгын теоремыг ашиглан
+  <md>\frac{1}{10\sqrt2}\le\int_0^1\frac{x^9}{\sqrt{1+x}}\,dx\le\frac1{10}</md>
+  гэж батал.</p></statement>
+  <hint><p><m>g(x)=x^9\ge0</m> жин, <m>f(x)=\frac{1}{\sqrt{1+x}}</m>.</p></hint>
+  <solution><p>Теоремоор <m>\xi\in[0,1]</m> олдох ба <m>\int_0^1\frac{x^9}{\sqrt{1+x}}dx=\frac{1}{\sqrt{1+\xi}}\int_0^1x^9dx=\frac{1}{10\sqrt{1+\xi}}</m>. <m>\frac1{\sqrt2}\le\frac1{\sqrt{1+\xi}}\le1</m> тул дүгнэлт гарна.</p></solution>
+</exercise>
+<exercise>
+  <statement><p><m>f</m> нь <m>[0,1]</m> дээр тасралтгүй бол <m>\displaystyle\lim_{n\to\infty}\int_0^1 x^nf(x)\,dx=0</m> гэж батал.</p></statement>
+  <hint><p>Жинлэгдсэн дундаж утгын теорем, <m>g(x)=x^n</m>.</p></hint>
+  <solution><p>Теоремоор <m>\int_0^1x^nf(x)dx=f(\xi_n)\int_0^1x^ndx=\frac{f(\xi_n)}{n+1}</m>, <m>\xi_n\in[0,1]</m>. <m>|f|\le M</m> тул <m>\left|\int_0^1x^nf\right|\le\frac{M}{n+1}\to0</m>.</p></solution>
+</exercise>
+</section>
+
+<homework title="Гэрийн даалгавар (AI)">
+<introduction><p>Энэ хичээлд багшийн гэрийн даалгавар байхгүй тул доорх бодлогуудыг хиймэл оюун ухаанаар үүсгэв. Заавар, хариу, бодолтыг гарчиг дээр нь дарж нээнэ.</p></introduction>
+<exercise>
+  <statement><p>Дарбугийн нийлбэрээр <m>\int_0^2x^2\,dx=\frac83</m> гэж батал.</p></statement>
+  <hint><p>Тэнцүү <m>n</m> хэсэгт хуваа, <m>\sum_{i=1}^ni^2=\frac{n(n+1)(2n+1)}6</m>.</p></hint>
+  <solution><p><m>x_i=\frac{2i}n</m>, <m>\Delta x_i=\frac2n</m>. <m>U=\frac8{n^3}\sum_{i=1}^ni^2=\frac{4(n+1)(2n+1)}{3n^2}\to\frac83</m>, <m>L=\frac{8}{n^3}\sum_{i=0}^{n-1}i^2=\frac{4(n-1)(2n-1)}{3n^2}\to\frac83</m>.</p></solution>
+</exercise>
+<exercise>
+  <statement><p><m>f(x)=x</m> (<m>x\in\Q</m>), <m>f(x)=0</m> (<m>x\notin\Q</m>) функц <m>[0,1]</m> дээр интегралчлагдахгүйг батал.</p></statement>
+  <hint><p><m>L(P,f)=0</m>, харин <m>U(P,f)\ge\int_0^1x\,dx=\frac12</m>.</p></hint>
+  <solution><p>Хэсэг бүрд иррационал тоо байх тул <m>m_i=0</m>, <m>L=0</m>. Рационал тоо нягт тул <m>M_i=x_i</m> ба <m>U(P,f)=\sum x_i\Delta x_i\ge\frac12</m> (энэ нь <m>y=x</m>-ийн дээд Дарбугийн нийлбэр). Иймд дээд интеграл <m>\ge\frac12&gt;0=</m> доод интеграл.</p></solution>
+</exercise>
+<exercise>
+  <statement><p><m>f\in\mathcal R[a,b]</m> бол <m>|f|\in\mathcal R[a,b]</m> гэж композицийн теоремгүйгээр батал.</p></statement>
+  <hint><p><m>\bigl||f(x)|-|f(y)|\bigr|\le|f(x)-f(y)|</m> тул хэсэг бүр дээр <m>M_i(|f|)-m_i(|f|)\le M_i(f)-m_i(f)</m>.</p></hint>
+  <solution><p>Хэсэг бүр дээр <m>M_i(|f|)-m_i(|f|)=\sup_{x,y}\bigl(|f(x)|-|f(y)|\bigr)\le\sup_{x,y}(f(x)-f(y))=M_i(f)-m_i(f)</m>. Иймд <m>U(P,|f|)-L(P,|f|)\le U(P,f)-L(P,f)</m> ба шинжүүрээр <m>|f|\in\mathcal R</m>.</p></solution>
+</exercise>
+<exercise>
+  <statement><p><m>f</m> нь <m>[a,b]</m> дээр тасралтгүй бөгөөд дурын тасралтгүй <m>g</m>-ийн хувьд <m>\int_a^bf(x)g(x)\,dx=0</m> бол <m>f\equiv0</m> гэж батал.</p></statement>
+  <hint><p><m>g=f</m> гэж ав.</p></hint>
+  <solution><p><m>g=f</m> гэвэл <m>\int_a^bf^2=0</m>. <m>f^2\ge0</m> тасралтгүй тул (семинарын бодлого) <m>f^2\equiv0</m>, иймд <m>f\equiv0</m>.</p></solution>
+</exercise>
+<exercise>
+  <statement><p><m>f\in\mathcal R[a,b]</m>, бүх <m>x</m>-д <m>f(x)\ge m&gt;0</m> бол <m>\frac1f\in\mathcal R[a,b]</m> гэж батал.</p></statement>
+  <hint><p><m>\left|\frac1{f(x)}-\frac1{f(y)}\right|=\frac{|f(x)-f(y)|}{f(x)f(y)}\le\frac{|f(x)-f(y)|}{m^2}</m>.</p></hint>
+  <solution><p>Зааврын тэнцэтгэл бишээр хэсэг бүр дээр <m>M_i(1/f)-m_i(1/f)\le\frac{1}{m^2}(M_i(f)-m_i(f))</m>, иймд <m>U(P,\frac1f)-L(P,\frac1f)\le\frac{1}{m^2}\bigl(U(P,f)-L(P,f)\bigr)</m>. Баруун тал <m>m^2\varepsilon</m>-оос бага байх <m>P</m> олдох тул шинжүүр биелнэ.</p></solution>
+</exercise>
+</homework>
+</ai>

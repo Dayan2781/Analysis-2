@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ai>
+<preview>
+<exploration xml:id="w09-preview">
+  <title>Хэр хурдан нийлэх вэ? (AI)</title>
+  <introduction>
+    <p><m>f_n(x)=x^n</m> функцүүдийн графикийг <m>[0,1]</m> дээр <m>n=1,2,5,20</m> үед зурж үзвэл тэд <m>x&lt;1</m> цэг бүрт <m>0</m> руу “унах” боловч <m>x=1</m>-ийн ойролцоо удаан унадаг. Цэг бүрт нийлэх хурд хэрхэн ялгаатайг тоогоор харьцуулъя.</p>
+  </introduction>
+  <task>
+    <statement><p><m>x\in[0,1]</m> бүрд <m>f(x)=\lim_{n\to\infty}x^n</m>-ийг ол. <m>f</m> тасралтгүй юу?</p></statement>
+    <answer><p><m>f(x)=0</m> (<m>0\le x&lt;1</m>), <m>f(1)=1</m>. <m>f</m> нь <m>x=1</m> цэгт тасралттай, хэдийгээр <m>x^n</m> бүр тасралтгүй ч.</p></answer>
+  </task>
+  <task>
+    <statement><p><m>x=0{,}9</m> ба <m>x=0{,}99</m> үед <m>x^N&lt;0{,}01</m> байх хамгийн бага <m>N</m>-ийг ол.</p></statement>
+    <hint><p><m>x^N&lt;0{,}01\iff N&gt;\frac{\ln0{,}01}{\ln x}</m>.</p></hint>
+    <answer><p><m>x=0{,}9</m>: <m>N=44</m>; <m>x=0{,}99</m>: <m>N=459</m>.</p></answer>
+  </task>
+  <task>
+    <statement><p><m>[0,1)</m>-ийн <em>бүх</em> <m>x</m>-д нэгэн зэрэг <m>x^N&lt;0{,}01</m> байх <m>N</m> олдох уу?</p></statement>
+    <hint><p>Тогтоосон <m>N</m>-д <m>\sup_{0\le x&lt;1}x^N</m>-ийг ол.</p></hint>
+    <answer><p>Үгүй: дурын <m>N</m>-д <m>\sup_{[0,1)}x^N=1</m> (жишээ нь <m>x=0{,}1^{1/N}\in[0,1)</m> үед <m>x^N=0{,}1</m>). <m>N</m> нь <m>x</m>-ээс хамаарч, <m>x\to1</m> үед хязгааргүй өсөнө. Энэ бүлэгт <m>N</m> нь <m>x</m>-ээс хамаарахгүй байх “жигд” нийлэлтийг судална.</p></answer>
+  </task>
+</exploration>
+</preview>
+
+<section ref="w09-s1">
+<exercise>
+  <statement><p><m>f_n(x)=\arctan(nx)</m>, <m>x\in\R</m> дарааллын хязгаар функцийг ол. Хязгаар функц тасралтгүй юу?</p></statement>
+  <answer><p><m>f(x)=\frac\pi2\sgn x</m>; <m>x=0</m> цэгт тасралттай.</p></answer>
+  <solution><p><m>x&gt;0</m> бол <m>nx\to+\infty</m>, <m>\arctan(nx)\to\frac\pi2</m>; <m>x&lt;0</m> бол <m>\to-\frac\pi2</m>; <m>x=0</m> бол <m>f_n(0)=0</m>. Иймд <m>f(x)=\frac\pi2\sgn x</m>. Тасралтгүй функцүүдийн цэгэн хязгаар тасралттай болж болохын бас нэг жишээ.</p></solution>
+</exercise>
+<exercise>
+  <statement><p><m>\displaystyle\sum_{n=0}^\infty\left(\frac{x}{1+x}\right)^n</m> функцийн цувааны нийлэлтийн муж ба нийлбэрийг ол.</p></statement>
+  <hint><p>Геометр цуваа: <m>q=\frac x{1+x}</m>, <m>|q|&lt;1</m> байх нөхцөлийг бод.</p></hint>
+  <answer><p>Муж: <m>\left(-\frac12,+\infty\right)</m>; нийлбэр <m>S(x)=1+x</m>.</p></answer>
+  <solution><p><m>x\ne-1</m> үед гишүүд тодорхойлогдох ба геометр цуваа <m>|q|&lt;1</m> үед л нийлнэ. <m>\left|\frac x{1+x}\right|&lt;1\iff x^2&lt;(1+x)^2\iff 2x+1&gt;0\iff x&gt;-\frac12</m>. Энэ үед
+  <md>S(x)=\frac{1}{1-\frac x{1+x}}=\frac{1+x}{1}=1+x.</md></p></solution>
+</exercise>
+<exercise>
+  <statement><p><m>f_n(x)=nxe^{-nx^2}</m>, <m>[0,1]</m> дээр. Хязгаар функц <m>f</m>-ийг олж, <m>\displaystyle\lim_{n\to\infty}\int_0^1f_n\,dx</m> ба <m>\int_0^1f\,dx</m>-ийг харьцуул.</p></statement>
+  <hint><p><m>x&gt;0</m> үед <m>nq^n\to0</m> (<m>q=e^{-x^2}&lt;1</m>). <m>\int_0^1nxe^{-nx^2}dx</m>-д <m>u=nx^2</m>.</p></hint>
+  <answer><p><m>f\equiv0</m>; <m>\lim\int_0^1f_n=\frac12\ne0</m>.</p></answer>
+  <solution><p><m>f_n(0)=0</m>; <m>0&lt;x\le1</m> үед <m>f_n(x)=x\cdot nq^n</m>, <m>q=e^{-x^2}\in(0,1)</m> тул <m>f_n(x)\to0</m>. Иймд <m>f\equiv0</m>, <m>\int_0^1f=0</m>. Харин
+  <md>\int_0^1nxe^{-nx^2}dx=\Bigl[-\frac12e^{-nx^2}\Bigr]_0^1=\frac{1-e^{-n}}{2}\to\frac12.</md>
+  Цэгэн нийлэлтэд интеграл ба хязгаар солигдохгүй.</p></solution>
+</exercise>
+</section>
+
+<section ref="w09-s2">
+<exercise>
+  <statement><p><m>f_n(x)=\dfrac{x}{1+nx}</m> нь <m>[0,+\infty)</m> дээр жигд нийлэхийг батал.</p></statement>
+  <hint><p><m>f_n</m> нь <m>x</m>-ээр өсөх функц; <m>\sup</m>-ийг ол.</p></hint>
+  <solution><p><m>f_n(x)\to0</m> (<m>x=0</m> үед <m>0</m>, <m>x&gt;0</m> үед <m>\le\frac1n</m>). <m>f_n'(x)=\frac1{(1+nx)^2}&gt;0</m> тул <m>f_n</m> өсөх ба <m>\lim_{x\to\infty}f_n(x)=\frac1n</m>. Иймд <m>M_n=\sup_{x\ge0}|f_n(x)|=\frac1n\to0</m> бөгөөд супремумын шинжүүрээр (Теорем <xref ref="thm-sup-test" text="global"/>) жигд нийлнэ.</p></solution>
+</exercise>
+<exercise>
+  <statement><p><m>f_n(x)=nxe^{-nx}</m> нь <m>[0,+\infty)</m> дээр жигд нийлэхгүй, харин <m>\delta&gt;0</m> бүрд <m>[\delta,+\infty)</m> дээр жигд нийлэхийг батал.</p></statement>
+  <hint><p><m>f_n'(x)=n(1-nx)e^{-nx}</m>; максимум нь <m>x=\frac1n</m>.</p></hint>
+  <solution><p>Хязгаар функц <m>f\equiv0</m> (<m>x&gt;0</m> үед <m>nq^n\to0</m>, <m>q=e^{-x}</m>). <m>f_n</m> нь <m>[0,\frac1n]</m> дээр өсөж, <m>[\frac1n,\infty)</m> дээр буурна. Иймд <m>\sup_{x\ge0}f_n=f_n\left(\frac1n\right)=\frac1e\not\to0</m> — жигд биш.</p>
+  <p><m>[\delta,\infty)</m> дээр: <m>n&gt;\frac1\delta</m> үед <m>\frac1n&lt;\delta</m> тул <m>f_n</m> нь <m>[\delta,\infty)</m> дээр буурах ба <m>\sup_{x\ge\delta}f_n=n\delta e^{-n\delta}\to0</m>. Иймд жигд нийлнэ.</p></solution>
+</exercise>
+<exercise>
+  <statement><p>Динигийн теоремыг ашиглан <m>f_n(x)=\left(1+\frac xn\right)^n</m> нь <m>[0,1]</m> дээр <m>e^x</m> руу жигд нийлэхийг батал.</p></statement>
+  <hint><p><m>x\ge0</m> үед <m>\{f_n(x)\}</m> өсөх дараалал: <m>n</m> ширхэг <m>1+\frac xn</m> ба нэг <m>1</m>-д арифметик-геометр дундажийн тэнцэтгэл биш хэрэглэ.</p></hint>
+  <solution><p><m>f_n</m> бүр <m>[0,1]</m> дээр тасралтгүй, <m>f_n(x)\to e^x</m> цэгэн, <m>e^x</m> тасралтгүй. Монотон чанар: <m>x\ge0</m> үед <m>n+1</m> эерэг тоо <m>1+\frac xn,\dots,1+\frac xn,1</m>-ийн хувьд
+  <md>\Bigl(1+\frac xn\Bigr)^n\cdot1\le\Bigl(\frac{n\left(1+\frac xn\right)+1}{n+1}\Bigr)^{n+1}=\Bigl(1+\frac x{n+1}\Bigr)^{n+1},</md>
+  өөрөөр хэлбэл <m>f_n(x)\le f_{n+1}(x)</m>. <m>[0,1]</m> битүү, зааглагдсан тул Динигийн теоремоор (Теорем <xref ref="thm-dini" text="global"/>) <m>f_n\rightrightarrows e^x</m>.</p></solution>
+</exercise>
+</section>
+
+<section ref="w09-s3">
+<exercise>
+  <statement><p><m>f(x)=\displaystyle\sum_{n=1}^\infty\frac{\cos nx}{n^3}</m> нь <m>\R</m> дээр тасралтгүй дифференциалчлагдах ба <m>f'(x)=-\displaystyle\sum_{n=1}^\infty\frac{\sin nx}{n^2}</m> гэж батал.</p></statement>
+  <hint><p>Мөрдөлгөө <xref ref="cor-series-diff" text="global"/> ба Вейерштрассын M-шинжүүр.</p></hint>
+  <solution><p><m>\left|\frac{\cos nx}{n^3}\right|\le\frac1{n^3}</m> тул цуваа <m>\R</m> дээр жигд нийлнэ (ялангуяа дурын <m>x_0</m>-д нийлнэ). <m>u_n'(x)=-\frac{\sin nx}{n^2}</m> ба <m>|u_n'|\le\frac1{n^2}</m> тул <m>\sum u_n'</m> мөн <m>\R</m> дээр жигд нийлнэ. Мөрдөлгөө <xref ref="cor-series-diff" text="global"/>-аар дурын <m>[a,b]</m> дээр <m>f'(x)=-\sum\frac{\sin nx}{n^2}</m>. Энэ нь тасралтгүй функцүүдийн жигд нийлдэг цувааны нийлбэр тул тасралтгүй (Мөрдөлгөө <xref ref="cor-series-cont" text="global"/>).</p></solution>
+</exercise>
+<exercise>
+  <statement><p><m>\displaystyle\int_0^1\sum_{n=1}^\infty\frac{x^n}{n^2}\,dx</m>-ийг тооцоол. (<m>\sum\frac1{n^2}=\frac{\pi^2}6</m>-ийг ашиглаж болно.)</p></statement>
+  <hint><p><m>[0,1]</m> дээр <m>\left|\frac{x^n}{n^2}\right|\le\frac1{n^2}</m>. <m>\frac1{n^2(n+1)}=\frac1{n^2}-\frac1n+\frac1{n+1}</m>.</p></hint>
+  <answer><p><m>\dfrac{\pi^2}6-1</m>.</p></answer>
+  <solution><p>M-шинжүүрээр цуваа <m>[0,1]</m> дээр жигд нийлэх тул Мөрдөлгөө <xref ref="cor-series-int" text="global"/>-аар гишүүнчлэн интегралчилна:
+  <md>\int_0^1\sum_{n=1}^\infty\frac{x^n}{n^2}dx=\sum_{n=1}^\infty\frac{1}{n^2(n+1)}=\sum_{n=1}^\infty\frac1{n^2}-\sum_{n=1}^\infty\Bigl(\frac1n-\frac1{n+1}\Bigr)=\frac{\pi^2}6-1.</md>
+  (Задлахад <m>\sum\frac1{n^2}</m> ба телескоп цуваа хоёулаа нийлэх тул зөв.)</p></solution>
+</exercise>
+<exercise>
+  <statement><p>Гишүүнчлэн дифференциалчлах теоремыг ашиглан <m>|x|&lt;1</m> үед
+  <md>\sum_{n=1}^\infty nx^{n-1}=\frac{1}{(1-x)^2}</md>
+  гэж батал.</p></statement>
+  <hint><p><m>0&lt;q&lt;1</m> тогтоогоод <m>[-q,q]</m> дээр ажилла: <m>|nx^{n-1}|\le nq^{n-1}</m> ба <m>\sum nq^{n-1}</m> нийлнэ.</p></hint>
+  <solution><p><m>0&lt;q&lt;1</m> гэе. <m>[-q,q]</m> дээр <m>u_n(x)=x^n</m> (<m>n\ge0</m>), <m>\sum u_n(0)=1</m> нийлнэ. <m>|u_n'(x)|=|nx^{n-1}|\le nq^{n-1}</m> ба <m>\frac{(n+1)q^n}{nq^{n-1}}\to q&lt;1</m> тул Даламбераар <m>\sum nq^{n-1}</m> нийлж, M-шинжүүрээр <m>\sum u_n'</m> нь <m>[-q,q]</m> дээр жигд нийлнэ. Мөрдөлгөө <xref ref="cor-series-diff" text="global"/>-аар
+  <md>\sum_{n=1}^\infty nx^{n-1}=\Bigl(\sum_{n=0}^\infty x^n\Bigr)'=\Bigl(\frac1{1-x}\Bigr)'=\frac1{(1-x)^2},\qquad x\in[-q,q].</md>
+  Дурын <m>|x|&lt;1</m> нь ямар нэг <m>[-q,q]</m>-д агуулагдах тул томьёо <m>(-1,1)</m> дээр биелнэ.</p></solution>
+</exercise>
+</section>
+
+<homework>
+<exercise>
+  <statement><p><m>\displaystyle\sum_{n=1}^\infty xe^{-nx}</m> цувааны нийлбэрийг <m>[0,+\infty)</m> дээр олж, цуваа <m>[0,+\infty)</m> дээр жигд нийлэхгүй, харин <m>\delta&gt;0</m> бүрд <m>[\delta,+\infty)</m> дээр жигд нийлэхийг батал.</p></statement>
+  <hint><p><m>x&gt;0</m> үед геометр цуваа. Нийлбэрийн <m>x\to0^+</m> үеийн хязгаарыг <m>S(0)</m>-той харьцуул.</p></hint>
+  <answer><p><m>S(x)=\dfrac{x}{e^x-1}</m> (<m>x&gt;0</m>), <m>S(0)=0</m>.</p></answer>
+  <solution><p><m>x&gt;0</m> үед <m>S(x)=x\frac{e^{-x}}{1-e^{-x}}=\frac{x}{e^x-1}</m>, <m>S(0)=0</m>. <m>\lim_{x\to0^+}\frac{x}{e^x-1}=1\ne S(0)</m> тул <m>S</m> тасралттай. Гишүүд бүгд тасралтгүй тул Мөрдөлгөө <xref ref="cor-series-cont" text="global"/>-аар цуваа <m>[0,\infty)</m> дээр жигд нийлэхгүй.</p>
+  <p><m>[\delta,\infty)</m> дээр: <m>u_n(x)=xe^{-nx}</m> нь <m>x\ge\frac1n</m> үед буурна. <m>n\ge\frac1\delta</m> үед <m>\sup_{x\ge\delta}u_n=\delta e^{-n\delta}=M_n</m>, <m>\sum\delta e^{-n\delta}</m> нийлдэг геометр цуваа. Эхний төгсгөлөг тооны гишүүн <m>\sup_{x\ge0}xe^{-nx}=\frac1{ne}</m>-ээр зааглагдана. M-шинжүүрээр цуваа <m>[\delta,\infty)</m> дээр жигд нийлнэ.</p></solution>
+</exercise>
+<exercise>
+  <statement><p><m>E</m> дээр <m>f_n\rightrightarrows f</m>, <m>g_n\rightrightarrows g</m> ба <m>f,g</m> зааглагдсан бол <m>f_ng_n\rightrightarrows fg</m> гэж батал. Зааглагдсан нөхцөлийг орхивол худал болохыг <m>f_n(x)=g_n(x)=x+\frac1n</m> (<m>\R</m> дээр) жишээгээр харуул.</p></statement>
+  <hint><p><m>f_ng_n-fg=(f_n-f)g_n+f(g_n-g)</m>; хангалттай их <m>n</m>-д <m>|g_n|\le\sup|g|+1</m>.</p></hint>
+  <solution><p><m>|f|\le A</m>, <m>|g|\le B</m> гэе. <m>N_0</m>-оос хойш <m>\sup_E|g_n-g|\le1</m> тул <m>|g_n|\le B+1</m>. Иймд <m>n\ge N_0</m> үед
+  <md>\sup_E|f_ng_n-fg|\le(B+1)\sup_E|f_n-f|+A\sup_E|g_n-g|\to0.</md></p>
+  <p>Жишээ: <m>f_n=g_n=x+\frac1n\rightrightarrows x</m> (<m>\R</m> дээр, <m>\sup|f_n-x|=\frac1n</m>). Харин <m>f_n^2-x^2=\frac{2x}n+\frac1{n^2}</m> ба <m>x=n</m> цэгт энэ нь <m>2+\frac1{n^2}\not\to0</m>, иймд <m>f_n^2</m> нь <m>x^2</m> руу жигд нийлэхгүй.</p></solution>
+</exercise>
+<exercise>
+  <statement><p><m>[a,b]</m> дээр <m>f_n</m> тасралтгүй, <m>f_n\rightrightarrows f</m> ба <m>x_n\to x_0</m> (<m>x_n,x_0\in[a,b]</m>) бол <m>f_n(x_n)\to f(x_0)</m> гэж батал. Жигд нийлэлтгүйгээр энэ нь худал болохыг <m>f_n(x)=x^n</m>, <m>x_n=1-\frac1n</m> жишээгээр харуул.</p></statement>
+  <hint><p><m>|f_n(x_n)-f(x_0)|\le|f_n(x_n)-f(x_n)|+|f(x_n)-f(x_0)|</m>.</p></hint>
+  <solution><p>Теорем <xref ref="thm-unif-cont" text="global"/>-аар <m>f</m> тасралтгүй, иймд <m>f(x_n)\to f(x_0)</m>. Мөн <m>|f_n(x_n)-f(x_n)|\le\sup_{[a,b]}|f_n-f|\to0</m>. Зааврын тэнцэтгэл бишээс <m>f_n(x_n)\to f(x_0)</m>.</p>
+  <p>Жишээ: <m>[0,1]</m> дээр <m>x^n\to f</m>, <m>f(1)=1</m> (жигд биш). <m>x_n=1-\frac1n\to1</m> боловч <m>f_n(x_n)=\left(1-\frac1n\right)^n\to\frac1e\ne1=f(1)</m>.</p></solution>
+</exercise>
+<exercise>
+  <statement><p><m>f(x)=x^2</m> функцийн Бернштейний олон гишүүнт
+  <md>B_n(x)=\sum_{k=0}^n\frac{k^2}{n^2}\binom nkx^k(1-x)^{n-k}=x^2+\frac{x(1-x)}{n}</md>
+  гэж батлаад, <m>\sup_{[0,1]}|B_n-f|</m>-ийг ол.</p></statement>
+  <hint><p><m>k\binom nk=n\binom{n-1}{k-1}</m>, <m>k(k-1)\binom nk=n(n-1)\binom{n-2}{k-2}</m> ба <m>\sum_j\binom mjx^j(1-x)^{m-j}=1</m>.</p></hint>
+  <answer><p><m>\sup_{[0,1]}|B_n-f|=\dfrac1{4n}</m>.</p></answer>
+  <solution><p>Ньютоны бином <m>\sum_{j=0}^m\binom mjx^j(1-x)^{m-j}=(x+1-x)^m=1</m>-ийг ашиглавал
+  <md><mrow>\sum_{k=0}^nk\binom nkx^k(1-x)^{n-k}&amp;=nx\sum_{k=1}^n\binom{n-1}{k-1}x^{k-1}(1-x)^{n-k}=nx,</mrow><mrow>\sum_{k=0}^nk(k-1)\binom nkx^k(1-x)^{n-k}&amp;=n(n-1)x^2\sum_{k=2}^n\binom{n-2}{k-2}x^{k-2}(1-x)^{n-k}=n(n-1)x^2.</mrow></md>
+  <m>k^2=k(k-1)+k</m> тул <m>B_n(x)=\frac{n(n-1)x^2+nx}{n^2}=x^2+\frac{x-x^2}{n}</m>. Иймд <m>B_n(x)-x^2=\frac{x(1-x)}n</m> ба <m>x(1-x)</m>-ийн <m>[0,1]</m> дээрх максимум <m>\frac14</m> (<m>x=\frac12</m>) тул <m>\sup|B_n-f|=\frac1{4n}\to0</m>.</p></solution>
+</exercise>
+<exercise>
+  <statement><p>(“Хоёрдугаар курсын оюутны мөрөөдөл”) <m>\displaystyle\int_0^1x^{-x}\,dx=\sum_{n=1}^\infty\frac1{n^n}</m> гэж батал.</p></statement>
+  <hint><p><m>x^{-x}=e^{-x\ln x}=\sum_{k=0}^\infty\frac{(-x\ln x)^k}{k!}</m>; <m>[0,1]</m> дээр <m>0\le-x\ln x\le\frac1e</m>. <m>\int_0^1x^k(-\ln x)^k\,dx</m>-д <m>x=e^{-t}</m> орлуулж, <m>\Gamma(k+1)=k!</m>-ийг ашигла.</p></hint>
+  <solution><p><m>g(x)=-x\ln x</m> (<m>0&lt;x\le1</m>), <m>g(0)=0</m> гэвэл <m>g</m> нь <m>[0,1]</m> дээр тасралтгүй ба <m>g'(x)=-\ln x-1</m> тул максимум нь <m>g\left(\frac1e\right)=\frac1e</m>; иймд <m>0\le g\le\frac1e</m>. <m>x^{-x}=e^{g(x)}=\sum_{k\ge0}\frac{g(x)^k}{k!}</m> ба <m>\left|\frac{g^k}{k!}\right|\le\frac{e^{-k}}{k!}=M_k</m>, <m>\sum M_k=e^{1/e}&lt;\infty</m>. M-шинжүүрээр цуваа <m>[0,1]</m> дээр жигд нийлэх тул гишүүнчлэн интегралчилна:
+  <md>\int_0^1x^{-x}dx=\sum_{k=0}^\infty\frac1{k!}\int_0^1x^k(-\ln x)^k\,dx.</md>
+  <m>x=e^{-t}</m> (<m>t\in(0,\infty)</m>) орлуулгаар, дараа нь <m>s=(k+1)t</m>:
+  <md>\int_0^1x^k(-\ln x)^kdx=\int_0^\infty t^ke^{-(k+1)t}\,dt=\frac{1}{(k+1)^{k+1}}\int_0^\infty s^ke^{-s}\,ds=\frac{k!}{(k+1)^{k+1}}.</md>
+  Иймд <m>\int_0^1x^{-x}dx=\sum_{k=0}^\infty\frac1{(k+1)^{k+1}}=\sum_{n=1}^\infty\frac1{n^n}\approx1{,}29129</m>.</p></solution>
+</exercise>
+</homework>
+</ai>

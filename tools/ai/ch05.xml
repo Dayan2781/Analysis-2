@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ai>
+<preview>
+<exploration xml:id="w05-preview">
+  <title>Нэг интеграл, гурван өнцөг (AI)</title>
+  <introduction>
+    <p>Өмнөх хичээлүүдэд үзсэн гурван гол санаа болох эх функц, тодорхой интеграл, интеграл функцийг нэг жишээн дээр холбож харъя. <m>f(x)=2xe^{x^2}</m> функцийг авч үзье.</p>
+  </introduction>
+  <task>
+    <statement><p><m>\displaystyle\int 2xe^{x^2}\,dx</m> тодорхойгүй интегралыг ол.</p></statement>
+    <hint><p><m>u=x^2</m> орлуулга.</p></hint>
+    <answer><p><m>e^{x^2}+C</m>.</p></answer>
+  </task>
+  <task>
+    <statement><p><m>f</m> нь <m>[0,1]</m> дээр интегралчлагдах уу? Яагаад? <m>\displaystyle\int_0^1 2xe^{x^2}\,dx</m>-ийг ол.</p></statement>
+    <answer><p>Тасралтгүй тул интегралчлагдана. Ньютон-Лейбницийн томьёогоор <m>e^{x^2}\Big|_0^1=e-1</m>.</p></answer>
+  </task>
+  <task>
+    <statement><p><m>G(x)=\displaystyle\int_0^x2te^{t^2}\,dt</m> гэе. <m>G'(x)</m> ба <m>G(0)</m>-ийг олж, <m>G(x)=e^{x^2}-1</m> гэж дүгнэ.</p></statement>
+    <answer><p>Интеграл тооллын үндсэн теоремоор <m>G'(x)=2xe^{x^2}</m>, <m>G(0)=0</m>. <m>G</m> ба <m>e^{x^2}-1</m> хоёр ижил уламжлалтай тул тогтмолоор ялгаатай, <m>x=0</m> үед хоёулаа <m>0</m> тул тэнцүү.</p></answer>
+  </task>
+</exploration>
+</preview>
+
+<section ref="w05-s1">
+<exercise>
+  <statement><p><m>\displaystyle\int\frac{dx}{x^2-5x+6}</m>-ийг ол.</p></statement>
+  <hint><p><m>x^2-5x+6=(x-2)(x-3)</m>; хялбар бутархайд задал.</p></hint>
+  <answer><p><m>\ln\left|\dfrac{x-3}{x-2}\right|+C</m>.</p></answer>
+  <solution><p><m>\frac{1}{(x-2)(x-3)}=\frac{1}{x-3}-\frac{1}{x-2}</m> (баруун талыг ерөнхий хуваарьт оруулж шалгана). Иймд
+  <md>\int\frac{dx}{x^2-5x+6}=\ln|x-3|-\ln|x-2|+C=\ln\left|\frac{x-3}{x-2}\right|+C.</md></p></solution>
+</exercise>
+<exercise>
+  <statement><p><m>\displaystyle\int x\arctan x\,dx</m>-ийг ол.</p></statement>
+  <hint><p><m>u=\arctan x</m>, <m>dv=x\,dx</m>; <m>\frac{x^2}{1+x^2}=1-\frac1{1+x^2}</m>.</p></hint>
+  <answer><p><m>\dfrac{x^2+1}{2}\arctan x-\dfrac x2+C</m>.</p></answer>
+  <solution><p><m>u=\arctan x</m>, <m>v=\frac{x^2}2</m> гэвэл
+  <md>\int x\arctan x\,dx=\frac{x^2}2\arctan x-\frac12\int\frac{x^2}{1+x^2}\,dx=\frac{x^2}2\arctan x-\frac12\left(x-\arctan x\right)+C=\frac{x^2+1}2\arctan x-\frac x2+C.</md></p></solution>
+</exercise>
+</section>
+
+<section ref="w05-s2">
+<exercise>
+  <statement><p><m>f(x)=x^2</m>, <m>[0,1]</m> дээр <m>P=\left\{0,\frac12,1\right\}</m> ба түүний нарийвчлал <m>P^*=\left\{0,\frac14,\frac12,\frac34,1\right\}</m> хуваалтуудын хувьд <m>L(P,f)</m>, <m>U(P,f)</m>, <m>L(P^*,f)</m>, <m>U(P^*,f)</m>-ийг ол. <m>L(P,f)\le L(P^*,f)\le U(P^*,f)\le U(P,f)</m> биелэхийг шалга.</p></statement>
+  <hint><p><m>f</m> нь <m>[0,1]</m> дээр өсөх тул хэсэг бүр дээр <m>m_i</m> нь зүүн, <m>M_i</m> нь баруун төгсгөл дээрх утга.</p></hint>
+  <answer><p><m>L(P,f)=\frac18</m>, <m>U(P,f)=\frac58</m>, <m>L(P^*,f)=\frac7{32}</m>, <m>U(P^*,f)=\frac{15}{32}</m>.</p></answer>
+  <solution><p><m>L(P,f)=\frac12\left(0+\frac14\right)=\frac18</m>, <m>U(P,f)=\frac12\left(\frac14+1\right)=\frac58</m>.
+  <md>L(P^*,f)=\frac14\left(0+\frac1{16}+\frac14+\frac9{16}\right)=\frac7{32},\qquad U(P^*,f)=\frac14\left(\frac1{16}+\frac14+\frac9{16}+1\right)=\frac{15}{32}.</md>
+  <m>\frac{4}{32}\le\frac7{32}\le\frac{15}{32}\le\frac{20}{32}</m> тул биелнэ. (Жинхэнэ утга <m>\frac13</m> нь <m>[\frac7{32},\frac{15}{32}]</m>-д оршино.)</p></solution>
+</exercise>
+<exercise>
+  <statement><p><m>f\in\mathcal R([a,b])</m> ба <m>g</m> нь <m>f</m>-ээс ганц <m>c\in[a,b]</m> цэг дээр л ялгаатай бол <m>g\in\mathcal R([a,b])</m> ба <m>\int_a^bg=\int_a^bf</m> гэж батал.</p></statement>
+  <hint><p><m>h=g-f</m> нь <m>c</m>-ээс бусад цэгт <m>0</m>. <m>h(c)=d&gt;0</m> гэж үзээд <m>L(P,h)</m>, <m>U(P,h)</m>-ийг үнэл.</p></hint>
+  <solution><p><m>h=g-f</m>, <m>d=h(c)</m> гэе. <m>d&gt;0</m> гэж үзье (<m>d&lt;0</m> бол <m>-h</m>-д хэрэглэнэ, <m>d=0</m> бол ойлгомжтой). Хэсэг бүр <m>c</m>-ээс өөр цэг агуулах тул <m>m_i=0</m>, <m>L(P,h)=0</m>. <m>M_i=d</m> нь зөвхөн <m>c</m>-г агуулсан хэсгүүдэд (хамгийн ихдээ хоёр), бусдад <m>M_i=0</m>. Иймд хэсгүүдийн хамгийн их урт <m>\|P\|</m> бол <m>U(P,h)\le2d\|P\|</m>. <m>\|P\|&lt;\frac{\varepsilon}{2d}</m> байхаар авбал <m>U(P,h)-L(P,h)&lt;\varepsilon</m> тул <m>h\in\mathcal R</m> ба <m>0\le\int_a^bh\le U(P,h)&lt;\varepsilon</m>, өөрөөр хэлбэл <m>\int_a^bh=0</m>. Шугаман чанараар <m>g=f+h\in\mathcal R</m> ба <m>\int_a^bg=\int_a^bf</m>.</p></solution>
+</exercise>
+</section>
+
+<section ref="w05-s3">
+<exercise>
+  <statement><p>
+  <md>\frac\pi6\le\int_0^1\frac{dx}{\sqrt{4-x^2-x^3}}\le\frac{\pi}{4\sqrt2}</md>
+  гэж батал.</p></statement>
+  <hint><p><m>[0,1]</m> дээр <m>0\le x^3\le x^2</m>. <m>\int\frac{dx}{\sqrt{c^2-x^2}}=\arcsin\frac xc+C</m>.</p></hint>
+  <solution><p><m>[0,1]</m> дээр <m>0\le x^3\le x^2</m> тул <m>4-2x^2\le4-x^2-x^3\le4-x^2</m>, эндээс
+  <md>\frac1{\sqrt{4-x^2}}\le\frac1{\sqrt{4-x^2-x^3}}\le\frac1{\sqrt{4-2x^2}}=\frac1{\sqrt2}\cdot\frac1{\sqrt{2-x^2}}.</md>
+  Монотон чанараар
+  <md>\int_0^1\frac{dx}{\sqrt{4-x^2}}=\arcsin\frac12=\frac\pi6,\qquad\frac1{\sqrt2}\int_0^1\frac{dx}{\sqrt{2-x^2}}=\frac1{\sqrt2}\arcsin\frac1{\sqrt2}=\frac{\pi}{4\sqrt2}.</md></p></solution>
+</exercise>
+<exercise>
+  <statement><p><m>\displaystyle\lim_{n\to\infty}\int_0^{\pi/2}\sin^nx\,dx=0</m> гэж батал.</p></statement>
+  <hint><p><m>\delta&gt;0</m> авч интегралыг <m>[0,\frac\pi2-\delta]</m> ба <m>[\frac\pi2-\delta,\frac\pi2]</m> хэсэгт хуваа.</p></hint>
+  <solution><p><m>\varepsilon\in(0,\pi)</m> өгөгдсөн, <m>\delta=\frac\varepsilon2</m> гэе. <m>q=\sin\left(\frac\pi2-\delta\right)=\cos\delta&lt;1</m>. Аддитив ба монотон чанараар
+  <md>0\le\int_0^{\pi/2}\sin^nx\,dx=\int_0^{\pi/2-\delta}\sin^nx\,dx+\int_{\pi/2-\delta}^{\pi/2}\sin^nx\,dx\le\frac\pi2q^n+\delta.</md>
+  <m>q^n\to0</m> тул хангалттай их <m>n</m>-д <m>\frac\pi2q^n&lt;\frac\varepsilon2</m> ба интеграл <m>&lt;\varepsilon</m>.</p></solution>
+</exercise>
+</section>
+
+<section ref="w05-s4">
+<exercise>
+  <statement><p><m>f(x)=\lfloor x\rfloor</m> (бүхэл хэсэг) функц <m>[0,3]</m> дээр интегралчлагдах уу? <m>\int_0^3\lfloor x\rfloor\,dx</m>-ийг ол.</p></statement>
+  <hint><p>Монотон функц. Аддитив чанар ба нэг цэг дээрх утга интегралд нөлөөлөхгүйг ашигла.</p></hint>
+  <answer><p>Тийм; <m>3</m>.</p></answer>
+  <solution><p><m>\lfloor x\rfloor</m> нь монотон өсөх тул интегралчлагдана. <m>[k,k+1]</m> дээр <m>\lfloor x\rfloor</m> нь баруун төгсгөлөөс бусад цэгт <m>k</m>-тай тэнцүү тул <m>\int_k^{k+1}\lfloor x\rfloor\,dx=k</m>. Аддитив чанараар <m>\int_0^3\lfloor x\rfloor\,dx=0+1+2=3</m>.</p></solution>
+</exercise>
+<exercise>
+  <statement><p><m>f\in\mathcal R([a,b])</m> ба <m>f\ge0</m> бол <m>\sqrt f\in\mathcal R([a,b])</m> гэж батал.</p></statement>
+  <hint><p>Давхар функцийн теорем.</p></hint>
+  <solution><p><m>f</m> зааглагдсан тул <m>0\le f\le M</m>. <m>\varphi(y)=\sqrt y</m> нь <m>[0,M]</m> дээр тасралтгүй. Давхар функцийн теоремоор (Рудин 6.11) <m>\sqrt f=\varphi\circ f\in\mathcal R([a,b])</m>.</p></solution>
+</exercise>
+</section>
+
+<section ref="w05-s5">
+<exercise>
+  <statement><p><m>[0,2]</m> дээр <m>f(t)=1</m> (<m>0\le t\le1</m>), <m>f(t)=2</m> (<m>1&lt;t\le2</m>) гэе. <m>F(x)=\int_0^xf(t)\,dt</m>-ийг олж, <m>F</m> тасралтгүй боловч <m>x=1</m> цэгт дифференциалчлагдахгүйг харуул.</p></statement>
+  <answer><p><m>F(x)=x</m> (<m>0\le x\le1</m>), <m>F(x)=2x-1</m> (<m>1&lt;x\le2</m>).</p></answer>
+  <solution><p><m>x\le1</m> үед <m>F(x)=x</m>. <m>x&gt;1</m> үед <m>F(x)=\int_0^11\,dt+\int_1^x2\,dt=1+2(x-1)=2x-1</m> (<m>t=1</m> цэг дэх утга интегралд нөлөөлөхгүй). <m>x=1</m> үед хоёр томьёо <m>1</m> өгөх тул <m>F</m> тасралтгүй (теоремын (a) хэсэгтэй тохирно). Зүүн уламжлал <m>1</m>, баруун уламжлал <m>2</m> тул <m>F'(1)</m> оршихгүй: <m>f</m> нь <m>1</m> цэгт тасралтгүй биш тул (b) хэсэг хэрэглэгдэхгүй.</p></solution>
+</exercise>
+<exercise>
+  <statement><p><m>\displaystyle\lim_{x\to0^+}\frac{1}{x^2}\int_0^x\ln(1+t)\,dt</m>-ийг ол.</p></statement>
+  <hint><p>Лопиталын дүрэм; <m>\ln(1+x)\sim x</m>.</p></hint>
+  <answer><p><m>\dfrac12</m>.</p></answer>
+  <solution><p>Хүртвэр ба хуваарь <m>0</m> руу тэмүүлнэ. <m>\ln(1+t)</m> тасралтгүй тул интеграл тооллын үндсэн теоремоор хүртвэрийн уламжлал <m>\ln(1+x)</m>. Лопиталаар
+  <md>\lim_{x\to0^+}\frac{\ln(1+x)}{2x}=\frac12.</md></p></solution>
+</exercise>
+</section>
+
+<section ref="w05-s6">
+<exercise>
+  <statement><p><m>\displaystyle\int_0^1\arcsin x\,dx</m>-ийг ол.</p></statement>
+  <hint><p><m>u=\arcsin x</m>, <m>v'=1</m>. Дараа нь <m>w=1-x^2</m> орлуулга.</p></hint>
+  <answer><p><m>\dfrac\pi2-1</m>.</p></answer>
+  <solution><p>Эхлээд эх функц олъё: хэсэгчлэн интегралчилбал
+  <md>\int\arcsin x\,dx=x\arcsin x-\int\frac{x}{\sqrt{1-x^2}}\,dx=x\arcsin x+\sqrt{1-x^2}+C.</md>
+  <m>F(x)=x\arcsin x+\sqrt{1-x^2}</m> нь <m>[0,1]</m> дээр тасралтгүй, <m>[0,1)</m> дээр <m>F'(x)=\arcsin x</m>. <m>x=1</m> цэгт Лагранжийн теоремоор зүүн уламжлал <m>\lim_{x\to1^-}F'(x)=\frac\pi2=\arcsin1</m> тул <m>F'=\arcsin x</m> бүх <m>[0,1]</m> дээр биелнэ. Ньютон-Лейбницээр <m>\int_0^1\arcsin x\,dx=F(1)-F(0)=\frac\pi2-1</m>.</p></solution>
+</exercise>
+<exercise>
+  <statement><p><m>\displaystyle I=\int_1^e\sin(\ln x)\,dx</m>-ийг ол.</p></statement>
+  <hint><p>Хоёр удаа хэсэгчлэн интегралчлахад <m>I</m> өөрөө дахин гарч ирнэ.</p></hint>
+  <answer><p><m>\dfrac{e(\sin1-\cos1)+1}{2}</m>.</p></answer>
+  <solution><p><m>u=\sin(\ln x)</m>, <m>v=x</m>: <m>I=x\sin(\ln x)\Big|_1^e-\int_1^e\cos(\ln x)\,dx=e\sin1-J</m>. Мөн <m>J=\int_1^e\cos(\ln x)\,dx=x\cos(\ln x)\Big|_1^e+\int_1^e\sin(\ln x)\,dx=e\cos1-1+I</m>. Иймд <m>I=e\sin1-e\cos1+1-I</m>, эндээс
+  <md>I=\frac{e(\sin1-\cos1)+1}2.</md></p></solution>
+</exercise>
+</section>
+
+<section ref="w05-s7">
+<exercise>
+  <statement><p><m>f(x)=\frac1x</m> функцийн <m>[1,e]</m> дээрх дундаж утга ба түүнийг авах <m>c</m> цэгийг ол.</p></statement>
+  <answer><p><m>\bar f=\dfrac1{e-1}</m>, <m>c=e-1</m>.</p></answer>
+  <solution><p><m>\bar f=\frac1{e-1}\int_1^e\frac{dx}x=\frac{1}{e-1}</m>. <m>\frac1c=\frac1{e-1}</m> тул <m>c=e-1\approx1.718\in[1,e]</m>.</p></solution>
+</exercise>
+<exercise>
+  <statement><p>Дундаж утгын I теоремыг ашиглан <m>\displaystyle\lim_{x\to0^+}\frac1x\int_0^x\cos\left(t^2\right)dt=1</m> гэж батал.</p></statement>
+  <solution><p><m>\cos(t^2)</m> тасралтгүй тул <m>\int_0^x\cos(t^2)\,dt=x\cos(c_x^2)</m> байх <m>c_x\in[0,x]</m> олдоно. <m>x\to0^+</m> үед <m>0\le c_x\le x</m> тул <m>c_x\to0</m> ба косинусын тасралтгүй чанараар <m>\frac1x\int_0^x\cos(t^2)\,dt=\cos(c_x^2)\to1</m>.</p></solution>
+</exercise>
+</section>
+
+<section ref="w05-s8">
+<exercise>
+  <statement><p><m>x=a\cos t</m>, <m>y=b\sin t</m> (<m>a,b&gt;0</m>) эллипсээр хүрээлэгдсэн дүрсийн талбайг параметр хэлбэрийн томьёогоор ол.</p></statement>
+  <hint><p>Дээд хагас (<m>t\in[0,\pi]</m>) дээр <m>y\ge0</m>; <m>t</m> өсөхөд <m>x</m> буурдгийг анхаар.</p></hint>
+  <answer><p><m>\pi ab</m>.</p></answer>
+  <solution><p>Дээд хагасын талбай <m>\int_{-a}^a y\,dx</m>. <m>x=a\cos t</m> орлуулгаар <m>t=\pi\mapsto x=-a</m>, <m>t=0\mapsto x=a</m>:
+  <md>\int_{-a}^ay\,dx=\int_\pi^0b\sin t\cdot(-a\sin t)\,dt=ab\int_0^\pi\sin^2t\,dt=\frac{\pi ab}{2}.</md>
+  Тэгш хэмээр бүтэн талбай <m>S=\pi ab</m>.</p></solution>
+</exercise>
+<exercise>
+  <statement><p><m>(x-R)^2+y^2\le r^2</m> (<m>0&lt;r&lt;R</m>) дугуйг <m>Oy</m> тэнхлэгийг тойруулан эргүүлэхэд үүсэх торусын эзлэхүүнийг бүрхүүл аргаар ол.</p></statement>
+  <hint><p><m>x</m> цэг дээрх босоо огтлолын өндөр <m>2\sqrt{r^2-(x-R)^2}</m>. <m>u=x-R</m> орлуулаад сондгой функцийн интеграл <m>0</m> гэдгийг ашигла.</p></hint>
+  <answer><p><m>2\pi^2Rr^2</m>.</p></answer>
+  <solution><p>
+  <md>V=2\pi\int_{R-r}^{R+r}x\cdot2\sqrt{r^2-(x-R)^2}\,dx=4\pi\int_{-r}^{r}(u+R)\sqrt{r^2-u^2}\,du.</md>
+  <m>u\sqrt{r^2-u^2}</m> сондгой тул түүний интеграл <m>0</m>; <m>\int_{-r}^r\sqrt{r^2-u^2}\,du=\frac{\pi r^2}2</m> (хагас дугуйн талбай). Иймд <m>V=4\pi R\cdot\frac{\pi r^2}2=2\pi^2Rr^2</m>.</p></solution>
+</exercise>
+</section>
+
+<homework title="Гэрийн даалгавар (AI)">
+<introduction><p>Энэ хичээлд багшийн гэрийн даалгавар байхгүй тул доорх бодлогуудыг хиймэл оюун ухаанаар үүсгэв. Бодлогууд нь Хичээл 1-4-ийн материалыг хамарна. Заавар, хариу, бодолтыг гарчиг дээр нь дарж нээнэ.</p></introduction>
+<exercise>
+  <statement><p><m>\displaystyle\int_0^{\pi/4}\ln(1+\tan x)\,dx=\frac{\pi}{8}\ln2</m> гэж батал.</p></statement>
+  <hint><p><m>x\mapsto\frac\pi4-x</m> орлуулга. <m>\tan\left(\frac\pi4-x\right)=\frac{1-\tan x}{1+\tan x}</m>.</p></hint>
+  <solution><p><m>I</m> гэж тэмдэглэе. <m>1+\tan\left(\frac\pi4-x\right)=\frac{2}{1+\tan x}</m> тул <m>x\mapsto\frac\pi4-x</m> орлуулгаар
+  <md>I=\int_0^{\pi/4}\ln\frac{2}{1+\tan x}\,dx=\frac\pi4\ln2-I.</md>
+  Иймд <m>2I=\frac\pi4\ln2</m>, <m>I=\frac\pi8\ln2</m>.</p></solution>
+</exercise>
+<exercise>
+  <statement><p><m>f</m> нь <m>\R</m> дээр тасралтгүй бөгөөд <m>T</m> үетэй (<m>f(x+T)=f(x)</m>) бол <m>\displaystyle\int_a^{a+T}f(x)\,dx</m> нь <m>a</m>-аас хамаарахгүй гэж батал.</p></statement>
+  <hint><p><m>\Phi(a)=\int_a^{a+T}f</m>-ийн уламжлалыг ол.</p></hint>
+  <solution><p>Гинжин дүрэм ба интеграл тооллын үндсэн теоремоор <m>\Phi'(a)=f(a+T)-f(a)=0</m> бүх <m>a</m>-д. <m>\R</m> завсар тул <m>\Phi</m> тогтмол, өөрөөр хэлбэл <m>\int_a^{a+T}f=\int_0^Tf</m>.</p></solution>
+</exercise>
+<exercise>
+  <statement><p><m>\displaystyle\lim_{n\to\infty}\prod_{k=1}^n\left(1+\frac kn\right)^{1/n}</m>-ийг ол.</p></statement>
+  <hint><p>Логарифм ав: <m>\frac1n\sum_{k=1}^n\ln\left(1+\frac kn\right)</m> нь <m>\ln(1+x)</m>-ийн <m>[0,1]</m> дээрх Риманы (дээд Дарбугийн) нийлбэр.</p></hint>
+  <answer><p><m>\dfrac4e</m>.</p></answer>
+  <solution><p><m>\ln(1+x)</m> нь өсөх тул <m>s_n=\frac1n\sum_{k=1}^n\ln\left(1+\frac kn\right)=U(P_n,f)</m>, энд <m>P_n</m> нь тэнцүү хуваалт. <m>f</m> тасралтгүй тул интегралчлагдах ба <m>U(P_n,f)-L(P_n,f)=\frac{\ln2}{n}\to0</m>; иймд <m>s_n\to\int_0^1\ln(1+x)\,dx</m>. Хэсэгчлэн интегралчилбал
+  <md>\int_0^1\ln(1+x)\,dx=x\ln(1+x)\Big|_0^1-\int_0^1\frac{x}{1+x}\,dx=\ln2-(1-\ln2)=2\ln2-1.</md>
+  Экспонентын тасралтгүй чанараар хязгаар нь <m>e^{2\ln2-1}=\frac4e</m>.</p></solution>
+</exercise>
+<exercise>
+  <statement><p><m>y=\ln x</m>, <m>y=0</m>, <m>x=e</m> шугамуудаар хүрээлэгдсэн дүрсийн талбай ба уг дүрсийг <m>Ox</m> тэнхлэгээр эргүүлэхэд үүсэх биеийн эзлэхүүнийг ол.</p></statement>
+  <hint><p><m>\int\ln x\,dx=x\ln x-x+C</m>; <m>\int\ln^2x\,dx</m>-ийг хэсэгчлэн интегралчил.</p></hint>
+  <answer><p><m>S=1</m>, <m>V=\pi(e-2)</m>.</p></answer>
+  <solution><p>Муруй <m>x=1</m>-д <m>Ox</m>-тэй огтлолцоно. <m>S=\int_1^e\ln x\,dx=(x\ln x-x)\Big|_1^e=0-(-1)=1</m>.
+  <md>\int_1^e\ln^2x\,dx=x\ln^2x\Big|_1^e-2\int_1^e\ln x\,dx=e-2,</md>
+  иймд диск аргаар <m>V=\pi\int_1^e\ln^2x\,dx=\pi(e-2)</m>.</p></solution>
+</exercise>
+<exercise>
+  <statement><p><m>f</m> нь <m>[0,\infty)</m> дээр тасралтгүй, <m>f\ge0</m> бөгөөд бүх <m>x\ge0</m>-д <m>\displaystyle f(x)\le\int_0^xf(t)\,dt</m> бол <m>f\equiv0</m> гэж батал.</p></statement>
+  <hint><p><m>G(x)=\int_0^xf</m> гэж аваад <m>\left(e^{-x}G(x)\right)'</m>-ийн тэмдгийг шинжил.</p></hint>
+  <solution><p><m>G(x)=\int_0^xf(t)\,dt</m> гэвэл <m>G'=f\le G</m>, <m>G(0)=0</m>, <m>G\ge0</m>. <m>H(x)=e^{-x}G(x)</m> бол <m>H'(x)=e^{-x}\bigl(G'(x)-G(x)\bigr)\le0</m> тул <m>H</m> буурах ба <m>H(x)\le H(0)=0</m>. Иймд <m>G\le0</m>, <m>G\ge0</m>-тэй хамт <m>G\equiv0</m>. Эндээс <m>f=G'\equiv0</m>.</p></solution>
+</exercise>
+</homework>
+</ai>

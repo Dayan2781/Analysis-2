@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ai>
+<preview>
+<exploration xml:id="w10-preview">
+  <title>Геометр цуваанаас шинэ нийлбэрүүд (AI)</title>
+  <introduction>
+    <p>Геометр цуваа <m>1+x+x^2+\cdots</m> бол бидний хамгийн сайн мэдэх "төгсгөлгүй олон гишүүнт" юм. Үүнийг энгийн олон гишүүнт шиг дифференциалчилж, интегралчилж болох уу? Хэрэв болдог бол олон шинэ нийлбэр бараг үнэгүй гарна.</p>
+  </introduction>
+  <task>
+    <statement><p><m>\sum_{n=0}^\infty x^n</m> цуваа ямар <m>x</m>-д нийлэх вэ? Нийлбэр нь юу вэ?</p></statement>
+    <answer><p><m>|x|&lt;1</m> үед нийлэх ба <m>\sum_{n=0}^\infty x^n=\dfrac{1}{1-x}</m>; <m>|x|\ge1</m> үед ерөнхий гишүүн <m>0</m> руу тэмүүлэхгүй тул сарнина.</p></answer>
+  </task>
+  <task>
+    <statement><p><m>\frac{1}{1-x}=\sum x^n</m> тэнцэтгэлийн хоёр талыг олон гишүүнт шиг "гишүүнчлэн" дифференциалчил. Гарсан томьёонд <m>x=\frac12</m> орлуулж <m>\displaystyle\sum_{n=1}^\infty\frac{n}{2^{n-1}}</m>-ийг таамагла.</p></statement>
+    <hint><p><m>\left(\frac{1}{1-x}\right)'=\frac{1}{(1-x)^2}</m>.</p></hint>
+    <answer><p><m>\sum_{n=1}^\infty nx^{n-1}=\dfrac{1}{(1-x)^2}</m>; <m>x=\frac12</m> үед <m>\sum\frac{n}{2^{n-1}}=4</m>.</p></answer>
+  </task>
+  <task>
+    <statement><p>Одоо <m>\frac{1}{1-t}=\sum t^n</m>-ийг <m>[0,x]</m> дээр гишүүнчлэн интегралчил. <m>x=-\frac12</m> гэж <m>\displaystyle\sum_{n=1}^\infty\frac{(-1)^{n-1}}{n\,2^n}</m>-ийн утгыг таамагла.</p></statement>
+    <hint><p><m>\int_0^x\frac{dt}{1-t}=-\ln(1-x)</m>.</p></hint>
+    <answer><p><m>-\ln(1-x)=\sum_{n=1}^\infty\frac{x^n}{n}</m>. <m>x=-\frac12</m>: <m>-\ln\frac32=\sum\frac{(-1)^n}{n2^n}</m>, иймд <m>\sum\frac{(-1)^{n-1}}{n2^n}=\ln\frac32</m>. Ийм гишүүнчлэн үйлдлүүд хэзээ зөв болохыг энэ бүлэгт батална.</p></answer>
+  </task>
+</exploration>
+</preview>
+
+<section ref="w10-s1">
+<exercise>
+  <statement><p><m>\sum a_nx^n</m> зэрэгт цуваа <m>x=-3</m> цэгт нийлдэг, <m>x=5</m> цэгт сарнидаг нь мэдэгдэж байв. <m>x=2</m>, <m>x=-6</m>, <m>x=4</m> цэгүүдэд цувааны тухай юу хэлж болох вэ?</p></statement>
+  <hint><p>Абелийн лемм ба түүний мөрдөлгөөг хэрэглэ.</p></hint>
+  <answer><p><m>x=2</m>: абсолют нийлнэ; <m>x=-6</m>: сарнина; <m>x=4</m>: тодорхойгүй (нийлж ч, сарниж ч болно).</p></answer>
+  <solution><p><m>|2|&lt;|-3|</m> тул Абелийн леммээр <m>x=2</m> дээр абсолют нийлнэ. <m>|-6|&gt;|5|</m> тул мөрдөлгөөгөөр <m>x=-6</m> дээр сарнина. <m>3&lt;|4|&lt;5</m> үед аль ч дүгнэлт хийх боломжгүй: жишээ нь <m>\sum\frac{x^n}{n\,4^n}</m> нь <m>x=-3</m>-д нийлж, <m>x=5</m>-д сарних ба <m>x=4</m>-д сарнина, харин <m>\sum\frac{x^n}{n^2\,4^n}</m> нь мөн <m>x=-3</m>-д нийлж, <m>x=5</m>-д сарних боловч <m>x=4</m>-д нийлнэ.</p></solution>
+</exercise>
+<exercise>
+  <statement><p><m>\sum a_nx^n</m> цувааны хувьд <m>x_1\ne0</m> цэгт гишүүд нь зөвхөн <em>зааглагдсан</em>: <m>|a_nx_1^n|\le M</m> (<m>n=0,1,\dots</m>) байг (цуваа <m>x_1</m> дээр нийлэх албагүй). Тэгвэл <m>|x|&lt;|x_1|</m> бүрд цуваа абсолют нийлнэ гэж батал. Эндээс <m>\sum a_nx^n</m>-ийн радиус <m>R\ge|x_1|</m> гэж дүгнэ.</p></statement>
+  <hint><p>Абелийн леммийн баталгаанд нийлэлтийг зөвхөн гишүүдийг зааглахад ашигласан.</p></hint>
+  <solution><p><m>|x|&lt;|x_1|</m> бол <m>q=\frac{|x|}{|x_1|}&lt;1</m> ба
+  <md>|a_nx^n|=|a_nx_1^n|\left|\frac{x}{x_1}\right|^n\le Mq^n.</md>
+  <m>\sum Mq^n</m> нийлэх тул харьцуулах шинжүүрээр <m>\sum|a_nx^n|</m> нийлнэ. Иймд <m>|x|&lt;|x_1|</m> бүрд цуваа нийлэх тул <m>R=\sup\{|x|:\sum a_nx^n\text{ нийлнэ}\}\ge|x_1|</m>.</p></solution>
+</exercise>
+</section>
+
+<section ref="w10-s2">
+<exercise>
+  <statement><p><m>\displaystyle\sum_{n=1}^\infty\frac{(x+1)^n}{n^2\,2^n}</m> цувааны нийлэлтийн мужийг ол.</p></statement>
+  <hint><p><m>t=x+1</m> орлуулаад Даламбертын томьёог хэрэглэ. Хилийн цэгүүдэд <m>\sum\frac1{n^2}</m>-тэй харьцуул.</p></hint>
+  <answer><p><m>[-3,1]</m>.</p></answer>
+  <solution><p><m>t=x+1</m>, <m>a_n=\frac{1}{n^22^n}</m> гэвэл <m>\left|\frac{a_n}{a_{n+1}}\right|=\frac{2(n+1)^2}{n^2}\to2</m>, иймд <m>t</m>-ээр радиус <m>2</m>. <m>t=\pm2</m> үед <m>\left|\frac{(\pm2)^n}{n^22^n}\right|=\frac1{n^2}</m> тул цуваа абсолют нийлнэ. Иймд <m>-2\le x+1\le2</m>, өөрөөр хэлбэл муж <m>[-3,1]</m>.</p></solution>
+</exercise>
+<exercise>
+  <statement><p><m>\displaystyle\sum_{n=1}^\infty\frac{x^{3n}}{n\,8^n}</m> цувааны нийлэлтийн радиус ба мужийг ол.</p></statement>
+  <hint><p>Коэффициентуудын ихэнх нь <m>0</m> тул Даламбертын томьёог шууд хэрэглэхгүй. <m>t=x^3</m> орлуул.</p></hint>
+  <answer><p><m>R=2</m>, муж <m>[-2,2)</m>.</p></answer>
+  <solution><p><m>t=x^3</m> гэвэл <m>\sum\frac{t^n}{n8^n}</m>; <m>\frac{a_n}{a_{n+1}}=\frac{8(n+1)}{n}\to8</m> тул <m>|t|&lt;8</m> үед нийлж, <m>|t|&gt;8</m> үед сарнина. <m>t=8</m>: <m>\sum\frac1n</m> — сарнина; <m>t=-8</m>: <m>\sum\frac{(-1)^n}{n}</m> — Лейбницээр нийлнэ. <m>t=x^3</m> нь <m>\R</m> дээр өсөх тул <m>-8\le x^3&lt;8\iff-2\le x&lt;2</m>. Иймд <m>R=2</m>, муж <m>[-2,2)</m>.</p></solution>
+</exercise>
+<exercise>
+  <statement><p>Бүх <m>n</m>-д <m>0&lt;m\le|a_n|\le M</m> (<m>m, M</m> — тогтмол) бол <m>\sum a_nx^n</m>-ийн нийлэлтийн радиус <m>1</m> гэж батал. Жишээ болгон <m>\sum(2+\sin n)x^n</m>-ийн радиусыг ол.</p></statement>
+  <hint><p>Коши–Адамарын томьёо; <m>\sqrt[n]{m}\to1</m>, <m>\sqrt[n]{M}\to1</m>.</p></hint>
+  <answer><p><m>R=1</m>; <m>\sum(2+\sin n)x^n</m>-д <m>1\le|a_n|\le3</m> тул <m>R=1</m>.</p></answer>
+  <solution><p><m>\sqrt[n]{m}\le\sqrt[n]{|a_n|}\le\sqrt[n]{M}</m> ба хоёр зах нь <m>1</m> руу тэмүүлэх тул хавчих зарчмаар <m>\sqrt[n]{|a_n|}\to1</m>, ялангуяа <m>\varlimsup\sqrt[n]{|a_n|}=1</m>. Коши–Адамарын томьёогоор <m>R=1</m>. <m>a_n=2+\sin n</m>-ийн хувьд <m>1\le a_n\le3</m>.</p></solution>
+</exercise>
+</section>
+
+<section ref="w10-s3">
+<exercise>
+  <statement><p><m>E(x)=\displaystyle\sum_{n=0}^\infty\frac{x^n}{n!}</m> гэе. Зэрэгт цувааны чанаруудыг ашиглан <m>E'(x)=E(x)</m> гэж харуулаад, эндээс <m>E(x)=e^x</m> бүх <m>x\in\R</m>-д гэж дүгнэ.</p></statement>
+  <hint><p><m>R=\infty</m>. <m>\bigl(E(x)e^{-x}\bigr)'</m>-ийг бод.</p></hint>
+  <solution><p><m>R=\infty</m> тул гишүүнчлэн дифференциалчилж болно:
+  <md>E'(x)=\sum_{n=1}^\infty\frac{nx^{n-1}}{n!}=\sum_{n=1}^\infty\frac{x^{n-1}}{(n-1)!}=E(x).</md>
+  Тэгвэл <m>\bigl(E(x)e^{-x}\bigr)'=E'(x)e^{-x}-E(x)e^{-x}=0</m> тул <m>E(x)e^{-x}</m> нь <m>\R</m> дээр тогтмол. <m>E(0)=1</m> тул тогтмол нь <m>1</m>, иймд <m>E(x)=e^x</m>.</p></solution>
+</exercise>
+<exercise>
+  <statement><p><m>L(x)=\displaystyle\sum_{n=1}^\infty\frac{x^n}{n^2}</m> функцийн хувьд <m>(-1,1)</m> дээр <m>x\ne0</m> үед <md>L'(x)=-\frac{\ln(1-x)}{x}</md> гэж батал. <m>L</m> нь <m>[-1,1]</m> дээр тасралтгүй юу?</p></statement>
+  <hint><p>Гишүүнчлэн дифференциалчлаад <m>\sum_{n\ge1}\frac{x^n}{n}=-\ln(1-x)</m>-ийг ашигла. Тасралтгүй чанарт M-шинжүүр.</p></hint>
+  <answer><p>Тийм, <m>[-1,1]</m> дээр тасралтгүй.</p></answer>
+  <solution><p>Радиус <m>1</m> тул <m>|x|&lt;1</m> үед <m>L'(x)=\sum_{n=1}^\infty\frac{x^{n-1}}{n}=\frac1x\sum_{n=1}^\infty\frac{x^n}{n}=-\frac{\ln(1-x)}{x}</m> (<m>x\ne0</m>). <m>|x|\le1</m> үед <m>\left|\frac{x^n}{n^2}\right|\le\frac1{n^2}</m> ба <m>\sum\frac1{n^2}</m> нийлэх тул Вейерштрассын M-шинжүүрээр цуваа <m>[-1,1]</m> дээр жигд нийлнэ; гишүүд тасралтгүй тул <m>L</m> нь <m>[-1,1]</m> дээр тасралтгүй.</p></solution>
+</exercise>
+<exercise>
+  <statement><p><m>y'=2xy</m>, <m>y(0)=1</m> тэгшитгэлийг хангах <m>y=\sum_{n=0}^\infty a_nx^n</m> зэрэгт цувааг ол (коэффициентуудыг тэнцүүл). Нийлбэрийг элементар функцээр илэрхийл.</p></statement>
+  <hint><p>Цор ганц чанараар <m>x^n</m>-ийн коэффициентуудыг тэнцүүл: <m>(n+1)a_{n+1}=2a_{n-1}</m>.</p></hint>
+  <answer><p><m>y=\displaystyle\sum_{k=0}^\infty\frac{x^{2k}}{k!}=e^{x^2}</m>, <m>R=\infty</m>.</p></answer>
+  <solution><p><m>y'=\sum_{n\ge0}(n+1)a_{n+1}x^n</m>, <m>2xy=\sum_{n\ge1}2a_{n-1}x^n</m>. Цор ганц чанараар <m>a_1=0</m> ба <m>(n+1)a_{n+1}=2a_{n-1}</m> (<m>n\ge1</m>). <m>a_0=y(0)=1</m>. Эндээс бүх сондгой коэффициент <m>0</m>, тэгшүүд нь <m>a_{2k}=\frac{2}{2k}a_{2k-2}=\frac1ka_{2k-2}</m>, өөрөөр хэлбэл <m>a_{2k}=\frac1{k!}</m>. <m>y=\sum\frac{x^{2k}}{k!}</m>-ийн радиус <m>\infty</m> бөгөөд <m>e^t=\sum\frac{t^k}{k!}</m>-д <m>t=x^2</m> орлуулбал <m>y=e^{x^2}</m>. Шалгалт: <m>(e^{x^2})'=2xe^{x^2}</m>.</p></solution>
+</exercise>
+</section>
+
+<section ref="w10-s4">
+<exercise>
+  <statement><p>Кошийн үржвэрээр <m>\dfrac{e^x}{1-x}=\displaystyle\sum_{n=0}^\infty c_nx^n</m> задаргааны <m>c_n</m>-ийг ол. Ямар <m>x</m>-д энэ тэнцэтгэл биелэх вэ? <m>c_0,\dots,c_4</m>-ийг бич.</p></statement>
+  <hint><p><m>a_k=\frac1{k!}</m>, <m>b_k=1</m>.</p></hint>
+  <answer><p><m>c_n=\displaystyle\sum_{k=0}^n\frac1{k!}</m>, <m>|x|&lt;1</m>; <m>1,\ 2,\ \frac52,\ \frac83,\ \frac{65}{24}</m>.</p></answer>
+  <solution><p><m>e^x=\sum\frac{x^n}{n!}</m> (<m>R=\infty</m>), <m>\frac1{1-x}=\sum x^n</m> (<m>R=1</m>). Кошийн үржвэрийн теоремоор <m>|x|&lt;1</m> үед <m>c_n=\sum_{k=0}^na_kb_{n-k}=\sum_{k=0}^n\frac1{k!}</m>. Иймд <m>c_0=1</m>, <m>c_1=2</m>, <m>c_2=\frac52</m>, <m>c_3=\frac83</m>, <m>c_4=\frac{65}{24}</m>. (<m>c_n\to e\ne0</m> тул <m>x=\pm1</m> дээр цуваа сарнина.)</p></solution>
+</exercise>
+<exercise>
+  <statement><p>Абелийн теоремыг ашиглан <m>\displaystyle\sum_{n=1}^\infty\frac{(-1)^{n-1}}{n(n+1)}</m>-ийн нийлбэрийг ол.</p></statement>
+  <hint><p><m>S(x)=\sum_{n\ge1}\frac{(-1)^{n-1}x^{n+1}}{n(n+1)}</m> гэвэл <m>S''(x)=\frac1{1+x}</m>.</p></hint>
+  <answer><p><m>2\ln2-1</m>.</p></answer>
+  <solution><p><m>S</m>-ийн радиус <m>1</m>. <m>|x|&lt;1</m> үед гишүүнчлэн хоёр удаа дифференциалчилбал <m>S''(x)=\sum_{n\ge1}(-1)^{n-1}x^{n-1}=\frac1{1+x}</m>. <m>S(0)=S'(0)=0</m> тул <m>S'(x)=\ln(1+x)</m>,
+  <md>S(x)=\int_0^x\ln(1+t)\,dt=(1+x)\ln(1+x)-x.</md>
+  <m>x=1</m> үед <m>\sum\frac{(-1)^{n-1}}{n(n+1)}</m> нь абсолют нийлэх (<m>\le\frac1{n^2}</m>) тул Абелийн теоремоор
+  <md>\sum_{n=1}^\infty\frac{(-1)^{n-1}}{n(n+1)}=\lim_{x\to1^-}S(x)=2\ln2-1.</md>
+  (Шалгалт: <m>\frac1{n(n+1)}=\frac1n-\frac1{n+1}</m> ба <m>\sum\frac{(-1)^{n-1}}{n}=\ln2</m>-ээс ч гарна.)</p></solution>
+</exercise>
+<exercise>
+  <statement><p><m>\displaystyle\lim_{x\to1^-}\sum_{n=0}^\infty(-1)^n(n+1)x^n</m>-ийг ол. Энэ нь <m>\sum(-1)^n(n+1)</m> цувааны нийлбэр мөн үү?</p></statement>
+  <hint><p><m>\sum(n+1)t^n=\frac1{(1-t)^2}</m>-д <m>t=-x</m>.</p></hint>
+  <answer><p>Хязгаар <m>\frac14</m>; гэвч <m>\sum(-1)^n(n+1)</m> сарнина (зөвхөн Абелийн нийлбэр нь <m>\frac14</m>).</p></answer>
+  <solution><p><m>|x|&lt;1</m> үед <m>\sum(-1)^n(n+1)x^n=\frac1{(1+x)^2}\to\frac14</m> (<m>x\to1^-</m>). Харин <m>|(-1)^n(n+1)|=n+1\not\to0</m> тул <m>\sum(-1)^n(n+1)</m> сарнина. Энэ нь Абелийн теоремын урвуу худал болохын бас нэг жишээ.</p></solution>
+</exercise>
+</section>
+
+<section ref="w10-s5">
+<exercise>
+  <statement><p><m>|x|&lt;1</m> үед <m>\displaystyle\sum_{n=0}^\infty(2n+1)x^{2n}</m>-ийн нийлбэрийг олж, <m>\displaystyle\sum_{n=0}^\infty\frac{2n+1}{4^n}</m>-ийг бод.</p></statement>
+  <hint><p><m>(2n+1)x^{2n}=\bigl(x^{2n+1}\bigr)'</m>.</p></hint>
+  <answer><p><m>\dfrac{1+x^2}{(1-x^2)^2}</m>; <m>\dfrac{20}{9}</m>.</p></answer>
+  <solution><p><m>\sum_{n\ge0}x^{2n+1}=\frac{x}{1-x^2}</m> (<m>|x|&lt;1</m>). Гишүүнчлэн дифференциалчилбал
+  <md>\sum_{n=0}^\infty(2n+1)x^{2n}=\left(\frac{x}{1-x^2}\right)'=\frac{(1-x^2)+2x^2}{(1-x^2)^2}=\frac{1+x^2}{(1-x^2)^2}.</md>
+  <m>x=\frac12</m>: <m>\sum\frac{2n+1}{4^n}=\frac{5/4}{9/16}=\frac{20}{9}</m>.</p></solution>
+</exercise>
+<exercise>
+  <statement><p><m>S(x)=\displaystyle\sum_{n=1}^\infty\frac{x^n}{n+2}</m>-ийн нийлэлтийн мужийг олж, нийлбэрийг ол. Эндээс <m>\displaystyle\sum_{n=1}^\infty\frac{(-1)^n}{n+2}</m>-ийг бод.</p></statement>
+  <hint><p><m>x^2S(x)=\sum_{m\ge3}\frac{x^m}{m}</m>.</p></hint>
+  <answer><p>Муж <m>[-1,1)</m>; <m>x\ne0</m> үед <m>S(x)=-\dfrac{\ln(1-x)+x+\frac{x^2}{2}}{x^2}</m>, <m>S(0)=0</m>; <m>\sum\frac{(-1)^n}{n+2}=\frac12-\ln2</m>.</p></answer>
+  <solution><p>Радиус <m>1</m>; <m>x=1</m>: <m>\sum\frac1{n+2}</m> сарнина, <m>x=-1</m>: Лейбницээр нийлнэ. Муж <m>[-1,1)</m>. <m>|x|&lt;1</m> үед
+  <md>x^2S(x)=\sum_{n=1}^\infty\frac{x^{n+2}}{n+2}=\sum_{m=3}^\infty\frac{x^m}{m}=-\ln(1-x)-x-\frac{x^2}{2}.</md>
+  Иймд <m>x\ne0</m> үед <m>S(x)=-\frac{\ln(1-x)+x+x^2/2}{x^2}</m>. <m>x=-1</m> дээр цуваа нийлэх тул Абелийн теоремоор
+  <md>\sum_{n=1}^\infty\frac{(-1)^n}{n+2}=S(-1)=-\left(\ln2-1+\frac12\right)=\frac12-\ln2.</md></p></solution>
+</exercise>
+</section>
+
+<section ref="w10-s7">
+<exercise>
+  <statement><p><m>f(x)=\sqrt{1+x}</m>-ийн <m>x_0=0</m> цэг дээрх 2-р эрэмбийн Тейлорын олон гишүүнтээр <m>\sqrt{1{,}2}</m>-ийг ойролцоолж, Лагранжийн хэлбэрээр алдааг үнэл.</p></statement>
+  <hint><p><m>T_2(x)=1+\frac x2-\frac{x^2}{8}</m>, <m>f'''(x)=\frac38(1+x)^{-5/2}</m>.</p></hint>
+  <answer><p><m>\sqrt{1{,}2}\approx1{,}095</m>, <m>0&lt;R_2(0{,}2)\le5\cdot10^{-4}</m>.</p></answer>
+  <solution><p><m>f'(x)=\frac12(1+x)^{-1/2}</m>, <m>f''(x)=-\frac14(1+x)^{-3/2}</m>, <m>f'''(x)=\frac38(1+x)^{-5/2}</m>. <m>T_2(0{,}2)=1+0{,}1-0{,}005=1{,}095</m>. Лагранжийн хэлбэрээр <m>\xi\in(0;\,0{,}2)</m>-д
+  <md>R_2(0{,}2)=\frac{f'''(\xi)}{3!}(0{,}2)^3=\frac{3}{8\cdot6}(1+\xi)^{-5/2}\cdot0{,}008,</md>
+  <m>0&lt;(1+\xi)^{-5/2}&lt;1</m> тул <m>0&lt;R_2&lt;\frac{0{,}008}{16}=5\cdot10^{-4}</m>. (Бодит утга <m>\sqrt{1{,}2}=1{,}09544\ldots</m>, алдаа <m>\approx4{,}5\cdot10^{-4}</m>.)</p></solution>
+</exercise>
+<exercise>
+  <statement><p><m>x&gt;0</m> үед
+  <md>x-\frac{x^2}{2}&lt;\ln(1+x)&lt;x-\frac{x^2}{2}+\frac{x^3}{3}</md>
+  гэж Тейлорын томьёогоор батал.</p></statement>
+  <hint><p><m>n=2</m>, Лагранжийн хэлбэр; <m>(\ln(1+x))'''=\frac{2}{(1+x)^3}</m>.</p></hint>
+  <solution><p><m>f(x)=\ln(1+x)</m>: <m>f(0)=0</m>, <m>f'(0)=1</m>, <m>f''(0)=-1</m>, <m>f'''(t)=\frac{2}{(1+t)^3}</m>. Лагранжийн хэлбэрээр <m>\xi\in(0,x)</m>-д
+  <md>\ln(1+x)=x-\frac{x^2}{2}+\frac{2}{(1+\xi)^3}\cdot\frac{x^3}{3!}=x-\frac{x^2}{2}+\frac{x^3}{3(1+\xi)^3}.</md>
+  <m>\xi&gt;0</m> тул <m>0&lt;\frac{1}{(1+\xi)^3}&lt;1</m>, иймд үлдэгдэл гишүүн <m>0</m> ба <m>\frac{x^3}{3}</m>-ийн хооронд хатуу оршино.</p></solution>
+</exercise>
+</section>
+
+<section ref="w10-s8">
+<exercise>
+  <statement><p><m>f</m> нь <m>(x_0-r,x_0+r)</m> дээр дурын эрэмбээр дифференциалчлагдах бөгөөд <m>M, C&gt;0</m> тогтмолуудын хувьд <m>|f^{(n)}(x)|\le MC^n</m> (бүх <m>n</m>, <m>x</m>) бол <m>f</m> нь энэ завсар дээр Тейлорын цуваанд задарна гэж батал. Эндээс <m>\cos2x</m> нь <m>\R</m> дээр Маклорены цуваанд задарна гэж дүгнэ.</p></statement>
+  <hint><p>Лагранжийн хэлбэр ба <m>\frac{a^n}{n!}\to0</m>.</p></hint>
+  <solution><p>Лагранжийн хэлбэрээр <m>|R_n(x)|\le\frac{MC^{n+1}}{(n+1)!}|x-x_0|^{n+1}\le M\frac{(Cr)^{n+1}}{(n+1)!}</m>. <m>\sum\frac{a^n}{n!}</m> (<m>a=Cr</m>) нийлэх тул түүний ерөнхий гишүүн <m>0</m> руу тэмүүлнэ, иймд <m>R_n(x)\to0</m> ба Задрах нөхцлөөр <m>f</m> задарна. <m>f(x)=\cos2x</m>-д <m>|f^{(n)}(x)|\le2^n</m> (<m>M=1</m>, <m>C=2</m>) бүх <m>\R</m> дээр, иймд дурын <m>r</m>-д <m>(-r,r)</m> дээр задарна.</p></solution>
+</exercise>
+<exercise>
+  <statement><p><m>f(x)=\dfrac{1}{1+x^2}</m> нь <m>\R</m> дээр дурын эрэмбээр дифференциалчлагдана. Түүний Маклорены цуваа ба нийлэлтийн радиусыг ол. <m>|x|\ge1</m> үед <m>R_n(x)</m> <m>0</m> руу тэмүүлэх үү?</p></statement>
+  <hint><p>Геометр цуваанд <m>-x^2</m> орлуул; цор ганц чанараар энэ нь Маклорены цуваа.</p></hint>
+  <answer><p><m>\sum_{n=0}^\infty(-1)^nx^{2n}</m>, <m>R=1</m>; <m>|x|\ge1</m> үед <m>R_n(x)\not\to0</m>.</p></answer>
+  <solution><p><m>|x|&lt;1</m> үед <m>\frac1{1+x^2}=\sum(-1)^nx^{2n}</m>; цор ганц чанараар (Мөрдөлгөө <xref ref="cor-uniqueness" text="global"/>) энэ нь <m>f</m>-ийн Маклорены цуваа. <m>|x|\ge1</m> үед ерөнхий гишүүн <m>|x|^{2n}\ge1</m> тул цуваа сарнина, иймд радиус <m>1</m>. <m>|x|\ge1</m> үед хэсгийн нийлбэр <m>T_{2n}(x)</m> нь хязгааргүй (эсвэл хэлбэлзэх) тул <m>R_{2n}(x)=f(x)-T_{2n}(x)</m> нь <m>0</m> руу тэмүүлэхгүй. Эндээс функц бүх шулуун дээр гөлгөр байсан ч Тейлорын цуваа нь зөвхөн хэсэг дээр нь задарч болохыг харна.</p></solution>
+</exercise>
+</section>
+
+<section ref="w10-s9">
+<exercise>
+  <statement><p><m>\sinh x\cosh x</m>-ийг Маклорены цуваанд задалж, нийлэлтийн мужийг ол.</p></statement>
+  <hint><p><m>\sinh x\cosh x=\frac12\sinh2x</m>.</p></hint>
+  <answer><p><m>\displaystyle\sum_{n=0}^\infty\frac{2^{2n}x^{2n+1}}{(2n+1)!}=x+\frac{2x^3}{3}+\frac{2x^5}{15}+\cdots</m>, <m>x\in\R</m>.</p></answer>
+  <solution><p><m>\sinh x\cosh x=\frac{(e^x-e^{-x})(e^x+e^{-x})}{4}=\frac{e^{2x}-e^{-2x}}{4}=\frac12\sinh2x</m>. <m>\sinh t=\sum\frac{t^{2n+1}}{(2n+1)!}</m>-д <m>t=2x</m>:
+  <md>\frac12\sinh2x=\sum_{n=0}^\infty\frac{2^{2n+1}x^{2n+1}}{2\,(2n+1)!}=\sum_{n=0}^\infty\frac{2^{2n}x^{2n+1}}{(2n+1)!},\qquad x\in\R.</md></p></solution>
+</exercise>
+<exercise>
+  <statement><p>Биномын цуваагаар
+  <md>\frac{1}{\sqrt{1-x}}=\sum_{n=0}^\infty\binom{2n}{n}\frac{x^n}{4^n},\qquad|x|&lt;1</md>
+  гэж батал.</p></statement>
+  <hint><p><m>\alpha=-\frac12</m>, <m>x\to-x</m>. <m>(2n)!=(2n)!!\,(2n-1)!!</m>, <m>(2n)!!=2^nn!</m>.</p></hint>
+  <solution><p>Хичээлийн жишээгээр <m>\frac1{\sqrt{1+t}}=\sum(-1)^n\frac{(2n-1)!!}{(2n)!!}t^n</m>, <m>|t|&lt;1</m>. <m>t=-x</m> гэвэл <m>\frac1{\sqrt{1-x}}=\sum\frac{(2n-1)!!}{(2n)!!}x^n</m>. Одоо
+  <md>\frac{(2n-1)!!}{(2n)!!}=\frac{(2n)!}{\bigl((2n)!!\bigr)^2}=\frac{(2n)!}{4^n(n!)^2}=\binom{2n}{n}\frac1{4^n}.</md></p></solution>
+</exercise>
+<exercise>
+  <statement><p><m>\operatorname{arsinh}x=\ln\bigl(x+\sqrt{1+x^2}\bigr)</m>-ийг <m>|x|&lt;1</m> дээр Маклорены цуваанд задал.</p></statement>
+  <hint><p><m>(\operatorname{arsinh}x)'=(1+x^2)^{-1/2}</m>-ийг биномын цуваагаар задлаад гишүүнчлэн интегралчил.</p></hint>
+  <answer><p><m>\displaystyle\operatorname{arsinh}x=\sum_{n=0}^\infty(-1)^n\frac{(2n-1)!!}{(2n)!!}\cdot\frac{x^{2n+1}}{2n+1}=x-\frac{x^3}{6}+\frac{3x^5}{40}-\cdots</m></p></answer>
+  <solution><p><m>(\operatorname{arsinh}x)'=\frac1{\sqrt{1+x^2}}=\sum(-1)^n\frac{(2n-1)!!}{(2n)!!}x^{2n}</m> (<m>\frac1{\sqrt{1+t}}</m>-ийн задаргаанд <m>t=x^2</m>, <m>|x|&lt;1</m>). <m>\operatorname{arsinh}0=0</m> тул <m>[0,x]</m> дээр гишүүнчлэн интегралчилбал (Теорем <xref ref="thm-power-diff-int" text="global"/>)
+  <md>\operatorname{arsinh}x=\sum_{n=0}^\infty(-1)^n\frac{(2n-1)!!}{(2n)!!}\cdot\frac{x^{2n+1}}{2n+1},\qquad|x|&lt;1.</md></p></solution>
+</exercise>
+</section>
+
+<section ref="w10-s10">
+<exercise>
+  <statement><p><m>\dfrac{1}{1+x+x^2}</m>-ийг Маклорены цуваанд задалж, нийлэлтийн радиусыг ол.</p></statement>
+  <hint><p><m>\frac1{1+x+x^2}=\frac{1-x}{1-x^3}</m>.</p></hint>
+  <answer><p><m>\displaystyle\sum_{n=0}^\infty\bigl(x^{3n}-x^{3n+1}\bigr)=1-x+x^3-x^4+x^6-x^7+\cdots</m>, <m>R=1</m>.</p></answer>
+  <solution><p><m>(1-x)(1+x+x^2)=1-x^3</m> тул <m>|x|&lt;1</m> үед
+  <md>\frac1{1+x+x^2}=\frac{1-x}{1-x^3}=(1-x)\sum_{n=0}^\infty x^{3n}=\sum_{n=0}^\infty\bigl(x^{3n}-x^{3n+1}\bigr).</md>
+  Коэффициентууд <m>1,-1,0</m> гэж давтагдах тул <m>\varlimsup\sqrt[n]{|a_n|}=1</m>, <m>R=1</m>.</p></solution>
+</exercise>
+<exercise>
+  <statement><p><m>e^{\sin x}</m>-ийн Маклорены цувааны <m>x^4</m> хүртэлх гишүүдийг ол.</p></statement>
+  <hint><p><m>u=\sin x=x-\frac{x^3}{6}+O(x^5)</m> гэж <m>e^u=1+u+\frac{u^2}2+\frac{u^3}6+\frac{u^4}{24}+O(u^5)</m>-д орлуулж, <m>x^4</m> хүртэл ялга.</p></hint>
+  <answer><p><m>e^{\sin x}=1+x+\dfrac{x^2}{2}-\dfrac{x^4}{8}+O(x^5)</m>.</p></answer>
+  <solution><p><m>u=x-\frac{x^3}6+O(x^5)</m> бол
+  <md>u^2=x^2-\frac{x^4}{3}+O(x^6),\quad u^3=x^3+O(x^5),\quad u^4=x^4+O(x^6).</md>
+  Иймд
+  <md>e^{\sin x}=1+\Bigl(x-\frac{x^3}6\Bigr)+\frac12\Bigl(x^2-\frac{x^4}3\Bigr)+\frac{x^3}6+\frac{x^4}{24}+O(x^5)=1+x+\frac{x^2}2-\frac{x^4}8+O(x^5).</md>
+  (<m>x^3</m>-ийн коэффициент: <m>-\frac16+\frac16=0</m>; <m>x^4</m>: <m>-\frac16+\frac1{24}=-\frac18</m>.)</p></solution>
+</exercise>
+<exercise>
+  <statement><p><m>\sec x=\dfrac1{\cos x}=b_0+b_2x^2+b_4x^4+\cdots</m> (тэгш функц) гэж, <m>\sec x\cdot\cos x=1</m>-д коэффициентуудыг тэнцүүлэн <m>b_0, b_2, b_4</m>-ийг ол.</p></statement>
+  <answer><p><m>\sec x=1+\dfrac{x^2}{2}+\dfrac{5x^4}{24}+\cdots</m></p></answer>
+  <solution><p><m>\bigl(b_0+b_2x^2+b_4x^4+\cdots\bigr)\Bigl(1-\frac{x^2}{2}+\frac{x^4}{24}-\cdots\Bigr)=1</m>. Коэффициентуудыг тэнцүүлбэл:
+  <m>x^0</m>: <m>b_0=1</m>; <m>x^2</m>: <m>b_2-\frac{b_0}{2}=0\Rightarrow b_2=\frac12</m>; <m>x^4</m>: <m>b_4-\frac{b_2}{2}+\frac{b_0}{24}=0\Rightarrow b_4=\frac14-\frac1{24}=\frac5{24}</m>.</p></solution>
+</exercise>
+</section>
+
+<section ref="w10-s11">
+<exercise>
+  <statement><p><m>\displaystyle\lim_{x\to0}\frac{e^x\sin x-x-x^2}{x^3}</m>-ийг ол.</p></statement>
+  <hint><p><m>e^x\sin x=x+x^2+\frac{x^3}{3}+O(x^4)</m> (хичээлийн жишээ).</p></hint>
+  <answer><p><m>\dfrac13</m>.</p></answer>
+  <solution><p><m>\bigl(1+x+\frac{x^2}2+O(x^3)\bigr)\bigl(x-\frac{x^3}{6}+O(x^5)\bigr)=x+x^2+\bigl(\frac12-\frac16\bigr)x^3+O(x^4)=x+x^2+\frac{x^3}3+O(x^4)</m>. Иймд хүртвэр <m>\frac{x^3}{3}+O(x^4)</m>, хязгаар <m>\frac13</m>.</p></solution>
+</exercise>
+<exercise>
+  <statement><p><m>\displaystyle\int_0^1\sin(x^2)\,dx</m>-ийг <m>10^{-4}</m> нарийвчлалтай тооцоол.</p></statement>
+  <hint><p><m>\sin(x^2)=\sum\frac{(-1)^nx^{4n+2}}{(2n+1)!}</m>-ийг гишүүнчлэн интегралчил. Сөөлжилсөн цуваа.</p></hint>
+  <answer><p><m>\approx0{,}3103</m>.</p></answer>
+  <solution><p>Цуваа <m>[0,1]</m> дээр жигд нийлэх тул
+  <md>\int_0^1\sin(x^2)\,dx=\sum_{n=0}^\infty\frac{(-1)^n}{(4n+3)(2n+1)!}=\frac13-\frac1{42}+\frac1{1320}-\frac1{75600}+\cdots</md>
+  Гишүүдийн модуль буурч <m>0</m> руу тэмүүлэх сөөлжилсөн цуваа тул алдаа эхний хаясан гишүүнээс бага: <m>\frac{1}{75600}\approx1{,}3\cdot10^{-5}&lt;10^{-4}</m>. Иймд <m>\frac13-\frac1{42}+\frac1{1320}\approx0{,}31028</m>, өөрөөр хэлбэл <m>\approx0{,}3103</m> (бодит утга <m>0{,}310268\ldots</m>).</p></solution>
+</exercise>
+<exercise>
+  <statement><p><m>\displaystyle\sum_{n=1}^\infty\frac{n}{(2n+1)!}</m>-ийн нийлбэрийг ол.</p></statement>
+  <hint><p><m>n=\frac{(2n+1)-1}{2}</m>; <m>\cosh1=\sum\frac1{(2n)!}</m>, <m>\sinh1=\sum\frac1{(2n+1)!}</m>.</p></hint>
+  <answer><p><m>\dfrac{1}{2e}</m>.</p></answer>
+  <solution><p><m>\frac{n}{(2n+1)!}=\frac12\Bigl(\frac{1}{(2n)!}-\frac1{(2n+1)!}\Bigr)</m>. Хоёр цуваа хоёулаа нийлэх тул
+  <md>\sum_{n=1}^\infty\frac{n}{(2n+1)!}=\frac12\Bigl[(\cosh1-1)-(\sinh1-1)\Bigr]=\frac12(\cosh1-\sinh1)=\frac{e^{-1}}{2}.</md></p></solution>
+</exercise>
+</section>
+
+<homework>
+<exercise>
+  <statement><p><m>H_n=1+\frac12+\cdots+\frac1n</m> гэе. <m>\displaystyle\sum_{n=1}^\infty H_nx^n</m>-ийн нийлэлтийн мужийг олж, нийлбэрийг элементар функцээр илэрхийл.</p></statement>
+  <hint><p><m>1\le H_n\le n</m>. Нийлбэрт <m>\sum\frac{x^n}{n}</m> ба <m>\sum x^n</m>-ийн Кошийн үржвэрийг ашигла.</p></hint>
+  <answer><p>Муж <m>(-1,1)</m>; <m>\displaystyle\sum H_nx^n=-\frac{\ln(1-x)}{1-x}</m>.</p></answer>
+  <solution><p><m>1\le H_n\le n</m> тул <m>1\le\sqrt[n]{H_n}\le\sqrt[n]n\to1</m>, <m>R=1</m>. <m>x=\pm1</m> үед <m>|H_nx^n|=H_n\to\infty</m> тул сарнина; муж <m>(-1,1)</m>. <m>|x|&lt;1</m> үед <m>-\ln(1-x)=\sum_{k\ge1}\frac{x^k}{k}</m>, <m>\frac1{1-x}=\sum_{j\ge0}x^j</m>, хоёулаа абсолют нийлэх тул Кошийн үржвэрийн теоремоор
+  <md>-\frac{\ln(1-x)}{1-x}=\sum_{n=1}^\infty\Bigl(\sum_{k=1}^n\frac1k\cdot1\Bigr)x^n=\sum_{n=1}^\infty H_nx^n.</md></p></solution>
+</exercise>
+<exercise>
+  <statement><p><m>S(x)=\sum a_nx^n</m>-ийн радиус <m>R&gt;0</m> бөгөөд <m>S\bigl(\frac1k\bigr)=0</m> бүх хангалттай их <m>k\in\N</m>-д биелдэг бол бүх <m>n</m>-д <m>a_n=0</m> гэж батал. (Ялангуяа цор ганц чанарыг сулруулсан хэлбэр.)</p></statement>
+  <hint><p><m>S</m> нь <m>0</m> цэгт тасралтгүй. Тэг биш хамгийн бага индекстэй <m>a_m</m> байна гэж үзээд <m>S(x)/x^m</m>-ийг авч үз.</p></hint>
+  <solution><p>Эсрэгээр нь тэг биш коэффициент байна гэж үзээд, <m>m</m> нь <m>a_m\ne0</m> байх хамгийн бага индекс гэе. <m>|x|&lt;R</m> үед <m>S(x)=x^m g(x)</m>, <m>g(x)=\sum_{j\ge0}a_{m+j}x^j</m>. <m>g</m> нь мөн <m>R</m> радиустай (Коши–Адамар) зэрэгт цуваа тул <m>0</m> цэгт тасралтгүй ба <m>g(0)=a_m</m>. Хангалттай их <m>k</m>-д <m>\frac1k&lt;R</m> ба <m>0=S\bigl(\frac1k\bigr)=k^{-m}g\bigl(\frac1k\bigr)</m>, иймд <m>g\bigl(\frac1k\bigr)=0</m>. <m>k\to\infty</m> гэвэл тасралтгүй чанараар <m>a_m=g(0)=0</m> — зөрчил.</p></solution>
+</exercise>
+<exercise>
+  <statement><p><m>\displaystyle\lim_{n\to\infty}n\sin\bigl(2\pi e\,n!\bigr)</m>-ийг ол.</p></statement>
+  <hint><p><m>e\,n!=\sum_{k=0}^n\frac{n!}{k!}+\theta_n</m>, эхний нийлбэр бүхэл тоо, <m>\theta_n=\sum_{k&gt;n}\frac{n!}{k!}</m>. <m>\frac1{n+1}&lt;\theta_n&lt;\frac1n</m> гэж харуул.</p></hint>
+  <answer><p><m>2\pi</m>.</p></answer>
+  <solution><p><m>e=\sum_{k\ge0}\frac1{k!}</m> тул <m>e\,n!=N_n+\theta_n</m>, <m>N_n=\sum_{k=0}^n\frac{n!}{k!}\in\Z</m>,
+  <md>\theta_n=\frac1{n+1}+\frac1{(n+1)(n+2)}+\cdots,\qquad\frac1{n+1}&lt;\theta_n&lt;\sum_{j=1}^\infty\frac1{(n+1)^j}=\frac1n.</md>
+  <m>\sin</m> нь <m>2\pi</m> үетэй тул <m>\sin(2\pi e\,n!)=\sin(2\pi\theta_n)</m>. Хавчих зарчмаар <m>n\theta_n\to1</m>, мөн <m>\theta_n\to0</m> тул <m>\frac{\sin(2\pi\theta_n)}{2\pi\theta_n}\to1</m>. Иймд
+  <md>n\sin(2\pi e\,n!)=2\pi\cdot n\theta_n\cdot\frac{\sin2\pi\theta_n}{2\pi\theta_n}\to2\pi.</md></p></solution>
+</exercise>
+<exercise>
+  <statement><p><md>\sum_{n=0}^\infty\frac{x^{3n}}{(3n)!}=\frac13\Bigl(e^x+2e^{-x/2}\cos\frac{\sqrt3\,x}{2}\Bigr),\qquad x\in\R</md>
+  гэж батал.</p></statement>
+  <hint><p><m>\omega=e^{2\pi i/3}=-\frac12+\frac{\sqrt3}{2}i</m> бол <m>1+\omega^k+\omega^{2k}</m> нь <m>3\mid k</m> үед <m>3</m>, бусад үед <m>0</m>. Комплекс <m>e^z=\sum\frac{z^k}{k!}</m>-ийг ашигла.</p></hint>
+  <solution><p><m>\omega^3=1</m>, <m>\omega\ne1</m> тул <m>3\nmid k</m> үед <m>1+\omega^k+\omega^{2k}=\frac{\omega^{3k}-1}{\omega^k-1}=0</m>, харин <m>3\mid k</m> үед <m>3</m>. Абсолют нийлэх цуваануудыг нэмбэл
+  <md>e^x+e^{\omega x}+e^{\omega^2x}=\sum_{k=0}^\infty\bigl(1+\omega^k+\omega^{2k}\bigr)\frac{x^k}{k!}=3\sum_{n=0}^\infty\frac{x^{3n}}{(3n)!}.</md>
+  <m>\omega^2=\bar\omega</m> ба <m>x</m> бодит тул <m>e^{\omega^2x}=\overline{e^{\omega x}}</m> (цувааны гишүүн бүрийг хосмогоор сольсон), иймд <m>e^{\omega x}+e^{\omega^2x}=2\operatorname{Re}e^{\omega x}</m>. <m>e^{z+w}=e^ze^w</m> (Кошийн үржвэр ба биномын томьёо) ба Эйлерийн томьёогоор <m>e^{\omega x}=e^{-x/2}\bigl(\cos\frac{\sqrt3x}2+i\sin\frac{\sqrt3x}2\bigr)</m>, иймд <m>2\operatorname{Re}e^{\omega x}=2e^{-x/2}\cos\frac{\sqrt3x}2</m>.</p></solution>
+</exercise>
+<exercise>
+  <statement><p>("Хоёрдугаар курсийн мөрөөдөл") <md>\int_0^1x^{-x}\,dx=\sum_{n=1}^\infty\frac1{n^n}</md> гэж батал.</p></statement>
+  <hint><p><m>x^{-x}=e^{-x\ln x}=\sum_{n\ge0}\frac{(-x\ln x)^n}{n!}</m>; <m>[0,1]</m> дээр <m>|x\ln x|\le\frac1e</m>. <m>\int_0^1x^n\ln^nx\,dx</m>-ийг <m>x=e^{-t}</m> орлуулгаар бод.</p></hint>
+  <solution><p><m>x\in(0,1]</m> дээр <m>|x\ln x|\le\frac1e</m> (<m>x=\frac1e</m> дээр хамгийн их), <m>x\ln x\to0</m> (<m>x\to0^+</m>). Иймд <m>\left|\frac{(-x\ln x)^n}{n!}\right|\le\frac{e^{-n}}{n!}</m> ба M-шинжүүрээр <m>\sum\frac{(-x\ln x)^n}{n!}</m> нь <m>[0,1]</m> дээр (<m>x=0</m>-д <m>0\ln0=0</m> гэж үзэн) жигд нийлж, нийлбэр нь <m>x^{-x}</m>. Гишүүнчлэн интегралчилж болно:
+  <md>\int_0^1x^{-x}dx=\sum_{n=0}^\infty\frac{(-1)^n}{n!}\int_0^1x^n\ln^nx\,dx.</md>
+  <m>x=e^{-t}</m>, дараа нь <m>u=(n+1)t</m>:
+  <md>\int_0^1x^n\ln^nx\,dx=(-1)^n\int_0^\infty t^ne^{-(n+1)t}dt=\frac{(-1)^n}{(n+1)^{n+1}}\int_0^\infty u^ne^{-u}du=\frac{(-1)^nn!}{(n+1)^{n+1}},</md>
+  энд <m>\int_0^\infty u^ne^{-u}du=n!</m>-ийг хэсэгчлэн интегралчилж индукцээр гаргана. Орлуулбал <m>\int_0^1x^{-x}dx=\sum_{n\ge0}\frac{1}{(n+1)^{n+1}}=\sum_{m\ge1}\frac1{m^m}</m>.</p></solution>
+</exercise>
+</homework>
+</ai>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Математик Анализ 2 — PreTeXt publication file                        -->
+<!-- AI-аар үүсгэсэн агуулгыг (component="ai") хасах бол доорх            -->
+<!-- <version include="ai"/> мөрийг <version include="none"/> болго.        -->
+<publication>
+  <source>
+    <version include="ai"/>
+  </source>
+  <common>
+    <chunking level="2"/>
+    <tableofcontents level="2"/>
+    <exercise-inline statement="yes" hint="yes" answer="yes" solution="yes"/>
+    <exercise-divisional statement="yes" hint="yes" answer="yes" solution="yes"/>
+  </common>
+  <numbering>
+    <divisions level="2"/>
+    <blocks level="1"/>
+  </numbering>
+  <html>
+    <knowl theorem="no" proof="yes" definition="no" example="no" example-solution="yes" exercise-inline="no" exercise-divisional="no"/>
+    <search variant="textbook"/>
+  </html>
+  <latex latex-style="" />
+</publication>

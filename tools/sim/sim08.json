@@ -1,0 +1,247 @@
+{
+"39c1bc2f8e": {
+"p": "$\\displaystyle\\int_0^{+\\infty}\\frac{dx}{e^{2x}+e^{-2x}}$-ийг тооцоол.",
+"h": "$u=e^{2x}$ орлуул.",
+"a": "$\\frac\\pi8$."
+},
+"a17f28801c": {
+"p": "$\\displaystyle\\int_2^{+\\infty}\\frac{dx}{x(x+2)}$-ийг тооцоол.",
+"h": "$\\frac1{x(x+2)}=\\frac12\\bigl(\\frac1x-\\frac1{x+2}\\bigr)$.",
+"a": "$\\frac12\\ln2$."
+},
+"159ccbee3c": {
+"p": "$\\displaystyle\\int_{-\\infty}^{+\\infty}\\frac{x\\,dx}{4+x^2}$ сарнихыг батал. Харин $\\displaystyle\\lim_{R\\to\\infty}\\int_{-R}^{3R}\\frac{x\\,dx}{4+x^2}$-ийг ол.",
+"h": "Анхдагч функц $\\frac12\\ln(4+x^2)$.",
+"a": "Нэг талын $\\int_0^{\\infty}$ нь $\\frac12\\ln(4+x^2)\\to\\infty$ тул сарна. Хязгаар $=\\lim\\frac12\\ln\\frac{4+9R^2}{4+R^2}=\\ln3$."
+},
+"4d8d92ff90": {
+"p": "$\\displaystyle\\int_{-1}^{3}\\frac{dx}{\\sqrt{|x-1|}}$-ийг тооцоол.",
+"h": "Онцгой цэг $x=1$; хоёр хэсэгт хуваа.",
+"a": "$4\\sqrt2$."
+},
+"4b4df8cb46": {
+"p": "$\\displaystyle\\int_0^1\\frac{\\ln x}{\\sqrt[3]x}\\,dx$-ийг тооцоол.",
+"h": "Хэсэгчлэн интегралчил.",
+"a": "$-\\frac94$."
+},
+"fa62ef15da": {
+"p": "Ньютон-Лейбницийн томьёог шууд хэрэглэвэл $\\displaystyle\\int_{-1}^2\\frac{dx}{x^2}=\\bigl[-\\tfrac1x\\bigr]_{-1}^{2}=-\\frac32$ гэж гарна. Энэ яагаад буруу вэ? Интеграл нийлэх эсэхийг тогтоо.",
+"h": "$x=0$ цэг дээр интеграл доорх функц тасалддаг.",
+"a": "Эерэг функцийн интеграл сөрөг байж болохгүй. $x=0$ дээр $\\frac1{x^2}$ тасралтгүй биш, $\\int_0^2\\frac{dx}{x^2}$ сарна тул интеграл сарна."
+},
+"589c2f9a41": {
+"p": "$\\displaystyle\\int_0^1\\frac{\\arcsin^2 x}{\\sqrt{1-x^2}}\\,dx$-ийг тооцоол.",
+"h": "$x=\\sin t$.",
+"a": "$\\int_0^{\\pi/2}t^2dt=\\frac{\\pi^3}{24}$."
+},
+"63d8a6f992": {
+"p": "$\\displaystyle\\int_0^{+\\infty}\\frac{\\ln x}{x^2+4}\\,dx$ нийлэхийг батлаад, $x=2t$ орлуулгаар утгыг ол.",
+"h": "$\\ln(2t)=\\ln2+\\ln t$ ба $\\int_0^\\infty\\frac{\\ln t}{1+t^2}dt=0$ ($t=\\frac1s$).",
+"a": "$\\frac{\\pi\\ln2}{4}$."
+},
+"74e3036e20": {
+"p": "Хэсэгчлэн интегралчлах замаар $\\displaystyle\\int_1^{+\\infty}\\frac{\\ln^2x}{x^2}\\,dx$-ийг ол.",
+"h": "Хоёр удаа хэсэгчлэн интегралчил.",
+"a": "$2$."
+},
+"5a8f33a7d1": {
+"p": "Кошийн шинжүүрийг ашиглан $\\displaystyle\\int_1^{+\\infty}\\frac{|\\cos x|}{x+1}\\,dx$ сарнихыг батал.",
+"h": "$|\\cos x|\\ge\\cos^2x=\\frac{1+\\cos2x}2$, эсвэл $[k\\pi-\\frac\\pi4,k\\pi+\\frac\\pi4]$ завсарт $|\\cos x|\\ge\\frac1{\\sqrt2}$.",
+"a": "Завсар бүр дээр интеграл $\\ge\\frac{\\pi/2}{\\sqrt2\\,(k\\pi+\\pi/4+1)}\\sim\\frac ck$; гармоник цуваа шиг сарна, Коши нөхцөл биелэхгүй."
+},
+"7b2957cddb": {
+"p": "$\\int_a^{+\\infty}f(x)\\,dx$ нийлдэг бөгөөд $\\displaystyle\\lim_{x\\to+\\infty}xf(x)=L$ оршин байвал $L=0$ гэж батал.",
+"h": "$L\\ne0$ бол $f\\sim\\frac Lx$ харьцуулалт.",
+"a": "$L\\ne0$ бол хангалттай том $x$-д $|f(x)|\\ge\\frac{|L|}{2x}$ ба тэмдэг тогтмол, $\\int\\frac{dx}x$ сарна тул $\\int f$ сарна. Эсрэг үндэс."
+},
+"06a9ef6198": {
+"p": "$\\displaystyle\\int_0^{+\\infty}\\frac{dx}{x^{2/3}+x^{4/3}}$ нийлэх үү? Нийлдэг бол утгыг ол.",
+"h": "$x=t^3$.",
+"a": "Нийлнэ: $\\int_0^\\infty\\frac{3\\,dt}{1+t^2}=\\frac{3\\pi}2$."
+},
+"831e7943bd": {
+"p": "$\\displaystyle\\int_0^1\\frac{dx}{\\sqrt[3]{\\tan x-x}}$ нийлэх үү?",
+"h": "$\\tan x-x\\sim\\frac{x^3}3$ ($x\\to0$).",
+"a": "Сарна: гишүүн $\\sim\\frac{\\sqrt[3]3}{x}$, $\\int_0\\frac{dx}x$ сарна."
+},
+"9b52b23b7c": {
+"p": "$\\alpha$-ийн ямар утгад $\\displaystyle\\int_0^{+\\infty}\\frac{1-\\cos x}{x^\\alpha}\\,dx$ нийлэх вэ?",
+"h": "$0$ орчимд $1-\\cos x\\sim\\frac{x^2}2$, $\\infty$ орчимд $0\\le1-\\cos x\\le2$ ба дундаж $1$.",
+"a": "$1\\lt\\alpha\\lt3$."
+},
+"375ac56ec8": {
+"p": "$\\displaystyle\\int_0^{+\\infty}\\frac{\\sin x}{x^{4/3}}\\,dx$ абсолют нийлэхийг батал.",
+"h": "$[0,1]$ дээр $|\\sin x|\\le x$, $[1,\\infty)$ дээр $|\\sin x|\\le1$.",
+"a": "$\\int_0^1x^{-1/3}dx$ ба $\\int_1^\\infty x^{-4/3}dx$ нийлнэ."
+},
+"ccd2b0244b": {
+"p": "$\\int_a^{+\\infty}f^2\\,dx$ ба $\\int_a^{+\\infty}g^2\\,dx$ нийлдэг (функцүүд интегралчлагдана) бол $\\int_a^{+\\infty}f g\\,dx$ абсолют нийлэхийг батал.",
+"h": "$|fg|\\le\\frac{f^2+g^2}2$.",
+"a": "Харьцуулалтын шинжээр $\\int|fg|\\le\\frac12\\bigl(\\int f^2+\\int g^2\\bigr)\\lt\\infty$."
+},
+"1bf1dc5b4a": {
+"p": "$f(x)=\\frac{\\cos x}{\\sqrt[4]x}$ гэе. $\\int_1^{+\\infty}f\\,dx$ нийлдэг боловч $\\int_1^{+\\infty}f^2\\,dx$ сарних гэж батал.",
+"h": "Дирихле; $\\cos^2x=\\frac{1+\\cos2x}2$.",
+"a": "Дирихле: $\\cos x$-ийн анхдагч зааглагдсан, $x^{-1/4}\\downarrow0$. $f^2=\\frac{\\cos^2x}{\\sqrt x}=\\frac1{2\\sqrt x}+\\frac{\\cos2x}{2\\sqrt x}$: эхнийх сарна, хоёр нь нийлнэ."
+},
+"b3acf0ba21": {
+"p": "$\\displaystyle\\int_e^{+\\infty}\\frac{\\cos x}{\\ln^2x}\\,dx$ нөхцөлт нийлэхийг батал.",
+"h": "Дирихле; абсолютад $\\frac1{\\ln^2x}\\ge\\frac1x$.",
+"a": "$\\frac1{\\ln^2x}\\downarrow0$, $\\int\\cos x$ зааглагдсан тул нийлнэ. Абсолют: $\\frac{|\\cos x|}{\\ln^2x}\\ge\\frac{\\cos^2x}{x}$ ($\\ln^2x\\le x$) сарна."
+},
+"a7a49bc4c2": {
+"p": "$\\displaystyle\\int_0^{+\\infty}\\cos\\left(e^{2x}\\right)dx$ нийлэхийг батал.",
+"h": "$u=e^{2x}$ орлуул.",
+"a": "$\\frac12\\int_1^\\infty\\frac{\\cos u}{u}\\,du$, Дирихлегээр нийлнэ."
+},
+"ae788a6575": {
+"p": "$\\displaystyle\\int_1^{+\\infty}x^2\\cos\\left(x^4\\right)dx$ нийлэхийг батал. Интеграл доорх функц зааглагдаагүй гэдгийг анхаар.",
+"h": "$u=x^4$ орлуул.",
+"a": "$\\frac14\\int_1^\\infty u^{-1/4}\\cos u\\,du$, Дирихлегээр нийлнэ."
+},
+"62e52d7489": {
+"p": "$R_N=\\displaystyle\\sum_{n=N+1}^\\infty\\frac1{n^4}$ үлдэгдлийн хувьд $$\\frac{1}{3(N+1)^3}\\le R_N\\le\\frac1{3N^3}$$ гэж батал. $N=5$ үед $\\zeta(4)=\\sum\\frac1{n^4}$-ийг агуулах завсар бич ($S_5\\approx1{,}080352$).",
+"h": "$\\int_{N+1}^\\infty\\frac{dx}{x^4}\\le R_N\\le\\int_N^\\infty\\frac{dx}{x^4}$.",
+"a": "$1{,}08189\\lt\\zeta(4)\\lt1{,}08302$ ($S_5+\\frac1{3\\cdot6^3}$ ба $S_5+\\frac1{3\\cdot5^3}$)."
+},
+"1e9f1c2cb0": {
+"p": "$\\displaystyle\\lim_{N\\to\\infty}\\Bigl(\\sum_{k=1}^N\\frac1{\\sqrt[3]{k^2}}-3\\sqrt[3]N\\Bigr)$ хязгаар оршин байхыг батал.",
+"h": "Дараалал монотон ба зааглагдсан гэж харуул (интегралаар үнэл).",
+"a": "$a_N-a_{N-1}=N^{-2/3}-3(N^{1/3}-(N-1)^{1/3})\\le0$ (Лагранж), $\\sum_{k\\le N}k^{-2/3}\\ge\\int_1^{N+1}x^{-2/3}dx$ тул $a_N\\ge-3$; буурах ба доороос зааглагдсан."
+},
+"b689a25367": {
+"p": "Тооцоол: $(a)\\ \\displaystyle\\int_0^\\infty \\frac{dx}{x^2+6x+10}$; $(b)\\ \\displaystyle\\int_0^\\infty e^{-x}\\cos x\\,dx$; $(c)\\ \\displaystyle\\int_0^1 \\frac{x\\,dx}{\\sqrt{1-x^4}}$; $(d)\\ \\displaystyle\\int_2^\\infty\\frac{dx}{x\\ln^3 x}$.",
+"h": "(a) $\\arctan(x+3)$; (b) хэсэгчлэн; (c) $u=x^2$; (d) $u=\\ln x$.",
+"a": "(a) $\\arctan\\frac13$; (b) $\\frac12$; (c) $\\frac\\pi4$; (d) $\\frac1{2\\ln^22}$."
+},
+"fd1f55025b": {
+"p": "Нийлэлтийг шинжил: $(a)\\ \\displaystyle\\int_1^\\infty\\frac{x\\,dx}{x^3+\\cos x}$; $(b)\\ \\displaystyle\\int_1^\\infty\\frac{\\ln^2 x}{x^{3/2}}\\,dx$; $(c)\\ \\displaystyle\\int_0^1\\frac{dx}{\\sqrt{e^x - \\cos x}}$; $(d)\\ \\displaystyle\\int_0^1\\frac{\\ln x}{(1-x)^{3/2}}\\,dx$.",
+"h": "Эквивалент функцтэй харьцуул ($x\\to\\infty$, $x\\to0$, $x\\to1$).",
+"a": "Бүгд нийлнэ: (a) $\\sim x^{-2}$; (b) $\\ln^2x\\le Cx^{1/4}$ тул $\\lesssim x^{-5/4}$; (c) $\\sim x^{-1/2}$; (d) $0$-д логарифм, $1$-д $\\sim-(1-x)^{-1/2}$."
+},
+"eeb0dac107": {
+"p": "$p,q$-ийн ямар утгад $\\displaystyle\\int_0^\\infty\\frac{x^{p}}{(1+x^{q})^2}\\,dx$ ($q \\gt 0$) нийлэх вэ?",
+"h": "$0$ орчимд $x^p$, $\\infty$ орчимд $x^{p-2q}$.",
+"a": "$p\\gt-1$ ба $p\\lt2q-1$."
+},
+"a56ea45d71": {
+"p": "Абсолют, нөхцөлт нийлэлтийг шинжил: $(a)\\ \\displaystyle\\int_1^\\infty\\frac{\\ln x\\cos x}{x^p}\\,dx$ ($p \\gt 0$); $(b)\\ \\displaystyle\\int_0^\\infty\\frac{\\sqrt[3]{x}\\sin x}{x+5}\\,dx$.",
+"h": "Дирихле, $\\frac{\\ln x}{x^p}$ эцэст нь буурна; абсолютад харьцуулалт.",
+"a": "(a) абсолют $p\\gt1$; нөхцөлт $0\\lt p\\le1$. (b) нөхцөлт ($\\sim x^{-2/3}\\sin x$ тул Дирихлегээр нийлнэ, абсолют сарна)."
+},
+"4b03f9ca6b": {
+"p": "$\\displaystyle\\int_0^{\\infty}\\frac{1-\\cos x}{x^2}\\,dx$ нь $\\displaystyle\\int_0^{\\infty}\\frac{\\sin x}{x}\\,dx$-тэй тэнцүү гэдгийг хэсэгчлэн интегралчлах замаар харуул. Эхнийх нь абсолют нийлдгийг анхаар.",
+"h": "$u=1-\\cos x$, $dv=\\frac{dx}{x^2}$.",
+"a": "$\\bigl[-\\frac{1-\\cos x}{x}\\bigr]_0^\\infty+\\int_0^\\infty\\frac{\\sin x}x\\,dx$, зах дээрх гишүүд $0$. Нийлбэр $\\frac\\pi2$."
+},
+"bd70e9dfda": {
+"p": "$\\displaystyle\\int_0^{\\pi/2}\\ln\\tan x\\,dx$ нийлж, $0$-тэй тэнцүүг батал. (Заавар: $x=\\frac\\pi2-t$.)",
+"h": "Нийлэлт: $x\\to0$-д $\\ln x$, $\\frac\\pi2$-д $-\\ln(\\frac\\pi2-x)$.",
+"a": "$I=\\int_0^{\\pi/2}\\ln\\cot t\\,dt=-I$ тул $I=0$."
+},
+"480fee23c2": {
+"p": "$[0,\\infty)$ дээр тасралтгүй, сөрөг биш, зааглагдаагүй боловч $\\int_0^\\infty f\\,dx$ нийлдэг функцийн жишээ байгуул ($f(n)=n^2$ байхаар).",
+"h": "Бүхэл цэг дээр нарийн гурвалжин оргил.",
+"a": "$n\\ge1$ бүрд $n$ цэг дээр өндөр $n^2$, суурь $\\frac2{n^4}$ гурвалжин, бусад газар $0$; талбай $\\frac1{n^2}$, нийлбэр нь нийлнэ."
+},
+"25865f25d5": {
+"p": "$\\displaystyle\\int_{-\\infty}^{\\infty}\\frac{dx}{(x^2+4)^2}$. (Заавар: $x = 2\\tan t$.)",
+"h": "$dx=2\\sec^2t\\,dt$.",
+"a": "$\\frac{\\pi}{16}$."
+},
+"51e6398f82": {
+"p": "$\\displaystyle\\int_0^\\infty x^5e^{-x^2}\\,dx$.",
+"h": "$u=x^2$ ба хэсэгчлэн.",
+"a": "$1$."
+},
+"b4e1408d8b": {
+"p": "$\\displaystyle\\int_1^\\infty\\frac{dx}{x^2\\sqrt{x^2-1}}$.",
+"h": "$x=\\frac1{\\cos t}$.",
+"a": "$1$."
+},
+"e7b02f37bc": {
+"p": "$\\displaystyle\\int_0^1 x^n\\ln^2 x\\,dx$, $n\\in\\N$.",
+"h": "Хоёр удаа хэсэгчлэн.",
+"a": "$\\frac{2}{(n+1)^3}$."
+},
+"ecf092efbb": {
+"p": "$\\displaystyle\\int_1^\\infty\\frac{\\frac\\pi2-\\arctan x}{x^{p}}\\,dx$ — $p$-ээс хамааруулж.",
+"h": "$\\frac\\pi2-\\arctan x\\sim\\frac1x$ ($x\\to\\infty$).",
+"a": "Нийлнэ $\\iff p\\gt0$."
+},
+"7183f04b91": {
+"p": "$\\displaystyle\\int_0^\\infty\\frac{dx}{\\sqrt[4]{x}\\,(1+x)}$.",
+"h": "$x=t^4$ эсвэл бета функц: $\\int_0^\\infty\\frac{x^{a-1}}{1+x}dx=\\frac\\pi{\\sin\\pi a}$.",
+"a": "$\\pi\\sqrt2$."
+},
+"79ca6c6e81": {
+"p": "$\\displaystyle\\int_0^1\\frac{\\ln(1+x)}{x^{3/2}}\\,dx$.",
+"h": "$\\ln(1+x)\\sim x$ ($x\\to0$).",
+"a": "Нийлнэ (гишүүн $\\sim x^{-1/2}$)."
+},
+"7cdfdd1679": {
+"p": "$\\displaystyle\\int_0^{\\pi/2}\\tan^{p}x\\,dx$ — $p$-ээс хамааруулж.",
+"h": "$0$ орчимд $x^p$, $\\frac\\pi2$ орчимд $(\\frac\\pi2-x)^{-p}$.",
+"a": "Нийлнэ $\\iff-1\\lt p\\lt1$."
+},
+"20f8d79eb4": {
+"p": "$\\displaystyle\\int_0^\\infty \\frac{x^{s-1}}{e^x-1}\\,dx$ — ямар $s$-д нийлэх вэ?",
+"h": "$0$ орчимд $\\frac1{e^x-1}\\sim\\frac1x$, $\\infty$ орчимд экспоненциал буурна.",
+"a": "$s\\gt1$."
+},
+"bc3f23c012": {
+"p": "$\\displaystyle\\int_2^\\infty\\frac{\\sin x}{x^p\\ln x}\\,dx$ — $p\\gt0$-ээс хамааруулж абсолют/нөхцөлт нийлэлтийг тогтоо.",
+"h": "Дирихле; $p\\le1$ үед $|\\sin x|\\ge\\sin^2x$.",
+"a": "Абсолют: $p\\gt1$. Нөхцөлт: $0\\lt p\\le1$ ($p=1$ үед $\\int\\frac{dx}{x\\ln x}$ сарна)."
+},
+"37d16d6ce2": {
+"p": "$\\displaystyle\\int_0^\\infty \\sin(x^4)\\,dx$ нийлдгийг батал.",
+"h": "$u=x^4$ орлуул.",
+"a": "$\\frac14\\int_0^\\infty u^{-3/4}\\sin u\\,du$: $0$-д $\\sim u^{1/4}$ интегралчлагдана, $\\infty$-д Дирихле."
+},
+"dbd1055927": {
+"p": "$\\displaystyle\\int_1^\\infty\\frac{\\cos x}{x}\\Bigl(1+\\frac1x\\Bigr)^x\\,dx$ (Абелийн шинжүүр).",
+"h": "$\\int\\frac{\\cos x}x$ нийлнэ, $(1+\\frac1x)^x$ монотон зааглагдсан.",
+"a": "Нийлнэ (Абель)."
+},
+"aaf7799d5a": {
+"p": "$f\\gt0$ нь $[1,\\infty)$ дээр буурах бол $\\int_1^\\infty f\\,dx$ нийлэх нь $\\sum f(n)$ нийлэхтэй тэнцүү гэж батал.",
+"h": "$\\int_n^{n+1}f\\le f(n)\\le\\int_{n-1}^nf$.",
+"a": "Хэсэгчлэн нийлбэрийг интегралтай харьцуулж, эерэг гишүүнт тул хоёр тал нь зэрэг зааглагдана."
+},
+"9454e14c73": {
+"p": "$\\int_1^\\infty f$ нийлдэг, $\\int_1^\\infty f'$ абсолют нийлдэг бол $f(x)\\to0$ гэж батал.",
+"h": "$f(x)=f(1)+\\int_1^xf'$.",
+"a": "$\\int f'$ нийлэх тул $\\lim f(x)=L$ оршино; $\\int f$ нийлдэг тул $L=0$."
+},
+"a61662cee9": {
+"p": "$\\int_0^1 f^2$ нийлдэг бол $\\int_0^1|f|$ нийлнэ гэж батал, эсрэг нь худал болохыг жишээгээр харуул.",
+"h": "$|f|\\le\\frac{1+f^2}2$ эсвэл Коши-Буняковский.",
+"a": "$|f|\\le\\frac{1+f^2}2$. Жишээ: $f=x^{-1/2}$: $\\int_0^1f=2$, $\\int_0^1f^2=\\int\\frac{dx}x$ сарна."
+},
+"86bbe403eb": {
+"p": "$\\displaystyle\\int_0^{+\\infty}\\frac{dx}{1+x^4}$-ийг тооцоол.",
+"h": "$1+x^4=(x^2+\\sqrt2x+1)(x^2-\\sqrt2x+1)$.",
+"a": "$\\frac{\\pi}{2\\sqrt2}$."
+},
+"0d5414d2c7": {
+"p": "$a\\gt0$, $b\\in\\R$ бол $\\displaystyle\\int_0^{+\\infty}e^{-ax}\\sin bx\\,dx=\\frac{b}{a^2+b^2}$ гэж батал.",
+"h": "Хоёр удаа хэсэгчлэн эсвэл $\\operatorname{Im}\\int e^{(-a+ib)x}dx$.",
+"a": "$\\operatorname{Im}\\frac1{a-ib}=\\frac b{a^2+b^2}$."
+},
+"50bc920bff": {
+"p": "$p\\in\\R$-ийн утгаас хамааруулан $\\displaystyle\\int_0^{+\\infty}\\frac{\\sin(x^2)}{x^p}\\,dx$-ийн абсолют ба нөхцөлт нийлэлтийг шинжил.",
+"h": "$u=x^2$ орлуулж $\\frac12\\int\\frac{\\sin u}{u^{(p+1)/2}}du$ болго.",
+"a": "Нийлнэ $\\iff-1\\lt p\\lt3$. Абсолют: $1\\lt p\\lt3$; нөхцөлт: $-1\\lt p\\le1$."
+},
+"4022b68324": {
+"p": "$\\displaystyle\\int_0^{+\\infty}e^{-x^3}\\,dx$ нийлэхийг батлаад, $\\displaystyle\\int_0^{+\\infty}e^{-x^3}\\,dx\\le1+\\frac1e$ гэж үнэл.",
+"h": "$[0,1]$ дээр $e^{-x^3}\\le1$, $x\\ge1$ үед $x^3\\ge x$.",
+"a": "$\\int_0^1\\le1$, $\\int_1^\\infty e^{-x^3}\\le\\int_1^\\infty e^{-x}=\\frac1e$."
+},
+"72e4f02c41": {
+"p": "$0\\lt a\\lt b$ бол $\\displaystyle\\int_0^{+\\infty}\\frac{e^{-ax^2}-e^{-bx^2}}{x^2}\\,dx=\\sqrt\\pi(\\sqrt b-\\sqrt a)$ гэж батал.",
+"h": "$\\frac{e^{-ax^2}-e^{-bx^2}}{x^2}=\\int_a^be^{-tx^2}dt$, дараа нь интегралын дарааллыг солих.",
+"a": "$\\int_a^b\\int_0^\\infty e^{-tx^2}dx\\,dt=\\int_a^b\\frac{\\sqrt\\pi}{2\\sqrt t}dt=\\sqrt\\pi(\\sqrt b-\\sqrt a)$."
+}
+}

@@ -1,0 +1,287 @@
+{
+ "afb8401b36": {
+  "p": "$\\displaystyle\\sum_{n=1}^\\infty\\frac1{n(n+1)(n+2)(n+3)}$-ийн нийлбэрийг ол.",
+  "h": "Хэсэгт задалж телескоп нийлбэр болго.",
+  "a": "$\\frac1{18}$"
+ },
+ "4fdb7c233d": {
+  "p": "$\\displaystyle\\sum_{n=1}^\\infty\\frac{n}{3^n}$-ийн нийлбэрийг ол.",
+  "h": "$\\sum nx^n=\\frac{x}{(1-x)^2}$ эсвэл $S-\\frac S3$ аргаар ол.",
+  "a": "$\\frac34$"
+ },
+ "d6b7160d23": {
+  "p": "$\\displaystyle\\sum_{n=1}^\\infty\\left(\\frac1{\\sqrt n}-\\frac1{\\sqrt{n+1}}\\right)$ цуваа нийлэх үү? Нийлбэрийг ол.",
+  "h": "Хэсэгчилсэн нийлбэр $S_N=1-\\frac1{\\sqrt{N+1}}$.",
+  "a": "Нийлнэ, нийлбэр нь $1$."
+ },
+ "b1ab0a75c1": {
+  "p": "Нийлэлтийн зайлшгүй нөхцлийг ашиглан дараах цуваанууд сарнина гэж харуул: $\\displaystyle\\sum_{n=1}^\\infty n\\tan\\frac1n$; $\\displaystyle\\sum_{n=1}^\\infty\\left(\\frac n{n+1}\\right)^n$.",
+  "h": "Ерөнхий гишүүний хязгаарыг ол.",
+  "a": "$n\\tan\\frac1n\\to1\\neq0$; $\\left(\\frac n{n+1}\\right)^n\\to\\frac1e\\neq0$."
+ },
+ "fbea1a70ff": {
+  "p": "$\\displaystyle\\sum_{n=1}^\\infty\\frac1{\\sqrt[3]n}$ цувааны хувьд $S_n\\geq n^{2/3}$ гэж баталж, цуваа сарнина гэж дүгнэ.",
+  "h": "Гишүүн бүр $\\geq n^{-1/3}$.",
+  "a": "$S_n\\geq n\\cdot n^{-1/3}=n^{2/3}\\to\\infty$ тул сарнина."
+ },
+ "6058ac700e": {
+  "p": "$\\sum a_n$ нийлдэг бол $a_n\\to0$ гэж батал.",
+  "h": "$a_n=S_n-S_{n-1}$.",
+  "a": "$S_n\\to S$, $S_{n-1}\\to S$ тул $a_n\\to0$."
+ },
+ "e6302adbc5": {
+  "p": "Кошийн шалгуурыг ашиглан $\\displaystyle\\sum_{n=1}^\\infty\\frac1{n^3}$ нийлнэ гэж батал.",
+  "h": "$\\frac1{k^3}\\leq\\frac1{k(k-1)}$ ашиглан $|S_m-S_n|$-ийг үнэл.",
+  "a": "$|S_m-S_n|\\leq\\sum_{k=n+1}^m\\left(\\frac1{k-1}-\\frac1k\\right)\\lt\\frac1n\\to0$."
+ },
+ "f4b3380ef4": {
+  "p": "$\\displaystyle\\sum_{n=1}^\\infty\\left(\\frac4{3^n}-\\frac5{4^n}\\right)$-ийн нийлбэрийг ол.",
+  "h": "Геометр цувааны нийлбэр.",
+  "a": "$2-\\frac53=\\frac13$"
+ },
+ "2e2cb541b5": {
+  "p": "$\\sum a_n$ нийлдэг, $\\sum b_n$ сарнидаг бол $\\sum(2a_n-b_n)$ сарнина гэж батал. Хоёулаа сарнидаг $\\sum a_n$, $\\sum b_n$-ийн хувьд $\\sum(a_n-b_n)$ нийлэх жишээ гарга.",
+  "h": "Эсрэгээр таамаглаж зөрүүгээр $\\sum b_n$-ийг илэрхийл.",
+  "a": "Нийлдэг бол $b_n=2a_n-(2a_n-b_n)$ нийлнэ, зөрчил. Жишээ: $a_n=b_n=1$."
+ },
+ "6fe4010cfc": {
+  "p": "$(n-1)!\\geq2^{n-2}$ ($n\\geq2$) гэдгийг ашиглан $\\displaystyle\\sum_{n=1}^\\infty\\frac n{n!}$ нийлэх ба нийлбэр нь $3$-аас хэтрэхгүй гэж батал.",
+  "h": "$\\frac n{n!}=\\frac1{(n-1)!}$.",
+  "a": "$S\\leq1+\\sum_{n\\geq2}2^{-(n-2)}=1+2=3$; хэсэгчилсэн нийлбэр өсөх ба зааглагдсан."
+ },
+ "c5a9bc1352": {
+  "p": "$a_n\\geq0$, $\\sum a_n$ нийлдэг бол $\\displaystyle\\sum_{n=1}^\\infty a_na_{n+1}$ нийлнэ гэж батал.",
+  "h": "$a_n\\to0$ тул хэдэн ч гишүүнээс хойш $a_n\\leq1$.",
+  "a": "Үүнээс хойш $0\\leq a_na_{n+1}\\leq a_{n+1}$; харьцуулах шинжүүр."
+ },
+ "2dacc9cbf0": {
+  "p": "Нийлэх эсэхийг шинжил: $\\displaystyle\\sum_{n=1}^\\infty\\frac{3+\\cos n}{n}$; $\\displaystyle\\sum_{n=1}^\\infty\\frac{n+1}{n^3+2}$; $\\displaystyle\\sum_{n=1}^\\infty\\arctan\\frac1{n^2}$.",
+  "h": "Харьцуулах шинжүүр, $\\arctan t\\leq t$.",
+  "a": "Сарнина ($\\geq\\frac2n$); нийлнэ ($\\leq\\frac2{n^2}$); нийлнэ ($\\leq\\frac1{n^2}$)."
+ },
+ "f633b85a10": {
+  "p": "$a_n\\geq0$ ба $\\sum a_n^2$ нийлдэг бол $\\displaystyle\\sum_{n=1}^\\infty\\frac{a_n}{n}$ нийлнэ гэж батал.",
+  "h": "Коши-Шварц эсвэл $\\frac{a_n}n\\leq\\frac12\\left(a_n^2+\\frac1{n^2}\\right)$.",
+  "a": "$\\frac{a_n}{n}\\leq\\frac12\\left(a_n^2+\\frac1{n^2}\\right)$ ба хоёр цуваа нийлнэ."
+ },
+ "e29a54b419": {
+  "p": "$p$-ийн ямар утгад $\\displaystyle\\sum_{n=1}^\\infty\\frac{\\sqrt[3]{n^3+1}-n}{n^p}$ нийлэх вэ?",
+  "h": "$\\sqrt[3]{n^3+1}-n\\sim\\frac1{3n^2}$.",
+  "a": "Ерөнхий гишүүн $\\sim\\frac1{3n^{p+2}}$; $p\\gt-1$ үед нийлнэ."
+ },
+ "d0f2c6414a": {
+  "p": "$\\displaystyle\\sum_{n=1}^\\infty\\left(\\tan\\frac1n-\\frac1n\\right)$ нийлэх эсэхийг шинжил.",
+  "h": "$\\tan t-t\\sim\\frac{t^3}{3}$.",
+  "a": "Нийлнэ ($\\sim\\frac1{3n^3}$)."
+ },
+ "39ccf36092": {
+  "p": "Даламбертын шинжүүрээр шинжил: $\\displaystyle\\sum_{n=1}^\\infty\\frac{n^3}{3^n}$; $\\displaystyle\\sum_{n=1}^\\infty\\frac{n!}{n^n}$; $\\displaystyle\\sum_{n=1}^\\infty\\frac{(2n)!}{(n!)^2\\,3^n}$.",
+  "h": "$L=\\lim\\frac{a_{n+1}}{a_n}$, $\\left(1+\\frac1n\\right)^n\\to e$.",
+  "a": "$L=\\frac13$ нийлнэ; $L=\\frac1e$ нийлнэ; $L=\\frac43$ сарнина."
+ },
+ "28df604313": {
+  "p": "$\\sum\\frac1n$ ба $\\sum\\frac1{n^3}$ цуваануудын хувьд $\\lim\\frac{a_{n+1}}{a_n}$-ийг олж, $L=1$ үед Даламбертын шинжүүр яагаад хариу өгдөггүйг тайлбарла.",
+  "h": "Хоёуланд $L=1$ боловч нэг нь сарнина, нөгөө нь нийлнэ.",
+  "a": "Хоёуланд $L=1$; гэвч $\\sum\\frac1n$ сарнина, $\\sum\\frac1{n^3}$ нийлнэ."
+ },
+ "f085a520c9": {
+  "p": "Кошийн шинжүүрээр шинжил: $\\displaystyle\\sum_{n=1}^\\infty\\frac{n^7}{3^n}$; $\\displaystyle\\sum_{n=1}^\\infty\\frac1{4^n}\\left(1+\\frac1n\\right)^{n^2}$.",
+  "h": "$\\sqrt[n]{a_n}$-ийн хязгаар.",
+  "a": "$\\frac13$ нийлнэ; $\\frac e4\\lt1$ нийлнэ."
+ },
+ "19ecf8f1d2": {
+  "p": "$\\displaystyle\\sum_{n=1}^\\infty e^n\\left(1-\\frac1n\\right)^{n^2}$ цувааны хувьд Кошийн шинжүүр хариу өгөхгүйг харуулж, цуваа сарнина гэж батал.",
+  "h": "Ерөнхий гишүүний хязгаарыг ол.",
+  "a": "$\\sqrt[n]{a_n}\\to e\\cdot e^{-1}=1$; $a_n\\to e^{-1/2}\\neq0$ тул сарнина."
+ },
+ "c8d139f4ef": {
+  "p": "Интеграл шинжүүрээр $\\displaystyle\\sum_{n=1}^\\infty n^2e^{-n^3}$ нийлэх эсэхийг шинжил.",
+  "h": "$f(x)=x^2e^{-x^3}$ буурдаг ($x\\geq1$), $u=x^3$.",
+  "a": "$\\int_1^\\infty x^2e^{-x^3}dx=\\frac1{3e}$ төгсгөлөг тул нийлнэ."
+ },
+ "a7c802ee96": {
+  "p": "$r_N=\\displaystyle\\sum_{n=N+1}^\\infty\\frac1{n^3}$ үлдэгдлийн хувьд $\\dfrac1{2(N+1)^2}\\lt r_N\\lt\\dfrac1{2N^2}$ гэж батал. Дээд үнэлгээгээр $r_N\\lt0.005$ байх нь баталгаатай хамгийн бага $N$-ийг ол.",
+  "h": "$\\int_{N+1}^\\infty\\frac{dx}{x^3}\\lt r_N\\lt\\int_N^\\infty\\frac{dx}{x^3}$.",
+  "a": "$\\frac1{2N^2}\\leq0.005\\iff N\\geq10$; хамгийн бага $N=10$."
+ },
+ "78788fa10a": {
+  "p": "$\\displaystyle\\sum_{k=1}^n\\frac1{k^2}\\leq2-\\frac1n$ гэж батал.",
+  "h": "$k\\geq2$-д $\\frac1{k^2}\\lt\\frac1{k-1}-\\frac1k$.",
+  "a": "Телескоп: $\\sum_{k=1}^n\\frac1{k^2}\\lt1+\\left(1-\\frac1n\\right)$."
+ },
+ "e7fafe9a10": {
+  "p": "Нийлэлтийн зайлшгүй нөхцөл, геометр эсвэл телескоп цувааг ашиглан шалга: $(a)\\ \\sum\\frac{n^2}{3n^2+1}$; $(b)\\ \\sum\\frac{2^n+4^n}{5^n}$; $(c)\\ \\sum\\frac1{(3n-1)(3n+2)}$.",
+  "h": "Ерөнхий гишүүний хязгаар, геометр нийлбэр, хэсэгт задалга.",
+  "a": "(a) $\\to\\frac13\\neq0$ сарнина; (b) нийлнэ, нийлбэр $\\frac23+4=\\frac{14}3$; (c) нийлнэ, нийлбэр $\\frac16$."
+ },
+ "4b1959b8c0": {
+  "p": "Харьцуулах шинжүүр: $(a)\\ \\sum\\frac1{n^2+5n}$; $(b)\\ \\sum\\frac{n}{n^{3/2}+1}$; $(c)\\ \\sum\\frac{\\cos^2n}{n^2}$; $(d)\\ \\sum\\frac1{3n+1}$.",
+  "h": "Тохирох $p$-цувааг сонго.",
+  "a": "(a) нийлнэ ($\\leq\\frac1{n^2}$); (b) сарнина ($\\geq\\frac1{2\\sqrt n}$); (c) нийлнэ ($\\leq\\frac1{n^2}$); (d) сарнина ($\\geq\\frac1{4n}$)."
+ },
+ "944074e4f5": {
+  "p": "Даламбертын шинжүүр: $(a)\\ \\sum\\frac{5^n}{n!}$; $(b)\\ \\sum\\frac{4^nn!}{n^n}$; $(c)\\ \\sum\\frac{3^n(n!)^2}{(2n)!}$.",
+  "h": "$\\frac{a_{n+1}}{a_n}$-ийн хязгаар.",
+  "a": "(a) $L=0$ нийлнэ; (b) $L=\\frac4e\\gt1$ сарнина; (c) $L=\\frac34$ нийлнэ."
+ },
+ "56a1c40eaa": {
+  "p": "Кошийн шинжүүр: $(a)\\ \\sum\\left(\\frac{3n+1}{2n+5}\\right)^n$; $(b)\\ \\sum\\left(1+\\frac1n\\right)^{-n^2}$.",
+  "h": "$\\sqrt[n]{a_n}$-ийн хязгаар.",
+  "a": "(a) $\\frac32\\gt1$ сарнина; (b) $\\frac1e\\lt1$ нийлнэ."
+ },
+ "7ab06d5078": {
+  "p": "Интеграл шинжүүрээр $\\sum\\frac{\\ln n}{n^{3/2}}$ нийлэх эсэхийг шалга.",
+  "h": "$f(x)=\\frac{\\ln x}{x^{3/2}}$ нь $x\\geq2$ үед буурна.",
+  "a": "$\\int_2^\\infty\\frac{\\ln x}{x^{3/2}}dx=\\left[-\\frac{2\\ln x+4}{\\sqrt x}\\right]_2^\\infty$ төгсгөлөг тул нийлнэ."
+ },
+ "7e674d1667": {
+  "p": "$a_n,b_n\\gt0$, $\\sum a_n^2$ ба $\\sum b_n^2$ нийлдэг бол $\\sum a_nb_n$ мөн нийлнэ гэж батал. Мөн $\\sum a_n^2$ нийлдэг боловч $\\sum a_n$ зөрдөг жишээ гарга.",
+  "h": "$a_nb_n\\leq\\frac12(a_n^2+b_n^2)$.",
+  "a": "Харьцуулах шинжүүр. Жишээ: $a_n=\\frac1n$."
+ },
+ "80d15b68d6": {
+  "p": "Бүлэглэх аргаар $\\sum\\frac1{2n+1}$ сарнина гэдгийг интеграл шинжүүр ашиглахгүйгээр батал.",
+  "h": "$2^k\\lt n\\leq2^{k+1}$ гишүүдийг бүлэглэ.",
+  "a": "Бүлэг бүрийн нийлбэр $\\geq2^k\\cdot\\frac1{2^{k+2}+1}\\geq\\frac1{5}$; тул хэсэгчилсэн нийлбэр хязгааргүй."
+ },
+ "9615d65878": {
+  "p": "Асимптот харьцуулалтаар нийлэлтийг шалга: $(a)\\ \\sum\\bigl(\\sqrt{n^2+3}-n\\bigr)$; $(b)\\ \\sum\\Bigl(1-\\cos\\frac2n\\Bigr)$; $(c)\\ \\sum\\bigl(\\sqrt[n]2-1\\bigr)$; $(d)\\ \\sum\\bigl(\\sqrt[n^3]n-1\\bigr)$.",
+  "h": "$e^t-1\\sim t$, $1-\\cos t\\sim\\frac{t^2}2$.",
+  "a": "(a) $\\sim\\frac3{2n}$ сарнина; (b) $\\sim\\frac2{n^2}$ нийлнэ; (c) $\\sim\\frac{\\ln2}n$ сарнина; (d) $\\sim\\frac{\\ln n}{n^3}$ нийлнэ."
+ },
+ "20908eaca4": {
+  "p": "$a\\gt0$ параметрийн ямар утгад $\\displaystyle\\sum_{n=1}^\\infty3^{-a\\ln n}$ нийлэх вэ?",
+  "h": "$3^{-a\\ln n}=n^{-a\\ln3}$.",
+  "a": "$p$-цуваа: $a\\ln3\\gt1$, өөрөөр хэлбэл $a\\gt\\frac1{\\ln3}$."
+ },
+ "b16c3c61e6": {
+  "p": "Нийлэлтийг шалга: $(a)\\ \\displaystyle\\sum_{n=3}^\\infty\\frac1{(\\ln n)^{2\\ln n}}; \\qquad (b)\\ \\displaystyle\\sum_{n=3}^\\infty\\frac1{(\\ln n)^{3\\ln\\ln n}}$.",
+  "h": "$(\\ln n)^{c\\ln n}=n^{c\\ln\\ln n}$ ба $(\\ln n)^{3\\ln\\ln n}=e^{3(\\ln\\ln n)^2}$.",
+  "a": "(a) $n^{-2\\ln\\ln n}\\leq n^{-2}$ ($n\\geq16$), нийлнэ; (b) $e^{-3(\\ln\\ln n)^2}\\geq\\frac1n$ их $n$-д, сарнина."
+ },
+ "31c5401d20": {
+  "p": "$\\displaystyle\\sum_{n=1}^\\infty3^{(-1)^n-n}$ цувааны хувьд Даламбертын шинжүүр хариу өгөхгүй, харин Кошийн шинжүүр нийлэхийг харуул.",
+  "h": "$\\frac{a_{n+1}}{a_n}$ нь $\\frac1{27}$ ба $3$-ыг ээлжилнэ.",
+  "a": "Харьцаа $\\frac1{27}$, $3$ ээлжилж хязгааргүй; $\\sqrt[n]{a_n}\\to\\frac13\\lt1$ тул нийлнэ."
+ },
+ "501bce4503": {
+  "p": "$a_n\\geq0$ буурдаг бол $\\frac12\\sum_{k=1}^m2^ka_{2^k}\\leq\\sum_{n=1}^{2^m}a_n\\leq a_1+\\sum_{k=1}^{m-1}2^ka_{2^k}+a_{2^m}$ гэж батал. Үүнийг ашиглан $\\displaystyle\\sum\\frac1{n^p}$-ийг шинжил.",
+  "h": "$2^{k-1}\\lt n\\leq2^k$ бүлгийг үнэл.",
+  "a": "Бүлэг бүрд $a_{2^k}\\leq a_n\\leq a_{2^{k-1}}$. $\\sum\\frac1{n^p}$ нь $\\sum2^{k(1-p)}$-тэй адил: $p\\gt1$ нийлнэ, $p\\leq1$ сарнина."
+ },
+ "c37705fd4b": {
+  "p": "$a_n\\gt0$, $\\sum a_n$ сарнидаг, $S_n=a_1+\\dots+a_n$ гэе. Тэгвэл $(a)\\ \\sum\\frac{a_n}{1+S_n}$ сарнина; $(b)\\ \\sum\\frac{a_n}{(1+S_n)^2}$ нийлнэ.",
+  "h": "(a) Кошийн шалгуур; (b) телескоп.",
+  "a": "(a) $\\sum_{k=n+1}^m\\frac{a_k}{1+S_k}\\geq\\frac{S_m-S_n}{1+S_m}\\to1$; (b) $\\frac{a_n}{(1+S_n)^2}\\leq\\frac1{1+S_{n-1}}-\\frac1{1+S_n}$."
+ },
+ "407b8baee9": {
+  "p": "$\\displaystyle\\sum_{n=1}^\\infty\\left[\\left(1+\\frac1n\\right)^{n+1}-e\\right]$ сарнах ба $\\displaystyle\\sum_{n=1}^\\infty\\left[\\left(1+\\frac1n\\right)^{n+1}-e\\right]^2$ нийлэхийг батал.",
+  "h": "$n\\left[\\left(1+\\frac1n\\right)^{n+1}-e\\right]\\to\\frac e2$.",
+  "a": "Ерөнхий гишүүн $\\sim\\frac e{2n}$ тул сарнина; квадрат нь $\\sim\\frac{e^2}{4n^2}$ тул нийлнэ."
+ },
+ "9160d31fea": {
+  "p": "$\\displaystyle\\sum_{n=1}^\\infty\\frac1{n(n+2)}$. (Хэсэгт задлан телескоп нийлбэр.)",
+  "h": "$\\frac1{n(n+2)}=\\frac12\\left(\\frac1n-\\frac1{n+2}\\right)$.",
+  "a": "$\\frac34$"
+ },
+ "b8f45331a0": {
+  "p": "$\\displaystyle\\sum_{n=1}^\\infty\\frac1{(4n-3)(4n+1)}$. (Хэсэгт задлан хялбарчил.)",
+  "h": "$\\frac14\\left(\\frac1{4n-3}-\\frac1{4n+1}\\right)$.",
+  "a": "$\\frac14$"
+ },
+ "393c2a4d51": {
+  "p": "$\\displaystyle\\sum_{n=1}^\\infty\\arctan\\frac2{n^2}$. (Заавар: $\\arctan a-\\arctan b=\\arctan\\frac{a-b}{1+ab}$ томьёонд $a=n+1$, $b=n-1$ тавь.)",
+  "h": "$\\arctan\\frac2{n^2}=\\arctan(n+1)-\\arctan(n-1)$.",
+  "a": "$\\frac{3\\pi}4$"
+ },
+ "0c8cf3c5c5": {
+  "p": "$\\displaystyle\\sum_{n=1}^\\infty\\frac1{\\sqrt{n(n+2)}}$.",
+  "h": "$\\sqrt{n(n+2)}\\leq n+1$.",
+  "a": "Сарнина ($\\geq\\frac1{n+1}$)."
+ },
+ "78fd9b57ae": {
+  "p": "$\\displaystyle\\sum_{n=1}^\\infty\\frac{2n+1}{n^3+n+2}$.",
+  "h": "$\\frac1{n^2}$-тай харьцуул.",
+  "a": "Нийлнэ ($\\leq\\frac3{n^2}$)."
+ },
+ "a46196d1fc": {
+  "p": "$\\displaystyle\\sum_{n=1}^\\infty\\sin\\frac3{n^{3/2}}$. (Заавар: бага утганд $\\sin x\\sim x$.)",
+  "h": "$0\\lt\\sin x\\leq x$.",
+  "a": "Нийлнэ ($\\leq\\frac3{n^{3/2}}$)."
+ },
+ "16c6c0b76d": {
+  "p": "$\\displaystyle\\sum_{n=1}^\\infty\\ln\\!\\left(1+\\frac1{n^{3/2}}\\right)$.",
+  "h": "$\\ln(1+t)\\leq t$.",
+  "a": "Нийлнэ ($\\leq n^{-3/2}$)."
+ },
+ "ff1381a26c": {
+  "p": "$\\displaystyle\\sum_{n=1}^\\infty\\frac1{n^{1+1/\\sqrt n}}$. (Заавар: $n^{1/\\sqrt n}\\to1$.)",
+  "h": "Хязгаарын харьцуулах шинжүүр $\\frac1n$-тэй.",
+  "a": "Сарнина."
+ },
+ "0fb39195ca": {
+  "p": "$\\displaystyle\\sum_{n=1}^\\infty\\frac{100^n}{n!}$.",
+  "h": "Даламбертын шинжүүр.",
+  "a": "$\\frac{100}{n+1}\\to0$ тул нийлнэ."
+ },
+ "906f0cad7d": {
+  "p": "$\\displaystyle\\sum_{n=1}^\\infty\\frac{(n!)^3}{(3n)!}$.",
+  "h": "Даламбертын шинжүүр.",
+  "a": "$L=\\frac1{27}$ тул нийлнэ."
+ },
+ "352c97f1a0": {
+  "p": "$\\displaystyle\\sum_{n=1}^\\infty\\frac{2^n\\cdot n!}{n^n}$. (Заавар: $\\left(\\frac n{n+1}\\right)^n\\to\\frac1e$.)",
+  "h": "Даламбертын шинжүүр.",
+  "a": "$L=\\frac2e\\lt1$ тул нийлнэ."
+ },
+ "10105b64f4": {
+  "p": "$\\displaystyle\\sum_{n=1}^\\infty\\left(\\frac n{2n+1}\\right)^n$.",
+  "h": "Кошийн шинжүүр.",
+  "a": "$\\sqrt[n]{a_n}\\to\\frac12$ тул нийлнэ."
+ },
+ "bd196446f5": {
+  "p": "$\\displaystyle\\sum_{n=1}^\\infty\\left(\\frac{n+1}{n+2}\\right)^{n^2}$.",
+  "h": "Кошийн шинжүүр, $\\left(\\frac{n+1}{n+2}\\right)^n\\to\\frac1e$.",
+  "a": "$\\sqrt[n]{a_n}\\to\\frac1e\\lt1$ тул нийлнэ."
+ },
+ "9c6a236df4": {
+  "p": "$\\displaystyle\\sum_{n=2}^\\infty\\left(\\frac{\\ln n}n\\right)^n$.",
+  "h": "Кошийн шинжүүр.",
+  "a": "$\\sqrt[n]{a_n}=\\frac{\\ln n}n\\to0$ тул нийлнэ."
+ },
+ "ee93267f35": {
+  "p": "$\\displaystyle\\sum_{n=2}^\\infty\\frac1{n\\sqrt{\\ln n}}$.",
+  "h": "Интеграл шинжүүр, $u=\\ln x$.",
+  "a": "$\\int\\frac{dx}{x\\sqrt{\\ln x}}=2\\sqrt{\\ln x}\\to\\infty$ тул сарнина."
+ },
+ "e55253e1de": {
+  "p": "$\\displaystyle\\sum_{n=1}^\\infty\\frac n{1+n^4}$. (Заавар: $u=x^2$ орлуулга интегралд.)",
+  "h": "Интеграл шинжүүр.",
+  "a": "$\\int_1^\\infty\\frac{x\\,dx}{1+x^4}=\\frac12\\left(\\frac\\pi2-\\frac\\pi4\\right)$ төгсгөлөг тул нийлнэ."
+ },
+ "e51c0a424d": {
+  "p": "$\\displaystyle\\sum_{n=1}^\\infty\\frac{2n+3}{(n+1)^2(n+2)^2}$-ийн нийлбэрийг ол.",
+  "h": "$\\frac{2n+3}{(n+1)^2(n+2)^2}=\\frac1{(n+1)^2}-\\frac1{(n+2)^2}$.",
+  "a": "$\\frac14$"
+ },
+ "fc61930e67": {
+  "p": "$\\displaystyle\\sum_{n=2}^\\infty\\ln\\frac{n^3-1}{n^3+1}$-ийн нийлбэрийг ол.",
+  "h": "Үржвэрийг $\\frac{n-1}{n+1}\\cdot\\frac{n^2+n+1}{n^2-n+1}$ гэж задал.",
+  "a": "$\\ln\\frac23$"
+ },
+ "cb4e44944c": {
+  "p": "$a\\gt0$ параметрийн ямар утгад $\\displaystyle\\sum_{n=1}^\\infty\\frac{(an)^n}{n!}$ нийлэх вэ? $a=\\frac1e$ тохиолдлыг тусад нь шинжил.",
+  "h": "Даламбертын шинжүүрээр $L=ae$; $a=\\frac1e$-д $n!\\leq e\\sqrt n\\,(n/e)^n$ ашигла.",
+  "a": "$a\\lt\\frac1e$ нийлнэ; $a\\gt\\frac1e$ сарнина; $a=\\frac1e$ үед гишүүн $\\geq\\frac1{e\\sqrt n}$ тул сарнина."
+ },
+ "4ccdcf9da4": {
+  "p": "$\\{a_n\\}$ сөрөг биш, монотон буурах бөгөөд $\\sum a_n$ нийлдэг бол $\\sum n(a_n-a_{n+1})=\\sum a_n$ гэж батал. ($na_n\\to0$ гэдгийг ашиглаж болно.)",
+  "h": "$\\sum_{n=1}^Nn(a_n-a_{n+1})=S_N-Na_{N+1}$.",
+  "a": "$S_N-Na_{N+1}\\to S-0=S$."
+ },
+ "e0eca6e16a": {
+  "p": "$\\displaystyle\\sum_{n=2}^\\infty\\frac1{n^{1+\\ln\\ln n/\\ln n}}$ нийлэх эсэхийг шинжил. Илтгэгч $1+\\frac{\\ln\\ln n}{\\ln n}\\gt1$ байгаа ч $p$-цувааны теоремыг яагаад шууд хэрэглэж болохгүй вэ?",
+  "h": "$n^{\\ln\\ln n/\\ln n}=\\ln n$.",
+  "a": "Гишүүн $\\frac1{n\\ln n}$, сарнина. Илтгэгч $1$ руу тэмүүлдэг тул ямар нэг $p\\gt1$-ээр доороос нь хязгаарлаж болохгүй."
+ }
+}

@@ -1,0 +1,242 @@
+{
+"281e77f8d3": {
+"p": "$F(y)=\\displaystyle\\int_0^y\\frac{e^{xy}-1}{x}\\,dx$ бол $y\\neq0$ үед $F^{\\prime}(y)$-ийг ол. Хариугаа $u=xy$ орлуулгаар шалга.",
+"h": "Лейбницийн дүрэм: дээд хязгаарын уламжлал ба интеграл дотрох уламжлал.",
+"a": "$F^{\\prime}(y)=\\frac{e^{y^2}-1}{y}+\\int_0^ye^{xy}dx=\\frac{2(e^{y^2}-1)}y$; $F=\\int_0^{y^2}\\frac{e^u-1}udu$ тул $F^{\\prime}=2y\\frac{e^{y^2}-1}{y^2}$ нийцнэ."
+},
+"268bd8a5c4": {
+"p": "$a\\gt-1$ үед $$I(a)=\\int_0^1\\frac{x^a-1}{\\ln x}\\,dx=\\ln(1+a)$$ гэж батал.",
+"h": "$a$-аар дифференциалчилж $I^{\\prime}(a)=\\int_0^1x^adx$; $I(0)=0$.",
+"a": "$I^{\\prime}(a)=\\frac1{1+a}$, $I(0)=0$ тул $I(a)=\\ln(1+a)$."
+},
+"75c4d60917": {
+"p": "$\\displaystyle\\int_0^\\infty ye^{-xy}\\,dx$ нь $[y_0,\\infty)$ ($y_0\\gt0$) дээр жигд нийлж, $(0,\\infty)$ дээр жигд нийлэхгүйг батал.",
+"h": "Үлдэгдэл $\\int_A^\\infty ye^{-xy}dx=e^{-Ay}$-ийг үнэл.",
+"a": "$[y_0,\\infty)$: $e^{-Ay}\\leq e^{-Ay_0}\\to0$. $(0,\\infty)$: $y=\\frac1A$ үед үлдэгдэл $e^{-1}$, $0$ руу тэмүүлэхгүй."
+},
+"10778e0871": {
+"p": "$\\displaystyle\\int_1^\\infty\\frac{\\cos x}{\\sqrt{x+y}}\\,dx$ нь $y\\in[0,\\infty)$ дээр жигд нийлдгийг батал.",
+"h": "Дирихлегийн жигд шинж.",
+"a": "$|\\int_1^b\\cos x\\,dx|\\leq2$; $\\frac1{\\sqrt{x+y}}$ нь $x$-ээр монотон буурч, $\\leq\\frac1{\\sqrt x}\\to0$ ($y$-аас үл хамаарч жигд)."
+},
+"de8d1670d1": {
+"p": "$\\displaystyle\\int_1^\\infty x^{-y}\\,dx$ нь $[y_0,\\infty)$ ($y_0\\gt1$) дээр жигд нийлж, $(1,\\infty)$ дээр жигд нийлэхгүйг батал.",
+"h": "Үлдэгдэл $\\int_A^\\infty x^{-y}dx=\\frac{A^{1-y}}{y-1}$.",
+"a": "$y\\geq y_0$: үлдэгдэл $\\leq\\frac{A^{1-y_0}}{y_0-1}\\to0$. $(1,\\infty)$: $y\\to1+$ үед үлдэгдэл $\\to\\infty$."
+},
+"33f59cfb06": {
+"p": "$F(y)=\\displaystyle\\int_0^\\infty e^{-x}\\frac{\\sin yx}{x}\\,dx=\\arctan y$ гэж батал.",
+"h": "$y$-аар дифференциалчил: $F^{\\prime}=\\int_0^\\infty e^{-x}\\cos yx\\,dx$.",
+"a": "$F^{\\prime}(y)=\\frac1{1+y^2}$ ба $F(0)=0$ тул $F=\\arctan y$."
+},
+"5bffd6eccc": {
+"p": "$f(x,y)=(1-xy)e^{-xy}$ гэе. $$\\int_0^1dy\\int_0^\\infty f(x,y)\\,dx\\quad\\text{ба}\\quad\\int_0^\\infty dx\\int_0^1f(x,y)\\,dy$$ давхардсан интегралуудыг бодож, ялгаатай гэж харуул. Энэ нь интегралын тэмдгийн доорх солилцооны теоремтой зөрчилдөх үү?",
+"h": "$(1-xy)e^{-xy}=\\frac{\\partial}{\\partial y}\\bigl(ye^{-xy}\\bigr)$.",
+"a": "Эхнийх $0$ (учир нь $\\int_0^\\infty f\\,dx=\\frac1y\\int_0^\\infty(1-u)e^{-u}du=0$), хоёр дахь нь $\\int_0^\\infty e^{-x}dx=1$. Зөрчилгүй: $\\int_0^\\infty f\\,dx$ нь $y\\in[0,1]$ дээр жигд нийлдэггүй."
+},
+"19fb4a57fa": {
+"p": "$\\displaystyle\\int_0^\\infty\\frac{1-\\cos\\alpha x}{x^2}dx=\\frac{\\pi|\\alpha|}{2}$ үр дүнг ашиглан $\\displaystyle\\int_0^\\infty\\frac{(1-\\cos x)^2}{x^2}\\,dx$-ийг ол.",
+"h": "$(1-\\cos x)^2=2(1-\\cos x)-\\frac12(1-\\cos2x)$.",
+"a": "$2\\cdot\\frac\\pi2-\\frac12\\cdot\\pi=\\frac\\pi2$."
+},
+"a17327227a": {
+"p": "$a,b\\gt0$ үед $\\displaystyle\\int_0^\\infty\\frac{\\arctan ax-\\arctan bx}{x}\\,dx$-ийг ол.",
+"h": "Фруллани: $\\frac{f(ax)-f(bx)}x$, $f(0)=0$, $f(\\infty)=\\frac\\pi2$; эсвэл $\\int_b^a\\frac{dt}{1+t^2x^2}$ гэж бич.",
+"a": "$\\frac\\pi2\\ln\\frac ab$."
+},
+"c4be8f274b": {
+"p": "$a\\gt0$ үед $\\displaystyle\\int_0^\\infty e^{-ax^2}dx=\\frac12\\sqrt{\\frac\\pi a}$-ийг $a$-аар дифференциалчилж $\\displaystyle\\int_0^\\infty x^4e^{-ax^2}dx$-ийг ол. Алхам бүрийг зөвтгө.",
+"h": "Хоёр удаа дифференциалчил; $[a_0,\\infty)$ дээр $x^{2k}e^{-ax^2}\\leq x^{2k}e^{-a_0x^2}$ (Вейерштрасс).",
+"a": "$\\frac{3\\sqrt\\pi}{8a^{5/2}}$."
+},
+"2ce3cc2be4": {
+"p": "$\\Gamma\\bigl(\\frac72\\bigr)$ ба $\\Gamma\\bigl(-\\frac52\\bigr)$-ийг ол.",
+"h": "$\\Gamma(x+1)=x\\Gamma(x)$ ба $\\Gamma(\\frac12)=\\sqrt\\pi$.",
+"a": "$\\Gamma(\\frac72)=\\frac{15\\sqrt\\pi}8$; $\\Gamma(-\\frac52)=-\\frac{8\\sqrt\\pi}{15}$."
+},
+"76d652f93d": {
+"p": "$x\\gt0$ үед $\\Gamma(x)=2\\displaystyle\\int_0^\\infty u^{2x-1}e^{-u^2}du$ гэж харуулаад $\\displaystyle\\int_0^\\infty x^7e^{-x^2}dx$-ийг бод.",
+"h": "$t=u^2$ орлуулга; $2x-1=7$ буюу $x=4$.",
+"a": "$\\frac12\\Gamma(4)=3$."
+},
+"06b1ade736": {
+"p": "$B(2,5)$-ийг Гамма функцээр ба тодорхойлолтоор шууд бодож харьцуул. Мөн $B\\bigl(\\frac12,\\frac32\\bigr)$-ийг ол.",
+"h": "$B(p,q)=\\frac{\\Gamma(p)\\Gamma(q)}{\\Gamma(p+q)}$.",
+"a": "$B(2,5)=\\frac{1!4!}{6!}=\\frac1{30}$ (шууд: $\\int_0^1x(1-x)^4dx=\\frac1{30}$); $B(\\frac12,\\frac32)=\\frac\\pi2$."
+},
+"5755e63da3": {
+"p": "$a\\lt b$, $p,q\\gt0$ үед $$\\int_a^b(x-a)^{p-1}(b-x)^{q-1}dx=(b-a)^{p+q-1}B(p,q)$$ гэж баталж, $\\displaystyle\\int_{-1}^5\\sqrt{(x+1)(5-x)}\\,dx$-ийг бод. Геометр утгаар шалга.",
+"h": "$x=a+(b-a)t$ орлуулга; $p=q=\\frac32$.",
+"a": "$6^2B(\\frac32,\\frac32)=\\frac{9\\pi}2$; радиус $3$-тай хагас тойргийн талбай $\\frac{\\pi\\cdot9}2$."
+},
+"e2c4205d11": {
+"p": "$\\displaystyle\\int_0^\\infty\\frac{dx}{\\sqrt[4]{x}\\,(1+x)}$-ийг ол. Мөн $\\Gamma\\bigl(\\frac14\\bigr)\\Gamma\\bigl(\\frac34\\bigr)$-ийг ол.",
+"h": "$\\int_0^\\infty\\frac{x^{p-1}}{1+x}dx=B(p,1-p)=\\frac\\pi{\\sin\\pi p}$.",
+"a": "$p=\\frac34$: $\\frac{\\pi}{\\sin\\frac{3\\pi}4}=\\pi\\sqrt2$; $\\Gamma(\\frac14)\\Gamma(\\frac34)=\\pi\\sqrt2$."
+},
+"efef6bda86": {
+"p": "$\\displaystyle\\int_0^{\\pi/2}\\sin^2\\varphi\\cos^6\\varphi\\,d\\varphi$-ийг Гамма функцээр бод.",
+"h": "$\\int_0^{\\pi/2}\\sin^{2p-1}\\cos^{2q-1}=\\frac12B(p,q)$.",
+"a": "$\\frac12B(\\frac32,\\frac72)=\\frac{5\\pi}{256}$."
+},
+"187915c17e": {
+"p": "$\\displaystyle\\int_0^\\infty\\frac{dx}{1+x^4}$-ийг ол.",
+"h": "$t=x^4$ орлуулж Бета функцэд хүргэ.",
+"a": "$\\frac14B(\\frac14,\\frac34)=\\frac{\\pi}{4\\sin\\frac\\pi4}=\\frac{\\pi\\sqrt2}4$."
+},
+"bbcdb019a1": {
+"p": "$\\displaystyle\\int_0^\\infty x^2e^{-3\\sqrt x}\\,dx$-ийг ол.",
+"h": "$x=t^2$ орлуулга, дараа нь $\\Gamma$.",
+"a": "$2\\int_0^\\infty t^5e^{-3t}dt=\\frac{2\\cdot5!}{3^6}=\\frac{80}{243}$."
+},
+"7550711ce5": {
+"p": "$F(y)=\\displaystyle\\int_y^{y^2}\\frac{\\sin xy}{x}\\,dx$ ($y\\gt0$) бол $F^{\\prime}(y)$-г ол.",
+"h": "Хязгаар хувьсагчтай интегралын Лейбницийн дүрэм.",
+"a": "$F^{\\prime}(y)=\\frac{3\\sin y^3-2\\sin y^2}{y}$."
+},
+"fee8be4d68": {
+"p": "$f$ нь $[0,a]$ дээр тасралтгүй бол $F(x)=\\displaystyle\\int_0^xf(t)\\sin(x-t)\\,dt$ функц $F^{\\prime\\prime}+F=f$, $F(0)=F^{\\prime}(0)=0$ нөхцлийг хангадгийг батал.",
+"h": "Лейбницийн дүрмээр хоёр удаа дифференциалчил.",
+"a": "$F^{\\prime}=f(x)\\sin0+\\int_0^xf(t)\\cos(x-t)dt$, $F^{\\prime\\prime}=f(x)-\\int_0^xf(t)\\sin(x-t)dt=f-F$."
+},
+"d7f4b3a439": {
+"p": "$|a|\\lt1$ үед $I(a)=\\displaystyle\\int_0^{\\pi/2}\\frac1{\\cos x}\\ln\\frac{1+a\\cos x}{1-a\\cos x}\\,dx=\\pi\\arcsin a$ гэж батал. ($\\int_0^{\\pi/2}\\frac{dx}{1-a^2\\cos^2x}=\\frac{\\pi}{2\\sqrt{1-a^2}}$ гэдгийг ашигла.)",
+"h": "$a$-аар дифференциалчил; $I(0)=0$.",
+"a": "$I^{\\prime}(a)=\\int_0^{\\pi/2}\\frac{2\\,dx}{1-a^2\\cos^2x}=\\frac{\\pi}{\\sqrt{1-a^2}}$, $I(0)=0$ тул $I=\\pi\\arcsin a$."
+},
+"3957fc5bec": {
+"p": "$F(\\alpha)=\\displaystyle\\int_0^\\infty\\alpha e^{-\\alpha x}\\,dx$, $\\alpha\\in[0,1]$. $F$-ийг олж, интеграл $[0,1]$ дээр жигд нийлэхгүйг харуул. $[\\alpha_0,1]$ ($\\alpha_0\\gt0$) дээр яах вэ?",
+"h": "$F(0)=0$, $\\alpha\\gt0$ үед $F=1$; үлдэгдэл $e^{-A\\alpha}$.",
+"a": "$F(\\alpha)=1$ ($\\alpha\\gt0$), $F(0)=0$ — тасралттай тул жигд нийлэхгүй. $[\\alpha_0,1]$ дээр үлдэгдэл $e^{-A\\alpha}\\leq e^{-A\\alpha_0}\\to0$, жигд нийлнэ."
+},
+"9bbafe7fd7": {
+"p": "$\\displaystyle\\int_0^\\infty xe^{-x^2}\\sin2bx\\,dx=\\frac{\\sqrt\\pi}{2}\\,be^{-b^2}$ гэж, $\\int_0^\\infty e^{-x^2}\\cos2bx\\,dx=\\frac{\\sqrt\\pi}2e^{-b^2}$-ийг мэдэж байгаад батал.",
+"h": "Мэдэгдэж буй тэнцэлийг $b$-ээр дифференциалчил.",
+"a": "$\\frac d{db}$: $-2\\int_0^\\infty xe^{-x^2}\\sin2bx\\,dx=-\\sqrt\\pi be^{-b^2}$ (жигд нийлэлт: $|xe^{-x^2}|$ хязгаарлагдсан мажорант)."
+},
+"52a6387cb0": {
+"p": "$a,b\\gt0$ үед $\\displaystyle\\int_0^\\infty\\frac{\\sin ax\\sin bx}{x^2}\\,dx=\\frac{\\pi}{2}\\min(a,b)$ гэж $\\int_0^\\infty\\frac{1-\\cos\\alpha x}{x^2}dx=\\frac{\\pi|\\alpha|}2$-ийг ашиглан батал.",
+"h": "$\\sin ax\\sin bx=\\frac12[\\cos(a-b)x-\\cos(a+b)x]$.",
+"a": "$\\frac12\\bigl[\\frac{\\pi(a+b)}2-\\frac{\\pi|a-b|}2\\bigr]=\\frac\\pi2\\min(a,b)$."
+},
+"03d6fe5233": {
+"p": "$a,b\\gt0$ үед $\\displaystyle\\int_0^\\infty\\frac{e^{-ax}-e^{-bx}}{x}\\,dx=\\ln\\frac ba$ гэж батал.",
+"h": "$\\frac{e^{-ax}-e^{-bx}}x=\\int_a^be^{-xy}dy$ ба Фубини.",
+"a": "$\\int_a^bdy\\int_0^\\infty e^{-xy}dx=\\int_a^b\\frac{dy}y=\\ln\\frac ba$ (жигд нийлэлт $y\\geq a\\gt0$)."
+},
+"a02160c6fd": {
+"p": "Гамма, Бета функцээр бод: (a) $\\displaystyle\\int_0^1x^6\\sqrt{1-x^2}\\,dx$; (b) $\\displaystyle\\int_0^\\infty\\frac{\\sqrt x}{(1+x)^3}dx$; (c) $\\displaystyle\\int_0^1x\\Bigl(\\ln\\frac1x\\Bigr)^{s-1}dx$ ($s\\gt0$); (d) $\\displaystyle\\int_0^\\infty\\frac{\\sqrt x}{1+x^3}dx$.",
+"h": "Тохиромжтой орлуулга ($t=x^2$, $t=x^3$, $x=e^{-u}$) хийж $B$ эсвэл $\\Gamma$ болго.",
+"a": "(a) $\\frac12B(\\frac72,\\frac32)=\\frac{5\\pi}{256}$; (b) $B(\\frac32,\\frac32)=\\frac\\pi8$; (c) $\\frac{\\Gamma(s)}{2^s}$; (d) $\\frac13B(\\frac12,\\frac12)=\\frac\\pi3$."
+},
+"0b958ba392": {
+"p": "$\\displaystyle\\int_0^1\\frac{x^2\\,dx}{\\sqrt{1-x^4}}$-ийг $\\Gamma\\bigl(\\frac14\\bigr)$-ээр илэрхийл.",
+"h": "$t=x^4$; $\\Gamma(\\frac14)\\Gamma(\\frac34)=\\pi\\sqrt2$.",
+"a": "$\\frac14B(\\frac34,\\frac12)=\\frac{\\sqrt2\\,\\pi^{3/2}}{\\Gamma(\\frac14)^2}\\approx0{,}599$."
+},
+"55f54a23a3": {
+"p": "Стирлингийн томьёог ашиглан (a) $\\displaystyle\\lim_{n\\to\\infty}\\frac{\\sqrt[2n]{(2n)!}}{n}$; (b) $\\displaystyle\\binom{3n}{n}$-ийн асимптотыг ол.",
+"h": "$m!\\sim\\sqrt{2\\pi m}\\,(m/e)^m$.",
+"a": "(a) $\\frac2e$; (b) $\\binom{3n}n\\sim\\sqrt{\\frac{3}{4\\pi n}}\\Bigl(\\frac{27}4\\Bigr)^n$."
+},
+"62a79dce1a": {
+"p": "$\\displaystyle\\lim_{y\\to0}\\int_{-2}^1\\sqrt{x^2+y^2}\\,dx$-ийг ол, хязгаарт шилжилтийг зөвтгө.",
+"h": "Интеграл доторх функц $(x,y)$-д тасралтгүй, хязгаартай мужид жигд тасралтгүй.",
+"a": "$\\int_{-2}^1|x|dx=\\frac52$."
+},
+"657e89e925": {
+"p": "$F(y)=\\displaystyle\\int_{\\cos y}^{\\sin y}e^{yx^2}\\,dx$ бол $F^{\\prime}(y)$-г ол.",
+"h": "Лейбницийн дүрэм.",
+"a": "$F^{\\prime}(y)=\\cos y\\,e^{y\\sin^2y}+\\sin y\\,e^{y\\cos^2y}+\\int_{\\cos y}^{\\sin y}x^2e^{yx^2}dx$."
+},
+"7ae3cead2d": {
+"p": "$a\\gt-1$ үед $\\displaystyle\\int_0^{\\pi/2}\\ln\\bigl(1+a\\sin^2x\\bigr)dx=\\pi\\ln\\frac{1+\\sqrt{1+a}}{2}$ гэж батал. ($\\int_0^{\\pi/2}\\frac{dx}{1+a\\sin^2x}=\\frac{\\pi}{2\\sqrt{1+a}}$ гэдгийг ашигла.)",
+"h": "$a$-аар дифференциалчил: $I^{\\prime}=\\int\\frac{\\sin^2x}{1+a\\sin^2x}dx$.",
+"a": "$I^{\\prime}(a)=\\frac1a\\bigl(\\frac\\pi2-\\frac{\\pi}{2\\sqrt{1+a}}\\bigr)=\\frac{\\pi}{2\\sqrt{1+a}(1+\\sqrt{1+a})}$, $I(0)=0$; интеграл нь $\\pi\\ln\\frac{1+\\sqrt{1+a}}2$."
+},
+"3f0c6122ac": {
+"p": "$a\\geq0$ үед $\\displaystyle\\int_0^\\infty\\frac{\\arctan ax}{x(1+x^2)}\\,dx=\\frac\\pi2\\ln(1+a)$ гэж батал.",
+"h": "$a$-аар дифференциалчил; $\\frac1{(1+a^2x^2)(1+x^2)}$-ийг нэгж бутархайд задал.",
+"a": "$I^{\\prime}(a)=\\int_0^\\infty\\frac{dx}{(1+a^2x^2)(1+x^2)}=\\frac{\\pi}{2(1+a)}$, $I(0)=0$."
+},
+"908fe8939b": {
+"p": "$\\displaystyle\\int_0^\\infty e^{-\\alpha x}\\cos x\\,dx$ нь $[\\alpha_0,\\infty)$ ($\\alpha_0\\gt0$) дээр жигд нийлж, $(0,\\infty)$ дээр жигд нийлэхгүйг батал.",
+"h": "Вейерштрасс; үлдэгдлийг $\\alpha=\\frac1A$ үед үнэл.",
+"a": "$[\\alpha_0,\\infty)$: $|\\cdot|\\leq e^{-\\alpha_0x}$. Үлдэгдэл $e^{-\\alpha A}\\frac{\\alpha\\cos A-\\sin A}{1+\\alpha^2}$; $A=2\\pi n+\\frac\\pi2$, $\\alpha=\\frac1A$ үед $\\to-\\frac1e\\neq0$."
+},
+"20127ebd78": {
+"p": "$\\displaystyle\\int_0^\\infty x^{\\alpha-1}e^{-x}\\,dx$ нь $[\\alpha_0,A]$ ($0\\lt\\alpha_0\\lt A$) дээр жигд нийлж, $(0,A]$ дээр жигд нийлэхгүйг батал.",
+"h": "$[0,1]$ ба $[1,\\infty)$ хэсгийг тусад нь Вейерштрассаар үнэл.",
+"a": "$[\\alpha_0,A]$: $x^{\\alpha-1}e^{-x}\\leq x^{\\alpha_0-1}e^{-x}$ ($x\\leq1$), $\\leq x^{A-1}e^{-x}$ ($x\\geq1$). $(0,A]$: $\\int_0^\\delta x^{\\alpha-1}e^{-x}dx\\geq e^{-\\delta}\\frac{\\delta^\\alpha}{\\alpha}\\to\\infty$ ($\\alpha\\to0+$)."
+},
+"dcbf23d759": {
+"p": "$\\displaystyle\\int_1^\\infty\\frac{\\sin\\alpha x}{\\sqrt x}\\,dx$ нь $|\\alpha|\\geq\\alpha_0\\gt0$ дээр жигд нийлдгийг батал.",
+"h": "Дирихлегийн жигд шинж.",
+"a": "$|\\int_1^b\\sin\\alpha x\\,dx|\\leq\\frac2{\\alpha_0}$, $\\frac1{\\sqrt x}\\downarrow0$ ($\\alpha$-аас үл хамаарна)."
+},
+"3420e8f187": {
+"p": "$a,b\\gt0$ үед $\\displaystyle\\int_0^\\infty\\frac{e^{-ax^2}-e^{-bx^2}}{x}\\,dx=\\frac12\\ln\\frac ba$ гэж батал.",
+"h": "$\\frac{e^{-ax^2}-e^{-bx^2}}{x}=\\int_a^bxe^{-yx^2}dy$ ба Фубини.",
+"a": "$\\int_a^b\\frac{dy}{2y}=\\frac12\\ln\\frac ba$."
+},
+"3c9d1a9b86": {
+"p": "(a) $\\displaystyle\\int_0^\\infty\\frac{\\sin x\\cos^2x}{x}\\,dx$; (b) $\\displaystyle\\int_0^\\infty\\frac{\\sin5x\\cos2x}{x}\\,dx$-ийг ол.",
+"h": "Үржвэрийг синусуудын нийлбэр болго ба $\\int_0^\\infty\\frac{\\sin cx}xdx=\\frac\\pi2$.",
+"a": "(a) $\\sin x\\cos^2x=\\frac14\\sin x+\\frac14\\sin3x$ тул $\\frac\\pi4$; (b) $\\frac12[\\sin7x+\\sin3x]$ тул $\\frac\\pi2$."
+},
+"6026d308d9": {
+"p": "$a\\gt0$ үед $\\displaystyle\\int_0^\\infty e^{-x^2-a^2/x^2}dx=\\frac{\\sqrt\\pi}2e^{-2a}$-ийг мэдэж байгаад $\\displaystyle\\int_0^\\infty e^{-(x-a/x)^2}dx=\\frac{\\sqrt\\pi}2$ гэж харуул.",
+"h": "$(x-\\frac ax)^2=x^2+\\frac{a^2}{x^2}-2a$.",
+"a": "$e^{-(x-a/x)^2}=e^{2a}e^{-x^2-a^2/x^2}$ тул интеграл $e^{2a}\\cdot\\frac{\\sqrt\\pi}2e^{-2a}=\\frac{\\sqrt\\pi}2$."
+},
+"93c8064831": {
+"p": "$\\alpha\\gt0$ үед $\\displaystyle\\int_0^\\infty\\frac{\\cos\\alpha x}{1+x^2}\\,dx=\\frac\\pi2e^{-\\alpha}$ гэдгийг ашиглан $\\displaystyle\\int_0^\\infty\\frac{x\\sin\\alpha x}{1+x^2}\\,dx=\\frac\\pi2e^{-\\alpha}$ гэж батал.",
+"h": "$\\alpha$-аар дифференциалчил; $\\alpha\\geq\\alpha_0$ дээр интеграл жигд нийлнэ (Дирихле).",
+"a": "$\\frac d{d\\alpha}$: $-\\int_0^\\infty\\frac{x\\sin\\alpha x}{1+x^2}dx=-\\frac\\pi2e^{-\\alpha}$."
+},
+"5ab9e98e71": {
+"p": "Бод: (a) $\\displaystyle\\int_0^1\\frac{dx}{\\sqrt[6]{1-x^6}}$; (b) $\\displaystyle\\int_0^\\infty\\frac{x^3\\,dx}{1+x^6}$; (c) $\\displaystyle\\int_0^{\\pi/2}\\sin^7x\\cos^3x\\,dx$.",
+"h": "Тохиромжтой орлуулгаар $B(p,q)$ болго.",
+"a": "(a) $\\frac16B(\\frac16,\\frac56)=\\frac{\\pi}{6\\sin\\frac\\pi6}=\\frac\\pi3$; (b) $\\frac16B(\\frac23,\\frac13)=\\frac{\\pi}{3\\sqrt3}$; (c) $\\frac12B(4,2)=\\frac1{40}$."
+},
+"9eae857343": {
+"p": "$m\\geq0$, $n\\gt0$ үед $\\displaystyle\\int_0^\\infty x^me^{-x^n}dx=\\frac1n\\Gamma\\Bigl(\\frac{m+1}n\\Bigr)$ гэж харуулж, $n\\to\\infty$ үеийн хязгаарыг ол.",
+"h": "$t=x^n$ орлуулга; $\\Gamma(z)\\sim\\frac1z$ ($z\\to0+$).",
+"a": "Хязгаар $\\lim\\frac1n\\cdot\\frac n{m+1}=\\frac1{m+1}$."
+},
+"db33133610": {
+"p": "Лежандрын давхарлах томьёог ($\\Gamma(x)\\Gamma(x+\\frac12)=2^{1-2x}\\sqrt\\pi\\,\\Gamma(2x)$) ашиглан $\\Gamma\\bigl(n+\\frac12\\bigr)=\\dfrac{(2n)!\\sqrt\\pi}{4^nn!}$ ($n\\in\\N$) гэж гарга.",
+"h": "$x=n$ тавиад $\\Gamma(n)=(n-1)!$, $\\Gamma(2n)=(2n-1)!$ орлуул.",
+"a": "$\\Gamma(n+\\frac12)=\\frac{2^{1-2n}\\sqrt\\pi(2n-1)!}{(n-1)!}=\\frac{(2n)!\\sqrt\\pi}{4^nn!}$."
+},
+"a0cc18ad9b": {
+"p": "$\\Gamma^{\\prime}(1)=-\\gamma$ гэдгийг ашиглан $\\displaystyle\\int_0^\\infty x^2e^{-x}\\ln x\\,dx$ ба $\\displaystyle\\int_0^\\infty e^{-2x}\\ln x\\,dx$-ийг ол.",
+"h": "$\\Gamma^{\\prime}(s)=\\int_0^\\infty x^{s-1}e^{-x}\\ln x\\,dx$; $\\Gamma^{\\prime}(3)=\\Gamma(3)\\psi(3)$; $t=2x$.",
+"a": "$\\Gamma^{\\prime}(3)=2\\bigl(\\frac32-\\gamma\\bigr)=3-2\\gamma$; $-\\frac{\\gamma+\\ln2}2$."
+},
+"e94a3a3586": {
+"p": "$a\\gt0$ үед $\\displaystyle\\int_0^\\infty\\frac{\\ln(x^2+a^2)}{1+x^2}\\,dx=\\pi\\ln(1+a)$ гэж батал. Параметрээр дифференциалчлах ба тасралтгүй чанарын нөхцлүүдийг шалга.",
+"h": "$a$-аар дифференциалчил; $\\int_0^\\infty\\frac{dx}{(x^2+a^2)(1+x^2)}=\\frac{\\pi}{2a(1+a)}$.",
+"a": "$I^{\\prime}(a)=\\frac{\\pi}{1+a}$, $I(0)=\\int_0^\\infty\\frac{2\\ln x}{1+x^2}dx=0$ тул $I=\\pi\\ln(1+a)$."
+},
+"24a84570d1": {
+"p": "$n\\in\\N$ үед $$\\int_0^{\\pi/2}\\sin^{2n}x\\,dx=\\frac{\\sqrt\\pi\\,\\Gamma\\bigl(n+\\frac12\\bigr)}{2\\,\\Gamma(n+1)}=\\frac{(2n-1)!!}{(2n)!!}\\cdot\\frac\\pi2$$ гэж батал.",
+"h": "$\\int_0^{\\pi/2}\\sin^{2p-1}\\cos^{2q-1}=\\frac12B(p,q)$, $p=n+\\frac12$, $q=\\frac12$.",
+"a": "$\\frac12B(n+\\frac12,\\frac12)=\\frac{\\Gamma(n+\\frac12)\\sqrt\\pi}{2\\,n!}$; $\\Gamma(n+\\frac12)=\\frac{(2n-1)!!}{2^n}\\sqrt\\pi$ тул хоёр дахь илэрхийлэл гарна."
+},
+"770d5f7dc7": {
+"p": "$-1\\lt\\alpha\\lt2$ үед $\\displaystyle\\int_0^\\infty\\frac{x^\\alpha}{1+x^3}\\,dx=\\frac{\\pi}{3\\sin\\frac{\\pi(\\alpha+1)}3}$ гэж батал.",
+"h": "$t=x^3$ орлуулга: $B(p,1-p)=\\frac{\\pi}{\\sin\\pi p}$, $p=\\frac{\\alpha+1}3$.",
+"a": "$\\frac13\\int_0^\\infty\\frac{t^{p-1}}{1+t}dt=\\frac13B(p,1-p)=\\frac{\\pi}{3\\sin\\pi p}$, $0\\lt p\\lt1$."
+},
+"5507691f11": {
+"p": "$\\ln\\Gamma$-ийн гүдгэр чанарыг ашиглан $x\\gt0$ үед $$\\frac{x}{(x+\\frac13)^{2/3}}\\leq\\frac{\\Gamma(x+\\frac13)}{\\Gamma(x)}\\leq x^{1/3}$$ гэж батал. Эндээс $\\displaystyle\\lim_{x\\to\\infty}\\frac{\\Gamma(x+\\frac13)}{x^{1/3}\\Gamma(x)}=1$ гэж гарга.",
+"h": "$x+\\frac13=\\frac23x+\\frac13(x+1)$ ба $x+1=\\frac13(x+\\frac13)+\\frac23(x+\\frac43)$ гэж гүдгэрийг хэрэглэ.",
+"a": "Баруун: $\\Gamma(x+\\frac13)\\leq\\Gamma(x)^{2/3}\\Gamma(x+1)^{1/3}=x^{1/3}\\Gamma(x)$. Зүүн: $\\Gamma(x+1)\\leq\\Gamma(x+\\frac13)^{1/3}\\Gamma(x+\\frac43)^{2/3}=\\Gamma(x+\\frac13)(x+\\frac13)^{2/3}$. Хоёр талыг $x^{1/3}$-д хувааж $x\\to\\infty$."
+},
+"1383e061a6": {
+"p": "Гауссын томьёо $\\Gamma(x)=\\lim_{n\\to\\infty}\\frac{n!\\,n^x}{x(x+1)\\cdots(x+n)}$ ($x\\gt0$)-г ашиглан $\\Gamma(x+1)=x\\Gamma(x)$ гэж батал.",
+"h": "$\\Gamma(x+1)$-д томьёог бичиж $\\Gamma(x)$-ийн илэрхийлэлтэй харьцуул.",
+"a": "$\\Gamma(x+1)=\\lim\\frac{n!\\,n^{x+1}}{(x+1)\\cdots(x+n+1)}=x\\lim\\frac{n!\\,n^x}{x\\cdots(x+n)}\\cdot\\frac n{x+n+1}=x\\Gamma(x)$."
+}
+}

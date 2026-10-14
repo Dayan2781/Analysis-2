@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: default-modern                 *-->
+<!--*  Palette:                              *-->
+<!--******************************************-->
+
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="lemma theorem-like"><h2 class="heading">
+<span class="type">Лемм</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">11.11</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Риман–Лебег.</span>
+</h2>
+<div class="para logical">
+<div class="para">
+<span class="process-math">\(g\)</span> нь <span class="process-math">\([a,b]\)</span> дээр интегралчлагдах бол</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\lim_{\lambda\to\infty}\int_a^bg(t)\sin\lambda t\,dt = 0, \qquad \lim_{\lambda\to\infty}\int_a^bg(t)\cos\lambda t\,dt = 0.
+\end{equation*}
+</div>
+<div class="para">Ялангуяа Фурьегийн коэффициентууд <span class="process-math">\(a_n, b_n\to0\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#lem-riemann-lebesgue-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Лемм 11.11: Риман–Лебег"><a tabindex="-1" href="#lem-riemann-lebesgue" title="Copy heading and permalink for Лемм 11.11: Риман–Лебег" aria-label="Copy heading and permalink for Лемм 11.11: Риман–Лебег">🔗</a></div>
+</article>
+<details class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h2 class="heading"><span class="type">Баталгаа<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h2></summary>
+<article class="hiddenproof knowl__content">
+<div class="para logical">
+<div class="para">
+<span class="process-math">\(\varepsilon&gt;0\text{.}\)</span> <span class="process-math">\(g\)</span> интегралчлагдах тул <span class="process-math">\(U(P,g) - L(P,g)&lt;\varepsilon\)</span> байх <span class="process-math">\(P = \{t_0&lt;\dots&lt;t_m\}\)</span> хуваалт олдоно. <span class="process-math">\(m_i = \inf_{[t_{i-1},t_i]}g\)</span> ба <span class="process-math">\(h = m_i\)</span> (<span class="process-math">\([t_{i-1},t_i)\)</span> дээр) шаталсан функц гэвэл <span class="process-math">\(0\le g - h\)</span> ба <span class="process-math">\(\int_a^b(g - h)\le U - L&lt;\varepsilon\text{.}\)</span> Иймд</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\Bigl|\int_a^bg\sin\lambda t\Bigr| \le \int_a^b(g - h) + \Bigl|\sum_{i=1}^m m_i\int_{t_{i-1}}^{t_i}\sin\lambda t\,dt\Bigr| \le \varepsilon + \sum_{i=1}^m|m_i|\cdot\frac{2}{\lambda}.
+\end{equation*}
+</div>
+<div class="para">
+<span class="process-math">\(\lambda\)</span> хангалттай их үед хоёр дахь гишүүн <span class="process-math">\(&lt;\varepsilon\text{.}\)</span> <span class="process-math">\(\cos\)</span>-ийн хувьд адил.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#lem-riemann-lebesgue-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Баталгаа 11.11.1"><a tabindex="-1" href="#lem-riemann-lebesgue-3" title="Copy heading and permalink for Баталгаа 11.11.1" aria-label="Copy heading and permalink for Баталгаа 11.11.1">🔗</a></div>
+</article></details><span class="incontext"><a class="internal" href="w11-s3.html#lem-riemann-lebesgue">In Context</a></span>
+</body>
+</html>

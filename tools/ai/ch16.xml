@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ai>
+<preview>
+<exploration xml:id="w16-preview">
+  <title>Гадаргууг нэвтлэх урсгал (AI)</title>
+  <introduction>
+    <p>Хурдны талбар нь <m>F</m> байх шингэн гадаргууг нэгж хугацаанд хэр их хэмжээгээр нэвтэлж байгааг <em>урсгал</em> гэнэ. Тогтмол <m>F</m> ба талбай нь <m>S</m>, нэгж нормаль нь <m>n</m> хавтгай хэсгийн хувьд урсгал <m>(F\cdot n)\,S</m> — суурь нь <m>S</m>, өндөр нь <m>F\cdot n</m> призмийн эзлэхүүн.</p>
+  </introduction>
+  <task>
+    <statement><p><m>F=(0,0,3)</m> талбарын <m>z=0</m> хавтгай дахь <m>[0,1]^2</m> квадратыг дээш (<m>n=(0,0,1)</m>) нэвтлэх урсгалыг ол.</p></statement>
+    <answer><p><m>3\cdot1=3</m>.</p></answer>
+  </task>
+  <task>
+    <statement><p>Одоо <m>z=x</m> налуу хавтгайн <m>0\le x,y\le1</m> хэсгийг (дээд тал) авъя. Түүний талбай, нэгж нормаль ба <m>F=(0,0,3)</m>-ийн урсгалыг ол.</p></statement>
+    <hint><p>Хавтгай <m>(1,0,1)</m> ба <m>(0,1,0)</m> векторуудаар татагдсан параллелограмм.</p></hint>
+    <answer><p>Талбай <m>|(1,0,1)\times(0,1,0)|=|(-1,0,1)|=\sqrt2</m>, <m>n=\frac1{\sqrt2}(-1,0,1)</m>, урсгал <m>\frac3{\sqrt2}\cdot\sqrt2=3</m> — (a)-тай ижил: налуу гадаргууг нэвтлэх шингэн нь түүний проекцыг нэвтлэх шингэнтэй тэнцүү.</p></answer>
+  </task>
+  <task>
+    <statement><p><m>F=(x,0,0)</m> бол <m>[0,1]^3</m> шоогийн зургаан талаар гадагш гарах нийт урсгалыг ол. Үүнийг <m>\frac{\partial F_1}{\partial x}</m>-ийн шоон дээрх интегралтай харьцуул.</p></statement>
+    <answer><p>Зөвхөн <m>x=1</m> (<m>F\cdot n=1</m>) ба <m>x=0</m> (<m>F\cdot n=0</m>) талууд хувь нэмэртэй: урсгал <m>1</m>. <m>\iiint_{[0,1]^3}1\,dV=1</m> — тэнцүү. Энэ нь Гаусс–Остроградскийн томьёоны энгийн тохиолдол.</p></answer>
+  </task>
+</exploration>
+</preview>
+
+<section ref="w16-s1">
+<exercise>
+  <statement><p>Конус <m>r(u,v)=(v\cos u,\ v\sin u,\ v)</m>, <m>u\in[0,2\pi]</m>, <m>v\in[0,1]</m>-ийн нормаль <m>N=r_u\times r_v</m> ба <m>|N|</m>-ийг ол. Аль цэгт параметрчлэл гөлгөр биш вэ?</p></statement>
+  <answer><p><m>N=(v\cos u,\ v\sin u,\ -v)</m>, <m>|N|=\sqrt2\,v</m>; <m>v=0</m> (оройд) <m>N=0</m>.</p></answer>
+  <solution><p><m>r_u=(-v\sin u,\ v\cos u,\ 0)</m>, <m>r_v=(\cos u,\ \sin u,\ 1)</m>:
+  <md>r_u\times r_v=\bigl(v\cos u\cdot1-0,\ 0-(-v\sin u),\ -v\sin^2u-v\cos^2u\bigr)=(v\cos u,\ v\sin u,\ -v).</md>
+  <m>|N|=\sqrt{v^2+v^2}=\sqrt2\,v</m>, оройд (<m>v=0</m>) тэг. Энэ нормаль <m>z</m> байгуулагч нь сөрөг — конусын "гадна, доош" харна. Оройд конус өөрөө шовхтой тул ямар ч параметрчлэлд гөлгөр болохгүй.</p></solution>
+</exercise>
+<exercise>
+  <statement><p><m>r(u,v)=(u\cos v,\ u\sin v,\ u^2)</m> (<m>z=x^2+y^2</m> параболоид) параметрчлэлийн <m>N</m>-ийг олж, <m>|N|</m>-ийг ол. Графикийн томьёо <m>(-f_x,-f_y,1)</m>-тэй харьцуул.</p></statement>
+  <answer><p><m>N=(-2u^2\cos v,\ -2u^2\sin v,\ u)=u\,(-2x,-2y,1)</m>, <m>|N|=u\sqrt{1+4u^2}</m>.</p></answer>
+  <solution><p><m>r_u=(\cos v,\sin v,2u)</m>, <m>r_v=(-u\sin v,u\cos v,0)</m>:
+  <md>N=\bigl(0-2u^2\cos v,\ -2u^2\sin v-0,\ u\cos^2v+u\sin^2v\bigr)=(-2u^2\cos v,\ -2u^2\sin v,\ u).</md>
+  <m>x=u\cos v</m>, <m>y=u\sin v</m> тул <m>N=u(-2x,-2y,1)=u(-f_x,-f_y,1)</m> — Якобиан <m>\frac{\partial(x,y)}{\partial(u,v)}=u&gt;0</m>-ээр үржсэн (параметр солих тайлбартай нийцнэ). <m>|N|=u\sqrt{4u^2+1}</m>.</p></solution>
+</exercise>
+<exercise>
+  <statement><p><m>x^2+2y^2+3z^2=6</m> эллипсоидын <m>(1,1,1)</m> цэг дээрх шүргэгч хавтгайн тэгшитгэлийг ол.</p></statement>
+  <answer><p><m>x+2y+3z=6</m>.</p></answer>
+  <solution><p><m>\Phi=x^2+2y^2+3z^2-6</m>, <m>\nabla\Phi=(2x,4y,6z)=(2,4,6)</m> нь нормаль. Шүргэгч хавтгай: <m>2(x-1)+4(y-1)+6(z-1)=0</m>, өөрөөр хэлбэл <m>x+2y+3z=6</m>.</p></solution>
+</exercise>
+</section>
+
+<section ref="w16-s2">
+<exercise>
+  <statement><p>Цилиндр <m>x^2+y^2=R^2</m>-ийн хоёр параметрчлэл <m>r(\varphi,z)=(R\cos\varphi,R\sin\varphi,z)</m> ба <m>\tilde r(z,\varphi)=(R\cos\varphi,R\sin\varphi,z)</m> өгөгдөв. Тус бүрийн <m>N</m> гадагш уу, дотогш уу харна вэ?</p></statement>
+  <answer><p><m>r</m>: гадагш; <m>\tilde r</m>: дотогш.</p></answer>
+  <solution><p><m>r_\varphi\times r_z=(-R\sin\varphi,R\cos\varphi,0)\times(0,0,1)=(R\cos\varphi,R\sin\varphi,0)</m> — цэгийн радиус векторын чиглэлд, гадагш. <m>\tilde r</m>-д хувьсагчдын дараалал солигдсон тул <m>\tilde r_z\times\tilde r_\varphi=-(r_\varphi\times r_z)</m> — дотогш (параметр солих тайлбарт <m>J=-1</m>).</p></solution>
+</exercise>
+<exercise>
+  <statement><p>(a) <m>\Sigma_+</m>: <m>z=\sqrt{1-x^2-y^2}</m> дээд хагас бөмбөрцөг, гадаад (дээш) нормальтай; (b) <m>\Sigma_-</m>: <m>z=-\sqrt{1-x^2-y^2}</m> доод хагас бөмбөрцөг, гадаад (доош) нормальтай. Хил болох <m>x^2+y^2=1</m>, <m>z=0</m> тойргийн зохицсон чиглэлийг (дээрээс харахад) тус бүрд тогтоо.</p></statement>
+  <hint><p>Графикийн параметрчлэл <m>(x,y)\mapsto(x,y,f(x,y))</m>-ийн <m>N=(-f_x,-f_y,1)</m> нь дээш харна; <m>\partial D</m>-ийн эерэг чиглэлийн дүр нь <m>N</m>-тэй зохицсон.</p></hint>
+  <answer><p>(a) цагийн зүүний эсрэг; (b) цагийн зүүгээр.</p></answer>
+  <solution><p>(a) Дээд нормаль нь графикийн <m>N=(-f_x,-f_y,1)</m>-тэй ижил чиглэлтэй тул тодорхойлолтоор <m>\partial D</m> (нэгж тойрог)-ийн эерэг чиглэл буюу дээрээс харахад цагийн зүүний эсрэг чиглэл зохицно.</p>
+  <p>(b) <m>\Sigma_-</m>-ийн гадаад нормаль доош харна, өөрөөр хэлбэл графикийн <m>N</m>-ийн эсрэг. Иймд зохицсон чиглэл нь эсрэг — дээрээс харахад цагийн зүүгээр. (Бөмбөрцгийг хоёр хагаст хуваахад экватор хоёр хагасын хилд эсрэг чиглэлтэй ордог нь Стоксын томьёоны баталгаанд чухал.)</p></solution>
+</exercise>
+</section>
+
+<section ref="w16-s3">
+<exercise>
+  <statement><p><m>x+2y+2z=6</m> хавтгайн нэгдүгээр октантад орших хэсгийн талбайг ол.</p></statement>
+  <hint><p><m>z=\frac{6-x-2y}2</m>, проекц нь <m>x,y\ge0</m>, <m>x+2y\le6</m> гурвалжин.</p></hint>
+  <answer><p><m>\dfrac{27}2</m>.</p></answer>
+  <solution><p><m>f_x=-\frac12</m>, <m>f_y=-1</m>, <m>\sqrt{1+\frac14+1}=\frac32</m>. Проекц <m>D</m> нь катетууд нь <m>6</m> ба <m>3</m> тэгш өнцөгт гурвалжин, <m>|D|=9</m>. <m>S=\frac32\cdot9=\frac{27}2</m>.</p></solution>
+</exercise>
+<exercise>
+  <statement><p><m>x^2+z^2=a^2</m> цилиндрийн <m>x^2+y^2\le a^2</m> цилиндр дотор орших хэсгийн талбайг ол.</p></statement>
+  <hint><p>Дээд хэсэг <m>z=\sqrt{a^2-x^2}</m>, <m>(x,y)\in\{x^2+y^2\le a^2\}</m>; <m>\sqrt{1+z_x^2+z_y^2}=\frac a{\sqrt{a^2-x^2}}</m>.</p></hint>
+  <answer><p><m>8a^2</m>.</p></answer>
+  <solution><p>Дээд хэсэг (<m>z\ge0</m>) нь <m>D=\{x^2+y^2\le a^2\}</m> дээрх <m>z=\sqrt{a^2-x^2}</m> график, <m>z_x=\frac{-x}{\sqrt{a^2-x^2}}</m>, <m>z_y=0</m>. <m>x</m>-ийг бэхэлбэл <m>|y|\le\sqrt{a^2-x^2}</m>:
+  <md>S_+=\int_{-a}^adx\int_{-\sqrt{a^2-x^2}}^{\sqrt{a^2-x^2}}\frac{a\,dy}{\sqrt{a^2-x^2}}=\int_{-a}^a2a\,dx=4a^2.</md>
+  (Интеграл доорх функц <m>x=\pm a</m>-д зааглагдаагүй боловч дотоод интеграл тогтмол болж, өргөтгөсөн интеграл нийлнэ.) Доод хэсэг тэгш хэмээр ижил: <m>S=8a^2</m>.</p></solution>
+</exercise>
+<exercise>
+  <statement><p><m>x^2+y^2+z^2=4</m> бөмбөрцгийн <m>z\ge1</m> хэсгийн талбайг бөмбөрцөг координатаар ол.</p></statement>
+  <hint><p><m>z=2\cos\theta\ge1\iff\theta\le\frac\pi3</m>; <m>|N|=4\sin\theta</m>.</p></hint>
+  <answer><p><m>4\pi</m>.</p></answer>
+  <solution><p><m>S=\int_0^{2\pi}\!\!\int_0^{\pi/3}4\sin\theta\,d\theta\,d\varphi=8\pi\left(1-\cos\frac\pi3\right)=4\pi</m>.</p></solution>
+</exercise>
+</section>
+
+<section ref="w16-s4">
+<exercise>
+  <statement><p><m>\displaystyle\iint_\Sigma(x^2+y^2)\,dS</m>-ийг ол, <m>\Sigma</m>: <m>z=\sqrt{x^2+y^2}</m>, <m>0\le z\le1</m>.</p></statement>
+  <answer><p><m>\dfrac{\sqrt2\,\pi}2</m>.</p></answer>
+  <solution><p>Конусын хувьд <m>f_x^2+f_y^2=1</m>, <m>dS=\sqrt2\,dx\,dy</m>, проекц нь нэгж дугуй:
+  <md>\iint_\Sigma(x^2+y^2)\,dS=\sqrt2\int_0^{2\pi}\!\!\int_0^1r^2\cdot r\,dr\,d\theta=\sqrt2\cdot\frac{2\pi}4=\frac{\sqrt2\,\pi}2.</md></p></solution>
+</exercise>
+<exercise>
+  <statement><p><m>\displaystyle\iint_\Sigma xyz\,dS</m>-ийг ол, <m>\Sigma</m> — <m>x+y+z=1</m> хавтгайн нэгдүгээр октант дахь хэсэг.</p></statement>
+  <answer><p><m>\dfrac{\sqrt3}{120}</m>.</p></answer>
+  <solution><p><m>z=1-x-y</m>, <m>dS=\sqrt3\,dx\,dy</m>, <m>D=\{x,y\ge0,\ x+y\le1\}</m>:
+  <md>\sqrt3\int_0^1x\,dx\int_0^{1-x}y(1-x-y)\,dy=\sqrt3\int_0^1x\frac{(1-x)^3}6\,dx=\frac{\sqrt3}6\cdot\frac1{20}=\frac{\sqrt3}{120}.</md></p></solution>
+</exercise>
+<exercise>
+  <statement><p><m>S_R</m>: <m>x^2+y^2+z^2=R^2</m> ба <m>a&gt;R</m> бол
+  <md>\iint_{S_R}\frac{dS}{\sqrt{x^2+y^2+(z-a)^2}}=\frac{4\pi R^2}a</md>
+  гэж батал (нэгэн төрлийн бүрхүүлийн гаднах цэг дээрх потенциал).</p></statement>
+  <hint><p>Бөмбөрцөг координатад <m>x^2+y^2+(z-a)^2=R^2+a^2-2aR\cos\theta</m>; <m>w=R^2+a^2-2aR\cos\theta</m> орлуулга.</p></hint>
+  <solution><p><m>dS=R^2\sin\theta\,d\theta\,d\varphi</m>:
+  <md>2\pi R^2\int_0^\pi\frac{\sin\theta\,d\theta}{\sqrt{R^2+a^2-2aR\cos\theta}}=2\pi R^2\cdot\frac1{2aR}\int_{(a-R)^2}^{(a+R)^2}\frac{dw}{\sqrt w}=\frac{\pi R}{a}\cdot2\bigl((a+R)-(a-R)\bigr)=\frac{4\pi R^2}a.</md>
+  Бүрхүүлийн талбай <m>4\pi R^2</m> тул бүх "масс" төвдөө төвлөрсөн мэт (Ньютоны теорем).</p></solution>
+</exercise>
+</section>
+
+<section ref="w16-s5">
+<exercise>
+  <statement><p><m>F=(x,y,0)</m> талбарын <m>x^2+y^2+z^2=R^2</m>, <m>z\ge0</m> хагас бөмбөрцгийг гадагш нэвтлэх урсгалыг ол.</p></statement>
+  <hint><p><m>n=\frac{(x,y,z)}R</m>, <m>F\cdot n=\frac{x^2+y^2}R</m>.</p></hint>
+  <answer><p><m>\dfrac{4\pi R^3}3</m>.</p></answer>
+  <solution><p><m>F\cdot n=\frac{x^2+y^2}R=R\sin^2\theta</m>, <m>dS=R^2\sin\theta\,d\theta\,d\varphi</m>:
+  <md>\iint F\cdot n\,dS=2\pi R^3\int_0^{\pi/2}\sin^3\theta\,d\theta=2\pi R^3\cdot\frac23=\frac{4\pi R^3}3.</md></p></solution>
+</exercise>
+<exercise>
+  <statement><p><m>\displaystyle\iint_\Sigma x\,dy\,dz+y\,dz\,dx+z\,dx\,dy</m>-ийг ол, <m>\Sigma</m> — <m>x+y+z=1</m> хавтгайн нэгдүгээр октант дахь гурвалжны дээд тал.</p></statement>
+  <answer><p><m>\dfrac12</m>.</p></answer>
+  <solution><p>Дээд талын нэгж нормаль <m>n=\frac1{\sqrt3}(1,1,1)</m>, <m>F\cdot n=\frac{x+y+z}{\sqrt3}=\frac1{\sqrt3}</m>. Гурвалжны талбай <m>\frac{\sqrt3}2</m> (тал нь <m>\sqrt2</m> зөв гурвалжин). Урсгал <m>\frac1{\sqrt3}\cdot\frac{\sqrt3}2=\frac12</m>. (Графикийн томьёогоор: <m>\iint_D(x+y+(1-x-y))\,dx\,dy=|D|=\frac12</m>.)</p></solution>
+</exercise>
+<exercise>
+  <statement><p><m>\displaystyle\iint_\Sigma z\,dx\,dy</m>-ийг ол, <m>\Sigma</m> — <m>z=x^2+y^2</m> параболоидын <m>z\le1</m> хэсгийн дээд тал.</p></statement>
+  <answer><p><m>\dfrac\pi2</m>.</p></answer>
+  <solution><p>Графикийн дээд талын томьёогоор <m>\iint_\Sigma R\,dx\,dy=\iint_DR(x,y,f(x,y))\,dx\,dy</m>:
+  <md>\iint_{x^2+y^2\le1}(x^2+y^2)\,dx\,dy=\int_0^{2\pi}\!\!\int_0^1r^3\,dr\,d\theta=\frac\pi2.</md></p></solution>
+</exercise>
+</section>
+
+<section ref="w16-s6">
+<exercise>
+  <statement><p><m>F=(xy,\ yz,\ zx)</m> талбарын <m>[0,1]^3</m> шоогийн гадаргуугаар гадагш гарах урсгалыг ол.</p></statement>
+  <answer><p><m>\dfrac32</m>.</p></answer>
+  <solution><p><m>\operatorname{div}F=y+z+x</m>. Гаусс–Остроградскийн томьёогоор урсгал <m>\iiint_{[0,1]^3}(x+y+z)\,dV=3\cdot\frac12=\frac32</m>.</p></solution>
+</exercise>
+<exercise>
+  <statement><p><m>F=|r|^2r</m> (<m>r=(x,y,z)</m>) бол <m>\operatorname{div}F=5|r|^2</m> гэж шалгаад, <m>S_R</m> бөмбөрцгөөр гадагш гарах урсгалыг хоёр аргаар ол.</p></statement>
+  <answer><p><m>4\pi R^5</m>.</p></answer>
+  <solution><p><m>\partial_x(|r|^2x)=|r|^2+2x^2</m>, гурвыг нэмбэл <m>3|r|^2+2|r|^2=5|r|^2</m>. Гауссаар: <m>\iiint_{B_R}5\rho^2\,dV=5\int_0^R\rho^2\cdot4\pi\rho^2\,d\rho=4\pi R^5</m>. Шууд: <m>S_R</m> дээр <m>F\cdot n=R^2\cdot r\cdot\frac rR=R^3</m>, урсгал <m>R^3\cdot4\pi R^2=4\pi R^5</m>.</p></solution>
+</exercise>
+<exercise>
+  <statement><p><m>V=\{\sqrt{x^2+y^2}\le z\le h\}</m> конусаар <m>F=(x,y,z)</m> талбарын гадагш гарах урсгалыг Гаусс–Остроградскийн томьёогоор олж, хажуугийн ба тагийн урсгалыг тус тусад нь бодож шалга.</p></statement>
+  <answer><p><m>\pi h^3</m>.</p></answer>
+  <solution><p><m>\operatorname{div}F=3</m>, <m>|V|=\frac{\pi h^3}3</m>, урсгал <m>\pi h^3</m>. Шалгалт: таг <m>z=h</m>, <m>n=(0,0,1)</m>, <m>F\cdot n=h</m>, талбай <m>\pi h^2</m> — урсгал <m>\pi h^3</m>. Хажуу <m>z=\sqrt{x^2+y^2}</m> дээр гадаад нормаль <m>(x,y,-z)</m>-тэй параллель тул <m>F\cdot n\propto x^2+y^2-z^2=0</m> — урсгал <m>0</m> (конус оройгоороо дайрсан шулуунуудаас тогтох тул радиус вектор түүнд шүргэнэ). Нийт <m>\pi h^3</m>.</p></solution>
+</exercise>
+</section>
+
+<section ref="w16-s7">
+<exercise>
+  <statement><p><m>\displaystyle\oint_C-y^3\,dx+x^3\,dy-z^3\,dz</m>-ийг Стоксын томьёогоор ол, <m>C</m> — <m>x^2+y^2=1</m> цилиндр ба <m>x+y+z=1</m> хавтгайн огтлолцол, дээрээс харахад цагийн зүүний эсрэг чиглэлтэй.</p></statement>
+  <answer><p><m>\dfrac{3\pi}2</m>.</p></answer>
+  <solution><p><m>F=(-y^3,x^3,-z^3)</m>, <m>\operatorname{rot}F=(0-0,\ 0-0,\ 3x^2+3y^2)</m>. <m>\Sigma</m>: <m>z=1-x-y</m>, <m>x^2+y^2\le1</m>, дээд тал (<m>C</m>-ийн чиглэлтэй зохицсон), <m>N=(1,1,1)</m>. <m>\operatorname{rot}F\cdot N=3(x^2+y^2)</m>:
+  <md>\oint_C=\iint_{x^2+y^2\le1}3(x^2+y^2)\,dx\,dy=3\cdot2\pi\cdot\frac14=\frac{3\pi}2.</md>
+  (Шууд параметрчлэл <m>x=\cos t</m>, <m>y=\sin t</m>, <m>z=1-\cos t-\sin t</m>-ээр мөн <m>\frac{3\pi}2</m>.)</p></solution>
+</exercise>
+<exercise>
+  <statement><p><m>F=(z,x,y)</m> талбарын <m>A(1,0,0)\to B(0,1,0)\to C(0,0,1)\to A</m> гурвалжин хүрээний дагуух циркуляцийг Стоксын томьёогоор олж, шууд бодож шалга.</p></statement>
+  <answer><p><m>\dfrac32</m>.</p></answer>
+  <solution><p><m>\operatorname{rot}F=(1,1,1)</m>. Энэ чиглэлтэй зохицсон нормаль нь <m>n=\frac1{\sqrt3}(1,1,1)</m> (<m>\overrightarrow{AB}\times\overrightarrow{AC}=(1,1,1)</m>). Гурвалжны талбай <m>\frac{\sqrt3}2</m>. Иймд циркуляц <m>\sqrt3\cdot\frac{\sqrt3}2=\frac32</m>.</p>
+  <p>Шууд: <m>AB</m>: <m>r=(1-t,t,0)</m>, <m>F\cdot r'=0\cdot(-1)+(1-t)\cdot1+t\cdot0=1-t</m>, интеграл <m>\frac12</m>. Тэгш хэмээр (<m>x\to y\to z\to x</m> циклийн солигдол <m>F</m> ба гурвалжныг хадгална) <m>BC</m>, <m>CA</m> тус бүр <m>\frac12</m>. Нийт <m>\frac32</m>.</p></solution>
+</exercise>
+<exercise>
+  <statement><p><m>f,g\in C^2</m> бол <m>\operatorname{rot}(f\nabla g)=\nabla f\times\nabla g</m> гэдгийг ашиглан
+  <md>\oint_{\partial\Sigma}f\nabla g\cdot dr=\iint_\Sigma(\nabla f\times\nabla g)\cdot n\,dS,\qquad\oint_{\partial\Sigma}f\nabla f\cdot dr=0</md>
+  гэж батал.</p></statement>
+  <hint><p><m>\operatorname{rot}(UF)=U\operatorname{rot}F+\nabla U\times F</m> ба <m>\operatorname{rot}\nabla g=0</m>.</p></hint>
+  <solution><p>Адилтгалаар <m>\operatorname{rot}(f\nabla g)=f\operatorname{rot}\nabla g+\nabla f\times\nabla g=\nabla f\times\nabla g</m> (<m>g\in C^2</m> тул <m>\operatorname{rot}\nabla g=0</m>). Стоксын томьёогоор эхний тэнцэтгэл гарна. <m>g=f</m> бол <m>\nabla f\times\nabla f=0</m> тул хоёр дахь нь гарна. (Шууд: <m>f\nabla f=\nabla\frac{f^2}2</m> потенциалт.)</p></solution>
+</exercise>
+</section>
+
+<section ref="w16-s8">
+<exercise>
+  <statement><p><m>F=(yz,\ xz,\ xy)</m> талбарын дивергенц ба роторыг ол. Энэ талбар потенциалт уу, соленоид уу? Потенциал <m>U</m>-г олж, <m>\Delta U=0</m> гэж шалга.</p></statement>
+  <answer><p><m>\operatorname{div}F=0</m>, <m>\operatorname{rot}F=0</m>; <m>U=xyz</m> — гармоник.</p></answer>
+  <solution><p><m>\operatorname{div}F=0+0+0=0</m>. <m>\operatorname{rot}F=(x-x,\ y-y,\ z-z)=0</m>. <m>\R^3</m> гүдгэр тул потенциал оршино: <m>U=xyz</m> (<m>U_x=yz</m>, <m>U_y=xz</m>, <m>U_z=xy</m>). <m>\Delta U=\operatorname{div}\nabla U=\operatorname{div}F=0</m>, мөн шууд <m>U_{xx}=U_{yy}=U_{zz}=0</m>. Талбар потенциалт бөгөөд соленоид, өөрөөр хэлбэл гармоник.</p></solution>
+</exercise>
+<exercise>
+  <statement><p><m>U,V\in C^2</m> бол <m>\operatorname{div}(\nabla U\times\nabla V)=0</m> гэж батал.</p></statement>
+  <hint><p>Теорем <xref ref="w16-thm-identities" text="global"/>-ийн (5) ба (1).</p></hint>
+  <solution><p>(5)-аар <m>\operatorname{div}(\nabla U\times\nabla V)=\nabla V\cdot\operatorname{rot}\nabla U-\nabla U\cdot\operatorname{rot}\nabla V</m>, (1)-ээр <m>\operatorname{rot}\nabla U=\operatorname{rot}\nabla V=0</m>. Иймд <m>0</m>. (Үүнийг (5)-ыг <m>C^1</m> талбаруудад хэрэглэж байгаа; <m>\nabla U,\nabla V\in C^1</m>.)</p></solution>
+</exercise>
+<exercise>
+  <statement><p><m>F=(y,z,x)</m> соленоид гэж шалгаад, <m>A_3=0</m> хэлбэрийн вектор потенциал <m>A=(A_1,A_2,0)</m>-г ол.</p></statement>
+  <hint><p><m>\operatorname{rot}A=\bigl(-\partial_zA_2,\ \partial_zA_1,\ \partial_xA_2-\partial_yA_1\bigr)</m>. Эхний хоёр тэгшитгэлийг <m>z</m>-ээр интегралчил.</p></hint>
+  <answer><p>Жишээ нь <m>A=\left(\dfrac{z^2}2,\ \dfrac{x^2}2-yz,\ 0\right)</m> (<m>\nabla\psi</m> нэмэх нарийвчлалтай).</p></answer>
+  <solution><p><m>\operatorname{div}F=0+0+0=0</m>. <m>-\partial_zA_2=y</m>-ээс <m>A_2=-yz+g(x,y)</m>; <m>\partial_zA_1=z</m>-ээс <m>A_1=\frac{z^2}2+k(x,y)</m>. Гурав дахь: <m>\partial_xA_2-\partial_yA_1=g_x-k_y=x</m>; <m>k=0</m>, <m>g=\frac{x^2}2</m> гэж авч болно. Шалгалт: <m>\operatorname{rot}A=\bigl(0-(-y),\ z-0,\ x-0\bigr)=(y,z,x)=F</m>. Дурын <m>\nabla\psi</m> нэмбэл <m>\operatorname{rot}</m> өөрчлөгдөхгүй тул вектор потенциал ганц биш.</p></solution>
+</exercise>
+</section>
+
+<homework>
+<exercise>
+  <statement><p><m>\displaystyle\iint_\Sigma(x+y+z)\,dS</m>-ийг ол, <m>\Sigma</m> — <m>[0,1]^3</m> шоогийн бүтэн гадаргуу.</p></statement>
+  <answer><p><m>9</m>.</p></answer>
+  <solution><p><m>x=0</m> тал дээр <m>\iint(y+z)\,dy\,dz=1</m>, <m>x=1</m> тал дээр <m>\iint(1+y+z)=2</m>. Тэгш хэмээр бусад хос талууд мөн <m>1+2</m>. Нийт <m>3\cdot3=9</m>.</p></solution>
+</exercise>
+<exercise>
+  <statement><p><m>F=(x^2,y^2,z^2)</m> талбарын <m>(x-a)^2+(y-b)^2+(z-c)^2=R^2</m> бөмбөрцгөөр гадагш гарах урсгалыг ол.</p></statement>
+  <hint><p>Бөмбөлөг дээр <m>\iiint x\,dV=a\cdot\frac43\pi R^3</m> (<m>x-a</m> нь тэгш хэмээр <m>0</m> интегралтай).</p></hint>
+  <answer><p><m>\dfrac83\pi R^3(a+b+c)</m>.</p></answer>
+  <solution><p><m>\operatorname{div}F=2(x+y+z)</m>. <m>B</m> бөмбөлөг дээр <m>\iiint_B(x-a)\,dV=0</m> (<m>x-a\mapsto-(x-a)</m> тусгалаар), иймд <m>\iiint_Bx\,dV=a|B|</m>, адил <m>y</m>, <m>z</m>. Гауссаар урсгал <m>2(a+b+c)\cdot\frac43\pi R^3</m>.</p></solution>
+</exercise>
+<exercise>
+  <statement><p><m>\displaystyle\oint_Cy^2\,dx+z^2\,dy+x^2\,dz</m>-ийг Стоксын томьёогоор ол, <m>C</m>: <m>x^2+y^2=1</m>, <m>z=x+2</m> эллипс, дээрээс харахад цагийн зүүний эсрэг чиглэлтэй. Хариуг шууд параметрчлэлээр шалга.</p></statement>
+  <answer><p><m>4\pi</m>.</p></answer>
+  <solution><p><m>\operatorname{rot}F=(0-2z,\ 0-2x,\ 0-2y)=(-2z,-2x,-2y)</m>. <m>\Sigma</m>: <m>z=x+2</m>, <m>x^2+y^2\le1</m>, дээд тал, <m>N=(-1,0,1)</m>. <m>\operatorname{rot}F\cdot N=2z-2y=2x+4-2y</m>:
+  <md>\iint_{x^2+y^2\le1}(2x-2y+4)\,dx\,dy=0-0+4\pi=4\pi.</md>
+  Шууд: <m>x=\cos t</m>, <m>y=\sin t</m>, <m>z=\cos t+2</m>:
+  <md>\int_0^{2\pi}\bigl[-\sin^3t+(\cos t+2)^2\cos t-\cos^2t\sin t\bigr]dt=\int_0^{2\pi}4\cos^2t\,dt=4\pi,</md>
+  учир нь <m>\sin^3t</m>, <m>\cos^3t</m>, <m>\cos t</m>, <m>\cos^2t\sin t</m>-ийн бүтэн үеийн интеграл <m>0</m>.</p></solution>
+</exercise>
+<exercise>
+  <statement><p>(Грийний хоёрдугаар адилтгал) <m>f,g\in C^2(\overline V)</m>, <m>V</m> нь Гаусс–Остроградскийн томьёо биелэх бие бол
+  <md>\iiint_V(f\Delta g-g\Delta f)\,dV=\iint_{\partial V}\Bigl(f\frac{\partial g}{\partial n}-g\frac{\partial f}{\partial n}\Bigr)dS</md>
+  гэж батал. <m>V=B_R</m>, <m>f=1</m>, <m>g=x^2+y^2+z^2</m> үед хоёр талыг тооцоолж шалга.</p></statement>
+  <hint><p><m>\operatorname{div}(f\nabla g-g\nabla f)=f\Delta g-g\Delta f</m>.</p></hint>
+  <solution><p><m>\operatorname{div}(f\nabla g)=\nabla f\cdot\nabla g+f\Delta g</m> (адилтгал (3)), мөн <m>\operatorname{div}(g\nabla f)=\nabla g\cdot\nabla f+g\Delta f</m>. Хасвал <m>\operatorname{div}(f\nabla g-g\nabla f)=f\Delta g-g\Delta f</m>. Гаусс–Остроградскийн томьёог <m>f\nabla g-g\nabla f\in C^1</m> талбарт хэрэглээд <m>\nabla g\cdot n=\frac{\partial g}{\partial n}</m> гэж бичвэл адилтгал гарна.</p>
+  <p>Шалгалт: <m>\Delta g=6</m>, <m>\Delta f=0</m>; зүүн тал <m>6\cdot\frac43\pi R^3=8\pi R^3</m>. <m>S_R</m> дээр <m>\frac{\partial g}{\partial n}=\nabla g\cdot\frac rR=\frac{2|r|^2}R=2R</m>; баруун тал <m>2R\cdot4\pi R^2=8\pi R^3</m>.</p></solution>
+</exercise>
+<exercise>
+  <statement><p><m>F=\bigl(y,\ -x,\ e^{xz}\bigr)</m> ба <m>\Sigma</m> — <m>x^2+y^2+z^2=1</m>, <m>z\ge0</m> хагас бөмбөрцгийн гадна тал бол <m>\displaystyle\iint_\Sigma\operatorname{rot}F\cdot n\,dS</m>-ийг ол.</p></statement>
+  <hint><p>Шууд бодох нь төвөгтэй. Стоксын томьёогоор хилийн (экватор) дагуух циркуляцид шилжүүл; экватор дээр <m>z=0</m>, <m>dz=0</m>.</p></hint>
+  <answer><p><m>-2\pi</m>.</p></answer>
+  <solution><p>Гадаад (дээш) нормальтай зохицсон хил нь дээрээс харахад цагийн зүүний эсрэг чиглэлтэй экватор <m>x=\cos t</m>, <m>y=\sin t</m>, <m>z=0</m>. Тэнд <m>dz=0</m> тул
+  <md>\iint_\Sigma\operatorname{rot}F\cdot n\,dS=\oint y\,dx-x\,dy=\int_0^{2\pi}\bigl(-\sin^2t-\cos^2t\bigr)dt=-2\pi.</md>
+  (Мөн <m>\operatorname{rot}F=(0,\ -ze^{xz},\ -2)</m> тул нэгж дугуйг <m>\Sigma</m>-ийн оронд авбал <m>\iint(-2)\,dx\,dy=-2\pi</m> — ижил хилтэй гадаргуунуудын урсгал тэнцүү.)</p></solution>
+</exercise>
+</homework>
+</ai>

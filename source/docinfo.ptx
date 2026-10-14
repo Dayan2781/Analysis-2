@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<docinfo>
+    <document-id>analysis2-num</document-id>
+    <macros>
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\Sx}{\mathrm{S}}
+\newcommand{\smallbigcup}{\mathop{\textstyle\bigcup}}
+\newcommand{\smallbigcap}{\mathop{\textstyle\bigcap}}
+\newcommand{\arccot}{\mathbf{arccot}}
+\newcommand{\sech}{\operatorname{sech}}
+\newcommand{\csch}{\operatorname{csch}}
+\newcommand{\arcsec}{\operatorname{arcsec}}
+\newcommand{\sgn}{\operatorname{sgn}}
+\newcommand{\diver}{\operatorname{div}}
+\newcommand{\rot}{\operatorname{rot}}
+\newcommand{\grad}{\operatorname{grad}}
+\newcommand{\curl}{\operatorname{curl}}
+    </macros>
+    <latex-image-preamble>\usepackage{tikz}\usetikzlibrary{arrows}</latex-image-preamble>
+    <!-- Монгол нэршил: PreTeXt-д mn-MN орчуулга байхгүй тул бүх нэрийг энд солив -->
+    <rename element="theorem">Теорем</rename>
+    <rename element="corollary">Мөрдөлгөө</rename>
+    <rename element="lemma">Лемм</rename>
+    <rename element="proposition">Өгүүлбэр</rename>
+    <rename element="claim">Өгүүлэмж</rename>
+    <rename element="proof">Баталгаа</rename>
+    <rename element="definition">Тодорхойлолт</rename>
+    <rename element="equation">Тэгшитгэл</rename>
+    <rename element="book">Ном</rename>
+    <rename element="chapter">Хичээл</rename>
+    <rename element="appendix">Хавсралт</rename>
+    <rename element="appendices">Хавсралтууд</rename>
+    <rename element="section">Хэсэг</rename>
+    <rename element="subsection">Дэд хэсэг</rename>
+    <rename element="subsubsection">Дэд хэсэг</rename>
+    <rename element="introduction">Удиртгал</rename>
+    <rename element="conclusion">Дүгнэлт</rename>
+    <rename element="exercises">Дасгал</rename>
+    <rename element="solutions">Бодолтууд</rename>
+    <rename element="references">Ном зүй</rename>
+    <rename element="frontmatter">Нүүр хэсэг</rename>
+    <rename element="backmatter">Төгсгөлийн хэсэг</rename>
+    <rename element="remark">Тэмдэглэл</rename>
+    <rename element="note">Санамж</rename>
+    <rename element="warning">Анхааруулга</rename>
+    <rename element="insight">Ойлголт</rename>
+    <rename element="example">Жишээ</rename>
+    <rename element="question">Асуулт</rename>
+    <rename element="problem">Бодлого</rename>
+    <rename element="project">Төсөл</rename>
+    <rename element="activity">Идэвхтэй дасгал</rename>
+    <rename element="exploration">Урьдчилсан дасгал</rename>
+    <rename element="task">Даалгавар</rename>
+    <rename element="investigation">Судалгаа</rename>
+    <rename element="objectives">Зорилго</rename>
+    <rename element="outcomes">Үр дүн</rename>
+    <rename element="figure">Зураг</rename>
+    <rename element="table">Хүснэгт</rename>
+    <rename element="fn">Зүүлт</rename>
+    <rename element="list">Жагсаалт</rename>
+    <rename element="exercise-divisional">Бодлого</rename>
+    <rename element="exercise-inline">Бодлого</rename>
+    <rename element="exercise-worksheet">Бодлого</rename>
+    <rename element="exercise-reading">Асуулт</rename>
+    <rename element="hint">Заавар</rename>
+    <rename element="answer">Хариу</rename>
+    <rename element="solution">Бодолт</rename>
+    <rename element="subexercises">Бодлогын бүлэг</rename>
+    <rename element="exercisegroup">Бодлогын бүлэг</rename>
+    <rename element="toc">Агуулга</rename>
+    <rename element="abstract">Хураангуй</rename>
+    <rename element="preface">Өмнөх үг</rename>
+    <rename element="colophon">Нийтлэлийн мэдээлэл</rename>
+    <rename element="index">Индекс</rename>
+    <rename element="previous">Өмнөх</rename>
+    <rename element="up">Дээш</rename>
+    <rename element="next">Дараах</rename>
+    <rename element="previous-short">Өмнөх</rename>
+    <rename element="up-short">Дээш</rename>
+    <rename element="next-short">Дараах</rename>
+    <rename element="top">Дээш</rename>
+    <rename element="authored">PreTeXt-ээр бичигдсэн</rename>
+    <rename element="search-book">Номоос хайх</rename>
+    <rename element="search-results-heading">Хайлтын үр дүн</rename>
+    <rename element="no-search-results">Илэрц олдсонгүй</rename>
+    <rename element="skip-to-content">Үндсэн агуулга руу шилжих</rename>
+    <rename element="copyright">Зохиогчийн эрх</rename>
+    <rename element="edition">Хэвлэл</rename>
+    <rename element="website">Вэб сайт</rename>
+    <rename element="print">Хэвлэх</rename>
+    <rename element="print-preview">Хэвлэхийн өмнө харах</rename>
+    <rename element="close">Хаах</rename>
+    <rename element="readability-settings">Унших тохиргоо</rename>
+    <rename element="readability-theme">Загвар</rename>
+    <rename element="readability-theme-light">Цайвар</rename>
+    <rename element="readability-theme-dark">Бараан</rename>
+    <rename element="readability-theme-system">Системийн</rename>
+    <rename element="reset-all">Бүгдийг сэргээх</rename>
+    <rename element="readability-line-height">Мөрийн өндөр</rename>
+    <rename element="readability-content-font-size">Үсгийн хэмжээ</rename>
+    <rename element="hide-hints">Заавар нуух</rename>
+    <rename element="hide-answers">Хариу нуух</rename>
+    <rename element="hide-solutions">Бодолт нуух</rename>
+    <rename element="reveal">Харуулах</rename>
+    <rename element="case">Тохиолдол</rename>
+</docinfo>

@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ai>
+<preview>
+<exploration xml:id="w13-preview">
+  <title>Биеийн эзлэхүүнийг зүсмэлээр олох (AI)</title>
+  <introduction>
+    <p><m>R=[0,1]\times[0,1]</m> квадрат дээр <m>z=x^2+y</m> гадаргуугийн доор орших биеийн эзлэхүүнийг олъё. Нэг хувьсагчийн үеийн адилаар суурийг жижиг хэсгүүдэд хувааж "баганууд"-аар ойролцоолох, эсвэл биеийг нимгэн зүсмэлүүдэд хуваах хоёр санааг туршиж үзье.</p>
+  </introduction>
+  <task>
+    <statement><p><m>R</m>-ийг тал нь <m>\frac12</m> дөрвөн квадратад хуваа. Квадрат бүр дээр функцийн хамгийн бага утгаар өндөр нь тодорхойлогдох багануудын эзлэхүүний нийлбэр <m>L</m>, хамгийн их утгаар тодорхойлогдох нийлбэр <m>U</m>-г ол.</p></statement>
+    <hint><p><m>f(x,y)=x^2+y</m> нь <m>x</m>, <m>y</m> хоёуланд нь өсөх тул хамгийн бага утга нь квадратын зүүн доод оройд, хамгийн их нь баруун дээд оройд хүрэгдэнэ.</p></hint>
+    <answer><p><m>L=\frac14\left(0+\frac14+\frac12+\frac34\right)=\frac38</m>, <m>U=\frac14\left(\frac34+\frac32+\frac54+2\right)=\frac{11}{8}</m>.</p></answer>
+  </task>
+  <task>
+    <statement><p><m>x</m>-ийг бэхэлж, биеийг <m>x=\mathrm{const}</m> хавтгайгаар зүсье. Зүсэлтийн талбай <m>A(x)=\int_0^1(x^2+y)\,dy</m>-г ол.</p></statement>
+    <answer><p><m>A(x)=x^2+\frac12</m>.</p></answer>
+  </task>
+  <task>
+    <statement><p>Зүсмэлүүдийн "эзлэхүүн" <m>A(x)\,dx</m>-ийг нэмж <m>\int_0^1A(x)\,dx</m>-ийг ол. Зүсэлтийг <m>y=\mathrm{const}</m> хавтгайгаар хийвэл ижил хариу гарах уу? Хариуг (a)-ийн <m>L</m>, <m>U</m>-тэй харьцуул.</p></statement>
+    <answer><p><m>\int_0^1\left(x^2+\frac12\right)dx=\frac56</m>. Нөгөө дарааллаар <m>\int_0^1\left(\frac13+y\right)dy=\frac56</m> — ижил, мөн <m>\frac38\le\frac56\le\frac{11}8</m>. Энэ бүлгийн Фубинийн теорем яг энэ "зүсмэлийн арга"-ыг зөвтгөнө.</p></answer>
+  </task>
+</exploration>
+</preview>
+
+<section ref="w13-s1">
+<exercise>
+  <statement><p><m>f(x,y)=xy</m>, <m>I=[0,1]^2</m> байг. Тэнхлэг бүрийг <m>n</m> тэнцүү хэсэгт хуваах <m>P_n</m> хуваалтын хувьд <m>U(P_n,f)</m>, <m>L(P_n,f)</m>-ийг олж, <m>f</m> интегралчлагдах ба <m>\iint_Ixy\,dx\,dy=\frac14</m> гэдгийг харуул.</p></statement>
+  <hint><p>Дэд брус <m>S_{ij}=\left[\frac{i-1}n,\frac in\right]\times\left[\frac{j-1}n,\frac jn\right]</m> дээр <m>f</m> нь баруун дээд оройд хамгийн их, зүүн доод оройд хамгийн бага утгаа авна. <m>\sum_{i=1}^ni=\frac{n(n+1)}2</m>.</p></hint>
+  <answer><p><m>U=\dfrac{(n+1)^2}{4n^2}</m>, <m>L=\dfrac{(n-1)^2}{4n^2}</m>, <m>U-L=\dfrac1n</m>.</p></answer>
+  <solution><p><m>|S_{ij}|=\frac1{n^2}</m>, <m>M_{S_{ij}}=\frac{ij}{n^2}</m>, <m>m_{S_{ij}}=\frac{(i-1)(j-1)}{n^2}</m>. Иймд
+  <md><mrow>U(P_n,f)&amp;=\frac1{n^4}\sum_{i=1}^n\sum_{j=1}^nij=\frac1{n^4}\left(\frac{n(n+1)}2\right)^2=\frac{(n+1)^2}{4n^2},</mrow><mrow>L(P_n,f)&amp;=\frac1{n^4}\left(\sum_{i=0}^{n-1}i\right)^2=\frac{(n-1)^2}{4n^2}.</mrow></md>
+  <m>U-L=\frac{(n+1)^2-(n-1)^2}{4n^2}=\frac1n&lt;\varepsilon</m> хангалттай их <m>n</m>-д тул Риманы шинжүүрээр <m>f</m> интегралчлагдана. <m>L(P_n,f)\le\iint_If\le U(P_n,f)</m> ба хоёр тал <m>\frac14</m> руу тэмүүлэх тул <m>\iint_If=\frac14</m>.</p></solution>
+</exercise>
+<exercise>
+  <statement><p><m>I\subset\R^n</m> брус, <m>p\in I</m> цэг өгөгдөв. <m>f(p)=1</m>, <m>x\neq p</m> үед <m>f(x)=0</m> гэе. <m>f</m> нь <m>I</m> дээр интегралчлагдах ба <m>\int_If=0</m> гэдгийг Дарбугийн нийлбэрээр батал.</p></statement>
+  <hint><p>Тэнхлэг бүрийг <m>k</m> тэнцүү хэсэгт хуваавал <m>p</m> цэг хамгийн ихдээ <m>2^n</m> дэд брусд харьяалагдана.</p></hint>
+  <solution><p>Дурын дэд брус <m>S</m> нь <m>p</m>-ээс ялгаатай цэгтэй тул <m>m_S=0</m>, иймд бүх <m>P</m>-д <m>L(P,f)=0</m>. Тэнхлэг бүрийг <m>k</m> тэнцүү хэсэгт хуваах <m>P_k</m> хуваалтын дэд брус бүрийн эзлэхүүн <m>\frac{|I|}{k^n}</m>. <m>p</m>-ийн координат бүр хамгийн ихдээ хоёр хөрш хэрчимд орох тул <m>p</m>-ийг агуулах дэд брусын тоо <m>\le2^n</m>; тэдгээр дээр <m>M_S=1</m>, бусад дээр <m>M_S=0</m>. Иймд
+  <md>0\le U(P_k,f)-L(P_k,f)=U(P_k,f)\le\frac{2^n|I|}{k^n}\longrightarrow0\quad(k\to\infty).</md>
+  Риманы шинжүүрээр <m>f</m> интегралчлагдах ба <m>0=L(P_k,f)\le\int_If\le U(P_k,f)\to0</m> тул <m>\int_If=0</m>.</p></solution>
+</exercise>
+<exercise>
+  <statement><p><m>g</m> нь <m>[a,b]</m> дээр интегралчлагдах, <m>f(x,y)=g(x)</m> нь <m>I=[a,b]\times[c,d]</m> дээр тодорхойлогдсон байг. <m>f</m> нь <m>I</m> дээр интегралчлагдах ба <m>\iint_If=(d-c)\int_a^bg(x)\,dx</m> гэж Дарбугийн нийлбэр ашиглан батал.</p></statement>
+  <hint><p><m>P=P_1\times P_2</m> бол <m>S=S_1\times S_2</m> дэд брус дээр <m>m_S(f)=m_{S_1}(g)</m>, <m>M_S(f)=M_{S_1}(g)</m>.</p></hint>
+  <solution><p><m>f</m> нь <m>y</m>-ээс хамаарахгүй тул <m>S=S_1\times S_2</m> дээр <m>m_S(f)=m_{S_1}(g)</m>, <m>M_S(f)=M_{S_1}(g)</m>. <m>|S|=|S_1||S_2|</m> ба <m>\sum_{S_2}|S_2|=d-c</m> тул
+  <md>L(P,f)=\sum_{S_1}\sum_{S_2}m_{S_1}(g)|S_1||S_2|=(d-c)L(P_1,g),\qquad U(P,f)=(d-c)U(P_1,g).</md>
+  <m>g</m> интегралчлагдах тул <m>U(P_1,g)-L(P_1,g)&lt;\frac{\varepsilon}{d-c}</m> байх <m>P_1</m> олдох ба <m>P=P_1\times\{c,d\}</m>-д <m>U(P,f)-L(P,f)&lt;\varepsilon</m>. Иймд <m>f</m> интегралчлагдана. Мөн <m>(d-c)L(P_1,g)\le\iint_If\le(d-c)U(P_1,g)</m> бүх <m>P_1</m>-д тул <m>\iint_If=(d-c)\int_a^bg</m>.</p></solution>
+</exercise>
+</section>
+
+<section ref="w13-s2">
+<exercise>
+  <statement><p>(a) <m>\{(x,0):0\le x\le1\}</m> хэрчим <m>\R^2</m>-д Жорданы утгаар хэмжээ тэг гэж тодорхойлолтоор батал.</p>
+  <p>(b) <m>x^2+y^2=1</m> тойрог Жорданы утгаар хэмжээ тэг гэдгийг Өгүүлбэр <xref ref="w13-prop-null" text="global"/> ашиглан үндэслэ.</p></statement>
+  <hint><p>(b) Тойрог нь <m>y=\pm\sqrt{1-x^2}</m>, <m>x\in[-1,1]</m> хоёр тасралтгүй функцийн графикийн нэгдэл.</p></hint>
+  <solution><p>(a) <m>\varepsilon&gt;0</m> өгөгдсөн бол <m>[0,1]\times\left[-\frac\varepsilon4,\frac\varepsilon4\right]</m> ганц тэгш өнцөгт хэрчмийг хучих бөгөөд талбай нь <m>\frac\varepsilon2&lt;\varepsilon</m>.</p>
+  <p>(b) <m>\varphi_\pm(x)=\pm\sqrt{1-x^2}</m> нь <m>[-1,1]</m> дээр тасралтгүй тул Өгүүлбэрийн 4-өөр тэдгээрийн графикууд Жорданы утгаар хэмжээ тэг. Хоёр олонлогийн нэгдэл нь нийт талбай нь <m>&lt;\frac\varepsilon2+\frac\varepsilon2</m> төгсгөлөг тооны тэгш өнцөгтөөр хучигдана.</p></solution>
+</exercise>
+<exercise>
+  <statement><p><m>I=[0,1]^2</m> дээр <m>f(x,y)=1</m> (<m>y&gt;x^2</m>), <m>f(x,y)=0</m> (<m>y\le x^2</m>) гэе. <m>f</m> интегралчлагдахыг Лебегийн шинжүүрээр үндэслэ. (Интегралын утгыг Фубинийн теоремоор олвол <m>\frac23</m> болно.)</p></statement>
+  <hint><p><m>f</m> хаана тасралтгүй вэ? <m>y=x^2</m> муруйгаас гадуурх цэгийн жижиг орчинд <m>f</m> тогтмол.</p></hint>
+  <solution><p><m>y&gt;x^2</m> эсвэл <m>y&lt;x^2</m> байх цэгийн хангалттай бага орчинд (тасралтгүй функцийн тэмдэг хадгалагдах тул) <m>f</m> тогтмол, иймд тасралтгүй. Тэгэхээр <m>D(f)\subset\{(x,x^2):0\le x\le1\}</m> — тасралтгүй функцийн график, Өгүүлбэр <xref ref="w13-prop-null" text="global"/>-ийн 4-өөр хэмжээ тэг. <m>f</m> зааглагдсан тул Лебегийн шинжүүрээр интегралчлагдана. Утга нь: <m>\int_0^1dx\int_{x^2}^1dy=\int_0^1(1-x^2)\,dx=\frac23</m>.</p></solution>
+</exercise>
+<exercise>
+  <statement><p><m>f</m> нь <m>I</m> брус дээр интегралчлагдах, <m>g:I\to\R</m> зааглагдсан бөгөөд <m>\{x:g(x)\ne f(x)\}\subset Z</m>, энд <m>Z</m> нь Жорданы утгаар хэмжээ тэг олонлог байг. <m>g</m> интегралчлагдах ба <m>\int_Ig=\int_If</m> гэж батал.</p></statement>
+  <hint><p><m>h=g-f</m> гэ. <m>h</m>-ийн тасралтын цэгүүд <m>\overline Z</m>-д агуулагдана. <m>Z</m>-г хучих төгсгөлөг тооны битүү брусын нэгдэл <m>\overline Z</m>-г мөн хучина.</p></hint>
+  <solution><p><m>h=g-f</m> зааглагдсан, <m>|h|\le M</m>, <m>Z</m>-ээс гадна <m>h=0</m>. <m>x\notin\overline Z</m> бол <m>x</m>-ийн орчинд <m>h\equiv0</m> тул <m>D(h)\subset\overline Z</m>. <m>Z</m>-г нийт эзлэхүүн нь <m>&lt;\varepsilon</m> битүү брусууд <m>J_1,\dots,J_N</m>-ээр хучвал тэдгээрийн нэгдэл битүү тул <m>\overline Z</m>-г мөн хучина; иймд <m>\overline Z</m> Жорданы утгаар хэмжээ тэг, Лебегийн шинжүүрээр <m>h</m> интегралчлагдана. <m>|h|\le M\chi_{J_1\cup\dots\cup J_N}\le M\sum_k\chi_{J_k}</m> тул <m>\left|\int_Ih\right|\le M\sum_k|J_k|&lt;M\varepsilon</m>; <m>\varepsilon</m> дурын тул <m>\int_Ih=0</m>. Эцэст нь <m>g=f+h</m> интегралчлагдах ба <m>\int_Ig=\int_If</m>.</p></solution>
+</exercise>
+</section>
+
+<section ref="w13-s3">
+<exercise>
+  <statement><p><m>E_1</m>, <m>E_2</m> Жорданы утгаар хэмжигдэхүүнтэй бол <m>E_1\setminus E_2</m> мөн хэмжигдэхүүнтэй гэж батал.</p></statement>
+  <hint><p><m>\partial(E_1\setminus E_2)\subset\partial E_1\cup\partial E_2</m> гэдгийг шалгаад Теорем <xref ref="w13-thm-jordan" text="global"/>-ийг хэрэглэ.</p></hint>
+  <solution><p><m>x\notin\partial E_1\cup\partial E_2</m> гэе. Тэгвэл <m>x</m> нь <m>E_1</m>-ийн дотоод эсвэл гадаад цэг, мөн <m>E_2</m>-ийн дотоод эсвэл гадаад цэг тул <m>x</m>-ийн ямар нэг орчин <m>W</m> нь <m>E_1</m>-д бүхэлдээ агуулагдах эсвэл <m>E_1</m>-тэй огтлолцохгүй, мөн <m>E_2</m>-ийн хувьд адил. Тэгвэл <m>W</m> нь <m>E_1\setminus E_2</m>-д бүхэлдээ агуулагдах эсвэл түүнтэй огтлолцохгүй, өөрөөр хэлбэл <m>x\notin\partial(E_1\setminus E_2)</m>. Иймд <m>\partial(E_1\setminus E_2)\subset\partial E_1\cup\partial E_2</m> нь Жорданы утгаар хэмжээ тэг хоёр олонлогийн нэгдэлд агуулагдах тул хэмжээ тэг. Теорем <xref ref="w13-thm-jordan" text="global"/>-аар <m>E_1\setminus E_2</m> хэмжигдэхүүнтэй.</p></solution>
+</exercise>
+<exercise>
+  <statement><p><m>E=\left\{\left(\frac1k,y\right):k\in\N,\ 0\le y\le1\right\}\subset\R^2</m> (тоолж болох тооны босоо хэрчим) Жорданы утгаар хэмжигдэхүүнтэй юу? Хэрэв тийм бол <m>|E|</m>-ийг ол.</p></statement>
+  <hint><p><m>\overline E</m> ба <m>\partial E</m>-ийг ол. Компакт, хэмжээ тэг олонлог Жорданы утгаар хэмжээ тэг.</p></hint>
+  <answer><p>Тийм, <m>|E|=0</m>.</p></answer>
+  <solution><p><m>E</m> дотоод цэггүй, <m>\overline E=E\cup(\{0\}\times[0,1])</m>, иймд <m>\partial E=\overline E</m>. Энэ нь зааглагдсан битүү, тиймээс компакт; тоолж болох тооны хэрчмийн нэгдэл тул (хэрчим бүр хэмжээ тэг) Өгүүлбэр <xref ref="w13-prop-null" text="global"/>-ийн 2-оор хэмжээ тэг, 3-аар Жорданы утгаар хэмжээ тэг. Теорем <xref ref="w13-thm-jordan" text="global"/>-аар <m>E</m> хэмжигдэхүүнтэй. Мөн <m>E\subset\overline E</m> нь Жорданы утгаар хэмжээ тэг тул <m>0\le|E|\le</m> хучих брусуудын нийт талбай <m>&lt;\varepsilon</m>, өөрөөр хэлбэл <m>|E|=0</m>.</p></solution>
+</exercise>
+<exercise>
+  <statement><p><m>E=\{(x,y):0\le x\le1,\ 0\le y\le1,\ x\in\Q\}</m> Жорданы утгаар хэмжигдэхүүнтэй юу?</p></statement>
+  <hint><p><m>\partial E</m>-ийг ол.</p></hint>
+  <answer><p>Үгүй.</p></answer>
+  <solution><p>Рационал ба иррационал тоонууд нягт тул <m>[0,1]^2</m>-ийн дурын цэгийн дурын орчинд <m>E</m>-ийн цэг ба <m>E</m>-д үл хамаарах цэг хоёулаа байна; иймд <m>\partial E=[0,1]^2</m>. Энэ нь Жорданы утгаар хэмжээ тэг биш: хэрэв <m>[0,1]^2\subset J_1\cup\dots\cup J_N</m> бол <m>\chi_{[0,1]^2}\le\sum_k\chi_{J_k}</m> тул интегралчилбал <m>1\le\sum_k|J_k|</m>. Теорем <xref ref="w13-thm-jordan" text="global"/>-аар <m>E</m> хэмжигдэхүүнгүй.</p></solution>
+</exercise>
+</section>
+
+<section ref="w13-s4">
+<exercise>
+  <statement><p>Интегралын монотон чанар ба <m>e^t\ge1+t</m> тэнцэтгэл бишийг ашиглан
+  <md>\frac54\le\iint_{[0,1]^2}e^{xy}\,dx\,dy\le e</md>
+  гэж батал.</p></statement>
+  <hint><p><m>\iint_{[0,1]^2}xy\,dx\,dy=\frac14</m> (энэ бүлгийн өмнөх дасгал).</p></hint>
+  <solution><p><m>[0,1]^2</m> дээр <m>1+xy\le e^{xy}\le e</m>. Монотон ба шугаман чанараар
+  <md>\iint(1+xy)=1+\frac14=\frac54\le\iint_{[0,1]^2}e^{xy}\le e\cdot|[0,1]^2|=e.</md>
+  (Бодит утга нь ойролцоогоор <m>1.318</m>.)</p></solution>
+</exercise>
+<exercise>
+  <statement><p><m>\displaystyle\iint_{[0,2]^2}\lfloor x+y\rfloor\,dx\,dy</m>-ийг ол (<m>\lfloor\cdot\rfloor</m> — бүхэл хэсэг).</p></statement>
+  <hint><p>Квадратыг <m>x+y=1,2,3</m> шулуунуудаар хэсэглэж, нэмэх чанарыг ашигла. Хэсэг бүр гурвалжин эсвэл олон өнцөгт бөгөөд хоорондоо хэрчмээр (хэмжээ тэг) огтлолцоно.</p></hint>
+  <answer><p><m>6</m>.</p></answer>
+  <solution><p><m>E_k=\{k\le x+y&lt;k+1\}\cap[0,2]^2</m> (<m>k=0,1,2,3</m>; <m>E_3</m>-д <m>x+y=4</m> цэгийг нэмнэ) дээр функц <m>k</m>-тэй тэнцүү. Талбайнууд: <m>|E_0|=\frac12</m>, <m>|E_0\cup E_1|=|\{x+y\le2\}|=2</m> тул <m>|E_1|=\frac32</m>; тэгш хэмээр (<m>(x,y)\mapsto(2-x,2-y)</m>) <m>|E_3|=\frac12</m>, <m>|E_2|=\frac32</m>. Нэмэх чанараар
+  <md>\iint_{[0,2]^2}\lfloor x+y\rfloor=0\cdot\frac12+1\cdot\frac32+2\cdot\frac32+3\cdot\frac12=6.</md></p></solution>
+</exercise>
+<exercise>
+  <statement><p><m>f</m> нь <m>p\in\R^2</m> цэгийн орчинд тасралтгүй, <m>B_r</m> нь <m>p</m> төвтэй <m>r</m> радиустай битүү дугуй (<m>|B_r|=\pi r^2</m>) бол
+  <md>\lim_{r\to0^+}\frac{1}{\pi r^2}\iint_{B_r}f(x,y)\,dx\,dy=f(p)</md>
+  гэж батал.</p></statement>
+  <hint><p>Дундаж утгын теорем (Теорем <xref ref="w13-thm-props" text="global"/>-ийн 4): <m>B_r</m> компакт, холбоост.</p></hint>
+  <solution><p><m>B_r</m> нь компакт, холбоост (дурын хоёр цэгийг хэрчмээр холбоно), хэмжигдэхүүнтэй, <m>f</m> тасралтгүй тул <m>\iint_{B_r}f=f(\xi_r)\,\pi r^2</m> байх <m>\xi_r\in B_r</m> олдоно. <m>|\xi_r-p|\le r\to0</m> ба <m>f</m> нь <m>p</m> дээр тасралтгүй тул <m>\frac1{\pi r^2}\iint_{B_r}f=f(\xi_r)\to f(p)</m>.</p></solution>
+</exercise>
+</section>
+
+<section ref="w13-s5">
+<exercise>
+  <statement><p><m>\displaystyle\iint_{[0,1]^2}x\,e^{xy}\,dx\,dy</m>-ийг ол. Интегралчлалын аль дарааллыг сонгох нь тохиромжтой вэ?</p></statement>
+  <hint><p>Эхлээд <m>y</m>-ээр интегралчил: <m>\int_0^1xe^{xy}\,dy=e^x-1</m>.</p></hint>
+  <answer><p><m>e-2</m>.</p></answer>
+  <solution><p>Интеграл доорх функц тасралтгүй тул Мөрдөлгөө <xref ref="w13-cor-fubini-rect" text="global"/>-аар
+  <md>\int_0^1dx\int_0^1xe^{xy}\,dy=\int_0^1\Bigl[e^{xy}\Bigr]_{y=0}^{y=1}dx=\int_0^1(e^x-1)\,dx=e-2.</md>
+  Нөгөө дарааллаар <m>\int_0^1xe^{xy}\,dx</m>-ийг хэсэгчлэн интегралчилж, дараа нь <m>y</m>-ээр интегралчлах шаардлагатай (<m>\int\frac{e^y}{y}dy</m> маягийн гишүүд гарч, хоорондоо устах ёстой) — илүү төвөгтэй.</p></solution>
+</exercise>
+<exercise>
+  <statement><p><m>\displaystyle\iint_{[0,\pi/2]^2}\sin(x+y)\,dx\,dy</m>-ийг ол.</p></statement>
+  <answer><p><m>2</m>.</p></answer>
+  <solution><p>
+  <md>\int_0^{\pi/2}dx\int_0^{\pi/2}\sin(x+y)\,dy=\int_0^{\pi/2}\Bigl[\cos x-\cos\Bigl(x+\frac\pi2\Bigr)\Bigr]dx=\int_0^{\pi/2}(\cos x+\sin x)\,dx=1+1=2.</md></p></solution>
+</exercise>
+<exercise>
+  <statement><p><m>V=[0,1]\times[0,2]\times[0,3]</m> брус дээр <m>\displaystyle\iiint_V(x+y+z)\,dx\,dy\,dz</m>-ийг ол.</p></statement>
+  <hint><p>Шугаман чанараар гурван интегралд задал; жишээ нь <m>\iiint_Vx=\int_0^1x\,dx\cdot2\cdot3</m>.</p></hint>
+  <answer><p><m>18</m>.</p></answer>
+  <solution><p>Үржвэр хэлбэрийн функцийн Фубинийн томьёогоор <m>\iiint_Vx=\frac12\cdot2\cdot3=3</m>, <m>\iiint_Vy=1\cdot\frac{2^2}2\cdot3=6</m>, <m>\iiint_Vz=1\cdot2\cdot\frac{3^2}2=9</m>. Нийлбэр <m>3+6+9=18</m>.</p></solution>
+</exercise>
+</section>
+
+<section ref="w13-s6">
+<exercise>
+  <statement><p>Интегралчлалын дарааллыг сольж бод:
+  <md>\int_0^1dy\int_{\arcsin y}^{\pi/2}\cos x\sqrt{1+\cos^2x}\,dx.</md></p></statement>
+  <hint><p>Муж: <m>0\le y\le1</m>, <m>\arcsin y\le x\le\frac\pi2</m> нь <m>0\le x\le\frac\pi2</m>, <m>0\le y\le\sin x</m>-тэй ижил.</p></hint>
+  <answer><p><m>\dfrac{2\sqrt2-1}{3}</m>.</p></answer>
+  <solution><p><m>y\le\sin x\iff\arcsin y\le x</m> (<m>x\in[0,\frac\pi2]</m>) тул
+  <md>\int_0^{\pi/2}dx\int_0^{\sin x}\cos x\sqrt{1+\cos^2x}\,dy=\int_0^{\pi/2}\sin x\cos x\sqrt{1+\cos^2x}\,dx.</md>
+  <m>u=\cos^2x</m>, <m>du=-2\sin x\cos x\,dx</m> орлуулгаар <m>=\frac12\int_0^1\sqrt{1+u}\,du=\frac13\Bigl[(1+u)^{3/2}\Bigr]_0^1=\frac{2\sqrt2-1}{3}</m>.</p></solution>
+</exercise>
+<exercise>
+  <statement><p><m>y=x</m> шулуун ба <m>y=x^2-2x</m> параболоор хашигдсан <m>D</m> мужийн талбай ба <m>\displaystyle\iint_Dx\,dx\,dy</m>-ийг ол.</p></statement>
+  <hint><p>Огтлолцлын цэгүүд: <m>x=0</m>, <m>x=3</m>. <m>[0,3]</m> дээр <m>x^2-2x\le x</m>.</p></hint>
+  <answer><p><m>|D|=\frac92</m>, <m>\iint_Dx\,dx\,dy=\frac{27}4</m>.</p></answer>
+  <solution><p><m>D=\{0\le x\le3,\ x^2-2x\le y\le x\}</m>. Теорем <xref ref="w13-thm-normal" text="global"/>-аар
+  <md>|D|=\int_0^3(3x-x^2)\,dx=\frac{27}2-9=\frac92,\qquad\iint_Dx=\int_0^3x(3x-x^2)\,dx=27-\frac{81}4=\frac{27}4.</md>
+  (Эндээс хүндийн төвийн абсцисс <m>\bar x=\frac{27/4}{9/2}=\frac32</m> — мужийн тэгш хэмийн тэнхлэг.)</p></solution>
+</exercise>
+<exercise>
+  <statement><p><m>V=\{0\le x\le1,\ 0\le y\le x,\ 0\le z\le xy\}</m> дээр <m>\displaystyle\iiint_Vz\,dx\,dy\,dz</m>-ийг ол.</p></statement>
+  <answer><p><m>\dfrac1{36}</m>.</p></answer>
+  <solution><p>Гурван хэмжээст энгийн мужийн томьёогоор
+  <md>\int_0^1dx\int_0^xdy\int_0^{xy}z\,dz=\int_0^1dx\int_0^x\frac{x^2y^2}2\,dy=\int_0^1\frac{x^5}{6}\,dx=\frac1{36}.</md></p></solution>
+</exercise>
+</section>
+
+<section ref="w13-s7">
+<exercise>
+  <statement><p><m>D=\{0\le x\le1,\ 0\le y\le x^2\}</m> муж дээр, <m>z=x+y</m> хавтгайн доор, <m>z=0</m>-ийн дээр орших биеийн эзлэхүүнийг ол.</p></statement>
+  <answer><p><m>\dfrac7{20}</m>.</p></answer>
+  <solution><p>
+  <md>|V|=\int_0^1dx\int_0^{x^2}(x+y)\,dy=\int_0^1\Bigl(x^3+\frac{x^4}2\Bigr)dx=\frac14+\frac1{10}=\frac7{20}.</md></p></solution>
+</exercise>
+<exercise>
+  <statement><p><m>(0,0)</m>, <m>(1,0)</m>, <m>(0,1)</m> оройтой гурвалжин ялтасын нягт <m>\rho(x,y)=x</m> бол масс ба массын төвийг ол.</p></statement>
+  <hint><p><m>D=\{0\le x\le1,\ 0\le y\le1-x\}</m>.</p></hint>
+  <answer><p><m>m=\frac16</m>, <m>(\bar x,\bar y)=\left(\frac12,\frac14\right)</m>.</p></answer>
+  <solution><p>
+  <md><mrow>m&amp;=\int_0^1x(1-x)\,dx=\frac16,\qquad\iint_Dx\rho=\int_0^1x^2(1-x)\,dx=\frac1{12},</mrow><mrow>\iint_Dy\rho&amp;=\int_0^1x\frac{(1-x)^2}2\,dx=\frac12\Bigl(\frac12-\frac23+\frac14\Bigr)=\frac1{24}.</mrow></md>
+  Иймд <m>\bar x=\frac{1/12}{1/6}=\frac12</m>, <m>\bar y=\frac{1/24}{1/6}=\frac14</m>. (Нэгэн төрлийн үед <m>(\frac13,\frac13)</m>; нягт <m>x</m>-ээр өсөх тул төв баруун тийш шилжсэн.)</p></solution>
+</exercise>
+<exercise>
+  <statement><p>Өмнөх бодлогын гурвалжин нэгэн төрлийн (<m>\rho\equiv1</m>) бол <m>I_x</m>, <m>I_y</m>, <m>I_0</m> инерцийн моментуудыг олж, <m>I_0</m>-ийг масс <m>m</m>-ээр илэрхийл.</p></statement>
+  <answer><p><m>I_x=I_y=\frac1{12}</m>, <m>I_0=\frac16=\frac m3</m>.</p></answer>
+  <solution><p><m>I_x=\int_0^1dx\int_0^{1-x}y^2\,dy=\int_0^1\frac{(1-x)^3}3\,dx=\frac1{12}</m>; тэгш хэмээр (<m>x\leftrightarrow y</m>) <m>I_y=\frac1{12}</m>. <m>I_0=I_x+I_y=\frac16</m>, <m>m=|D|=\frac12</m> тул <m>I_0=\frac m3</m>.</p></solution>
+</exercise>
+</section>
+
+<section ref="w13-s8">
+<exercise>
+  <statement><p><m>(0,1]^2</m> дээр <m>f(x,y)=\dfrac{x-y}{(x+y)^3}</m> гэе.
+  <ol marker="(a)">
+    <li><p><m>\displaystyle\int_0^1dx\int_0^1f\,dy=\frac12</m>, <m>\displaystyle\int_0^1dy\int_0^1f\,dx=-\frac12</m> гэж харуул.</p></li>
+    <li><p>Энэ нь Фубинийн теоремтой яагаад зөрчилдөхгүй вэ?</p></li>
+  </ol></p></statement>
+  <hint><p><m>x-y=2x-(x+y)</m> гэж бичвэл <m>\frac{\partial}{\partial y}\left(\frac{y}{(x+y)^2}\right)=f(x,y)</m> гэдгийг шалгаж болно.</p></hint>
+  <solution><p>(a) <m>\frac{\partial}{\partial y}\frac{y}{(x+y)^2}=\frac{(x+y)-2y}{(x+y)^3}=f(x,y)</m>. Иймд <m>x&gt;0</m> бэхэлсэн үед
+  <md>\int_0^1f(x,y)\,dy=\frac{1}{(x+1)^2},\qquad\int_0^1\frac{dx}{(1+x)^2}=\frac12.</md>
+  <m>f(y,x)=-f(x,y)</m> тул нөгөө дарааллын давталттай интеграл <m>-\frac12</m>.</p>
+  <p>(b) <m>f</m> нь <m>(0,0)</m>-ийн орчинд зааглагдаагүй (жишээ нь <m>f(x,0)=\frac1{x^2}\to\infty</m>), иймд <m>[0,1]^2</m> дээр Риманы утгаар интегралчлагдахгүй; Фубинийн теоремын нөхцөл биелэхгүй.</p></solution>
+</exercise>
+<exercise>
+  <statement><p><m>f(x,y)=\dfrac{x^2-y^2}{(x^2+y^2)^2}</m> (Жишээ <xref ref="w13-ex-unbounded" text="global"/>) ба <m>0&lt;\varepsilon&lt;1</m> байг.
+  <ol marker="(a)">
+    <li><p><m>\displaystyle\iint_{[\varepsilon,1]^2}f\,dx\,dy=0</m> гэж батал.</p></li>
+    <li><p><m>\displaystyle\iint_{[\varepsilon,1]\times[0,1]}f\,dx\,dy=\frac\pi4-\arctan\varepsilon</m> гэж батал.</p></li>
+  </ol>
+  <m>\varepsilon\to0</m> үед хоёр "ойртолт" өөр хязгаарт тэмүүлж буйг тайлбарла.</p></statement>
+  <hint><p>(a) <m>[\varepsilon,1]^2</m> дээр <m>f</m> тасралтгүй ба <m>f(y,x)=-f(x,y)</m>. (b) <m>\int_0^1f(x,y)\,dy=\frac{1}{1+x^2}</m>.</p></hint>
+  <solution><p>(a) <m>[\varepsilon,1]^2</m> дээр <m>f</m> тасралтгүй тул Фубинийн теоремыг хоёр дарааллаар хэрэглэж болно; <m>x</m>, <m>y</m>-ийн нэрийг солиход <m>I=\iint f(x,y)=\iint f(y,x)=-I</m>, иймд <m>I=0</m>.</p>
+  <p>(b) <m>[\varepsilon,1]\times[0,1]</m> дээр <m>f</m> тасралтгүй (<m>x\ge\varepsilon&gt;0</m>), <m>\frac{\partial}{\partial y}\frac{y}{x^2+y^2}=f</m> тул
+  <md>\iint_{[\varepsilon,1]\times[0,1]}f=\int_\varepsilon^1\frac{dx}{1+x^2}=\frac\pi4-\arctan\varepsilon.</md>
+  <m>\varepsilon\to0</m> үед (a) нь <m>0</m>, (b) нь <m>\frac\pi4</m> руу тэмүүлнэ: <m>(0,1]^2</m>-ийг "дүүргэх" аргаас хамаарч өөр хариу гарч байна. Энэ нь <m>\iint|f|=\infty</m> байгаатай холбоотой бөгөөд дараагийн бүлгийн өргөтгөсөн интегралын тодорхойлолтод шавхалтаас үл хамаарах нөхцөл тавьдгийн учир юм.</p></solution>
+</exercise>
+</section>
+
+<homework>
+<exercise>
+  <statement><p><m>\displaystyle\iint_{[0,1]^2}\max(x,y)\,dx\,dy</m>-ийг ол.</p></statement>
+  <hint><p>Квадратыг <m>y=x</m> диагоналиар хоёр гурвалжинд хуваа; тэгш хэм ашигла.</p></hint>
+  <answer><p><m>\dfrac23</m>.</p></answer>
+  <solution><p><m>T_1=\{0\le y\le x\le1\}</m> дээр <m>\max(x,y)=x</m>, <m>T_2=\{0\le x\le y\le1\}</m> дээр <m>y</m>; огтлолцол нь диагональ (хэмжээ тэг). <m>x\leftrightarrow y</m> тэгш хэмээр хоёр хэсгийн интеграл тэнцүү:
+  <md>\iint_{[0,1]^2}\max(x,y)=2\int_0^1dx\int_0^xx\,dy=2\int_0^1x^2\,dx=\frac23.</md></p></solution>
+</exercise>
+<exercise>
+  <statement><p><m>\displaystyle\iint_{[-1,1]\times[0,2]}|y-x^2|\,dx\,dy</m>-ийг ол.</p></statement>
+  <hint><p><m>x</m>-ийг бэхэлж, дотоод интегралыг <m>[0,x^2]</m> ба <m>[x^2,2]</m> гэж хуваа.</p></hint>
+  <answer><p><m>\dfrac{46}{15}</m>.</p></answer>
+  <solution><p><m>|x|\le1</m> үед <m>x^2\le1&lt;2</m> тул
+  <md>\int_0^2|y-x^2|\,dy=\int_0^{x^2}(x^2-y)\,dy+\int_{x^2}^2(y-x^2)\,dy=\frac{x^4}2+\frac{(2-x^2)^2}2=x^4-2x^2+2.</md>
+  Иймд <m>\int_{-1}^1(x^4-2x^2+2)\,dx=\frac25-\frac43+4=\frac{46}{15}</m>.</p></solution>
+</exercise>
+<exercise>
+  <statement><p><m>z=x^2+y^2</m> параболоид ба <m>z=2x</m> хавтгайгаар хашигдсан биеийн эзлэхүүнийг Кавальеригийн зарчим (<m>x=\mathrm{const}</m> огтлол) ашиглан ол.</p></statement>
+  <hint><p>Бие нь <m>(x-1)^2+y^2\le1</m> дугуй дээр, өндөр нь <m>2x-x^2-y^2=s^2-y^2</m>, энд <m>s=\sqrt{1-(x-1)^2}</m>. <m>\int_{-1}^1(1-t^2)^{3/2}dt=\frac{3\pi}8</m> (<m>t=\sin u</m>).</p></hint>
+  <answer><p><m>\dfrac\pi2</m>.</p></answer>
+  <solution><p><m>x^2+y^2\le z\le2x</m> нь <m>x^2+y^2\le2x</m>, өөрөөр хэлбэл <m>(x-1)^2+y^2\le1</m> үед утгатай. <m>x\in[0,2]</m>-ийг бэхэлбэл огтлол нь <m>|y|\le s</m>, <m>x^2+y^2\le z\le2x</m> муж, талбай нь
+  <md>S(x)=\int_{-s}^s(s^2-y^2)\,dy=\frac43s^3=\frac43\bigl(1-(x-1)^2\bigr)^{3/2}.</md>
+  <m>t=x-1</m> гэвэл <m>|V|=\frac43\int_{-1}^1(1-t^2)^{3/2}dt=\frac43\cdot\frac{3\pi}8=\frac\pi2</m>. (<m>t=\sin u</m>: <m>\int_{-\pi/2}^{\pi/2}\cos^4u\,du=\frac{3\pi}8</m>.)</p></solution>
+</exercise>
+<exercise>
+  <statement><p><m>f</m> ба <m>\frac{\partial f}{\partial x}</m> нь <m>[a,b]\times[c,d]</m> дээр тасралтгүй, <m>F(x)=\int_c^df(x,y)\,dy</m> бол Фубинийн теорем ашиглан
+  <md>F'(x)=\int_c^d\frac{\partial f}{\partial x}(x,y)\,dy</md>
+  гэж батал (параметрээс хамаарсан интегралыг дифференциалчлах дүрэм).</p></statement>
+  <hint><p><m>G(s)=\int_c^df_x(s,y)\,dy</m> гэж аваад <m>\int_a^xG(s)\,ds</m>-ийг дарааллыг сольж бод.</p></hint>
+  <solution><p><m>f_x</m> нь компакт <m>[a,b]\times[c,d]</m> дээр жигд тасралтгүй тул <m>|G(s)-G(s')|\le(d-c)\sup_y|f_x(s,y)-f_x(s',y)|\to0</m> (<m>s'\to s</m>) — <m>G</m> тасралтгүй. <m>x\in[a,b]</m> бэхэлж, <m>[a,x]\times[c,d]</m> дээр тасралтгүй <m>f_x</m>-д Мөрдөлгөө <xref ref="w13-cor-fubini-rect" text="global"/>-ийг хэрэглэвэл
+  <md>\int_a^xG(s)\,ds=\int_c^d\Bigl(\int_a^xf_x(s,y)\,ds\Bigr)dy=\int_c^d\bigl(f(x,y)-f(a,y)\bigr)dy=F(x)-F(a).</md>
+  Зүүн тал нь тасралтгүй <m>G</m>-ийн дээд хязгаараас хамаарсан интеграл тул интеграл тооллын үндсэн теоремоор <m>F'(x)=G(x)</m>.</p></solution>
+</exercise>
+<exercise>
+  <statement><p><m>f</m> нь <m>I=[a,b]\times[c,d]</m> дээр тасралтгүй бөгөөд <m>I</m>-д агуулагдах дурын тэгш өнцөгт <m>R</m>-ийн хувьд <m>\iint_Rf=0</m> бол <m>f\equiv0</m> гэж батал. Мөн <m>F(x,y)=\iint_{[a,x]\times[c,y]}f</m> бол <m>\frac{\partial^2F}{\partial x\,\partial y}=f</m> гэж харуул.</p></statement>
+  <hint><p><m>f(p)&gt;0</m> гэж үзээд <m>p</m>-ийн жижиг тэгш өнцөгт орчинд <m>f&gt;\frac{f(p)}2</m> болохыг ашигла. Хоёр дахь хэсэгт <m>F(x,y)=\int_a^xds\int_c^yf(s,t)\,dt</m>.</p></hint>
+  <solution><p>(1) <m>f(p)&gt;0</m> байх <m>p\in I</m> оршдог гэе. Тасралтгүй чанараар <m>p</m>-г агуулсан, эерэг талбайтай <m>R\subset I</m> тэгш өнцөгт олдох ба түүн дээр <m>f\ge\frac{f(p)}2</m>. Монотон чанараар <m>\iint_Rf\ge\frac{f(p)}2|R|&gt;0</m> — зөрчил. <m>f(p)&lt;0</m> бол <m>-f</m>-д адил. Иймд <m>f\equiv0</m>.</p>
+  <p>(2) Фубиниор <m>F(x,y)=\int_a^x\varphi(s,y)\,ds</m>, <m>\varphi(s,y)=\int_c^yf(s,t)\,dt</m>. <m>\varphi</m> тасралтгүй (жигд тасралтгүй <m>f</m>-ээс) тул үндсэн теоремоор <m>F_x(x,y)=\varphi(x,y)=\int_c^yf(x,t)\,dt</m>, дахин үндсэн теоремоор <m>F_{xy}=f(x,y)</m>.</p></solution>
+</exercise>
+</homework>
+</ai>

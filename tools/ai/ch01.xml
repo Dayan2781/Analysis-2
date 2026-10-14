@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ai>
+<preview>
+<exploration xml:id="w01-preview">
+  <title>Уламжлалаас эх функц рүү (AI)</title>
+  <introduction>
+    <p>Бид функцийн уламжлалыг олох дүрмүүдийг сайн мэднэ. Одоо урвуу асуулт тавья: <em>уламжлал нь өгөгдсөн бол анхны функц нь юу байх вэ?</em> Энэ асуулт физикт байнга гардаг: хурдаа мэдэж байгаад замаа, хурдатгалаа мэдэж байгаад хурдаа олох хэрэгтэй болдог.</p>
+  </introduction>
+  <task>
+    <statement><p><m>F'(x)=3x^2</m> байх <m>F</m> функцийг ол. Ийм функц ганцхан уу? Хэд хэдэн жишээ бич.</p></statement>
+    <answer><p><m>F(x)=x^3</m>, <m>x^3+5</m>, <m>x^3-\pi</m>, … Ерөнхийдөө <m>F(x)=x^3+C</m>; ийм функц төгсгөлгүй олон.</p></answer>
+  </task>
+  <task>
+    <statement><p>Чөлөөт уналтын хурд <m>v(t)=9.8\,t</m> м/с, <m>s(0)=0</m> бол <m>t</m> секундэд туулах зам <m>s(t)</m>-г ол.</p></statement>
+    <hint><p><m>s'(t)=v(t)</m> байх ёстой.</p></hint>
+    <answer><p><m>s(t)=4.9\,t^2</m> м.</p></answer>
+  </task>
+  <task>
+    <statement><p><m>(x\ln x - x)'</m>-ийг ол. Эндээс <m>\ln x</m> функцийн эх функцийн талаар юу хэлж болох вэ?</p></statement>
+    <answer><p><m>(x\ln x-x)'=\ln x+1-1=\ln x</m>. Иймд <m>x\ln x-x</m> нь <m>(0,\infty)</m> дээр <m>\ln x</m>-ийн эх функц; бүх эх функц нь <m>x\ln x - x + C</m> хэлбэртэй.</p></answer>
+  </task>
+</exploration>
+</preview>
+
+<section ref="w01-s1">
+<exercise>
+  <statement><p><m>F(x)=\ln|x|</m> ба
+  <md>G(x)=\begin{cases}\ln|x|, &amp; x&lt;0,\\ \ln|x|+1, &amp; x&gt;0\end{cases}</md>
+  функцүүд <m>\R\setminus\{0\}</m> дээр <m>F'=G'=\frac1x</m> байна. Гэтэл <m>G-F</m> тогтмол биш. Энэ нь <xref ref="togtmol" text="global"/>-р теоремтой зөрчилдөх үү?</p></statement>
+  <hint><p>Теоремд <m>I</m> олонлог ямар байх ёстойг анхаар.</p></hint>
+  <answer><p>Зөрчилдөхгүй: <m>\R\setminus\{0\}</m> нь завсар биш.</p></answer>
+  <solution><p>Теорем нь <m>I</m> <em>завсар</em> байхыг шаарддаг (баталгаанд Лагранжийн теоремыг <m>I</m>-ийн дурын хоёр цэгийн хоорондох хэрчим дээр хэрэглэдэг). <m>\R\setminus\{0\}=(-\infty,0)\cup(0,\infty)</m> нь хоёр завсрын нэгдэл тул завсар бүр дээр <m>G-F</m> тогтмол байна: <m>(-\infty,0)</m> дээр <m>0</m>, <m>(0,\infty)</m> дээр <m>1</m>. Иймд <m>\frac1x</m>-ийн бүх эх функц нь <m>\ln|x|+C_1</m> (<m>x&lt;0</m>), <m>\ln|x|+C_2</m> (<m>x&gt;0</m>) хэлбэртэй, <m>C_1, C_2</m> нь хамааралгүй тогтмолууд.</p></solution>
+</exercise>
+<exercise>
+  <statement><p><m>f(x)=|x|</m> функцийн бүх <m>\R</m> дээрх эх функцийг ол.</p></statement>
+  <hint><p><m>x\ge 0</m> ба <m>x&lt;0</m> үед тусад нь эх функц олоод, <m>x=0</m> цэгт тасралтгүй, дифференциалчлагдахуйц байхаар нийлүүл.</p></hint>
+  <answer><p><m>F(x)=\dfrac{x|x|}{2}+C</m>.</p></answer>
+  <solution><p><m>F(x)=\frac{x|x|}{2}</m> гэе. <m>x&gt;0</m> үед <m>F(x)=\frac{x^2}{2}</m>, <m>F'(x)=x=|x|</m>; <m>x&lt;0</m> үед <m>F(x)=-\frac{x^2}{2}</m>, <m>F'(x)=-x=|x|</m>. <m>x=0</m> цэгт
+  <md>F'(0)=\lim_{h\to0}\frac{h|h|/2}{h}=\lim_{h\to 0}\frac{|h|}{2}=0=|0|.</md>
+  Иймд <m>F'=|x|</m> бүх <m>\R</m> дээр биелэх ба <m>\R</m> завсар тул бүх эх функц нь <m>F(x)+C</m>.</p></solution>
+</exercise>
+<exercise>
+  <statement><p>Тодорхойлолт ашиглан (уламжлал авч) дараах тэнцэтгэлийг шалга:
+  <md>\int \frac{dx}{\sqrt{x^2+1}}=\ln\left(x+\sqrt{x^2+1}\right)+C.</md></p></statement>
+  <hint><p>Давхар функцийн уламжлал ашигла. <m>\left(\sqrt{x^2+1}\right)'=\frac{x}{\sqrt{x^2+1}}</m>.</p></hint>
+  <solution><p>
+  <md>\left(\ln\left(x+\sqrt{x^2+1}\right)\right)'=\frac{1+\frac{x}{\sqrt{x^2+1}}}{x+\sqrt{x^2+1}}=\frac{\frac{\sqrt{x^2+1}+x}{\sqrt{x^2+1}}}{x+\sqrt{x^2+1}}=\frac{1}{\sqrt{x^2+1}}.</md>
+  Мөн <m>x+\sqrt{x^2+1}&gt;0</m> бүх <m>x</m>-д тул функц <m>\R</m> дээр тодорхойлогдоно.</p></solution>
+</exercise>
+</section>
+
+<section ref="w01-s2">
+<exercise>
+  <statement><p><m>\displaystyle\int\left(2x^3-\frac{3}{x}+4e^x\right)dx</m>-ийг ол.</p></statement>
+  <answer><p><m>\dfrac{x^4}{2}-3\ln|x|+4e^x+C</m>.</p></answer>
+  <solution><p>Шугаман чанар ба жагсаалтын 1, 2, 3-р томьёогоор
+  <md>\int\left(2x^3-\frac3x+4e^x\right)dx=2\cdot\frac{x^4}{4}-3\ln|x|+4e^x+C=\frac{x^4}{2}-3\ln|x|+4e^x+C.</md></p></solution>
+</exercise>
+<exercise>
+  <statement><p><m>\displaystyle\int\frac{(x+1)^2}{\sqrt{x}}\,dx</m>-ийг ол.</p></statement>
+  <hint><p>Хүртвэрийг задалж, гишүүн бүрийг <m>\sqrt{x}</m>-д хувааж зэрэгт функцүүдийн нийлбэр болго.</p></hint>
+  <answer><p><m>\dfrac25x^{5/2}+\dfrac43x^{3/2}+2x^{1/2}+C</m>.</p></answer>
+  <solution><p><m>\frac{(x+1)^2}{\sqrt x}=\frac{x^2+2x+1}{x^{1/2}}=x^{3/2}+2x^{1/2}+x^{-1/2}</m> тул
+  <md>\int\frac{(x+1)^2}{\sqrt{x}}\,dx=\frac{x^{5/2}}{5/2}+2\frac{x^{3/2}}{3/2}+\frac{x^{1/2}}{1/2}+C=\frac25x^{5/2}+\frac43x^{3/2}+2\sqrt x+C.</md></p></solution>
+</exercise>
+<exercise>
+  <statement><p><m>\displaystyle\int\frac{dx}{\sin^2x\cos^2x}</m>-ийг ол.</p></statement>
+  <hint><p>Хүртвэр дэх <m>1</m>-ийг <m>\sin^2x+\cos^2x</m> гэж бич.</p></hint>
+  <answer><p><m>\tan x-\cot x+C</m>.</p></answer>
+  <solution><p>
+  <md>\frac{1}{\sin^2x\cos^2x}=\frac{\sin^2x+\cos^2x}{\sin^2x\cos^2x}=\frac{1}{\cos^2x}+\frac{1}{\sin^2x}.</md>
+  <m>(\tan x)'=\frac{1}{\cos^2 x}</m>, <m>(\cot x)'=-\frac{1}{\sin^2x}</m> тул интеграл нь <m>\tan x-\cot x+C</m>.</p></solution>
+</exercise>
+</section>
+
+<section ref="w01-s3">
+<exercise>
+  <statement><p><m>\displaystyle\int x\,2^x\,dx</m>-ийг ол.</p></statement>
+  <hint><p>LAPTE дүрмээр <m>f(x)=x</m>, <m>g'(x)=2^x</m> гэж ав.</p></hint>
+  <answer><p><m>\dfrac{x\,2^x}{\ln 2}-\dfrac{2^x}{\ln^2 2}+C</m>.</p></answer>
+  <solution><p><m>f=x</m>, <m>g'=2^x</m> гэвэл <m>f'=1</m>, <m>g=\frac{2^x}{\ln2}</m>. Иймд
+  <md>\int x\,2^x\,dx=\frac{x\,2^x}{\ln2}-\int\frac{2^x}{\ln 2}\,dx=\frac{x\,2^x}{\ln2}-\frac{2^x}{\ln^22}+C.</md></p></solution>
+</exercise>
+<exercise>
+  <statement><p><m>\displaystyle\int\frac{\ln x}{x^2}\,dx</m>-ийг ол.</p></statement>
+  <hint><p><m>f(x)=\ln x</m>, <m>g'(x)=x^{-2}</m>.</p></hint>
+  <answer><p><m>-\dfrac{\ln x+1}{x}+C</m>.</p></answer>
+  <solution><p><m>f=\ln x</m>, <m>g'=x^{-2}</m> гэвэл <m>f'=\frac1x</m>, <m>g=-\frac1x</m>:
+  <md>\int\frac{\ln x}{x^2}\,dx=-\frac{\ln x}{x}+\int\frac{1}{x^2}\,dx=-\frac{\ln x}{x}-\frac1x+C.</md></p></solution>
+</exercise>
+<exercise>
+  <statement><p><m>I_n=\displaystyle\int x^ne^x\,dx</m> (<m>n\in\N</m>) гэе.
+  <ol marker="(a)">
+    <li><p><m>I_n=x^ne^x-nI_{n-1}</m> гэсэн бууруулах томьёог батал.</p></li>
+    <li><p>Үүнийг ашиглан <m>I_3</m>-ийг ол.</p></li>
+  </ol></p></statement>
+  <hint><p><m>f=x^n</m>, <m>g'=e^x</m> гэж хэсэгчлэн интегралчил. <m>I_0=e^x+C</m>.</p></hint>
+  <answer><p><m>I_3=e^x\left(x^3-3x^2+6x-6\right)+C</m>.</p></answer>
+  <solution><p>(a) <m>f=x^n</m>, <m>g'=e^x</m> гэвэл <m>f'=nx^{n-1}</m>, <m>g=e^x</m> ба <m>I_n=x^ne^x-n\int x^{n-1}e^x\,dx=x^ne^x-nI_{n-1}</m>.</p>
+  <p>(b) <m>I_0=e^x</m>, <m>I_1=xe^x-e^x</m>, <m>I_2=x^2e^x-2I_1=e^x(x^2-2x+2)</m>,
+  <md>I_3=x^3e^x-3I_2=e^x\left(x^3-3x^2+6x-6\right)+C.</md></p></solution>
+</exercise>
+</section>
+
+<section ref="w01-s4">
+<exercise>
+  <statement><p><m>\displaystyle\int xe^{-x^2}\,dx</m>-ийг ол.</p></statement>
+  <hint><p><m>u=-x^2</m> орлуулга.</p></hint>
+  <answer><p><m>-\dfrac12e^{-x^2}+C</m>.</p></answer>
+  <solution><p><m>u=-x^2</m> гэвэл <m>du=-2x\,dx</m>, <m>x\,dx=-\frac{du}{2}</m>:
+  <md>\int xe^{-x^2}\,dx=-\frac12\int e^u\,du=-\frac12e^{-x^2}+C.</md></p></solution>
+</exercise>
+<exercise>
+  <statement><p><m>\displaystyle\int\frac{\cos x}{1+\sin^2x}\,dx</m>-ийг ол.</p></statement>
+  <hint><p>Интеграл дотор <m>(\sin x)'</m> бэлэн байна.</p></hint>
+  <answer><p><m>\arctan(\sin x)+C</m>.</p></answer>
+  <solution><p><m>u=\sin x</m>, <m>du=\cos x\,dx</m>:
+  <md>\int\frac{\cos x}{1+\sin^2x}\,dx=\int\frac{du}{1+u^2}=\arctan u+C=\arctan(\sin x)+C.</md></p></solution>
+</exercise>
+<exercise>
+  <statement><p>Тригонометр орлуулга ашиглан <m>\displaystyle\int\frac{dx}{(1+x^2)^{3/2}}</m>-ийг ол.</p></statement>
+  <hint><p><m>x=\tan\theta</m>, <m>-\frac\pi2&lt;\theta&lt;\frac\pi2</m> гэж ав.</p></hint>
+  <answer><p><m>\dfrac{x}{\sqrt{1+x^2}}+C</m>.</p></answer>
+  <solution><p><m>x=\tan\theta</m> гэвэл <m>dx=\sec^2\theta\,d\theta</m>, <m>1+x^2=\sec^2\theta</m>, <m>(1+x^2)^{3/2}=\sec^3\theta</m> (<m>\cos\theta&gt;0</m>). Иймд
+  <md>\int\frac{dx}{(1+x^2)^{3/2}}=\int\frac{\sec^2\theta}{\sec^3\theta}\,d\theta=\int\cos\theta\,d\theta=\sin\theta+C.</md>
+  <m>\tan\theta=x</m> үед <m>\sin\theta=\frac{\tan\theta}{\sec\theta}=\frac{x}{\sqrt{1+x^2}}</m>.</p></solution>
+</exercise>
+<exercise>
+  <statement><p><m>\displaystyle\int\frac{x^2}{\sqrt{9-x^2}}\,dx</m>-ийг ол.</p></statement>
+  <hint><p><m>x=3\sin\theta</m> гэж ав. <m>\sin^2\theta=\frac{1-\cos2\theta}{2}</m>.</p></hint>
+  <answer><p><m>\dfrac92\arcsin\dfrac x3-\dfrac x2\sqrt{9-x^2}+C</m>.</p></answer>
+  <solution><p><m>x=3\sin\theta</m>, <m>|\theta|&lt;\frac\pi2</m> гэвэл <m>dx=3\cos\theta\,d\theta</m>, <m>\sqrt{9-x^2}=3\cos\theta</m>:
+  <md>\int\frac{9\sin^2\theta}{3\cos\theta}\,3\cos\theta\,d\theta=9\int\sin^2\theta\,d\theta=\frac92\left(\theta-\frac{\sin2\theta}{2}\right)+C=\frac92\theta-\frac92\sin\theta\cos\theta+C.</md>
+  <m>\sin\theta=\frac x3</m>, <m>\cos\theta=\frac{\sqrt{9-x^2}}{3}</m> тул <m>\frac92\sin\theta\cos\theta=\frac x2\sqrt{9-x^2}</m>.</p></solution>
+</exercise>
+</section>
+
+<homework>
+<exercise>
+  <statement><p><m>\displaystyle\int\frac{dx}{x\left(1+\ln^2x\right)}</m>.</p></statement>
+  <hint><p><m>u=\ln x</m>.</p></hint>
+  <answer><p><m>\arctan(\ln x)+C</m>.</p></answer>
+  <solution><p><m>u=\ln x</m>, <m>du=\frac{dx}{x}</m> тул <m>\int\frac{du}{1+u^2}=\arctan u+C=\arctan(\ln x)+C</m>.</p></solution>
+</exercise>
+<exercise>
+  <statement><p><m>\displaystyle\int e^{\sqrt x}\,dx</m>.</p></statement>
+  <hint><p>Эхлээд <m>t=\sqrt x</m> орлуулаад, дараа нь хэсэгчлэн интегралчил.</p></hint>
+  <answer><p><m>2e^{\sqrt x}\left(\sqrt x-1\right)+C</m>.</p></answer>
+  <solution><p><m>x=t^2</m>, <m>dx=2t\,dt</m>: <m>\int e^{\sqrt x}dx=2\int te^t\,dt=2(te^t-e^t)+C=2e^{\sqrt x}(\sqrt x-1)+C</m>.</p></solution>
+</exercise>
+<exercise>
+  <statement><p><m>\displaystyle\int x^3e^{x^2}\,dx</m>.</p></statement>
+  <hint><p><m>u=x^2</m> гэвэл <m>x^3\,dx=\frac12u\,du</m>.</p></hint>
+  <answer><p><m>\dfrac12e^{x^2}\left(x^2-1\right)+C</m>.</p></answer>
+  <solution><p><m>u=x^2</m>, <m>du=2x\,dx</m> тул <m>\int x^3e^{x^2}dx=\frac12\int ue^u\,du=\frac12(u-1)e^u+C=\frac12e^{x^2}(x^2-1)+C</m>.</p></solution>
+</exercise>
+<exercise>
+  <statement><p><m>F</m> нь <m>f</m>-ийн эх функц, <m>a\neq0</m> бол
+  <md>\int f(ax+b)\,dx=\frac1aF(ax+b)+C</md>
+  гэдгийг батал. Үүнийг ашиглан <m>\displaystyle\int\cos(3x-1)\,dx</m> ба <m>\displaystyle\int\frac{dx}{(5-2x)^4}</m>-ийг ол.</p></statement>
+  <answer><p><m>\frac13\sin(3x-1)+C</m>; <m>\dfrac{1}{6(5-2x)^3}+C</m>.</p></answer>
+  <solution><p><m>\left(\frac1aF(ax+b)\right)'=\frac1aF'(ax+b)\cdot a=f(ax+b)</m>. Эхний интегралд <m>F=\sin</m>, <m>a=3</m>. Хоёр дахьд <m>f(u)=u^{-4}</m>, <m>F(u)=-\frac{u^{-3}}{3}</m>, <m>a=-2</m>: <m>\frac{1}{-2}\cdot\left(-\frac{(5-2x)^{-3}}{3}\right)=\frac{1}{6(5-2x)^3}</m>.</p></solution>
+</exercise>
+<exercise>
+  <statement><p><m>x&gt;2</m> үед <m>\displaystyle\int\frac{\sqrt{x^2-4}}{x}\,dx</m>-ийг ол.</p></statement>
+  <hint><p><m>t=\sqrt{x^2-4}</m> орлуулга хийвэл <m>x\,dx=t\,dt</m>, <m>x^2=t^2+4</m>.</p></hint>
+  <answer><p><m>\sqrt{x^2-4}-2\arctan\dfrac{\sqrt{x^2-4}}{2}+C</m>.</p></answer>
+  <solution><p><m>t=\sqrt{x^2-4}</m> гэвэл <m>t\,dt=x\,dx</m> ба
+  <md>\int\frac{\sqrt{x^2-4}}{x}\,dx=\int\frac{t}{x^2}\,x\,dx=\int\frac{t^2}{t^2+4}\,dt=\int\left(1-\frac{4}{t^2+4}\right)dt=t-2\arctan\frac t2+C.</md></p></solution>
+</exercise>
+</homework>
+</ai>

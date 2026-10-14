@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pretext xml:lang="en-US" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <xi:include href="./docinfo.ptx"/>
+  <book xml:id="analysis2">
+    <title>Математик Анализ 2</title>
+    <subtitle>MATH302 — лекц, семинар, дасгал (2026 оны намар)</subtitle>
+    <xi:include href="./frontmatter.ptx"/>
+    <xi:include href="./chapters/ch01.ptx"/>
+    <xi:include href="./chapters/ch02.ptx"/>
+    <xi:include href="./chapters/ch03.ptx"/>
+    <xi:include href="./chapters/ch04.ptx"/>
+    <xi:include href="./chapters/ch05.ptx"/>
+    <xi:include href="./chapters/ch06.ptx"/>
+    <xi:include href="./chapters/ch07.ptx"/>
+    <xi:include href="./chapters/ch08.ptx"/>
+    <xi:include href="./chapters/ch09.ptx"/>
+    <xi:include href="./chapters/ch10.ptx"/>
+    <xi:include href="./chapters/ch11.ptx"/>
+    <xi:include href="./chapters/ch12.ptx"/>
+    <xi:include href="./chapters/ch13.ptx"/>
+    <xi:include href="./chapters/ch14.ptx"/>
+    <xi:include href="./chapters/ch15.ptx"/>
+    <xi:include href="./chapters/ch16.ptx"/>
+  </book>
+</pretext>

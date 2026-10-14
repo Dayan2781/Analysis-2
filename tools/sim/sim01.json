@@ -1,0 +1,307 @@
+{
+ "a8343a3d27": {
+  "p": "$F(x)=\\arctan\\frac1x$ ба $G(x)=\\arctan\\frac1x$ ($x\\lt0$ үед), $G(x)=\\arctan\\frac1x+\\pi$ ($x\\gt0$ үед) функцүүд $\\R\\setminus\\{0\\}$ дээр $F\\,'=G\\,'=-\\frac1{1+x^2}$ байна. Гэтэл $G-F$ тогтмол биш. Энэ нь \"эх функцүүд тогтмолоор ялгагдана\" гэсэн теоремтой зөрчилдөх үү?",
+  "h": "Теоремын нөхцөл болох мужийн холбогдмол байдлыг шалга.",
+  "a": "Зөрчилдөхгүй: $\\R\\setminus\\{0\\}$ нь интервал биш (хоёр интервалын нэгдэл). Теорем нь интервал дээр хүчинтэй; $(-\\infty,0)$ ба $(0,\\infty)$ тус бүр дээр $G-F$ тогтмол (0 ба $\\pi$)."
+ },
+ "b277704bd3": {
+  "p": "$f(x)=|x-1|$ функцийн бүх $\\R$ дээрх эх функцийг ол.",
+  "h": "$x\\lt1$ ба $x\\gt1$ хэсгээр нь интегралчилж, $x=1$ цэг дээр үргэлжлүүл.",
+  "a": "$F(x)=\\frac{(x-1)|x-1|}{2}+C$."
+ },
+ "65084668c9": {
+  "p": "Тодорхойлолт ашиглан (уламжлал авч) дараах тэнцэтгэлийг шалга: $$\\int \\frac{dx}{\\sqrt{x^2-4}}=\\ln\\left|x+\\sqrt{x^2-4}\\right|+C\\quad(x\\gt2).$$",
+  "h": "Баруун талыг дифференциалчил.",
+  "a": "Тийм: $\\left(\\ln(x+\\sqrt{x^2-4})\\right)\\,'=\\frac{1+x/\\sqrt{x^2-4}}{x+\\sqrt{x^2-4}}=\\frac1{\\sqrt{x^2-4}}$."
+ },
+ "ba0d7c65f1": {
+  "p": "$\\displaystyle\\int \\left(4x^3+\\frac{2}{x}-3e^x\\right)dx$-ийг ол.",
+  "h": "Гишүүн гишүүнээр нь интегралчил.",
+  "a": "$x^4+2\\ln|x|-3e^x+C$."
+ },
+ "00772bbce2": {
+  "p": "$\\displaystyle\\int \\frac{(x-1)^2}{\\sqrt{x}}\\,dx$-ийг ол.",
+  "h": "Хураангуйлж $x$-ийн зэргүүдийн нийлбэр болго.",
+  "a": "$\\frac25x^{5/2}-\\frac43x^{3/2}+2\\sqrt x+C$."
+ },
+ "843d18dd8c": {
+  "p": "$\\displaystyle\\int \\frac{\\cos2x}{\\sin^2x}\\,dx$-ийг ол.",
+  "h": "$\\cos2x=1-2\\sin^2x$ гэж задал.",
+  "a": "$-\\cot x-2x+C$."
+ },
+ "23f8f6b845": {
+  "p": "$\\displaystyle\\int x\\,3^x\\,dx$-ийг ол.",
+  "h": "Хэсэгчлэн интегралчил: $u=x$, $dv=3^xdx$.",
+  "a": "$\\frac{x\\,3^x}{\\ln3}-\\frac{3^x}{\\ln^23}+C$."
+ },
+ "07c5ee02d5": {
+  "p": "$\\displaystyle\\int \\frac{\\ln x}{x^3}\\,dx$-ийг ол.",
+  "h": "Хэсэгчлэн интегралчил: $u=\\ln x$.",
+  "a": "$-\\frac{\\ln x}{2x^2}-\\frac1{4x^2}+C$."
+ },
+ "840506d515": {
+  "p": "$J_n=\\displaystyle\\int x^ne^{-x}\\,dx$ ($n\\in\\N$) гэе. $J_n=-x^ne^{-x}+nJ_{n-1}$ гэсэн бууруулах томьёог батал. Үүнийг ашиглан $J_3$-ийг ол.",
+  "h": "Хэсэгчлэн интегралчил: $u=x^n$, $dv=e^{-x}dx$.",
+  "a": "$J_3=-e^{-x}(x^3+3x^2+6x+6)+C$."
+ },
+ "2c5a6b5f0c": {
+  "p": "$\\displaystyle\\int x^2e^{x^3}\\,dx$-ийг ол.",
+  "h": "$u=x^3$ орлуулга.",
+  "a": "$\\frac13e^{x^3}+C$."
+ },
+ "b1df8865fb": {
+  "p": "$\\displaystyle\\int \\frac{\\sin x}{1+\\cos^2x}\\,dx$-ийг ол.",
+  "h": "$u=\\cos x$ орлуулга.",
+  "a": "$-\\arctan(\\cos x)+C$."
+ },
+ "9af3f2a534": {
+  "p": "Тригонометр орлуулга ашиглан $\\displaystyle\\int\\frac{dx}{(4+x^2)^{3/2}}$-ийг ол.",
+  "h": "$x=2\\tan t$ орлуулга.",
+  "a": "$\\frac{x}{4\\sqrt{4+x^2}}+C$."
+ },
+ "8fcd4236e3": {
+  "p": "$\\displaystyle\\int \\frac{x^2}{\\sqrt{4-x^2}}\\,dx$-ийг ол.",
+  "h": "$x=2\\sin t$ орлуулга.",
+  "a": "$2\\arcsin\\frac x2-\\frac x2\\sqrt{4-x^2}+C$."
+ },
+ "7371003a92": {
+  "p": "Жагсаалт ашиглан бод. $\\displaystyle \\int \\frac{(1-\\sqrt{x})^2}{x}\\,dx.$ $\\displaystyle \\int \\frac{2^x+3^x}{6^x}\\,dx.$",
+  "h": "Эхний интегралд хаалт задалж, хоёр дахинд хуваалтыг гишүүнчлэн хий.",
+  "a": "$\\ln|x|-4\\sqrt x+x+C$; $-\\frac{3^{-x}}{\\ln3}-\\frac{2^{-x}}{\\ln2}+C$."
+ },
+ "dc2975fbaa": {
+  "p": "Хэсэгчлэх аргаар бод. $\\displaystyle\\int x\\sec^2x\\,dx$ $\\displaystyle\\int\\arctan2x\\,dx$",
+  "h": "Хэсэгчлэн интегралчил.",
+  "a": "$x\\tan x+\\ln|\\cos x|+C$; $x\\arctan2x-\\frac14\\ln(1+4x^2)+C$."
+ },
+ "da480c7c66": {
+  "p": "Орлуулах арга хэрэглэн интеграл бод. $\\displaystyle \\int (3x-2)^{10}\\,dx.$ $\\displaystyle \\int \\frac{x^2\\,dx}{\\sqrt{1+x^3}}.$ $\\displaystyle \\int \\frac{\\sin x}{\\cos^3x}\\,dx.$",
+  "h": "Тохирох $u$-г сонго: $3x-2$, $1+x^3$, $\\cos x$.",
+  "a": "$\\frac{(3x-2)^{11}}{33}+C$; $\\frac23\\sqrt{1+x^3}+C$; $\\frac1{2\\cos^2x}+C$."
+ },
+ "ef5232a143": {
+  "p": "$\\displaystyle\\int \\frac{dx}{3x+2}$-ийг ол.",
+  "h": "$\\int\\frac{dx}{kx+m}=\\frac1k\\ln|kx+m|+C$.",
+  "a": "$\\frac13\\ln|3x+2|+C$."
+ },
+ "1a12c57e09": {
+  "p": "$\\displaystyle\\int \\frac{dx}{a-bx}\\ \\ (b\\neq0)$-ийг ол.",
+  "h": "$u=a-bx$ орлуулга.",
+  "a": "$-\\frac1b\\ln|a-bx|+C$."
+ },
+ "c170f3914a": {
+  "p": "$\\displaystyle\\int \\frac{x\\,dx}{3x^2+5}$-ийг ол.",
+  "h": "$u=3x^2+5$ орлуулга.",
+  "a": "$\\frac16\\ln(3x^2+5)+C$."
+ },
+ "27efe131cf": {
+  "p": "$\\displaystyle\\int \\frac{x^3\\,dx}{x^4-1}$-ийг ол.",
+  "h": "$u=x^4-1$ орлуулга.",
+  "a": "$\\frac14\\ln|x^4-1|+C$."
+ },
+ "cdc5517745": {
+  "p": "$\\displaystyle\\int \\frac{e^{2x}\\,dx}{e^{2x}+3}$-ийг ол.",
+  "h": "$u=e^{2x}+3$ орлуулга.",
+  "a": "$\\frac12\\ln(e^{2x}+3)+C$."
+ },
+ "f20758960a": {
+  "p": "$\\displaystyle\\int \\cot x\\,dx$-ийг ол.",
+  "h": "$\\cot x=\\frac{\\cos x}{\\sin x}$, $u=\\sin x$.",
+  "a": "$\\ln|\\sin x|+C$."
+ },
+ "e1d5af2bd8": {
+  "p": "$\\displaystyle\\int \\tan(3x-2)\\,dx$-ийг ол.",
+  "h": "$u=\\cos(3x-2)$ орлуулга.",
+  "a": "$-\\frac13\\ln|\\cos(3x-2)|+C$."
+ },
+ "0af1619995": {
+  "p": "$\\displaystyle\\int \\frac{\\sin2x}{1+3\\sin^2x}\\,dx$-ийг ол.",
+  "h": "$u=1+3\\sin^2x$, $du=3\\sin2x\\,dx$.",
+  "a": "$\\frac13\\ln(1+3\\sin^2x)+C$."
+ },
+ "b04813ff93": {
+  "p": "$\\displaystyle\\int \\frac{dx}{x(1+\\ln x)}$-ийг ол.",
+  "h": "$u=1+\\ln x$ орлуулга.",
+  "a": "$\\ln|1+\\ln x|+C$."
+ },
+ "f3f6e6dbbb": {
+  "p": "$\\displaystyle\\int \\frac{dx}{x(\\ln x)^m}\\ \\ (m\\neq1)$-ийг ол.",
+  "h": "$u=\\ln x$ орлуулга.",
+  "a": "$\\frac{(\\ln x)^{1-m}}{1-m}+C$."
+ },
+ "1f681c8884": {
+  "p": "$\\displaystyle\\int e^{\\cos x}\\sin x\\,dx$-ийг ол.",
+  "h": "$u=\\cos x$ орлуулга.",
+  "a": "$-e^{\\cos x}+C$."
+ },
+ "9af8ee8e3c": {
+  "p": "$\\displaystyle\\int e^{-2x^2}x\\,dx$-ийг ол.",
+  "h": "$u=-2x^2$ орлуулга.",
+  "a": "$-\\frac14e^{-2x^2}+C$."
+ },
+ "bedf1db426": {
+  "p": "$\\displaystyle\\int \\frac{dx}{\\sqrt{1-16x^2}}$-ийг ол.",
+  "h": "$u=4x$ орлуулга.",
+  "a": "$\\frac14\\arcsin4x+C$."
+ },
+ "697f4bce93": {
+  "p": "$\\displaystyle\\int \\frac{dx}{1+25x^2}$-ийг ол.",
+  "h": "$u=5x$ орлуулга.",
+  "a": "$\\frac15\\arctan5x+C$."
+ },
+ "3729ef878f": {
+  "p": "$\\displaystyle\\int \\frac{dx}{2x^2+3}$-ийг ол.",
+  "h": "$\\int\\frac{du}{u^2+c^2}$ хэлбэрт аваачи.",
+  "a": "$\\frac1{\\sqrt6}\\arctan\\frac{\\sqrt6\\,x}{3}+C$."
+ },
+ "95272d0edb": {
+  "p": "$\\displaystyle\\int \\frac{x\\,dx}{x^4+9}$-ийг ол.",
+  "h": "$u=x^2$ орлуулга.",
+  "a": "$\\frac16\\arctan\\frac{x^2}{3}+C$."
+ },
+ "55053d31bb": {
+  "p": "$\\displaystyle\\int \\frac{e^{x}\\,dx}{e^{2x}+9}$-ийг ол.",
+  "h": "$u=e^x$ орлуулга.",
+  "a": "$\\frac13\\arctan\\frac{e^x}{3}+C$."
+ },
+ "1e47e98f1c": {
+  "p": "$\\displaystyle\\int \\frac{3^{x}\\,dx}{\\sqrt{1-9^{x}}}$-ийг ол.",
+  "h": "$u=3^x$ орлуулга.",
+  "a": "$\\frac{\\arcsin3^x}{\\ln3}+C$."
+ },
+ "236ac374ba": {
+  "p": "$\\displaystyle\\int \\frac{6x+5}{x^2+4}\\,dx$-ийг ол.",
+  "h": "Хоёр хэсэгт задал: $\\frac{2x}{x^2+4}$ ба $\\frac1{x^2+4}$.",
+  "a": "$3\\ln(x^2+4)+\\frac52\\arctan\\frac x2+C$."
+ },
+ "a15c17c842": {
+  "p": "$\\displaystyle\\int \\frac{2-x}{\\sqrt{4-x^2}}\\,dx$-ийг ол.",
+  "h": "Хоёр хэсэгт задал.",
+  "a": "$2\\arcsin\\frac x2+\\sqrt{4-x^2}+C$."
+ },
+ "02f25224c2": {
+  "p": "$\\displaystyle\\int x\\,e^{-2x}\\,dx$-ийг ол.",
+  "h": "Хэсэгчлэн интегралчил.",
+  "a": "$-\\frac{(2x+1)e^{-2x}}{4}+C$."
+ },
+ "f0a4a7db0f": {
+  "p": "$\\displaystyle\\int x\\sin3x\\,dx$-ийг ол.",
+  "h": "Хэсэгчлэн интегралчил: $u=x$.",
+  "a": "$-\\frac{x\\cos3x}{3}+\\frac{\\sin3x}{9}+C$."
+ },
+ "d914214225": {
+  "p": "$\\displaystyle\\int \\ln(3x)\\,dx$-ийг ол.",
+  "h": "Хэсэгчлэн интегралчил.",
+  "a": "$x\\ln(3x)-x+C$."
+ },
+ "d9b0a1750a": {
+  "p": "$\\displaystyle\\int x^4\\ln x\\,dx$-ийг ол.",
+  "h": "Хэсэгчлэн интегралчил: $u=\\ln x$.",
+  "a": "$\\frac{x^5}5\\ln x-\\frac{x^5}{25}+C$."
+ },
+ "6218a90cdc": {
+  "p": "$\\displaystyle\\int \\arcsin2x\\,dx$-ийг ол.",
+  "h": "Хэсэгчлэн интегралчил.",
+  "a": "$x\\arcsin2x+\\frac12\\sqrt{1-4x^2}+C$."
+ },
+ "02f985bfdd": {
+  "p": "$\\displaystyle\\int x\\arccos x\\,dx$-ийг ол.",
+  "h": "Хэсэгчлэн интегралчил: $dv=x\\,dx$.",
+  "a": "$\\frac{x^2}2\\arccos x+\\frac14\\arcsin x-\\frac x4\\sqrt{1-x^2}+C$."
+ },
+ "2b6656de45": {
+  "p": "$\\displaystyle\\int x^2e^{2x}\\,dx$-ийг ол.",
+  "h": "Хоёр удаа хэсэгчлэн интегралчил.",
+  "a": "$e^{2x}\\left(\\frac{x^2}2-\\frac x2+\\frac14\\right)+C$."
+ },
+ "6de731551f": {
+  "p": "$\\displaystyle\\int (x^2+x-3)e^{-x}\\,dx$-ийг ол.",
+  "h": "Хэсэгчлэн интегралчил эсвэл $-(x^2+ax+b)e^{-x}$ хэлбэрээр ол.",
+  "a": "$-(x^2+3x)e^{-x}+C$."
+ },
+ "1f4529b510": {
+  "p": "$\\displaystyle\\int \\ln^3x\\,dx$-ийг ол.",
+  "h": "Хэсэгчлэн интегралчил: $u=\\ln^3x$.",
+  "a": "$x(\\ln^3x-3\\ln^2x+6\\ln x-6)+C$."
+ },
+ "2c73b9c93c": {
+  "p": "$\\displaystyle\\int e^{2x}\\cos3x\\,dx.$",
+  "h": "Хоёр удаа хэсэгчлэн интегралчилж, анхны интегралтай тэгшитгэл үүсгэ.",
+  "a": "$\\frac{e^{2x}(2\\cos3x+3\\sin3x)}{13}+C$."
+ },
+ "000fee0e7e": {
+  "p": "$\\displaystyle\\int \\ln\\left(x+\\sqrt{x^2+4}\\right)dx$-ийг ол.",
+  "h": "Хэсэгчлэн интегралчил.",
+  "a": "$x\\ln\\left(x+\\sqrt{x^2+4}\\right)-\\sqrt{x^2+4}+C$."
+ },
+ "0d1fff3e41": {
+  "p": "$\\displaystyle\\int \\frac{x^2-1}{x^4+x^2+1}\\,dx$-ийг ол.",
+  "h": "$x^4+x^2+1=(x^2+x+1)(x^2-x+1)$ гэж задалж, хэсэгчилсэн бутархай болго.",
+  "a": "$\\frac12\\ln\\frac{x^2-x+1}{x^2+x+1}+C$."
+ },
+ "b0e2e6e354": {
+  "p": "$x\\gt\\sqrt2$ үед $\\displaystyle\\int\\frac{dx}{x\\sqrt{x^4-4}}$-ийг ол.",
+  "h": "$t=x^2$ орлуулга.",
+  "a": "$\\frac14\\arccos\\frac2{x^2}+C$."
+ },
+ "955b01225e": {
+  "p": "$\\displaystyle\\int \\frac{x\\,e^x}{(x+1)^2}\\,dx$-ийг ол.",
+  "h": "$\\frac{e^x}{x+1}$-ийн уламжлалыг тооц.",
+  "a": "$\\frac{e^x}{x+1}+C$."
+ },
+ "65bcc163cf": {
+  "p": "$\\displaystyle\\int e^x\\,\\frac{1-\\sin x}{1-\\cos x}\\,dx$-ийг ол.",
+  "h": "$f+f'$ хэлбэр: $f=-\\cot\\frac x2$.",
+  "a": "$-e^x\\cot\\frac x2+C$."
+ },
+ "fbd6950f98": {
+  "p": "$\\displaystyle\\int \\frac{\\sin x\\cos x}{1+\\sin^4x}\\,dx$-ийг ол.",
+  "h": "$u=\\sin^2x$ орлуулга.",
+  "a": "$\\frac12\\arctan(\\sin^2x)+C$."
+ },
+ "f67e00c356": {
+  "p": "$|x|\\lt1$ үед $\\displaystyle\\int\\frac{x\\arcsin x}{(1-x^2)^{3/2}}\\,dx$-ийг ол.",
+  "h": "Хэсэгчлэн: $dv=\\frac{x\\,dx}{(1-x^2)^{3/2}}$, $v=\\frac1{\\sqrt{1-x^2}}$.",
+  "a": "$\\frac{\\arcsin x}{\\sqrt{1-x^2}}-\\frac12\\ln\\frac{1+x}{1-x}+C$."
+ },
+ "0af29807b1": {
+  "p": "$|x|\\lt1$ үед $\\displaystyle\\int\\frac{dx}{(2-x^2)\\sqrt{1-x^2}}$-ийг ол.",
+  "h": "$t=\\frac{x}{\\sqrt{1-x^2}}$ орлуулга.",
+  "a": "$\\frac1{\\sqrt2}\\arctan\\frac{x}{\\sqrt2\\sqrt{1-x^2}}+C$."
+ },
+ "98737e3461": {
+  "p": "$\\displaystyle\\int \\frac{\\ln(1+\\ln x)}{x}\\,dx$-ийг ол.",
+  "h": "$u=1+\\ln x$ орлуулж, дараа нь хэсэгчлэн интегралчил.",
+  "a": "$(1+\\ln x)\\ln(1+\\ln x)-\\ln x+C$."
+ },
+ "48133091da": {
+  "p": "$\\displaystyle\\int \\frac{dx}{x^4+4}$-ийг ол.",
+  "h": "$x^4+4=(x^2-2x+2)(x^2+2x+2)$.",
+  "a": "$\\frac1{16}\\ln\\frac{x^2+2x+2}{x^2-2x+2}+\\frac18\\left(\\arctan(x+1)+\\arctan(x-1)\\right)+C$."
+ },
+ "664222a6e2": {
+  "p": "$\\displaystyle\\int \\frac{dx}{x\\left(4+\\ln^2x\\right)}$-ийг ол.",
+  "h": "$u=\\ln x$ орлуулга.",
+  "a": "$\\frac12\\arctan\\frac{\\ln x}{2}+C$."
+ },
+ "67c0c77eca": {
+  "p": "$\\displaystyle\\int e^{3\\sqrt x}\\,dx$-ийг ол.",
+  "h": "$x=t^2$ орлуулж, хэсэгчлэн интегралчил.",
+  "a": "$\\frac29(3\\sqrt x-1)e^{3\\sqrt x}+C$."
+ },
+ "b22ca97ef9": {
+  "p": "$\\displaystyle\\int x^5e^{x^2}\\,dx$-ийг ол.",
+  "h": "$u=x^2$ орлуулж, хэсэгчлэн интегралчил.",
+  "a": "$\\frac12e^{x^2}(x^4-2x^2+2)+C$."
+ },
+ "292a5ab91b": {
+  "p": "$F$ нь $f$-ийн эх функц, $k\\neq0$ бол $$\\int f(kx)\\,dx=\\frac1kF(kx)+C$$ гэдгийг батал. Үүнийг ашиглан $\\displaystyle\\int\\sin(2x-3)\\,dx$ ба $\\displaystyle\\int\\frac{dx}{(3-4x)^2}$-ийг ол.",
+  "h": "Баруун талыг дифференциалчил (нийлмэл функцийн уламжлал).",
+  "a": "$\\left(\\frac1kF(kx)\\right)\\,'=f(kx)$. $-\\frac{\\cos(2x-3)}{2}+C$; $\\frac1{4(3-4x)}+C$."
+ },
+ "3048a12713": {
+  "p": "$x\\gt3$ үед $\\displaystyle\\int\\frac{\\sqrt{x^2-9}}{x}\\,dx$-ийг ол.",
+  "h": "$x=\\frac3{\\cos t}$ орлуулга.",
+  "a": "$\\sqrt{x^2-9}-3\\arccos\\frac3x+C$."
+ }
+}

@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ai>
+<preview>
+<exploration xml:id="w12-preview">
+  <title>Интегралыг параметрээр дифференциалчлах (AI)</title>
+  <introduction>
+    <p><m>\int_0^1(\ln x)^2dx</m> гэх мэт интегралыг хэсэгчлэн интегралчилж бодож болно. Гэвч илүү "ухаалаг" зам бий: бид амархан бодогддог параметртэй интеграл аваад, түүнийгээ параметрээр дифференциалчилна. Энэ алхам хэзээ зөв болохыг энэ бүлэгт судална.</p>
+  </introduction>
+  <task>
+    <statement><p><m>y&gt;-1</m> үед <m>F(y)=\displaystyle\int_0^1x^y\,dx</m>-ийг ол.</p></statement>
+    <answer><p><m>F(y)=\dfrac{1}{y+1}</m>.</p></answer>
+  </task>
+  <task>
+    <statement><p><m>\frac{\partial}{\partial y}x^y=x^y\ln x</m>. <m>F(y)=\int_0^1x^ydx</m>-ийг интегралын тэмдгийн дор "дифференциалчилж" болно гэж үзээд <m>\displaystyle\int_0^1x^y\ln x\,dx</m>-ийг ол. <m>y=0</m> үед гарсан хариуг <m>\int_0^1\ln x\,dx</m>-ийн шууд утгатай харьцуул.</p></statement>
+    <answer><p><m>\int_0^1x^y\ln x\,dx=F'(y)=-\dfrac{1}{(y+1)^2}</m>; <m>y=0</m>: <m>-1</m>, шууд бодлого <m>[x\ln x-x]_0^1=-1</m>-тэй таарна.</p></answer>
+  </task>
+  <task>
+    <statement><p>Үүнийг <m>n</m> удаа давтаж <m>\displaystyle\int_0^1x^y(\ln x)^n\,dx</m>-ийн томьёог таамаглаад, <m>\displaystyle\int_0^1(\ln x)^2dx</m>-ийг ол.</p></statement>
+    <answer><p><m>\int_0^1x^y(\ln x)^ndx=\dfrac{(-1)^nn!}{(y+1)^{n+1}}</m>; <m>\int_0^1(\ln x)^2dx=2</m>.</p></answer>
+  </task>
+</exploration>
+</preview>
+
+<section ref="w12-s1">
+<exercise>
+  <statement><p><m>F(y)=\displaystyle\int_0^y\frac{\sin xy}{x}\,dx</m> бол <m>y\ne0</m> үед <m>F'(y)</m>-ийг ол. Хариугаа <m>u=xy</m> орлуулгаар шалга.</p></statement>
+  <hint><p>Хувьсах хязгаартай интегралын теорем. <m>f(x,y)=\frac{\sin xy}{x}</m>-ийг <m>x=0</m> дээр <m>y</m> гэж тодорхойлбол <m>f</m>, <m>f_y=\cos xy</m> хоёулаа тасралтгүй.</p></hint>
+  <answer><p><m>F'(y)=\dfrac{2\sin y^2}{y}</m>.</p></answer>
+  <solution><p><m>f</m> ба <m>f_y(x,y)=\cos xy</m> нь <m>\R^2</m> дээр тасралтгүй, <m>\alpha(y)=0</m>, <m>\beta(y)=y</m>. Теорем <xref ref="w12-thm-var-limits" text="global"/>-аар
+  <md>F'(y)=\int_0^y\cos xy\,dx+f(y,y)\cdot1=\frac{\sin y^2}{y}+\frac{\sin y^2}{y}=\frac{2\sin y^2}{y}.</md>
+  Шалгалт: <m>u=xy</m> гэвэл <m>F(y)=\int_0^{y^2}\frac{\sin u}{u}du</m>, иймд <m>F'(y)=\frac{\sin y^2}{y^2}\cdot2y=\frac{2\sin y^2}{y}</m>.</p></solution>
+</exercise>
+<exercise>
+  <statement><p><m>a\ge0</m> үед <md>I(a)=\int_0^{\pi/2}\frac{\arctan(a\tan x)}{\tan x}\,dx=\frac\pi2\ln(1+a)</md> гэж батал.</p></statement>
+  <hint><p>Интеграл доорх функцийг <m>x=0</m> дээр <m>a</m>, <m>x=\frac\pi2</m> дээр <m>0</m> гэж тодорхойл. <m>a&gt;0</m> үед <m>I'(a)=\int_0^{\pi/2}\frac{dx}{1+a^2\tan^2x}</m>; <m>t=\tan x</m> орлуулаад хялбар бутархайд задал.</p></hint>
+  <solution><p><m>f(x,a)=\frac{\arctan(a\tan x)}{\tan x}</m> нь <m>[0,\frac\pi2]\times[0,A]</m> дээр тасралтгүй: <m>g(s)=\frac{\arctan s}{s}</m> (<m>g(0)=1</m>) тасралтгүй тул <m>x&lt;\frac\pi2</m> үед <m>f=a\,g(a\tan x)</m>, мөн <m>|f|\le\frac{\pi}{2}\cot x\to0</m> (<m>x\to\frac\pi2</m>), <m>a</m>-аас үл хамааран. Иймд <m>I</m> нь <m>[0,\infty)</m> дээр тасралтгүй (Теорем <xref ref="w12-thm-cont" text="global"/>), <m>I(0)=0</m>.</p>
+  <p><m>[c,A]</m> (<m>c&gt;0</m>) дээр <m>f_a=\frac{1}{1+a^2\tan^2x}=\frac{\cos^2x}{\cos^2x+a^2\sin^2x}</m> тасралтгүй тул Лейбницийн дүрмээр
+  <md>I'(a)=\int_0^{\pi/2}\frac{dx}{1+a^2\tan^2x}\overset{t=\tan x}{=}\int_0^\infty\frac{dt}{(1+t^2)(1+a^2t^2)}.</md>
+  <m>a\ne1</m> үед <m>\frac{1}{(1+t^2)(1+a^2t^2)}=\frac{1}{1-a^2}\Bigl(\frac{1}{1+t^2}-\frac{a^2}{1+a^2t^2}\Bigr)</m> тул <m>I'(a)=\frac{1}{1-a^2}\Bigl(\frac\pi2-\frac{a\pi}2\Bigr)=\frac{\pi}{2(1+a)}</m>; <m>a=1</m> үед <m>\int_0^\infty\frac{dt}{(1+t^2)^2}=\frac\pi4</m> — мөн таарна. Иймд <m>(0,\infty)</m> дээр <m>I(a)=\frac\pi2\ln(1+a)+C</m>; <m>a\to0^+</m> гэвэл тасралтгүй чанараар <m>C=I(0)=0</m>.</p></solution>
+</exercise>
+</section>
+
+<section ref="w12-s2">
+<exercise>
+  <statement><p><m>\displaystyle\int_0^\infty\frac{dx}{1+x^2y^2}</m> нь <m>[y_0,\infty)</m> (<m>y_0&gt;0</m>) дээр жигд нийлж, <m>(0,\infty)</m> дээр жигд нийлэхгүйг батал.</p></statement>
+  <hint><p>Үлдэгдлийг шууд бод: <m>\int_b^\infty\frac{dx}{1+x^2y^2}=\frac1y\bigl(\frac\pi2-\arctan by\bigr)</m>.</p></hint>
+  <solution><p><m>r(b,y)=\int_b^\infty\frac{dx}{1+x^2y^2}=\frac1y\Bigl(\frac\pi2-\arctan by\Bigr)</m>. <m>y\ge y_0</m> үед хоёр үржигдэхүүн <m>y</m>-ээр буурах тул <m>\sup_{y\ge y_0}r(b,y)=r(b,y_0)\to0</m> (<m>b\to\infty</m>) — жигд. <m>(0,\infty)</m> дээр тогтмол <m>b</m>-д <m>y=\frac1b</m> гэвэл <m>r=b\bigl(\frac\pi2-\frac\pi4\bigr)=\frac{\pi b}{4}\not\to0</m>, иймд <m>\sup_{y&gt;0}r(b,y)\not\to0</m> — жигд биш.</p></solution>
+</exercise>
+<exercise>
+  <statement><p><m>\displaystyle\int_1^\infty\frac{\sin x}{x+y}\,dx</m> нь <m>y\in[0,\infty)</m> дээр жигд нийлдгийг батал.</p></statement>
+  <hint><p>Дирихлегийн шинжүүр: <m>\bigl|\int_1^b\sin x\,dx\bigr|\le2</m>, <m>\frac1{x+y}</m> нь <m>x</m>-ээр буурах ба <m>\le\frac1x</m>.</p></hint>
+  <solution><p><m>f(x,y)=\sin x</m>: <m>\bigl|\int_1^b\sin x\,dx\bigr|=|\cos1-\cos b|\le2</m> бүх <m>b</m>, <m>y</m>-д. <m>g(x,y)=\frac1{x+y}</m> нь <m>x</m>-ээр тасралтгүй дифференциалчлагдах, буурах ба <m>0&lt;g\le\frac1x</m> тул <m>\sup_{y\ge0}g(x,y)\le\frac1x\to0</m>, өөрөөр хэлбэл <m>g\rightrightarrows0</m>. Теорем <xref ref="w12-thm-dir-abel" text="global"/>-ийн Дирихлегийн хэсгээр интеграл <m>[0,\infty)</m> дээр жигд нийлнэ.</p></solution>
+</exercise>
+<exercise>
+  <statement><p><m>\displaystyle\int_0^1x^{y-1}\,dx</m> (онцгой цэг <m>x=0</m>) нь <m>[y_0,\infty)</m> (<m>y_0&gt;0</m>) дээр жигд нийлж, <m>(0,1]</m> дээр жигд нийлэхгүйг батал.</p></statement>
+  <hint><p>Онцгой цэг доод хязгаарт байгаа тул "үлдэгдэл" нь <m>\int_0^\delta x^{y-1}dx=\frac{\delta^y}{y}</m>, <m>\delta\to0^+</m>.</p></hint>
+  <solution><p><m>0&lt;\delta&lt;1</m> үед <m>\int_0^\delta x^{y-1}dx=\frac{\delta^y}{y}</m>. <m>y\ge y_0</m> үед <m>\delta^y\le\delta^{y_0}</m>, <m>\frac1y\le\frac1{y_0}</m> тул <m>\sup_{y\ge y_0}\frac{\delta^y}{y}=\frac{\delta^{y_0}}{y_0}\to0</m> — жигд. <m>(0,1]</m> дээр <m>y\to0^+</m> үед <m>\frac{\delta^y}{y}\to+\infty</m>, иймд <m>\sup=\infty</m> — жигд биш.</p></solution>
+</exercise>
+</section>
+
+<section ref="w12-s3">
+<exercise>
+  <statement><p><m>F(y)=\displaystyle\int_0^\infty e^{-x}\frac{1-\cos yx}{x}\,dx=\frac12\ln(1+y^2)</m> гэж батал.</p></statement>
+  <hint><p><m>y</m>-ээр дифференциалчил: <m>\bigl|e^{-x}\sin yx\bigr|\le e^{-x}</m>. <m>\int_0^\infty e^{-x}\sin yx\,dx=\frac{y}{1+y^2}</m>.</p></hint>
+  <solution><p><m>f(x,y)=e^{-x}\frac{1-\cos yx}{x}</m> (<m>x=0</m> дээр <m>0</m>) ба <m>f_y=e^{-x}\sin yx</m> нь <m>[0,\infty)\times\R</m> дээр тасралтгүй. <m>F(0)=0</m> — нийлнэ. <m>|f_y|\le e^{-x}</m> тул M-шинжүүрээр <m>\int_0^\infty f_y\,dx</m> нь <m>\R</m> дээр жигд нийлнэ. Теорем <xref ref="w12-thm-impr-diff" text="global"/>-ээр
+  <md>F'(y)=\int_0^\infty e^{-x}\sin yx\,dx=\frac{y}{1+y^2},\qquad F(y)=F(0)+\int_0^y\frac{s\,ds}{1+s^2}=\frac12\ln(1+y^2).</md></p></solution>
+</exercise>
+<exercise>
+  <statement><p><m>f(x,y)=(2xy-x^2y^2)e^{-xy}</m> гэе. <md>\int_0^1dy\int_0^\infty f(x,y)\,dx\quad\text{ба}\quad\int_0^\infty dx\int_0^1f(x,y)\,dy</md> давхардсан интегралуудыг бодож, ялгаатай гэж харуул. Энэ нь Теорем <xref ref="w12-thm-impr-int" text="global"/>-тэй зөрчилдөх үү?</p></statement>
+  <hint><p><m>\frac{\partial}{\partial y}\bigl(xy^2e^{-xy}\bigr)=f(x,y)</m>. <m>y&gt;0</m> үед <m>u=xy</m> орлуул.</p></hint>
+  <answer><p>Эхнийх <m>0</m>, хоёр дахь нь <m>1</m>. Зөрчилдөхгүй: <m>\int_0^\infty f\,dx</m> нь <m>[0,1]</m> дээр жигд нийлэхгүй.</p></answer>
+  <solution><p><m>y&gt;0</m> үед <m>u=xy</m>: <m>\int_0^\infty f\,dx=\frac1y\int_0^\infty(2u-u^2)e^{-u}du=\frac1y(2-2)=0</m>; <m>y=0</m> үед <m>f\equiv0</m>. Иймд эхний давхардсан интеграл <m>0</m>. Нөгөө талаас <m>\int_0^1f\,dy=\bigl[xy^2e^{-xy}\bigr]_{y=0}^{1}=xe^{-x}</m> ба <m>\int_0^\infty xe^{-x}dx=1</m>.</p>
+  <p>Теорем <xref ref="w12-thm-impr-int" text="global"/> жигд нийлэлтийг шаарддаг. <m>f</m> тасралтгүй тул хэрэв <m>\int_0^\infty f\,dx</m> нь <m>[0,1]</m> дээр жигд нийлдэг байсан бол хоёр давхардсан интеграл тэнцүү байх байсан. Иймд энэ интеграл <m>[0,1]</m> дээр жигд нийлэхгүй. Шууд: <m>\frac{\partial}{\partial x}\bigl(x^2ye^{-xy}\bigr)=f</m> тул <m>\int_b^\infty f\,dx=-b^2ye^{-by}</m>; <m>y=\frac1b</m> үед модуль нь <m>\frac be\to\infty</m>.</p></solution>
+</exercise>
+</section>
+
+<section ref="w12-s4">
+<exercise>
+  <statement><p>Семинарын <m>\displaystyle\int_0^\infty\frac{1-\cos\alpha x}{x^2}dx=\frac{\pi|\alpha|}{2}</m> үр дүнг ашиглан <m>\displaystyle\int_0^\infty\frac{\sin^4x}{x^2}\,dx</m>-ийг ол.</p></statement>
+  <hint><p><m>\sin^4x=\frac{3-4\cos2x+\cos4x}{8}=\frac{4(1-\cos2x)-(1-\cos4x)}{8}</m>.</p></hint>
+  <answer><p><m>\dfrac\pi4</m>.</p></answer>
+  <solution><p>Зааврын адилтгал ба хоёр нийлдэг интегралын шугаман чанараар
+  <md>\int_0^\infty\frac{\sin^4x}{x^2}dx=\frac18\Bigl[4\int_0^\infty\frac{1-\cos2x}{x^2}dx-\int_0^\infty\frac{1-\cos4x}{x^2}dx\Bigr]=\frac18\Bigl[4\cdot\pi-2\pi\Bigr]=\frac\pi4.</md></p></solution>
+</exercise>
+<exercise>
+  <statement><p><m>a,b&gt;0</m> үед <m>\displaystyle\int_0^\infty\frac{\tanh ax-\tanh bx}{x}\,dx</m>-ийг ол.</p></statement>
+  <hint><p>Фруллани: <m>f(0)=\tanh0=0</m>, <m>f(\infty)=1</m>.</p></hint>
+  <answer><p><m>\ln\dfrac ab</m>.</p></answer>
+  <solution><p><m>f(x)=\tanh x</m> нь <m>[0,\infty)</m> дээр тасралтгүй, <m>f(0)=0</m>, <m>\lim_{x\to\infty}\tanh x=1</m>. Фруллани теоремоор интеграл <m>(0-1)\ln\frac ba=\ln\frac ab</m>.</p></solution>
+</exercise>
+<exercise>
+  <statement><p><m>a&gt;0</m> үед <m>\displaystyle\int_0^\infty e^{-ax^2}dx=\frac12\sqrt{\frac\pi a}</m>-ийг <m>a</m>-аар дифференциалчилж <m>\displaystyle\int_0^\infty x^2e^{-ax^2}dx</m>-ийг ол. Алхам бүрийг зөвтгө.</p></statement>
+  <hint><p>Эхний тэнцэл нь <m>x=\frac{u}{\sqrt a}</m> орлуулга ба Эйлер–Пуассоны интеграл. <m>[a_0,A]</m> дээр <m>x^2e^{-ax^2}\le x^2e^{-a_0x^2}</m>.</p></hint>
+  <answer><p><m>\dfrac{\sqrt\pi}{4a^{3/2}}</m>.</p></answer>
+  <solution><p><m>J(a)=\int_0^\infty e^{-ax^2}dx=\frac1{\sqrt a}\int_0^\infty e^{-u^2}du=\frac{\sqrt\pi}{2\sqrt a}</m>. <m>f=e^{-ax^2}</m>, <m>f_a=-x^2e^{-ax^2}</m> тасралтгүй, <m>0&lt;a_0\le a\le A</m> үед <m>|f_a|\le x^2e^{-a_0x^2}</m> ба энэ нь интегралчлагдах тул M-шинжүүрээр <m>\int f_a\,dx</m> жигд нийлнэ. Теорем <xref ref="w12-thm-impr-diff" text="global"/>-ээр <m>J'(a)=-\int_0^\infty x^2e^{-ax^2}dx</m>. <m>J'(a)=-\frac{\sqrt\pi}{4}a^{-3/2}</m> тул <m>\int_0^\infty x^2e^{-ax^2}dx=\frac{\sqrt\pi}{4a^{3/2}}</m>. <m>a_0</m> дурын тул бүх <m>a&gt;0</m>-д.</p></solution>
+</exercise>
+</section>
+
+<section ref="w12-s5">
+<exercise>
+  <statement><p><m>\Gamma\bigl(\frac52\bigr)</m> ба <m>\Gamma\bigl(-\frac32\bigr)</m>-ийг ол.</p></statement>
+  <hint><p><m>\Gamma(x+1)=x\Gamma(x)</m>, <m>\Gamma(\frac12)=\sqrt\pi</m>; сөрөг аргументыг <m>\Gamma(x)=\frac{\Gamma(x+n)}{x(x+1)\cdots(x+n-1)}</m>-ээр.</p></hint>
+  <answer><p><m>\Gamma\bigl(\frac52\bigr)=\dfrac{3\sqrt\pi}{4}</m>, <m>\Gamma\bigl(-\frac32\bigr)=\dfrac{4\sqrt\pi}{3}</m>.</p></answer>
+  <solution><p><m>\Gamma(\frac52)=\frac32\cdot\frac12\Gamma(\frac12)=\frac{3\sqrt\pi}4</m>. <m>\Gamma(-\frac32)=\frac{\Gamma(\frac12)}{(-\frac32)(-\frac12)}=\frac{\sqrt\pi}{3/4}=\frac{4\sqrt\pi}{3}</m>.</p></solution>
+</exercise>
+<exercise>
+  <statement><p><m>x&gt;0</m> үед <m>\Gamma(x)=2\displaystyle\int_0^\infty u^{2x-1}e^{-u^2}du</m> гэж харуулаад <m>\displaystyle\int_0^\infty x^5e^{-x^2}dx</m>-ийг бод.</p></statement>
+  <hint><p><m>t=u^2</m>.</p></hint>
+  <answer><p><m>1</m>.</p></answer>
+  <solution><p><m>t=u^2</m>, <m>dt=2u\,du</m>: <m>\Gamma(x)=\int_0^\infty u^{2x-2}e^{-u^2}2u\,du=2\int_0^\infty u^{2x-1}e^{-u^2}du</m>. <m>2x-1=5</m>, <m>x=3</m>: <m>\int_0^\infty x^5e^{-x^2}dx=\frac{\Gamma(3)}{2}=\frac{2!}{2}=1</m>.</p></solution>
+</exercise>
+</section>
+
+<section ref="w12-s6">
+<exercise>
+  <statement><p><m>B(3,4)</m>-ийг Гамма функцээр ба тодорхойлолтоор шууд бодож харьцуул. Мөн <m>B\bigl(\frac12,\frac12\bigr)</m>-ийг ол.</p></statement>
+  <answer><p><m>B(3,4)=\dfrac1{60}</m>, <m>B\bigl(\frac12,\frac12\bigr)=\pi</m>.</p></answer>
+  <solution><p><m>B(3,4)=\frac{\Gamma(3)\Gamma(4)}{\Gamma(7)}=\frac{2\cdot6}{720}=\frac1{60}</m>. Шууд: <m>\int_0^1t^2(1-t)^3dt=\int_0^1(t^2-3t^3+3t^4-t^5)dt=\frac13-\frac34+\frac35-\frac16=\frac{1}{60}</m>. <m>B(\frac12,\frac12)=\frac{\Gamma(\frac12)^2}{\Gamma(1)}=\pi</m> (эсвэл тригонометр хэлбэрээр <m>2\int_0^{\pi/2}d\varphi=\pi</m>).</p></solution>
+</exercise>
+<exercise>
+  <statement><p><m>a&lt;b</m>, <m>p,q&gt;0</m> үед <md>\int_a^b(x-a)^{p-1}(b-x)^{q-1}dx=(b-a)^{p+q-1}B(p,q)</md> гэж баталж, <m>\displaystyle\int_1^3\sqrt{(x-1)(3-x)}\,dx</m>-ийг бод. Геометр утгаар шалга.</p></statement>
+  <hint><p><m>x=a+(b-a)t</m>.</p></hint>
+  <answer><p><m>\dfrac\pi2</m>.</p></answer>
+  <solution><p><m>x=a+(b-a)t</m>: <m>x-a=(b-a)t</m>, <m>b-x=(b-a)(1-t)</m>, <m>dx=(b-a)dt</m>, иймд интеграл <m>(b-a)^{p-1+q-1+1}\int_0^1t^{p-1}(1-t)^{q-1}dt=(b-a)^{p+q-1}B(p,q)</m>. <m>p=q=\frac32</m>, <m>b-a=2</m>:
+  <md>\int_1^3\sqrt{(x-1)(3-x)}\,dx=2^2B\Bigl(\frac32,\frac32\Bigr)=4\cdot\frac{\Gamma(\frac32)^2}{\Gamma(3)}=4\cdot\frac{\pi/4}{2}=\frac\pi2.</md>
+  <m>y=\sqrt{(x-1)(3-x)}=\sqrt{1-(x-2)^2}</m> нь <m>(2,0)</m> төвтэй нэгж хагас тойрог тул талбай <m>\frac\pi2</m>.</p></solution>
+</exercise>
+<exercise>
+  <statement><p><m>\displaystyle\int_0^\infty\frac{dx}{\sqrt[3]{x}\,(1+x)}</m>-ийг ол. Мөн <m>\Gamma\bigl(\frac13\bigr)\Gamma\bigl(\frac23\bigr)</m>-ийг ол.</p></statement>
+  <hint><p>Нөхөх томьёо: <m>\int_0^\infty\frac{u^{x-1}}{1+u}du=\frac{\pi}{\sin\pi x}</m>, <m>x=\frac23</m>.</p></hint>
+  <answer><p>Хоёулаа <m>\dfrac{2\pi}{\sqrt3}</m>.</p></answer>
+  <solution><p><m>x^{-1/3}=x^{\frac23-1}</m> тул Теорем <xref ref="w12-thm-reflection" text="global"/>-оор (<m>x=\frac23</m>) интеграл <m>\frac{\pi}{\sin\frac{2\pi}3}=\frac{2\pi}{\sqrt3}</m>; энэ нь мөн <m>\Gamma(\frac23)\Gamma(\frac13)</m>-тэй тэнцүү.</p></solution>
+</exercise>
+</section>
+
+<section ref="w12-s7">
+<exercise>
+  <statement><p><m>\displaystyle\int_0^{\pi/2}\sin^4\varphi\cos^2\varphi\,d\varphi</m>-ийг Гамма функцээр бод.</p></statement>
+  <answer><p><m>\dfrac{\pi}{32}</m>.</p></answer>
+  <solution><p>Өгүүлбэр <xref ref="w12-prop-sin-cos" text="global"/>-д <m>a=4</m>, <m>b=2</m>:
+  <md>\frac{\Gamma(\frac52)\Gamma(\frac32)}{2\Gamma(4)}=\frac{\frac34\sqrt\pi\cdot\frac12\sqrt\pi}{2\cdot6}=\frac{3\pi/8}{12}=\frac{\pi}{32}.</md></p></solution>
+</exercise>
+<exercise>
+  <statement><p><m>\displaystyle\int_0^\infty\frac{dx}{1+x^6}</m>-ийг ол.</p></statement>
+  <hint><p><m>\int_0^\infty\frac{dx}{1+x^n}=\frac{\pi/n}{\sin(\pi/n)}</m>.</p></hint>
+  <answer><p><m>\dfrac\pi3</m>.</p></answer>
+  <solution><p><m>n=6</m>: <m>\frac{\pi/6}{\sin(\pi/6)}=\frac{\pi/6}{1/2}=\frac\pi3</m>. (Томьёо нь <m>t=x^6</m> орлуулга ба нөхөх томьёоноос гарна.)</p></solution>
+</exercise>
+<exercise>
+  <statement><p><m>\displaystyle\int_0^\infty x^3e^{-\sqrt x}\,dx</m>-ийг ол.</p></statement>
+  <hint><p><m>x=t^2</m>.</p></hint>
+  <answer><p><m>2\cdot7!=10080</m>.</p></answer>
+  <solution><p><m>x=t^2</m>, <m>dx=2t\,dt</m>: <m>\int_0^\infty t^6e^{-t}\,2t\,dt=2\int_0^\infty t^7e^{-t}dt=2\Gamma(8)=2\cdot7!=10080</m>.</p></solution>
+</exercise>
+</section>
+
+<homework>
+<exercise>
+  <statement><p><m>a\ge0</m> үед <m>\displaystyle\int_0^\infty\frac{\ln(1+a^2x^2)}{1+x^2}\,dx=\pi\ln(1+a)</m> гэж батал. Параметрээр дифференциалчлах ба тасралтгүй чанарын нөхцлүүдийг шалга.</p></statement>
+  <hint><p><m>a\ne1</m> үед <m>\frac{x^2}{(1+a^2x^2)(1+x^2)}=\frac1{a^2-1}\Bigl(\frac1{1+x^2}-\frac1{1+a^2x^2}\Bigr)</m>.</p></hint>
+  <solution><p><m>I(a)</m> гэж тэмдэглэе. <m>f=\frac{\ln(1+a^2x^2)}{1+x^2}</m>, <m>f_a=\frac{2ax^2}{(1+a^2x^2)(1+x^2)}</m> нь <m>[0,\infty)\times[0,\infty)</m> дээр тасралтгүй.</p>
+  <p><em>Тасралтгүй чанар.</em> <m>0\le a\le A</m> үед <m>0\le f\le\frac{\ln(1+A^2x^2)}{1+x^2}</m>, баруун тал интегралчлагдана (<m>\ln(1+A^2x^2)\le C\sqrt x</m>, <m>x\ge1</m>). M-шинжүүр ба Теорем <xref ref="w12-thm-impr-cont" text="global"/>-аар <m>I</m> нь <m>[0,A]</m> дээр тасралтгүй, <m>I(0)=0</m>.</p>
+  <p><em>Уламжлал.</em> <m>0&lt;a_0\le a\le A</m> үед <m>|f_a|\le\frac{2Ax^2}{(1+a_0^2x^2)(1+x^2)}\le\frac{2A}{a_0^2(1+x^2)}</m> тул <m>\int f_a\,dx</m> жигд нийлнэ; Теорем <xref ref="w12-thm-impr-diff" text="global"/>-ээр <m>a\ne1</m> үед
+  <md>I'(a)=\frac{2a}{a^2-1}\Bigl(\frac\pi2-\frac{\pi}{2a}\Bigr)=\frac{\pi(a-1)}{a^2-1}=\frac{\pi}{1+a},</md>
+  <m>I'</m> тасралтгүй тул <m>a=1</m>-д ч мөн. Иймд <m>(0,\infty)</m> дээр <m>I(a)=\pi\ln(1+a)+C</m>, <m>a\to0^+</m> гэвэл <m>C=0</m>.</p></solution>
+</exercise>
+<exercise>
+  <statement><p><m>n\in\N</m> үед <md>\int_0^\infty\frac{dx}{(1+x^2)^n}=\frac{\sqrt\pi\,\Gamma\bigl(n-\frac12\bigr)}{2\,\Gamma(n)}=\frac{(2n-3)!!}{(2n-2)!!}\cdot\frac\pi2</md> гэж батал (<m>(-1)!!=0!!=1</m>).</p></statement>
+  <hint><p><m>u=x^2</m> орлуулаад Бета функцийн хагас шулууны хэлбэрийг ашигла.</p></hint>
+  <solution><p><m>x=\sqrt u</m>, <m>dx=\frac{du}{2\sqrt u}</m>:
+  <md>\int_0^\infty\frac{dx}{(1+x^2)^n}=\frac12\int_0^\infty\frac{u^{\frac12-1}}{(1+u)^{\frac12+(n-\frac12)}}du=\frac12B\Bigl(\frac12,n-\frac12\Bigr)=\frac{\Gamma(\frac12)\Gamma(n-\frac12)}{2\Gamma(n)}.</md>
+  <m>\Gamma(n-\frac12)=\frac{(2n-3)!!}{2^{n-1}}\sqrt\pi</m>, <m>\Gamma(n)=(n-1)!</m>, <m>2^{n-1}(n-1)!=(2n-2)!!</m> тул хариу <m>\frac{\pi(2n-3)!!}{2\,(2n-2)!!}</m>. Шалгалт: <m>n=1</m>: <m>\frac\pi2</m>; <m>n=2</m>: <m>\frac\pi4</m>.</p></solution>
+</exercise>
+<exercise>
+  <statement><p><m>|\alpha|&lt;1</m> үед <m>\displaystyle\int_0^{\pi/2}\tan^\alpha\varphi\,d\varphi=\frac{\pi}{2\cos\frac{\pi\alpha}{2}}</m> гэж батал.</p></statement>
+  <hint><p><m>\tan^\alpha\varphi=\sin^\alpha\varphi\cos^{-\alpha}\varphi</m>; Өгүүлбэр <xref ref="w12-prop-sin-cos" text="global"/> ба нөхөх томьёо.</p></hint>
+  <solution><p><m>a=\alpha&gt;-1</m>, <m>b=-\alpha&gt;-1</m> тул Өгүүлбэр <xref ref="w12-prop-sin-cos" text="global"/>-ээр
+  <md>\int_0^{\pi/2}\sin^\alpha\varphi\cos^{-\alpha}\varphi\,d\varphi=\frac{\Gamma\bigl(\frac{1+\alpha}{2}\bigr)\Gamma\bigl(\frac{1-\alpha}{2}\bigr)}{2\Gamma(1)}.</md>
+  <m>s=\frac{1+\alpha}2\in(0,1)</m> ба <m>1-s=\frac{1-\alpha}{2}</m> тул нөхөх томьёогоор <m>\Gamma(s)\Gamma(1-s)=\frac{\pi}{\sin\pi s}=\frac{\pi}{\sin(\frac\pi2+\frac{\pi\alpha}2)}=\frac{\pi}{\cos\frac{\pi\alpha}{2}}</m>.</p></solution>
+</exercise>
+<exercise>
+  <statement><p>(Уоллисын томьёо) <m>\ln\Gamma</m>-ийн гүдгэр чанарыг ашиглан
+  <md>\frac{n}{\sqrt{n+\frac12}}\le\frac{\Gamma\bigl(n+\frac12\bigr)}{\Gamma(n)}\le\sqrt n\qquad(n\in\N)</md>
+  гэж батал. Эндээс <m>\displaystyle\lim_{n\to\infty}\frac{(2n-1)!!}{(2n)!!}\sqrt{\pi n}=1</m> гэж гарга.</p></statement>
+  <hint><p>Гүдгэр функцийн хувьд <m>\ln\Gamma\bigl(\frac{u+v}{2}\bigr)\le\frac12\bigl(\ln\Gamma(u)+\ln\Gamma(v)\bigr)</m>. <m>(u,v)=(n,n+1)</m> ба <m>(n+\frac12,n+\frac32)</m> гэж ав.</p></hint>
+  <solution><p><m>u=n</m>, <m>v=n+1</m>: <m>\Gamma(n+\frac12)^2\le\Gamma(n)\Gamma(n+1)=n\Gamma(n)^2</m>, иймд <m>\frac{\Gamma(n+\frac12)}{\Gamma(n)}\le\sqrt n</m>. <m>u=n+\frac12</m>, <m>v=n+\frac32</m>: <m>\Gamma(n+1)^2\le\Gamma(n+\frac12)\Gamma(n+\frac32)=(n+\frac12)\Gamma(n+\frac12)^2</m>, иймд <m>\Gamma(n+\frac12)\ge\frac{n\Gamma(n)}{\sqrt{n+\frac12}}</m>.</p>
+  <p><m>\sqrt n</m>-д хуваавал <m>\sqrt{\frac{n}{n+1/2}}\le\frac{\Gamma(n+\frac12)}{\sqrt n\,\Gamma(n)}\le1</m>, хавчих зарчмаар харьцаа <m>1</m> руу тэмүүлнэ. Нөгөө талаас <m>\Gamma(n+\frac12)=\frac{(2n-1)!!}{2^n}\sqrt\pi</m>, <m>\Gamma(n)=\frac{n!}{n}</m>, <m>2^nn!=(2n)!!</m> тул
+  <md>\frac{\Gamma(n+\frac12)}{\sqrt n\,\Gamma(n)}=\frac{(2n-1)!!\sqrt\pi\,n}{(2n)!!\sqrt n}=\frac{(2n-1)!!}{(2n)!!}\sqrt{\pi n}\to1.</md></p></solution>
+</exercise>
+<exercise>
+  <statement><p>(Гауссын томьёо) <m>x&gt;0</m> үед
+  <md>\Gamma(x)=\lim_{n\to\infty}\frac{n!\,n^x}{x(x+1)\cdots(x+n)}</md>
+  гэж батал.</p></statement>
+  <hint><p>(1) <m>\int_0^nt^{x-1}\bigl(1-\frac tn\bigr)^ndt=n^xB(x,n+1)</m>. (2) <m>0\le t\le n</m> үед <m>0\le e^{-t}-\bigl(1-\frac tn\bigr)^n\le\frac{t^2e^{-t}}{n}</m>: <m>e^t\ge\bigl(1+\frac tn\bigr)^n</m> ба Бернуллийн тэнцэтгэл биш <m>\bigl(1-\frac{t^2}{n^2}\bigr)^n\ge1-\frac{t^2}{n}</m>-ийг ашигла.</p></hint>
+  <solution><p>(1) <m>t=nu</m> орлуулгаар <m>\int_0^nt^{x-1}(1-\frac tn)^ndt=n^x\int_0^1u^{x-1}(1-u)^ndu=n^xB(x,n+1)=\frac{n^x\Gamma(x)\,n!}{\Gamma(x+n+1)}</m>. <m>\Gamma(x+n+1)=(x+n)(x+n-1)\cdots x\,\Gamma(x)</m> тул энэ нь <m>\frac{n!\,n^x}{x(x+1)\cdots(x+n)}</m>.</p>
+  <p>(2) <m>0\le t\le n</m> үед <m>1-\frac tn\le e^{-t/n}</m> тул <m>(1-\frac tn)^n\le e^{-t}</m>. Мөн <m>e^{t}\ge(1+\frac tn)^n</m> ба Бернуллиар
+  <md>e^t\Bigl(1-\frac tn\Bigr)^n\ge\Bigl(1-\frac{t^2}{n^2}\Bigr)^n\ge1-\frac{t^2}{n},</md>
+  иймд <m>e^{-t}-(1-\frac tn)^n=e^{-t}\bigl[1-e^t(1-\frac tn)^n\bigr]\le\frac{t^2e^{-t}}{n}</m>.</p>
+  <p>(3) Иймд
+  <md>0\le\Gamma(x)-\int_0^nt^{x-1}\Bigl(1-\frac tn\Bigr)^ndt=\int_n^\infty t^{x-1}e^{-t}dt+\int_0^nt^{x-1}\Bigl[e^{-t}-\Bigl(1-\frac tn\Bigr)^n\Bigr]dt\le\int_n^\infty t^{x-1}e^{-t}dt+\frac{\Gamma(x+2)}{n}.</md>
+  Баруун тал нь нийлдэг интегралын үлдэгдэл ба <m>\frac{\Gamma(x+2)}{n}</m> тул <m>0</m> руу тэмүүлнэ. (1)-тэй хослуулбал томьёо батлагдана.</p></solution>
+</exercise>
+</homework>
+</ai>

@@ -1,0 +1,281 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<chapter xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="ch-w02">
+<title>Тодорхойгүй интеграл бодох</title>
+<introduction><exploration component="ai" xml:id="w02-preview">
+  <title>Бутархайг задлах нь яагаад хэрэгтэй вэ? (AI)</title>
+  <introduction>
+    <p>Бутархайг нэмэхэд ерөнхий хуваарьт оруулдаг. Интеграл бодоход эсрэг үйлдэл буюу нэг бутархайг хэд хэдэн <q>энгийн</q> бутархайд задлах нь их хэрэг болно.</p>
+  </introduction>
+  <task>
+    <statement><p><m>\dfrac{1}{x-1}-\dfrac{1}{x+1}</m>-ийг нэг бутархай болго.</p></statement>
+    <answer><p><m>\dfrac{2}{x^2-1}</m>.</p></answer>
+  </task>
+  <task>
+    <statement><p>Өмнөх үр дүнг ашиглан <m>\displaystyle\int\frac{2\,dx}{x^2-1}</m>-ийг ол.</p></statement>
+    <answer><p><m>\ln|x-1|-\ln|x+1|+C=\ln\left|\dfrac{x-1}{x+1}\right|+C</m>.</p></answer>
+  </task>
+  <task>
+    <statement><p><m>\dfrac{x+5}{(x-1)(x+2)}=\dfrac{A}{x-1}+\dfrac{B}{x+2}</m> байх <m>A, B</m> тоог ол.</p></statement>
+    <hint><p>Хоёр талыг <m>(x-1)(x+2)</m>-оор үржүүлээд <m>x=1</m>, <m>x=-2</m> утгыг орлуул.</p></hint>
+    <answer><p><m>A=2</m>, <m>B=-1</m>.</p></answer>
+  </task>
+</exploration></introduction>
+<section xml:id="w02-s1">
+<title>Рационал бутархайн интеграл</title>
+<p><m>\dfrac{P(x)}{Q(x)}</m> хэлбэрийн функцийг рационал функц гэдэг. Энд <m>P(x)</m>, <m>Q(x)</m> нь олон гишүүнт. Хэрэв <m>\deg P&lt;\deg Q</m> бол зөв рационал бутархай бусад үед засагдах рационал бутархай гэдэг. Хэрэв <m>\dfrac{P(x)}{Q(x)}</m> засагдах рационал бутархай бол түүнийг <md>\dfrac{P(x)}{Q(x)}=M(x)+\dfrac{R(x)}{Q(x)}</md> хэлбэрт нэг утгатай тавьж болно. Энд <m>M(x),\, R(x)</m> олон гишүүнтүүд ба <m>\deg R&lt;\deg Q</m>. Тиймээс зөв бутархайн интегралыг бодчихвол ямар ч рационал бутархай функцийн интегралыг бодож болно.</p>
+<theorem><title>Хялбар бутархайд задлах</title><statement><p><m>\dfrac{P(x)}{Q(x)}</m> зөв рационал бутархай бол түүнийг дараах 4 хэлбэрийн бутархайнуудын нийлбэрт нэг утгатай задлаж болно. Үүнд <m>p^2-4q&lt;0</m> ба <md number="yes"><mrow>\dfrac{A}{(x-a)}&amp;&amp;\text{-1-р төрлийн хялбар бутархай}</mrow><mrow>\dfrac{A}{(x-a)^k}&amp;&amp;\text{-2-р төрлийн хялбар бутархай}</mrow><mrow>\dfrac{A}{(x^2+px+q)}&amp;&amp;\text{-3-р төрлийн хялбар бутархай}</mrow><mrow>\dfrac{A}{(x^2+px+q)^k}&amp;&amp;\text{-4-р төрлийн хялбар бутархай}</mrow></md></p></statement></theorem>
+<p>Дээрх теоремээс харахад 4 төрлийн хялбар бутархайн интегралыг бодчихвол ямар ч рационал бутархайн интеграл бодогдоно. Эхлээд эдгээр интегралуудыг хэрхэн бодох талаар үзье. Хялбар бутархайн интегралууд дараах байдалтай:</p>
+<p><md>\int \frac{dx}{x-a}=\ln|x-a|+C,</md></p>
+<p><md>\int \frac{dx}{(x-a)^n}=\frac{-1}{(n-1)(x-a)^{\,n-1}}+C,
+\qquad n\ge 2,</md></p>
+<p><md>\int\frac{dx}{x^2+a^2}=\frac{1}{a}\arctan\frac{x}{a}+C,</md></p>
+<p><md>\int\frac{dx}{(x^2+px+q)}=\frac{2}{\sqrt{4q-p^2}}
+\arctan\frac{2x+p}{\sqrt{4q-p^2}}+C.</md></p>
+<p>Хэрэв <m>x^2+px+q</m> квадрат нь бодит язгуургүй бол түүнийг <md>x^2+px+q=(x+a)^2+b^2</md> хэлбэрт оруулж арктангенс ашиглан бодно. Иймд 4-р төрлийн хялбар бутархайн интегралийн хувьд түүнийг <m>t=\dfrac{2x+p}{\sqrt{4q-p^2}}</m> орлуулгаар <m>\dfrac{A}{(t^2+1)^n}</m> хэлбэрт хувиргаж болно. Иймд <md>\displaystyle I_n = \int \frac{dx}{(1+x^2)^n}</md> хэрхэн бодохыг тайлбарлая.</p>
+<p>Эхлээд <m>n=1</m> үед <md>I_1 = \int \frac{dx}{1+x^2} = \arctan x+C</md> байхыг харах амархан.</p>
+<p>Хэсэгчлэн интегралчлах замаар <md>I_n = \frac{x}{2(n-1)(1+x^2)^{n-1}} + \frac{2n-3}{2(n-1)} I_{n-1}</md> томьёог гаргаж болно. Иймд 4-р төрлийн бутархайн интеграл бодогдоно. Жишээ болгон эхний хэдэн интегралыг бичвэл: <md>I_2=\frac{x}{2(1+x^2)}+\frac12 I_1
+   =\frac{x}{2(1+x^2)}+\frac12\arctan x+C</md> <m>I_3</m>–г олохын тулд рекурент томьёонд <m>n=3</m> гэж орлуулбал <md>I_3=\frac{x}{2(1+x^2)^2}+\frac34 I_2</md> болно. <m>I_2</m>–ийн оронд өмнө олсоноо орлуулбал: <md>I_3=\frac{x}{2(1+x^2)^2}
+    +\frac{3}{4}\left(\frac{x}{2(1+x^2)}+\frac12\arctan x\right)+C</md> буюу <md>I_3=
+\frac{x}{2(1+x^2)^2}
++\frac{3x}{8(1+x^2)}
++\frac{3}{8}\arctan x+C</md> болно. <m>I_4</m>–г ижлээр олбол <md>I_4=
+\frac{x}{2(1+x^2)^3}
++\frac{5x}{12(1+x^2)^2}
++\frac{15x}{48(1+x^2)}
++\frac{15}{48}\arctan x+C.</md> Бүх үзсэн зүйлсээ нэгтгэн үзвэл рационал бутархайн интегралыг бодохдоо дараах алхамуудыг хийнэ. <ol><li>Эхний алхам рационал бутархайг засаж зөв бутархай ба олон гишүүнтийн нийлбэр болгоно.</li><li>Зөв бутархайг хялбар рационал бутархайнуудын нийлбэр байдлаар илэрхийлэн.</li><li>Интегралаа бодно.</li></ol> <m>\dfrac{R(x)}{Q(X)}</m> зөв бутархайн хувьд <md number="yes"><mrow>Q(x)&amp;=A(x-a_1)\ldots (x-a_m)(x-b_1)^{n_1}\ldots (x-b_k)^{n_k}</mrow><mrow>&amp;= (x^2+p_1x+q_1)\ldots (x^2+p_lx+q_l)(x^2+r_1x+s_1)^{g_1}\ldots (x^2+p_dx+q_d)^{g_d}</mrow></md> бол түүнийг хялбар бутархайд задлахад <m>Q(x)</m> олон гишүүнтийн зэрэгтэй тэнцүү тооний үл мэдэгдэх бүхий шугман тэгшитгэлийн систем бодно.</p>
+<example><p><md>\int\frac{3x^3+2x^2+x-7}{x^2+1} dx</md> хувьд</p><p><md>\frac{3x^3+2x^2+x-7}{x^2+1}
+=
+3x+2+\frac{-2x-9}{x^2+1}.</md> болно. Энэ үед интеграл нь: <md>\int (3x+2)\,dx - \int\frac{2x}{x^2+1}dx - 9\int\frac{dx}{x^2+1}=\dfrac{3}{2}x^2+2x-\ln(x^2+1)-9\arctan x+c.</md></p></example>
+<example><p><md>\int \frac{dx}{x^2-1}</md> бодъёо. Зөв бутархай учир хуваарийг үржигдэхүүн болговол <m>{x^2-1}=(x-1)(x+1)</m> тул <md>\frac{1}{(x-1)(x+1)}=\frac{A}{x-1}+\frac{B}{x+1}</md> байхаар <m>A, B</m> олдоно. Ижил хуваарь өгвөл <md>\frac{A}{x-1}+\frac{B}{x+1}=\frac{A(x+1)+B(x-1)}{(x-1)(x+1)}=\frac{(A+B)x+(A-B)}{(x-1)(x+1)}=\frac{1}{(x-1)(x+1)}</md> болно. Иймд <md>\begin{cases}
+    A+B&amp;=0\\
+    A-B&amp;=1
+\end{cases}</md> болно. Үүнийг бодвол <m>A=0.5, B=-0.5</m> болно. Тэгвэл интеграл <md>\int \frac{dx}{x^2-1}=\frac12\Bigl[\int \Bigl(\dfrac{1}{x+1}-\dfrac{1}{x-1}\Bigr)dx\Bigr]==\frac12\ln|x-1|-\frac12\ln|x+1|+C
+=\frac12\ln\left|\frac{x-1}{x+1}\right|+C.</md> болно.</p></example>
+<example><p><md>\int \frac{dx}{x^2+4x+5}
+=
+\int \frac{dx}{(x+2)^2+1}
+=
+\arctan(x+2)+C.</md></p></example>
+<example><p>Дараах интегралыг бод. <md>I=\int\dfrac{2x^4 - x^3 - x^2 - 4x - 2}{x^3-x^2-x+1}\, dx.</md></p><p><term>1. Зөв бутархай болгох.</term></p><p>Эхлээд олон гишүүнтийг үлдэгдэлтэй хувааж зөв бутархайд шилжүүлнэ: <md>\frac{2x^4 - x^3 - x^2 - 4x - 2}{x^3 - x^2 - x + 1}
+= 2x+1 + \frac{2x^2 - 5x - 3}{x^3 - x^2 - x + 1}.</md></p><p>Хуваарийг үржигдэхүүн болговол <md>x^3 - x^2 - x + 1 
+= x^2(x-1) -1(x-1)
+= (x^2-1)(x-1)
+= (x-1)^2(x+1).</md></p><p>Тиймээс <md>\frac{2x^4 - x^3 - x^2 - 4x - 2}{x^3 - x^2 - x + 1}
+= 2x+1 + \frac{2x^2 - 5x - 3}{(x-1)^2(x+1)}.</md></p><p><term>2. Зөв бутархайг хялбар бутархайд задлах.</term></p><p>Бутархайг <md>\frac{2x^2 - 5x - 3}{(x-1)^2(x+1)}
+= \frac{A}{x-1} + \frac{B}{(x-1)^2} + \frac{C}{x+1}</md> гэж задлана.</p><p>Ижил хуваарь оруулбал: <md>2x^2 - 5x - 3 
+= A(x-1)(x+1) + B(x+1) + C(x-1)^2
+= (A+C)x^2 + (B-2C)x + (-A+B+C).</md> болно. Коэффициентүүдийг харьцуулбал: <md>2x^2 - 5x - 3 = (A+C)x^2 + (B-2C)x + (-A+B+C),</md> ингээд систем: <md>\begin{cases}
+A + C = 2,\\
+B - 2C = -5,\\
+-\,A + B + C = -3.
+\end{cases}</md></p><p>Энэ системээс: <md>A = 1,\qquad B = -3,\qquad C = 1.</md></p><p>Иймээс <md>\frac{2x^2 - 5x - 3}{(x-1)^2(x+1)}
+= \frac{1}{x-1} - \frac{3}{(x-1)^2} + \frac{1}{x+1}.</md></p><p>Тэгвэл бүхэлд нь <md>\dfrac{2x^4 - x^3 - x^2 - 4x - 2}{x^3 - x^2 - x + 1}
+= 2x+1 + \frac{1}{x-1} - \frac{3}{(x-1)^2} + \frac{1}{x+1}.</md></p><p><term>3. Хялбар бутархай тус бүрээр интегралчлах.</term></p><p>Одоо <md>\begin{aligned}
+I
+&amp;= \int (2x+1)\,dx 
++ \int \frac{1}{x-1}\,dx 
+- \int \frac{3}{(x-1)^2}\,dx 
++ \int\frac{1}{x+1}\,dx.
+\end{aligned}</md></p><p><md>\int (2x+1)\,dx = x^2 + x + C_1,</md></p><p><md>\int\frac{1}{x-1}\,dx = \ln|x-1| + C_2,</md></p><p><md>\int \frac{3}{(x-1)^2}\,dx 
+= 3\int (x-1)^{-2}\,dx 
+= 3\cdot\frac{(x-1)^{-1}}{-1} 
+= -\frac{3}{x-1},</md> тэгэхээр <md>-\int \frac{3}{(x-1)^2}\,dx = +\frac{3}{x-1},</md></p><p><md>\int\frac{1}{x+1}\,dx = \ln|x+1| + C_3.</md></p><p>Иймээс <md>I
+= x^2 + x + \ln|x-1| + \frac{3}{x-1} + \ln|x+1| + C.</md></p><p>Логарифмуудыг нэгтгээд <md>I
+= x^2 + x + \frac{3}{x-1} + \ln|x^2-1| + C,</md> учир нь <m>x^2-1=(x-1)(x+1)</m>.</p></example>
+<exercises component="ai" xml:id="w02-s1-ai"><title>Шалгах дасгал (AI)</title><exercise>
+  <statement><p><m>\displaystyle\int\frac{3x+1}{x^2-x-2}\,dx</m>.</p></statement>
+  <hint><p><m>x^2-x-2=(x-2)(x+1)</m>.</p></hint>
+  <answer><p><m>\dfrac73\ln|x-2|+\dfrac23\ln|x+1|+C</m>.</p></answer>
+  <solution><p><m>\frac{3x+1}{(x-2)(x+1)}=\frac{A}{x-2}+\frac{B}{x+1}</m>, <m>3x+1=A(x+1)+B(x-2)</m>. <m>x=2</m>: <m>7=3A</m>; <m>x=-1</m>: <m>-2=-3B</m>. Иймд <m>A=\frac73</m>, <m>B=\frac23</m> ба
+  <md>\int\frac{3x+1}{x^2-x-2}\,dx=\frac73\ln|x-2|+\frac23\ln|x+1|+C.</md></p></solution>
+<solution component="ai"><title>Төстэй бодлого (AI)</title><p><m>\displaystyle\int \frac{x+7}{x^2-x-6}\,dx</m>-ийг ол.</p><p><em>Заавар:</em> Хэсэгчилсэн бутархайд задал.</p><p><em>Хариу:</em> <m>2\ln|x-3|-\ln|x+2|+C</m>.</p></solution></exercise><exercise>
+  <statement><p><m>\displaystyle\int\frac{dx}{x^3+x}</m>.</p></statement>
+  <hint><p><m>\frac{1}{x(x^2+1)}=\frac Ax+\frac{Bx+C}{x^2+1}</m>.</p></hint>
+  <answer><p><m>\ln|x|-\dfrac12\ln(x^2+1)+C</m>.</p></answer>
+  <solution><p><m>1=A(x^2+1)+(Bx+C)x</m>. <m>x=0</m>: <m>A=1</m>; <m>x^2</m>-ийн коэффициент: <m>A+B=0\Rightarrow B=-1</m>; <m>x</m>-ийн коэффициент: <m>C=0</m>. Иймд
+  <md>\int\left(\frac1x-\frac{x}{x^2+1}\right)dx=\ln|x|-\frac12\ln(x^2+1)+C.</md></p></solution>
+<solution component="ai"><title>Төстэй бодлого (AI)</title><p><m>\displaystyle\int \frac{dx}{x^3+4x}</m>-ийг ол.</p><p><em>Заавар:</em> <m>\frac1{x(x^2+4)}=\frac Ax+\frac{Bx+C}{x^2+4}</m>.</p><p><em>Хариу:</em> <m>\frac14\ln|x|-\frac18\ln(x^2+4)+C</m>.</p></solution></exercise><exercise>
+  <statement><p><m>\displaystyle\int\frac{x^2+1}{(x-1)^3}\,dx</m>.</p></statement>
+  <hint><p><m>t=x-1</m> гэвэл <m>x^2+1=t^2+2t+2</m>.</p></hint>
+  <answer><p><m>\ln|x-1|-\dfrac{2}{x-1}-\dfrac{1}{(x-1)^2}+C</m>.</p></answer>
+  <solution><p><m>t=x-1</m>: <m>\frac{t^2+2t+2}{t^3}=\frac1t+\frac2{t^2}+\frac2{t^3}</m>. Интегралчилбал <m>\ln|t|-\frac2t-\frac1{t^2}+C</m>.</p></solution>
+<solution component="ai"><title>Төстэй бодлого (AI)</title><p><m>\displaystyle\int \frac{x^2+2}{(x-2)^3}\,dx</m>-ийг ол.</p><p><em>Заавар:</em> <m>t=x-2</m> орлуулж, тоологчийг <m>t</m>-ээр илэрхийл.</p><p><em>Хариу:</em> <m>\ln|x-2|-\frac4{x-2}-\frac3{(x-2)^2}+C</m>.</p></solution></exercise><exercise>
+  <statement><p><m>\displaystyle\int\frac{dx}{x^2+2x+5}</m>.</p></statement>
+  <hint><p>Бүтэн квадрат ялга: <m>x^2+2x+5=(x+1)^2+4</m>.</p></hint>
+  <answer><p><m>\dfrac12\arctan\dfrac{x+1}{2}+C</m>.</p></answer>
+  <solution><p><m>u=x+1</m>: <m>\int\frac{du}{u^2+4}=\frac12\arctan\frac u2+C</m>.</p></solution>
+<solution component="ai"><title>Төстэй бодлого (AI)</title><p><m>\displaystyle\int \frac{dx}{x^2-4x+13}</m>-ийг ол.</p><p><em>Заавар:</em> Бүтэн квадрат ялга.</p><p><em>Хариу:</em> <m>\frac13\arctan\frac{x-2}3+C</m>.</p></solution></exercise></exercises>
+</section>
+<section xml:id="w02-s2">
+<title>Иррационал функцийн интеграл</title>
+<introduction>
+<p>Иррационал интеграл гэдэг нь интегралын тэмдэгтийн дор квадрат язгуур, ерөнхийдөө <m>x</m>-ийн бутархай зэрэг ( <m>\sqrt{\phantom{x}}</m>, <m>\sqrt[n]{\phantom{x}}</m> ) орсон интегралуудыг хэлнэ. Жишээлбэл: <md>\int \sqrt{x+1}\,dx,\qquad 
+\int \frac{dx}{\sqrt{x^2+4}},\qquad
+\int \frac{x\,dx}{\sqrt{1-x^2}},\ \text{г.м.}</md></p>
+<p>Ийм интегралуудыг бодоход орлуулах арга түгээмэл ашиглана.</p>
+</introduction>
+<subsection xml:id="w02-s2-1">
+<title>1. <m>\sqrt{ax+b}</m> хэлбэрийн иррационал интеграл</title>
+<p>Ихэвчлэн <m>x</m>–ийг язгууртай тэнцүүлэх буюу <md>ax+b=t^2</md> гэсэн орлуулга хэрэглэнэ.</p>
+<example><p><md>\int \sqrt{x+1}\,dx.</md></p><p>Орлуулая: <md>x+1 = t^2 \quad\Rightarrow\quad x = t^2-1,\quad dx = 2t\,dt.</md> Тэгвэл <md>\sqrt{x+1} = \sqrt{t^2} = t \quad (t&gt;0\ \text{мужийг авч болно}).</md></p><p>Интеграл: <md>\int \sqrt{x+1}\,dx
+= \int t \cdot 2t\,dt
+= 2\int t^2\,dt
+= 2\cdot \frac{t^3}{3} + C
+= \frac{2}{3}t^3 + C.</md></p><p>Энд <m>t^2 = x+1</m> тул <m>t=\sqrt{x+1}</m>: <md>\int \sqrt{x+1}\,dx 
+= \frac{2}{3}(x+1)^{3/2} + C.</md></p></example>
+</subsection>
+<subsection xml:id="w02-s2-2">
+<title>2. <m>\sqrt{x^2+a^2}</m> ба <m>\sqrt{x^2-a^2}</m>: тригонометр орлуулга</title>
+<p>Квадрат язгуур дотор тэгш өнцөгт гурвалжин үүсгэж болохоор хэлбэр байвал тригонометр орлуулга ашиглана.</p>
+<p><ul><li><m>\sqrt{x^2+a^2}</m> үед <m>x = a\tan t</m> гэж орлуулна.</li><li><m>\sqrt{x^2-a^2}</m> үед <m>x = a\sec t</m> (эсвэл <m>x=a\cosh t</m> гэх мэт) гэж орлуулна.</li><li><m>\sqrt{a^2-x^2}</m> үед <m>x = a\sin t</m> гэж орлуулна.</li></ul></p>
+<example><p><md>\int \frac{dx}{\sqrt{x^2+4}}.</md></p><p>Энд <m>x^2+4 = x^2+2^2</m> тул <m>x=2\tan t</m> гэж орлуулвал: <md>x = 2\tan t \quad\Rightarrow\quad dx = 2\sec^2 t\,dt.</md> Мөн <md>\sqrt{x^2+4}
+= \sqrt{4\tan^2 t + 4}
+= 2\sqrt{\tan^2 t+1}
+= 2\sec t.</md></p><p>Интеграл: <md>\int \frac{dx}{\sqrt{x^2+4}}
+= \int \frac{2\sec^2 t\,dt}{2\sec t}
+= \int \sec t\,dt.</md></p><p><m>\displaystyle \int \sec t\,dt = \ln|\sec t + \tan t| + C</m> тул: <md>\int \frac{dx}{\sqrt{x^2+4}}
+= \ln|\sec t + \tan t| + C.</md></p><p>Одоо <m>x</m>-руу буцаая. <m>x=2\tan t \Rightarrow \tan t = \dfrac{x}{2}</m>. Тэгвэл <md>\sec t = \sqrt{1+\tan^2 t}
+= \sqrt{1+\frac{x^2}{4}}
+= \frac{\sqrt{x^2+4}}{2}.</md></p><p>Ингээд <md>\sec t + \tan t = \frac{\sqrt{x^2+4}}{2} + \frac{x}{2}
+= \frac{\sqrt{x^2+4}+x}{2}.</md></p><p>Тогтмол <m>\ln 2</m>-г <m>C</m>-д шингээж болдог тул: <md>\int \frac{dx}{\sqrt{x^2+4}}
+= \ln\bigl|\sqrt{x^2+4}+x\bigr| + C.</md></p></example>
+</subsection>
+<subsection xml:id="w02-s2-3">
+<title>3. Дифференциал биномын интеграл (Чебышёвын теорем)</title>
+<p>Рациналь <m>m,n,p</m> тоонуудын хувьд дараах интеграл <md>\int x^{m}(a+b x^{n})^{p}\,dx</md> ерөнхий тохиолдолд энгийн функцээр илэрхийлэгдэхгүй. Гэхдээ зөвхөн дараах <term>гурван тусгай нөхцөл</term> биелэх үед рациональ функцийн интегралд шилжүүлж болдог. Үүнийг Чебышёвын теорем гэнэ.</p>
+<paragraphs><title>Тохиолдол 1. <m>p</m> — бүхэл тоо</title><p>Хэрэв <md>p\in \mathbb{Z},</md> бол <md>x = z^{N},</md> орлуулга хэрэглэнэ. Энд <m>N</m> нь <m>m</m> болон <m>n</m>–ийн <em>ерөнхий хуваарь</em>.</p></paragraphs>
+<paragraphs><title>Тохиолдол 2. <m>\dfrac{m+1}{n}</m> — бүхэл тоо</title><p>Хэрэв <md>\frac{m+1}{n}\in\mathbb{Z},</md> бол дараах орлуулгыг хэрэглэнэ: <md>a + b x^{n} = z^{N},</md> энд <m>N</m> нь <m>p</m> бутархайн <em>хуваарь</em>.</p></paragraphs>
+<paragraphs><title>Тохиолдол 3. <m>\dfrac{m+1}{n}+p</m> — бүхэл тоо</title><p>Хэрэв <md>\frac{m+1}{n} + p \in \mathbb{Z},</md> бол дараах орлуулга хэрэглэнэ: <md>a x^{-n} + b = z^{N},</md> энд мөн <m>N</m> нь <m>p</m> бутархайн хуваарь.</p></paragraphs>
+<paragraphs><title>Тайлбар</title><p>Хэрэв <m>n=1</m> бол дээрх гурван нөхцөл нь дараахтай тэнцэнэ: <ol><li><m>p</m> — бүхэл;</li><li><m>m</m> — бүхэл;</li><li><m>m+p</m> — бүхэл.</li></ol></p></paragraphs>
+<paragraphs><title>Жишээ</title><p>Дараах интегралыг бодъё: <md>\int x^3(2+x^4)^{1/2}\,dx.</md></p><p>Энд <m>m=3</m>, <m>n=4</m>, <m>p=\frac12</m>. Шалгах: <md>\frac{m+1}{n} = \frac{4}{4} = 1 \in \mathbb{Z},</md> тиймээс <em>Тохиолдол 2</em> биелж байна.</p><p>Орлуулга хийвэл: <md>2 + x^4 = t^2, \qquad t = \sqrt{2+x^4}.</md> Мөн <md>4x^3\,dx = 2t\,dt \quad\Rightarrow\quad x^3dx = \frac{t}{2}\,dt.</md></p><p>Интегралыг орлуулж бодъё: <md>\int x^3(2+x^4)^{1/2}\,dx
+= \int \left( \frac{t}{2}\right)t\,dt
+= \frac12\int t^2 \, dt
+= \frac{t^3}{6} + C.</md></p><p>Буцааж орлуулбал: <md>\boxed{
+\int x^3(2+x^4)^{1/2}\,dx
+= \frac{(2+x^4)^{3/2}}{6} + C.
+}</md></p></paragraphs>
+</subsection>
+<exercises component="ai" xml:id="w02-s2-ai"><title>Шалгах дасгал (AI)</title><exercise>
+  <statement><p><m>\displaystyle\int\frac{dx}{\sqrt x+\sqrt[3]x}</m>.</p></statement>
+  <hint><p><m>x=t^6</m> орлуулга (<m>6</m> нь <m>2</m> ба <m>3</m>-ын хамгийн бага ерөнхий хуваагдагч).</p></hint>
+  <answer><p><m>2\sqrt x-3\sqrt[3]x+6\sqrt[6]x-6\ln\left(1+\sqrt[6]x\right)+C</m>.</p></answer>
+  <solution><p><m>x=t^6</m>, <m>t&gt;0</m>: <m>dx=6t^5dt</m>, <m>\sqrt x=t^3</m>, <m>\sqrt[3]x=t^2</m>.
+  <md>\int\frac{6t^5\,dt}{t^3+t^2}=6\int\frac{t^3}{t+1}\,dt=6\int\left(t^2-t+1-\frac1{t+1}\right)dt=2t^3-3t^2+6t-6\ln(1+t)+C.</md></p></solution>
+<solution component="ai"><title>Төстэй бодлого (AI)</title><p><m>\displaystyle\int \frac{dx}{\sqrt x+\sqrt[4]x}</m>-ийг ол.</p><p><em>Заавар:</em> <m>x=t^4</m> орлуулга.</p><p><em>Хариу:</em> <m>2\sqrt x-4\sqrt[4]x+4\ln(1+\sqrt[4]x)+C</m>.</p></solution></exercise><exercise>
+  <statement><p><m>\displaystyle\int\sqrt{\frac{1-x}{1+x}}\,dx</m>, <m>|x|&lt;1</m>.</p></statement>
+  <hint><p>Хүртвэр ба хуваарийг <m>\sqrt{1-x}</m>-ээр үржүүл.</p></hint>
+  <answer><p><m>\arcsin x+\sqrt{1-x^2}+C</m>.</p></answer>
+  <solution><p><m>\sqrt{\frac{1-x}{1+x}}=\frac{1-x}{\sqrt{1-x^2}}</m> тул
+  <md>\int\frac{dx}{\sqrt{1-x^2}}-\int\frac{x\,dx}{\sqrt{1-x^2}}=\arcsin x+\sqrt{1-x^2}+C.</md></p></solution>
+<solution component="ai"><title>Төстэй бодлого (AI)</title><p><m>\displaystyle\int \sqrt{\frac{1+x}{1-x}}\,dx</m>, <m>|x|\lt1</m>.</p><p><em>Заавар:</em> Тоологч ба хуваарийг <m>\sqrt{1+x}</m>-ээр үржүүл.</p><p><em>Хариу:</em> <m>\arcsin x-\sqrt{1-x^2}+C</m>.</p></solution></exercise><exercise>
+  <statement><p>Чебышёвын теоремын аль тохиолдол болохыг тогтоож, <m>\displaystyle\int\frac{dx}{x\sqrt{1+x^2}}</m> (<m>x&gt;0</m>)-ийг ол.</p></statement>
+  <hint><p><m>m=-1</m>, <m>n=2</m>, <m>p=-\frac12</m>. <m>\frac{m+1}{n}=0</m> бүхэл тоо. <m>1+x^2=t^2</m> орлуулга.</p></hint>
+  <answer><p><m>\ln\dfrac{x}{1+\sqrt{1+x^2}}+C</m>.</p></answer>
+  <solution><p>2-р тохиолдол. <m>t=\sqrt{1+x^2}</m> гэвэл <m>x\,dx=t\,dt</m>, <m>x^2=t^2-1</m>:
+  <md>\int\frac{dx}{x\sqrt{1+x^2}}=\int\frac{x\,dx}{x^2\sqrt{1+x^2}}=\int\frac{dt}{t^2-1}=\frac12\ln\frac{t-1}{t+1}+C.</md>
+  <m>\frac{t-1}{t+1}=\frac{(t-1)(t+1)}{(t+1)^2}=\frac{x^2}{(1+t)^2}</m> тул хариу <m>\ln\frac{x}{1+\sqrt{1+x^2}}+C</m>.</p></solution>
+<solution component="ai"><title>Төстэй бодлого (AI)</title><p>Чебышёвын теоремын аль тохиолдол болохыг тогтоож, <m>\displaystyle\int\frac{dx}{x^2\sqrt{1+x^2}}</m> (<m>x\gt0</m>)-ийг ол.</p><p><em>Заавар:</em> <m>m=-2</m>, <m>n=2</m>, <m>p=-\frac12</m>: <m>\frac{m+1}n+p</m> бүхэл; <m>t=\sqrt{1+x^{-2}}</m> эсвэл <m>x=\tan s</m>.</p><p><em>Хариу:</em> <m>\frac{m+1}{n}+p=-1\in\Z</m> (гурав дахь тохиолдол); <m>-\frac{\sqrt{1+x^2}}{x}+C</m>.</p></solution></exercise></exercises>
+</section>
+<section xml:id="w02-s3">
+<title>Семинар</title>
+<exercise><statement><p>Рационал бутархайн интеграл бод. <ol cols="2"><li><m>\displaystyle \int \frac{3x+1}{x^2+1}\,dx</m></li><li><m>\displaystyle \int \frac{2x-3}{x^2-3x+2}\,dx</m></li><li><m>\displaystyle \int \frac{x}{(x-1)^2(x+1)}\,dx</m></li><li><m>\displaystyle \int \frac{x}{(x-1)^2(x^2+2x+2)}\,dx</m></li><li><m>\displaystyle \int \frac{2x+3}{(x-2)(x+5)}\,dx</m></li><li><m>\displaystyle \int \frac{x}{(x+1)(x+2)(x+3)}\,dx</m></li><li><m>\displaystyle \int \frac{x^{10}}{x^2+x-2}\,dx</m></li><li><m>\displaystyle \int \frac{x^3+1}{x^3-5x^2+6x}\,dx</m></li><li><m>\displaystyle \int \frac{x^2+3x-2}{(x-1)(x^2+x+1)^2}\,dx</m></li><li><m>\displaystyle \int \frac{x^3+1}{(x^2+1)^2}\,dx</m></li></ol></p></statement><solution component="ai"><title>Төстэй бодлого (AI)</title><p>Рационал бутархайн интеграл бод. <m>\displaystyle \int \frac{x}{(x-2)^2(x+1)}\,dx</m> <m>\displaystyle \int \frac{x^3+1}{x^3-4x}\,dx</m> <m>\displaystyle \int \frac{dx}{(x-1)(x^2+1)}</m></p><p><em>Заавар:</em> Бүхэл хэсгийг ялгаад, хэсэгчилсэн бутархайд задал.</p><p><em>Хариу:</em> <m>\frac19\ln|x-2|-\frac{2}{3(x-2)}-\frac19\ln|x+1|+C</m>; <m>x-\frac14\ln|x|+\frac98\ln|x-2|-\frac78\ln|x+2|+C</m>; <m>\frac12\ln|x-1|-\frac14\ln(x^2+1)-\frac12\arctan x+C</m>.</p></solution></exercise>
+<exercise><statement><p>Иррационал функцийн интеграл бод. <ol cols="2"><li><m>\displaystyle \int \frac{dx}{1+\sqrt{x}}</m></li><li><m>\displaystyle \int \frac{1-\sqrt{x+1}}{1+\sqrt[3]{x+1}}\,dx</m></li><li><m>\displaystyle \int \sqrt{x^3+x^2}\, dx</m></li><li><m>\displaystyle \int \frac{\sqrt{x}}{(1+\sqrt[3]{x})^2}\,dx</m></li><li><m>\displaystyle \int \sqrt[3]{3x-x^3}\, dx</m></li><li><m>\displaystyle \int \frac{x^2}{\sqrt{1+x+x^2}} \,dx</m></li><li><m>\displaystyle \int \frac{dx}{(1-x^2)\sqrt{1-x^2}} \,dx</m></li></ol></p></statement><solution component="ai"><title>Төстэй бодлого (AI)</title><p>Иррационал функцийн интеграл бод. <m>\displaystyle \int \frac{dx}{2+\sqrt{x}}</m> <m>\displaystyle \int \frac{dx}{\sqrt{x}\,(1+\sqrt[3]{x})}</m> <m>\displaystyle \int \frac{dx}{(4-x^2)\sqrt{4-x^2}}</m></p><p><em>Заавар:</em> Тохирох орлуулга: <m>x=t^2</m>, <m>x=t^6</m>, <m>x=2\sin t</m>.</p><p><em>Хариу:</em> <m>2\sqrt x-4\ln(2+\sqrt x)+C</m>; <m>6\left(\sqrt[6]x-\arctan\sqrt[6]x\right)+C</m>; <m>\frac{x}{4\sqrt{4-x^2}}+C</m>.</p></solution></exercise>
+<exercise><statement><p>Тригонометрийн интеграл бод. <ol cols="2"><li><m>\displaystyle \int \cos^5 x\, dx</m></li><li><m>\displaystyle \int \sin ^4 x\, dx</m></li><li><m>\displaystyle \int \cos^5 x\sin^5 x\, dx</m></li><li><m>\displaystyle \int \frac{\sin^3 x}{\cos ^4x}\,dx</m></li><li><m>\displaystyle \int \frac{dx}{\sin^3x}\,dx</m></li><li><m>\displaystyle \int \sin 3x\cos x\,dx</m></li><li><m>\displaystyle \int \cos x\cos 2x\cos 3x\,dx</m></li><li><m>\displaystyle \int \frac{dx}{2\sin x-\cos x+5}\,dx</m></li></ol></p></statement><solution component="ai"><title>Төстэй бодлого (AI)</title><p>Тригонометрийн интеграл бод. <m>\displaystyle \int \sin^5 x\, dx</m> <m>\displaystyle \int \sin 2x\cos 4x\,dx</m> <m>\displaystyle \int \frac{dx}{5+4\cos x}</m></p><p><em>Заавар:</em> Сондгой зэрэг: <m>u=\cos x</m>; үржвэрийг нийлбэр болго; <m>t=\tan\frac x2</m>.</p><p><em>Хариу:</em> <m>-\cos x+\frac23\cos^3x-\frac15\cos^5x+C</m>; <m>-\frac{\cos6x}{12}+\frac{\cos2x}{4}+C</m>; <m>\frac23\arctan\left(\frac13\tan\frac x2\right)+C</m> (<m>|x|\lt\pi</m>).</p></solution></exercise>
+</section>
+<exercises xml:id="w02-hw">
+<title>Гэрийн даалгавар</title>
+<introduction><p>Тохиромжтой аргаар бод.</p></introduction>
+<exercise><statement><p><m>\displaystyle \int \frac{dx}{x^6(1+x^2)}.</m></p></statement><solution component="ai"><title>Төстэй бодлого (AI)</title><p><m>\displaystyle\int \frac{dx}{x^4(1+x^2)}</m>-ийг ол.</p><p><em>Заавар:</em> <m>\frac1{x^4(1+x^2)}=\frac1{x^4}-\frac1{x^2}+\frac1{1+x^2}</m>.</p><p><em>Хариу:</em> <m>-\frac1{3x^3}+\frac1x+\arctan x+C</m>.</p></solution></exercise>
+<exercise><statement><p><m>\displaystyle \int \frac{x^2}{(1-x^2)^3}\,dx.</m></p></statement><solution component="ai"><title>Төстэй бодлого (AI)</title><p><m>\displaystyle\int \frac{x^2}{(1-x^2)^2}\,dx</m>, <m>|x|\lt1</m>.</p><p><em>Заавар:</em> <m>\frac{x^2}{(1-x^2)^2}=\frac1{(1-x^2)^2}-\frac1{1-x^2}</m>.</p><p><em>Хариу:</em> <m>\frac{x}{2(1-x^2)}-\frac14\ln\frac{1+x}{1-x}+C</m>.</p></solution></exercise>
+<exercise><statement><p><m>\displaystyle \int \frac{dx}{1+x^4+x^8}.</m></p></statement><solution component="ai"><title>Төстэй бодлого (AI)</title><p><m>\displaystyle\int \frac{x^3\,dx}{1+x^4+x^8}</m>-ийг ол.</p><p><em>Заавар:</em> <m>u=x^4</m> орлуулж, бүтэн квадрат ялга.</p><p><em>Хариу:</em> <m>\frac1{2\sqrt3}\arctan\frac{2x^4+1}{\sqrt3}+C</m>.</p></solution></exercise>
+<exercise><statement><p><m>\displaystyle \int \frac{dx}{\sqrt{x+\sqrt[3]{x}}}.</m></p></statement><solution component="ai"><title>Төстэй бодлого (AI)</title><p><m>\displaystyle\int \frac{dx}{x+\sqrt[3]{x}}</m>-ийг ол.</p><p><em>Заавар:</em> <m>x=t^3</m> орлуулга.</p><p><em>Хариу:</em> <m>\frac32\ln\left(1+x^{2/3}\right)+C</m>.</p></solution></exercise>
+<exercise><statement><p><m>\displaystyle \int x^2\sqrt{\frac{x}{1-x}}\,dx.</m></p></statement><solution component="ai"><title>Төстэй бодлого (AI)</title><p><m>\displaystyle\int x\sqrt{\frac{1+x}{1-x}}\,dx</m>, <m>|x|\lt1</m>.</p><p><em>Заавар:</em> <m>\frac{x(1+x)}{\sqrt{1-x^2}}</m> болгож, <m>x=\sin t</m> орлуул.</p><p><em>Хариу:</em> <m>-\sqrt{1-x^2}+\frac12\arcsin x-\frac x2\sqrt{1-x^2}+C</m>.</p></solution></exercise>
+<exercise><statement><p><m>\displaystyle \int \frac{x+2}{x^2\sqrt{1-x^2}}\,dx.</m></p></statement><solution component="ai"><title>Төстэй бодлого (AI)</title><p><m>\displaystyle\int \frac{x+3}{x^2\sqrt{1-x^2}}\,dx</m>, <m>0\lt x\lt1</m>.</p><p><em>Заавар:</em> Хоёр интегралд задал.</p><p><em>Хариу:</em> <m>-\ln\frac{1+\sqrt{1-x^2}}{x}-\frac{3\sqrt{1-x^2}}{x}+C</m>.</p></solution></exercise>
+<exercise><statement><p><m>\displaystyle \int \sqrt{\frac{x}{1-x}}\,dx.</m></p></statement><solution component="ai"><title>Төстэй бодлого (AI)</title><p><m>\displaystyle\int \sqrt{\frac{x}{4-x}}\,dx</m>, <m>0\lt x\lt4</m>.</p><p><em>Заавар:</em> <m>x=4\sin^2t</m> орлуулга.</p><p><em>Хариу:</em> <m>4\arcsin\frac{\sqrt x}{2}-\sqrt{x(4-x)}+C</m>.</p></solution></exercise>
+<exercise><statement><p><m>\displaystyle \int \frac{dx}{\sqrt[3]{x^2(1-x)}}.</m></p></statement><solution component="ai"><title>Төстэй бодлого (AI)</title><p><m>\displaystyle\int \frac{dx}{\sqrt[3]{x(1-x)^2}}</m>, <m>0\lt x\lt1</m>.</p><p><em>Заавар:</em> <m>s=\sqrt[3]{\frac{x}{1-x}}</m> орлуулга: рационал бутархай болно.</p><p><em>Хариу:</em> <m>-\ln(s+1)+\frac12\ln(s^2-s+1)+\sqrt3\arctan\frac{2s-1}{\sqrt3}+C</m>, <m>s=\sqrt[3]{\frac x{1-x}}</m>.</p></solution></exercise>
+<exercise><statement><p><m>\displaystyle \int \frac{dx}{x\sqrt{1+x^3+x^6}}.</m></p></statement><solution component="ai"><title>Төстэй бодлого (AI)</title><p><m>\displaystyle\int \frac{dx}{x\sqrt{1+x^2+x^4}}</m>, <m>x\gt0</m>.</p><p><em>Заавар:</em> <m>t=x^2</m> орлуулж, Эйлерийн орлуулга ашигла.</p><p><em>Хариу:</em> <m>-\frac12\ln\frac{2+x^2+2\sqrt{1+x^2+x^4}}{x^2}+C</m>.</p></solution></exercise>
+<exercise><statement><p><m>\displaystyle \int x\sqrt{x^4-2x^2-1}\,dx.</m></p></statement><solution component="ai"><title>Төстэй бодлого (AI)</title><p><m>\displaystyle\int x\sqrt{x^4+2x^2+5}\,dx</m>-ийг ол.</p><p><em>Заавар:</em> <m>t=x^2+1</m> орлуулж, <m>\int\sqrt{t^2+4}\,dt</m> бод.</p><p><em>Хариу:</em> <m>\frac14\left[(x^2+1)\sqrt{x^4+2x^2+5}+4\ln\left(x^2+1+\sqrt{x^4+2x^2+5}\right)\right]+C</m>.</p></solution></exercise>
+<exercise><statement><p><m>\displaystyle \int \frac{1+\sqrt{\frac{1-x}{1+x}}}{1-\sqrt{\frac{1-x}{1+x}}}\,dx.</m></p></statement><solution component="ai"><title>Төстэй бодлого (AI)</title><p><m>\displaystyle\int \frac{\sqrt{1+x}-\sqrt{1-x}}{\sqrt{1+x}+\sqrt{1-x}}\,dx</m>, <m>0\lt|x|\lt1</m>.</p><p><em>Заавар:</em> Хуваарийн иррационалыг арилга: илэрхийлэл <m>\frac{1-\sqrt{1-x^2}}{x}</m> болно.</p><p><em>Хариу:</em> <m>\ln\left(1+\sqrt{1-x^2}\right)-\sqrt{1-x^2}+C</m>.</p></solution></exercise>
+<exercise><statement><p><m>\displaystyle \int \frac{(1+x)\,dx}{\sqrt{1+x^2}}.</m></p></statement><solution component="ai"><title>Төстэй бодлого (AI)</title><p><m>\displaystyle\int \frac{2-x}{\sqrt{4+x^2}}\,dx</m>-ийг ол.</p><p><em>Заавар:</em> Хоёр интегралд задал.</p><p><em>Хариу:</em> <m>2\ln\left(x+\sqrt{x^2+4}\right)-\sqrt{x^2+4}+C</m>.</p></solution></exercise>
+<exercise><statement><p><m>\displaystyle \int \frac{\ln(1+x+x^2)}{(1+x)^2}\,dx.</m></p></statement><solution component="ai"><title>Төстэй бодлого (AI)</title><p><m>\displaystyle\int \frac{\ln(x^2+2x+2)}{(x+2)^2}\,dx</m>, <m>x\gt-2</m>.</p><p><em>Заавар:</em> Хэсэгчлэн интегралчил, үлдсэн рационал бутархайг задал.</p><p><em>Хариу:</em> <m>-\frac{\ln(x^2+2x+2)}{x+2}-\ln(x+2)+\frac12\ln(x^2+2x+2)+\arctan(x+1)+C</m>.</p></solution></exercise>
+<exercise><statement><p><m>\displaystyle \int (2x+3)\arccos(2x-3)\,dx.</m></p></statement><solution component="ai"><title>Төстэй бодлого (AI)</title><p><m>\displaystyle\int (x+2)\arcsin x\,dx</m>-ийг ол.</p><p><em>Заавар:</em> Хэсэгчлэн: <m>v=\frac{x^2}2+2x</m>.</p><p><em>Хариу:</em> <m>\left(\frac{x^2}2+2x-\frac14\right)\arcsin x+\left(\frac x4+2\right)\sqrt{1-x^2}+C</m>.</p></solution></exercise>
+<exercise><statement><p><m>\displaystyle \int x\ln(4+x^4)\,dx.</m></p></statement><solution component="ai"><title>Төстэй бодлого (AI)</title><p><m>\displaystyle\int x\ln(9+x^4)\,dx</m>-ийг ол.</p><p><em>Заавар:</em> <m>u=x^2</m> орлуулж, хэсэгчлэн интегралчил.</p><p><em>Хариу:</em> <m>\frac{x^2}2\ln(9+x^4)-x^2+3\arctan\frac{x^2}3+C</m>.</p></solution></exercise>
+<exercise><statement><p><m>\displaystyle \int \frac{\arcsin x}{x^2}\cdot\frac{1+x^2}{\sqrt{1-x^2}}\,dx.</m></p></statement><solution component="ai"><title>Төстэй бодлого (AI)</title><p><m>\displaystyle\int \arccos x\cdot\frac{1+x^2}{x^2\sqrt{1-x^2}}\,dx</m>, <m>0\lt x\lt1</m>.</p><p><em>Заавар:</em> Хэсэгчлэн: <m>v=\arcsin x-\frac{\sqrt{1-x^2}}x</m>.</p><p><em>Хариу:</em> <m>\left(\arcsin x-\frac{\sqrt{1-x^2}}x\right)\arccos x-\ln x+\frac12\arcsin^2x+C</m>.</p></solution></exercise>
+<exercise><statement><p><m>\displaystyle \int \frac{x\ln\!\left(1+\sqrt{1+x^2}\,\right)}{\sqrt{1+x^2}}\,dx.</m></p></statement><solution component="ai"><title>Төстэй бодлого (AI)</title><p><m>\displaystyle\int \frac{x\ln\!\left(2+\sqrt{1+x^2}\right)}{\sqrt{1+x^2}}\,dx</m>-ийг ол.</p><p><em>Заавар:</em> <m>u=\sqrt{1+x^2}</m> орлуулга.</p><p><em>Хариу:</em> <m>\left(2+\sqrt{1+x^2}\right)\ln\left(2+\sqrt{1+x^2}\right)-\sqrt{1+x^2}+C</m>.</p></solution></exercise>
+<exercise><statement><p><m>\displaystyle \int x\sqrt{x^2+1}\,\ln\!\sqrt{x^2-1}\,dx.</m></p></statement><solution component="ai"><title>Төстэй бодлого (AI)</title><p><m>\displaystyle\int x\sqrt{x^2+1}\,\ln(x^2+1)\,dx</m>-ийг ол.</p><p><em>Заавар:</em> <m>u=x^2+1</m> орлуулж, хэсэгчлэн интегралчил.</p><p><em>Хариу:</em> <m>\frac13(x^2+1)^{3/2}\ln(x^2+1)-\frac29(x^2+1)^{3/2}+C</m>.</p></solution></exercise>
+<exercise><statement><p><m>\displaystyle \int \frac{x}{\sqrt{1-x^2}}\ln\frac{x}{\sqrt{1-x}}\,dx.</m></p></statement><solution component="ai"><title>Төстэй бодлого (AI)</title><p><m>\displaystyle\int \frac{x}{\sqrt{1-x^2}}\ln(1-x^2)\,dx</m>, <m>|x|\lt1</m>.</p><p><em>Заавар:</em> <m>u=1-x^2</m> орлуулга.</p><p><em>Хариу:</em> <m>-\sqrt{1-x^2}\,\ln(1-x^2)+2\sqrt{1-x^2}+C</m>.</p></solution></exercise>
+<exercise><statement><p><m>\displaystyle \int \frac{dx}{(2+\sin x)^2}.</m></p></statement><solution component="ai"><title>Төстэй бодлого (AI)</title><p><m>\displaystyle\int \frac{dx}{(2+\cos x)^2}</m>, <m>|x|\lt\pi</m>.</p><p><em>Заавар:</em> <m>\left(\frac{\sin x}{2+\cos x}\right)\!'</m>-ийг ашиглан <m>\\int\\frac{dx}{2+\\cos x}</m>-д бууруул.</p><p><em>Хариу:</em> <m>\frac{4}{3\sqrt3}\arctan\left(\frac1{\sqrt3}\tan\frac x2\right)-\frac{\sin x}{3(2+\cos x)}+C</m>.</p></solution></exercise>
+<exercise><statement><p><m>\displaystyle \int \frac{\sin 4x}{\sin^8 x+\cos^8 x}\,dx.</m></p></statement><solution component="ai"><title>Төстэй бодлого (AI)</title><p><m>\displaystyle\int \frac{\sin4x}{\sin^4x+\cos^4x}\,dx</m>-ийг ол.</p><p><em>Заавар:</em> <m>\sin^4x+\cos^4x=\frac{3+\cos4x}4</m>.</p><p><em>Хариу:</em> <m>-\ln(3+\cos4x)+C</m>.</p></solution></exercise>
+<exercise><statement><p><m>\displaystyle \int \frac{\sin x}{\sqrt{1+\cos x}}\,dx.</m></p></statement><solution component="ai"><title>Төстэй бодлого (AI)</title><p><m>\displaystyle\int \frac{\sin x}{\sqrt{1+3\cos x}}\,dx</m>-ийг ол.</p><p><em>Заавар:</em> <m>u=1+3\cos x</m> орлуулга.</p><p><em>Хариу:</em> <m>-\frac23\sqrt{1+3\cos x}+C</m>.</p></solution></exercise>
+<exercise><statement><p><m>\displaystyle \int \frac{ax^2+b}{x^2+1}\arctan x\,dx.</m></p></statement><solution component="ai"><title>Төстэй бодлого (AI)</title><p><m>\displaystyle\int \frac{ax^2+b}{x^2+4}\arctan\frac x2\,dx</m>-ийг ол.</p><p><em>Заавар:</em> <m>\frac{ax^2+b}{x^2+4}=a+\frac{b-4a}{x^2+4}</m>.</p><p><em>Хариу:</em> <m>a\left(x\arctan\frac x2-\ln(4+x^2)\right)+\frac{b-4a}{4}\arctan^2\frac x2+C</m>.</p></solution></exercise>
+<exercise><statement><p><m>\displaystyle \int \frac{ax^2+b}{x^2-1}\ln\!\left|\frac{x-1}{x+1}\right|dx.</m></p></statement><solution component="ai"><title>Төстэй бодлого (AI)</title><p><m>\displaystyle\int \frac{ax^2+b}{x^2-4}\ln\left|\frac{x-2}{x+2}\right|dx</m>-ийг ол.</p><p><em>Заавар:</em> <m>\frac{ax^2+b}{x^2-4}=a+\frac{4a+b}{x^2-4}</m>, <m>\left(\ln\left|\frac{x-2}{x+2}\right|\right)'=\\frac4{x^2-4}</m>.</p><p><em>Хариу:</em> <m>a\left[(x-2)\ln|x-2|-(x+2)\ln|x+2|\right]+\frac{4a+b}{8}\ln^2\left|\frac{x-2}{x+2}\right|+C</m>.</p></solution></exercise>
+<exercise><statement><p><m>\displaystyle \int \frac{x\ln x}{(1+x^2)^2}\,dx.</m></p></statement><solution component="ai"><title>Төстэй бодлого (AI)</title><p><m>\displaystyle\int \frac{x\ln x}{(4+x^2)^2}\,dx</m>-ийг ол.</p><p><em>Заавар:</em> Хэсэгчлэн: <m>v=-\frac1{2(4+x^2)}</m>.</p><p><em>Хариу:</em> <m>-\frac{\ln x}{2(4+x^2)}+\frac18\ln x-\frac1{16}\ln(x^2+4)+C</m>.</p></solution></exercise>
+<exercise><statement><p><m>\displaystyle \int \frac{x\arctan x}{\sqrt{1+x^2}}\,dx.</m></p></statement><solution component="ai"><title>Төстэй бодлого (AI)</title><p><m>\displaystyle\int \frac{x\arcsin x}{\sqrt{1-x^2}}\,dx</m>, <m>|x|\lt1</m>.</p><p><em>Заавар:</em> Хэсэгчлэн: <m>v=-\sqrt{1-x^2}</m>.</p><p><em>Хариу:</em> <m>x-\sqrt{1-x^2}\arcsin x+C</m>.</p></solution></exercise>
+<exercise><statement><p><m>\displaystyle \int \frac{\sin 2x}{\sqrt{1+\cos^4 x}}\,dx.</m></p></statement><solution component="ai"><title>Төстэй бодлого (AI)</title><p><m>\displaystyle\int \frac{\sin2x}{\sqrt{4-\cos^4x}}\,dx</m>-ийг ол.</p><p><em>Заавар:</em> <m>u=\cos^2x</m> орлуулга.</p><p><em>Хариу:</em> <m>-\arcsin\frac{\cos^2x}{2}+C</m>.</p></solution></exercise>
+<exercise><statement><p><m>\displaystyle \int \frac{x^3\arccos x}{\sqrt{1-x^2}}\,dx.</m></p></statement><solution component="ai"><title>Төстэй бодлого (AI)</title><p><m>\displaystyle\int \frac{x^3\arcsin x}{\sqrt{1-x^2}}\,dx</m>, <m>|x|\lt1</m>.</p><p><em>Заавар:</em> Хэсэгчлэн: <m>v=-\frac{(x^2+2)\sqrt{1-x^2}}3</m>.</p><p><em>Хариу:</em> <m>-\frac{(x^2+2)\sqrt{1-x^2}}{3}\arcsin x+\frac{x^3}9+\frac{2x}3+C</m>.</p></solution></exercise>
+<exercise><statement><p><m>\displaystyle \int \frac{x^4\arctan x}{1+x^2}\,dx.</m></p></statement><solution component="ai"><title>Төстэй бодлого (AI)</title><p><m>\displaystyle\int \frac{x^4+1}{1+x^2}\arctan x\,dx</m>-ийг ол.</p><p><em>Заавар:</em> <m>\frac{x^4+1}{1+x^2}=x^2-1+\frac2{1+x^2}</m>; хэсэгчлэн интегралчил.</p><p><em>Хариу:</em> <m>\left(\frac{x^3}3-x\right)\arctan x-\frac{x^2}6+\frac23\ln(1+x^2)+\arctan^2x+C</m>.</p></solution></exercise>
+<exercise><statement><p><m>\displaystyle \int \frac{x\arctan x}{(1+x^2)^3}\,dx.</m></p></statement><solution component="ai"><title>Төстэй бодлого (AI)</title><p><m>\displaystyle\int \frac{x\arctan x}{(1+x^2)^2}\,dx</m>-ийг ол.</p><p><em>Заавар:</em> Хэсэгчлэн: <m>v=-\frac1{2(1+x^2)}</m>.</p><p><em>Хариу:</em> <m>-\frac{\arctan x}{2(1+x^2)}+\frac{x}{4(1+x^2)}+\frac14\arctan x+C</m>.</p></solution></exercise>
+<exercise><statement><p><m>\displaystyle \int \frac{x\ln\!\left(x+\sqrt{1+x^2}\right)}{(1-x^2)^2}\,dx.</m></p></statement><solution component="ai"><title>Төстэй бодлого (AI)</title><p><m>\displaystyle\int \frac{x\ln\!\left(x+\sqrt{1+x^2}\right)}{(1+x^2)^{3/2}}\,dx</m>-ийг ол.</p><p><em>Заавар:</em> Хэсэгчлэн: <m>v=-\frac1{\sqrt{1+x^2}}</m>.</p><p><em>Хариу:</em> <m>-\frac{\ln\left(x+\sqrt{1+x^2}\right)}{\sqrt{1+x^2}}+\arctan x+C</m>.</p></solution></exercise>
+<exercise><statement><p><m>\displaystyle \int \sqrt{1-x^2}\,\arcsin x\,dx.</m></p></statement><solution component="ai"><title>Төстэй бодлого (AI)</title><p><m>\displaystyle\int \frac{\arcsin x}{(1-x^2)^{3/2}}\,dx</m>, <m>|x|\lt1</m>.</p><p><em>Заавар:</em> Хэсэгчлэн: <m>v=\frac x{\sqrt{1-x^2}}</m>.</p><p><em>Хариу:</em> <m>\frac{x\arcsin x}{\sqrt{1-x^2}}+\frac12\ln(1-x^2)+C</m>.</p></solution></exercise>
+<exercise><statement><p><m>\displaystyle \int x(1+x^2)\arctan x\,dx.</m></p></statement><solution component="ai"><title>Төстэй бодлого (AI)</title><p><m>\displaystyle\int x(x^2+2)\arctan x\,dx</m>-ийг ол.</p><p><em>Заавар:</em> Хэсэгчлэн: <m>v=\frac{(x^2+1)(x^2+3)}4</m>.</p><p><em>Хариу:</em> <m>\frac{(x^2+1)(x^2+3)}4\arctan x-\frac{x^3}{12}-\frac{3x}4+C</m>.</p></solution></exercise>
+<exercise><statement><p><m>\displaystyle \int x^x(1+\ln x)\,dx.</m></p></statement><solution component="ai"><title>Төстэй бодлого (AI)</title><p><m>\displaystyle\int x^{x^2}\,x\,(1+2\ln x)\,dx</m>, <m>x\gt0</m>.</p><p><em>Заавар:</em> <m>\left(x^{x^2}\right)'</m>-ийг логарифм уламжлалаар ол.</p><p><em>Хариу:</em> <m>x^{x^2}+C</m>.</p></solution></exercise>
+<exercise><statement><p><m>\displaystyle \int \frac{\arcsin(e^x)}{e^x}\,dx.</m></p></statement><solution component="ai"><title>Төстэй бодлого (AI)</title><p><m>\displaystyle\int \frac{\arctan e^x}{e^x}\,dx</m>-ийг ол.</p><p><em>Заавар:</em> <m>u=e^x</m> орлуулж, хэсэгчлэн интегралчил.</p><p><em>Хариу:</em> <m>-e^{-x}\arctan e^x+x-\frac12\ln(1+e^{2x})+C</m>.</p></solution></exercise>
+<exercise><statement><p><m>\displaystyle \int \frac{\arctan \frac{x}{2}}{e^x(1+e^x)}\,dx.</m></p></statement><solution component="ai"><title>Төстэй бодлого (AI)</title><p><m>\displaystyle\int \frac{\ln(1+e^x)}{e^x}\,dx</m>-ийг ол.</p><p><em>Заавар:</em> Хэсэгчлэн: <m>v=-e^{-x}</m>.</p><p><em>Хариу:</em> <m>-e^{-x}\ln(1+e^x)+x-\ln(1+e^x)+C</m>.</p></solution></exercise>
+<exercise><statement><p><m>\displaystyle \int \frac{dx}{(e^{x+1}+1)^2-(e^{x-1}+1)^2}.</m></p></statement><solution component="ai"><title>Төстэй бодлого (AI)</title><p><m>\displaystyle\int \frac{dx}{(e^{2x}+3)^2-(e^{2x}+1)^2}</m>-ийг ол.</p><p><em>Заавар:</em> Хуваарийг ялгавар квадратаар задал: <m>4(e^{2x}+2)</m>.</p><p><em>Хариу:</em> <m>\frac x8-\frac1{16}\ln(e^{2x}+2)+C</m>.</p></solution></exercise>
+<exercise><statement><p><m>\displaystyle \int \sqrt{\tanh^2 x+1}\,dx.</m></p></statement><solution component="ai"><title>Төстэй бодлого (AI)</title><p><m>\displaystyle\int \sqrt{\coth^2x-1}\,dx</m>, <m>x\gt0</m>.</p><p><em>Заавар:</em> <m>\coth^2x-1=\frac1{\sinh^2x}</m>.</p><p><em>Хариу:</em> <m>\ln\tanh\frac x2+C</m>.</p></solution></exercise>
+<exercise><statement><p><m>\displaystyle \int \frac{1+\sin x}{1+\cos x}e^x\,dx.</m></p></statement><solution component="ai"><title>Төстэй бодлого (AI)</title><p><m>\displaystyle\int e^{x}\,\frac{1+x\ln x}{x}\,dx</m>, <m>x\gt0</m>.</p><p><em>Заавар:</em> Интеграл нь <m>e^x(f+f')</m> хэлбэртэй.</p><p><em>Хариу:</em> <m>e^x\ln x+C</m>.</p></solution></exercise>
+<exercise><statement><p><m>\displaystyle \int |x|\,dx.</m></p></statement><solution component="ai"><title>Төстэй бодлого (AI)</title><p><m>\displaystyle\int |2x-1|\,dx</m>-ийг ол.</p><p><em>Заавар:</em> <m>x=\frac12</m> цэгээр хуваан, эх функцийг үргэлжлүүл.</p><p><em>Хариу:</em> <m>\frac{(2x-1)|2x-1|}{4}+C</m>.</p></solution></exercise>
+<exercise><statement><p><m>\displaystyle \int x\,|x|\,dx.</m></p></statement><solution component="ai"><title>Төстэй бодлого (AI)</title><p><m>\displaystyle\int x^2|x|\,dx</m>-ийг ол.</p><p><em>Заавар:</em> <m>x\gt0</m> ба <m>x\lt0</m> үед тусад нь бод.</p><p><em>Хариу:</em> <m>\frac{x^3|x|}{4}+C</m>.</p></solution></exercise>
+<exercise><statement><p><m>\displaystyle \int (x+|x|)^2\,dx.</m></p></statement><solution component="ai"><title>Төстэй бодлого (AI)</title><p><m>\displaystyle\int (x-|x|)^2\,dx</m>-ийг ол.</p><p><em>Заавар:</em> <m>x\geq0</m> үед <m>0</m>, <m>x\lt0</m> үед <m>4x^2</m>.</p><p><em>Хариу:</em> <m>F(x)=\frac43x^3</m> (<m>x\lt0</m> үед), <m>F(x)=0</m> (<m>x\geq0</m> үед), <m>+C</m>.</p></solution></exercise>
+<exercise><statement><p><m>\displaystyle \int (1+|x|-|1-x|)\,dx.</m></p></statement><solution component="ai"><title>Төстэй бодлого (AI)</title><p><m>\displaystyle\int (|x|-|x-2|)\,dx</m>-ийг ол.</p><p><em>Заавар:</em> Интегралчлах функцийг <m>x\le0</m>, <m>0\le x\le2</m>, <m>x\ge2</m> хэсгээр бич.</p><p><em>Хариу:</em> <m>-2x</m> (<m>x\leq0</m>); <m>x^2-2x</m> (<m>0\leq x\leq2</m>); <m>2x-4</m> (<m>x\geq2</m>); бүгдэд нь <m>+C</m>.</p></solution></exercise>
+<exercise><statement><p><m>\displaystyle \int (e^{-1/x})\,dx.</m></p></statement><solution component="ai"><title>Төстэй бодлого (AI)</title><p><m>\displaystyle\int e^{1/x}\left(1-\frac1x\right)dx</m>, <m>x\neq0</m>.</p><p><em>Заавар:</em> <m>\left(xe^{1/x}\right)'</m>-ийг ол.</p><p><em>Хариу:</em> <m>xe^{1/x}+C</m>.</p></solution></exercise>
+<exercise><statement><p><m>\displaystyle \int \max(1, x^3)\,dx.</m></p></statement><solution component="ai"><title>Төстэй бодлого (AI)</title><p><m>\displaystyle\int \max(1,x^2)\,dx</m>-ийг ол.</p><p><em>Заавар:</em> <m>|x|\leq1</m> ба <m>|x|\gt1</m> хэсгээр, эх функцийг үргэлжлүүл.</p><p><em>Хариу:</em> <m>x</m> (<m>|x|\leq1</m>); <m>\frac{x^3}3+\frac23</m> (<m>x\gt1</m>); <m>\frac{x^3}3-\frac23</m> (<m>x\lt-1</m>); <m>+C</m>.</p></solution></exercise>
+<exercise><statement><p><m>\displaystyle \int \frac{x^5}{\sqrt{1+x^2}}\,dx.</m></p></statement><solution component="ai"><title>Төстэй бодлого (AI)</title><p><m>\displaystyle\int \frac{x^5}{\sqrt{4+x^2}}\,dx</m>-ийг ол.</p><p><em>Заавар:</em> <m>u=4+x^2</m> орлуулга.</p><p><em>Хариу:</em> <m>\frac{u^{5/2}}5-\frac83u^{3/2}+16u^{1/2}+C</m>, <m>u=4+x^2</m>.</p></solution></exercise>
+<exercise><statement><p><m>\displaystyle \int \varphi(x)\,dx</m>, энд <m>\varphi(x)</m> нь <m>x</m> тооноос ойрхон бүхэл тоо хүртэлх зай.</p></statement><solution component="ai"><title>Төстэй бодлого (AI)</title><p><m>\displaystyle\int \{x\}\,dx</m>, энд <m>\{x\}=x-\lfloor x\rfloor</m> нь бутархай хэсэг.</p><p><em>Заавар:</em> <m>[n,n+1)</m> хэсэг бүр дээр интегралчилж, үргэлжлүүл.</p><p><em>Хариу:</em> <m>\frac{\lfloor x\rfloor}{2}+\frac{\{x\}^2}{2}+C</m>.</p></solution></exercise>
+<exercise><statement><p><m>\displaystyle \int \lfloor x \rfloor\, |\sin \pi x|\, dx \qquad (x&gt;0).</m></p></statement><solution component="ai"><title>Төстэй бодлого (AI)</title><p><m>\displaystyle\int (\lfloor x\rfloor+1)\,|\sin\pi x|\,dx</m> <m>(x\gt0)</m>.</p><p><em>Заавар:</em> <m>[n,n+1)</m> дээр <m>|\sin\pi x|=(-1)^n\sin\pi x</m>; <m>\int_n^{n+1}|\sin\pi x|dx=\frac2\pi</m>.</p><p><em>Хариу:</em> <m>n=\lfloor x\rfloor</m> гэвэл <m>\frac{n(n+1)}{\pi}+\frac{n+1}{\pi}\left(1-(-1)^n\cos\pi x\right)+C</m>.</p></solution></exercise>
+<exercise><statement><p><m>\displaystyle \int f(x)\,dx</m>, энд <md>f(x)=
+\begin{cases}
+1 - x^2, &amp; |x|\le 1,\\
+1 - |x|, &amp; |x|&gt;1.
+\end{cases}</md></p></statement><solution component="ai"><title>Төстэй бодлого (AI)</title><p><m>\displaystyle\int f(x)\,dx</m>, энд <m>f(x)=x^2</m> (<m>|x|\leq1</m> үед), <m>f(x)=|x|</m> (<m>|x|\gt1</m> үед).</p><p><em>Заавар:</em> Үргэлжлэх нөхцлөөр тогтмолуудыг <m>x=\pm1</m> дээр тохируул.</p><p><em>Хариу:</em> <m>\frac{x^3}3</m> (<m>|x|\leq1</m>); <m>\frac{x^2}2-\frac16</m> (<m>x\gt1</m>); <m>-\frac{x^2}2+\frac16</m> (<m>x\lt-1</m>); <m>+C</m>.</p></solution></exercise>
+<exercise><statement><p><m>\displaystyle \int f(x)\,dx</m>, энд <md>f(x)=
+\begin{cases}
+1, &amp; x&lt;0,\\[4pt]
+x+1, &amp; 0\le x \le 1,\\[4pt]
+2x, &amp; x&gt;1.
+\end{cases}</md></p></statement><solution component="ai"><title>Төстэй бодлого (AI)</title><p><m>\displaystyle\int f(x)\,dx</m>, энд <m>f(x)=2</m> (<m>x\lt0</m>), <m>f(x)=2+x</m> (<m>0\leq x\leq2</m>), <m>f(x)=2x</m> (<m>x\gt2</m>).</p><p><em>Заавар:</em> Хэсэг бүр дээр бод, цэгүүд дээр үргэлжлүүл.</p><p><em>Хариу:</em> <m>2x</m> (<m>x\leq0</m>); <m>2x+\frac{x^2}2</m> (<m>0\leq x\leq2</m>); <m>x^2+2</m> (<m>x\gt2</m>); <m>+C</m>.</p></solution></exercise>
+<exercise><statement><p><m>\displaystyle \int x\, f''(x)\,dx.</m></p></statement><solution component="ai"><title>Төстэй бодлого (AI)</title><p><m>\displaystyle\int x\,f\,'''(x)\,dx</m>-ийг ол.</p><p><em>Заавар:</em> Хэсэгчлэн интегралчил.</p><p><em>Хариу:</em> <m>xf\,''(x)-f\,'(x)+C</m>.</p></solution></exercise>
+<exercise><statement><p><m>\displaystyle \int f'(2x)\,dx.</m></p></statement><solution component="ai"><title>Төстэй бодлого (AI)</title><p><m>\displaystyle\int f\,''(3x-1)\,dx</m>-ийг ол.</p><p><em>Заавар:</em> Нийлмэл функцийн уламжлал: <m>\frac13f'(3x-1)</m>.</p><p><em>Хариу:</em> <m>\frac13f\,'(3x-1)+C</m>.</p></solution></exercise>
+<exercise><statement><p><m>f(x)</m>–ийг ол, хэрэв <m>\; f'(x^2)=\dfrac1{x}\quad (x&gt;0).</m></p></statement><solution component="ai"><title>Төстэй бодлого (AI)</title><p><m>f(x)</m>–ийг ол, хэрэв <m>f\,'(x^2)=x\ \ (x\gt0)</m>.</p><p><em>Заавар:</em> <m>t=x^2</m> гэж тэмдэглэ.</p><p><em>Хариу:</em> <m>f\,'(t)=\sqrt t</m>, иймд <m>f(x)=\frac23x^{3/2}+C</m>.</p></solution></exercise>
+<exercise><statement><p><m>f(x)</m>–ийг ол, хэрэв <m>\; f'(\sin^2 x)=\cos^2 x.</m></p></statement><solution component="ai"><title>Төстэй бодлого (AI)</title><p><m>f(x)</m>–ийг ол, хэрэв <m>f\,'(\sin^2x)=\cos^4x</m>.</p><p><em>Заавар:</em> <m>t=\sin^2x</m> гэвэл <m>\cos^2x=1-t</m>.</p><p><em>Хариу:</em> <m>f\,'(t)=(1-t)^2</m>, иймд <m>f(x)=-\frac{(1-x)^3}3+C</m>.</p></solution></exercise>
+<exercisegroup component="ai"><title>Нэмэлт бодлого (AI)</title><introduction><p>Доорх бодлогуудыг хиймэл оюун ухаанаар үүсгэсэн. Заавар, хариу, бодолтыг гарчиг дээр нь дарж нээнэ.</p></introduction><exercise>
+  <statement><p><m>\displaystyle\int\frac{x^4}{x^2+1}\,dx</m>.</p></statement>
+  <hint><p>Эхлээд олон гишүүнтийг хуваа (бутархай буруу).</p></hint>
+  <answer><p><m>\dfrac{x^3}{3}-x+\arctan x+C</m>.</p></answer>
+  <solution><p><m>x^4=(x^2+1)(x^2-1)+1</m> тул <m>\frac{x^4}{x^2+1}=x^2-1+\frac{1}{x^2+1}</m>.</p></solution>
+<solution component="ai"><title>Төстэй бодлого (AI)</title><p><m>\displaystyle\int \frac{x^6}{x^2+1}\,dx</m>-ийг ол.</p><p><em>Заавар:</em> Олон гишүүнтийг хуваан бүхэл хэсгийг ялга.</p><p><em>Хариу:</em> <m>\frac{x^5}5-\frac{x^3}3+x-\arctan x+C</m>.</p></solution></exercise><exercise>
+  <statement><p><m>\displaystyle\int\frac{dx}{x^2(x+1)}</m>.</p></statement>
+  <answer><p><m>-\dfrac1x-\ln|x|+\ln|x+1|+C</m>.</p></answer>
+  <solution><p><m>\frac{1}{x^2(x+1)}=-\frac1x+\frac{1}{x^2}+\frac{1}{x+1}</m> (<m>1=Ax(x+1)+B(x+1)+Cx^2</m>; <m>x=0\Rightarrow B=1</m>, <m>x=-1\Rightarrow C=1</m>, <m>x^2</m>: <m>A+C=0</m>).</p></solution>
+<solution component="ai"><title>Төстэй бодлого (AI)</title><p><m>\displaystyle\int \frac{dx}{x(x+1)^2}</m>-ийг ол.</p><p><em>Заавар:</em> <m>\frac Ax+\frac B{x+1}+\frac C{(x+1)^2}</m> гэж задал.</p><p><em>Хариу:</em> <m>\ln\left|\frac x{x+1}\right|+\frac1{x+1}+C</m>.</p></solution></exercise><exercise>
+  <statement><p><m>\displaystyle\int\frac{dx}{1+\sqrt{x+1}}</m>.</p></statement>
+  <hint><p><m>t=\sqrt{x+1}</m>.</p></hint>
+  <answer><p><m>2\sqrt{x+1}-2\ln\left(1+\sqrt{x+1}\right)+C</m>.</p></answer>
+  <solution><p><m>x=t^2-1</m>, <m>dx=2t\,dt</m>: <m>\int\frac{2t\,dt}{1+t}=\int\left(2-\frac{2}{1+t}\right)dt=2t-2\ln(1+t)+C</m>.</p></solution>
+<solution component="ai"><title>Төстэй бодлого (AI)</title><p><m>\displaystyle\int \frac{dx}{3+\sqrt{x+1}}</m>-ийг ол.</p><p><em>Заавар:</em> <m>t=\sqrt{x+1}</m> орлуулга.</p><p><em>Хариу:</em> <m>2\sqrt{x+1}-6\ln\left(3+\sqrt{x+1}\right)+C</m>.</p></solution></exercise><exercise>
+  <statement><p><m>\displaystyle\int\sin^3x\cos^2x\,dx</m>.</p></statement>
+  <hint><p><m>\sin^3x=(1-\cos^2x)\sin x</m>, <m>u=\cos x</m>.</p></hint>
+  <answer><p><m>-\dfrac{\cos^3x}{3}+\dfrac{\cos^5x}{5}+C</m>.</p></answer>
+  <solution><p><m>u=\cos x</m>, <m>du=-\sin x\,dx</m>: <m>-\int(1-u^2)u^2\,du=-\frac{u^3}3+\frac{u^5}5+C</m>.</p></solution>
+<solution component="ai"><title>Төстэй бодлого (AI)</title><p><m>\displaystyle\int \sin^2x\cos^3x\,dx</m>-ийг ол.</p><p><em>Заавар:</em> Сондгой зэрэгтэй <m>\cos x</m>-ээс нэгийг салгаж <m>u=\sin x</m>.</p><p><em>Хариу:</em> <m>\frac{\sin^3x}3-\frac{\sin^5x}5+C</m>.</p></solution></exercise><exercise>
+  <statement><p><m>a&gt;0</m> үед
+  <md>\int\frac{dx}{(x^2+a^2)^2}=\frac{x}{2a^2(x^2+a^2)}+\frac{1}{2a^3}\arctan\frac xa+C</md>
+  гэдгийг баталж, <m>\displaystyle\int\frac{dx}{(x^2+4)^2}</m>-ийг ол.</p></statement>
+  <hint><p><m>J_1=\int\frac{dx}{x^2+a^2}</m>-д хэсэгчлэн интегралчлалыг (<m>f=\frac{1}{x^2+a^2}</m>, <m>g'=1</m>) хэрэглэ, эсвэл баруун талын уламжлалыг шууд ол.</p></hint>
+  <answer><p><m>\dfrac{x}{8(x^2+4)}+\dfrac{1}{16}\arctan\dfrac x2+C</m>.</p></answer>
+  <solution><p><m>J_k=\int\frac{dx}{(x^2+a^2)^k}</m> гэе. Хэсэгчлэн интегралчилбал
+  <md>J_1=\frac{x}{x^2+a^2}+2\int\frac{x^2\,dx}{(x^2+a^2)^2}=\frac{x}{x^2+a^2}+2J_1-2a^2J_2,</md>
+  эндээс <m>J_2=\frac{1}{2a^2}\left(\frac{x}{x^2+a^2}+J_1\right)</m>, <m>J_1=\frac1a\arctan\frac xa</m>. <m>a=2</m> үед <m>\frac{x}{8(x^2+4)}+\frac1{16}\arctan\frac x2+C</m>.</p></solution>
+<solution component="ai"><title>Төстэй бодлого (AI)</title><p><m>a\gt0</m> үед <md>\int\frac{x^2\,dx}{(x^2+a^2)^2}=-\frac{x}{2(x^2+a^2)}+\frac{1}{2a}\arctan\frac xa+C</md> гэдгийг баталж, <m>\displaystyle\int\frac{x^2\,dx}{(x^2+9)^2}</m>-ийг ол.</p><p><em>Заавар:</em> Баруун талыг дифференциалчил, эсвэл <m>x\cdot\frac{x}{(x^2+a^2)^2}</m> гэж хэсэгчлэн интегралчил.</p><p><em>Хариу:</em> Дифференциалчилбал <m>\frac{x^2}{(x^2+a^2)^2}</m> гарна. <m>a=3</m>: <m>-\frac{x}{2(x^2+9)}+\frac16\arctan\frac x3+C</m>.</p></solution></exercise></exercisegroup>
+</exercises>
+</chapter>

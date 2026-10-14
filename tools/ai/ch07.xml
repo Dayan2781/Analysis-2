@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ai>
+<preview>
+<exploration xml:id="w07-preview">
+  <title>Нэмэх, хасах ээлжлэх нь (AI)</title>
+  <introduction>
+    <p>Гармоник цуваа <m>1+\frac12+\frac13+\cdots</m> сарнидаг гэдгийг бид мэднэ. Харин гишүүдийн тэмдгийг ээлжлэн сольж <m>1-\frac12+\frac13-\frac14+\cdots</m> гэвэл юу болох вэ? Гишүүд сөрөг утга авдаг болсноор хэсгийн нийлбэр монотон байхаа больж, огт шинэ үзэгдлүүд гарч ирдэг.</p>
+  </introduction>
+  <task>
+    <statement><p><m>S_n=\sum_{k=1}^{n}\frac{(-1)^{k+1}}{k}</m> хэсгийн нийлбэрүүдийн <m>S_1,\dots,S_6</m>-г бутархайгаар ол. Тоон шулуун дээр тэмдэглээд, тэд хэрхэн байрлаж байгааг ажигла.</p></statement>
+    <answer><p><m>S_1=1</m>, <m>S_2=\frac12</m>, <m>S_3=\frac56</m>, <m>S_4=\frac7{12}</m>, <m>S_5=\frac{47}{60}</m>, <m>S_6=\frac{37}{60}</m>. Тэгш дугаартай нийлбэрүүд өсөж, сондгой дугаартай нь буурч, хоёр тал руугаа “хавчигдан” ойртож байна.</p></answer>
+  </task>
+  <task>
+    <statement><p><m>S_{2n+2}-S_{2n}</m> ба <m>S_{2n+1}-S_{2n-1}</m>-ийн тэмдгийг тогтоо. Эндээс цувааны нийлбэр <m>S</m> (хэрэв оршин байвал) ямар завсарт орших вэ? (а)-гийн утгуудыг ашигла.</p></statement>
+    <hint><p><m>S_{2n+2}-S_{2n}=\frac1{2n+1}-\frac1{2n+2}</m>.</p></hint>
+    <answer><p><m>S_{2n+2}-S_{2n}&gt;0</m>, <m>S_{2n+1}-S_{2n-1}=-\frac1{2n}+\frac1{2n+1}&lt;0</m>. Иймд <m>S_6\le S\le S_5</m>, өөрөөр хэлбэл <m>0{,}616\le S\le 0{,}784</m>. (Үнэндээ <m>S=\ln2\approx0{,}693</m>.)</p></answer>
+  </task>
+  <task>
+    <statement><p>Эерэг гишүүдийн нийлбэр <m>1+\frac13+\frac15+\cdots</m> ба сөрөг гишүүдийн модулийн нийлбэр <m>\frac12+\frac14+\frac16+\cdots</m> нийлэх үү?</p></statement>
+    <hint><p><m>\frac1{2k-1}\ge\frac1{2k}</m> ба <m>\sum\frac1{2k}=\frac12\sum\frac1k</m>.</p></hint>
+    <answer><p>Хоёулаа <m>+\infty</m> руу сарнина. Цуваа нь хоёр төгсгөлгүй нийлбэрийн “тэнцвэр”-ээр л нийлж байна. Ийм цувааг энэ бүлэгт <term>нөхцөлт нийлэх</term> цуваа гэж нэрлэх ба гишүүдийн байрыг сольход нийлбэр нь өөрчлөгдөж болохыг харна.</p></answer>
+  </task>
+</exploration>
+</preview>
+
+<section ref="w07-s1">
+<exercise>
+  <statement><p><m>\displaystyle\sum_{n=1}^\infty(-1)^n\frac{2^n\,n!}{n^n}</m> цуваа абсолют нийлэх үү?</p></statement>
+  <hint><p><m>|a_n|</m>-д Даламберийн шинжүүр хэрэглэ. <m>\left(1+\frac1n\right)^n\to e</m>.</p></hint>
+  <answer><p>Тийм, абсолют нийлнэ.</p></answer>
+  <solution><p><m>|a_n|=\frac{2^nn!}{n^n}</m> гэвэл
+  <md>\frac{|a_{n+1}|}{|a_n|}=\frac{2^{n+1}(n+1)!}{(n+1)^{n+1}}\cdot\frac{n^n}{2^nn!}=2\left(\frac{n}{n+1}\right)^n=\frac{2}{\left(1+\frac1n\right)^n}\to\frac2e&lt;1.</md>
+  Иймд <m>\sum|a_n|</m> нийлж, цуваа абсолют нийлнэ.</p></solution>
+</exercise>
+<exercise>
+  <statement><p><m>|q|&lt;1</m> бол <m>\displaystyle\sum_{n=0}^\infty q^n</m> цувааны өөртэйгөө хийсэн Кошийн үржвэрийг олж, үүнийг ашиглан
+  <md>\sum_{n=0}^\infty(n+1)q^n=\frac{1}{(1-q)^2}</md>
+  гэж батал.</p></statement>
+  <hint><p><m>c_n=\sum_{k=0}^nq^kq^{n-k}</m>. Кошийн теоремын нөхцөл биелэх эсэхийг шалга.</p></hint>
+  <solution><p><m>|q|&lt;1</m> үед <m>\sum q^n=\frac1{1-q}</m> абсолют нийлнэ. Кошийн үржвэрийн гишүүн
+  <md>c_n=\sum_{k=0}^nq^k\,q^{n-k}=\sum_{k=0}^nq^n=(n+1)q^n.</md>
+  Хоёр үржигдэхүүн абсолют нийлэх тул Кошийн теоремоор <m>\sum c_n</m> нийлж, <m>\sum_{n=0}^\infty(n+1)q^n=\frac1{1-q}\cdot\frac1{1-q}=\frac1{(1-q)^2}</m>.</p></solution>
+</exercise>
+<exercise>
+  <statement><p>Риманы теоремын баталгааны 2-р алхмын дүрмийг (<m>T_{m-1}\le\alpha</m> бол дараагийн эерэг гишүүн, <m>T_{m-1}&gt;\alpha</m> бол дараагийн сөрөг гишүүн) <m>\displaystyle\sum_{n=1}^\infty\frac{(-1)^{n+1}}{n}</m> цуваа ба <m>\alpha=1</m>-д хэрэглэж, байр сольсон цувааны эхний 8 гишүүн ба <m>T_1,\dots,T_8</m>-г ол.</p></statement>
+  <hint><p>Эерэг гишүүд <m>1,\frac13,\frac15,\dots</m>, сөрөг гишүүд <m>-\frac12,-\frac14,\dots</m>. <m>T_0=0</m>.</p></hint>
+  <answer><p><m>1+\frac13-\frac12+\frac15-\frac14+\frac17+\frac19-\frac16+\cdots</m>; <m>T_1,\dots,T_8</m>: <m>1,\ \frac43,\ \frac56,\ \frac{31}{30},\ \frac{47}{60},\ \frac{389}{420},\ \frac{1307}{1260},\ \frac{1097}{1260}</m>.</p></answer>
+  <solution><p><m>T_0=0\le1</m> тул <m>b_1=1</m>, <m>T_1=1\le1</m> тул <m>b_2=\frac13</m>, <m>T_2=\frac43&gt;1</m> тул <m>b_3=-\frac12</m>, <m>T_3=\frac56\le1</m> тул <m>b_4=\frac15</m>, <m>T_4=\frac{31}{30}&gt;1</m> тул <m>b_5=-\frac14</m>, <m>T_5=\frac{47}{60}\le1</m> тул <m>b_6=\frac17</m>, <m>T_6=\frac{389}{420}\le1</m> тул <m>b_7=\frac19</m>, <m>T_7=\frac{1307}{1260}&gt;1</m> тул <m>b_8=-\frac16</m>, <m>T_8=\frac{1097}{1260}</m>. Хэсгийн нийлбэрүүд <m>1</m>-ийн хоёр талаар хэлбэлзэж, хэлбэлзлийн далайц нь <m>|b_m|\to0</m>-оор хязгаарлагдана; баталгаагаар <m>T_m\to1</m>.</p></solution>
+</exercise>
+</section>
+
+<section ref="w07-s2">
+<exercise>
+  <statement><p><m>\displaystyle\sum_{n=1}^\infty\frac{(-1)^n}{n-\ln n}</m> цуваа абсолют нийлэх, нөхцөлт нийлэх, сарних эсэхийг тогтоо.</p></statement>
+  <hint><p><m>\varphi(x)=x-\ln x</m>-ийн уламжлалыг <m>x\ge1</m> үед шинжил.</p></hint>
+  <answer><p>Нөхцөлт нийлнэ.</p></answer>
+  <solution><p><m>\varphi(x)=x-\ln x</m> гэвэл <m>\varphi'(x)=1-\frac1x\ge0</m> (<m>x\ge1</m>), <m>\varphi(1)=1&gt;0</m> ба <m>\varphi(x)\to+\infty</m>. Иймд <m>b_n=\frac1{n-\ln n}</m> эерэг, монотон буурах ба <m>b_n\to0</m>; Лейбницийн теоремоор цуваа нийлнэ. Нөгөө талаас <m>n-\ln n\le n</m> тул <m>b_n\ge\frac1n</m> ба <m>\sum\frac1n</m> сарних тул <m>\sum|a_n|</m> сарнина. Цуваа нөхцөлт нийлнэ.</p></solution>
+</exercise>
+<exercise>
+  <statement><p><m>S=\displaystyle\sum_{n=1}^\infty\frac{(-1)^{n+1}}{n\,2^n}</m>-ийг <m>10^{-3}</m>-аас бага алдаатай олоход Лейбницийн үнэлгээгээр хэдэн гишүүн хангалттай вэ? <m>S</m>-ийг агуулах завсар бич.</p></statement>
+  <hint><p><m>|S-S_n|\le b_{n+1}=\frac{1}{(n+1)2^{n+1}}</m>; үлдэгдлийн тэмдгийг мөн ашигла.</p></hint>
+  <answer><p><m>7</m> гишүүн; <m>S_7=\frac{909}{2240}\approx0{,}40580</m> ба <m>0{,}4053&lt;S&lt;0{,}4058</m>.</p></answer>
+  <solution><p><m>b_n=\frac1{n2^n}\downarrow0</m>. <m>b_7=\frac1{896}&gt;10^{-3}</m>, харин <m>b_8=\frac1{2048}&lt;10^{-3}</m> тул <m>n=7</m> хангалттай.
+  <md>S_7=\frac12-\frac18+\frac1{24}-\frac1{64}+\frac1{160}-\frac1{384}+\frac1{896}=\frac{909}{2240}\approx0{,}405804.</md>
+  Үлдэгдэл <m>S-S_7</m> нь <m>(-1)^7b_8</m>-тэй ижил тэмдэгтэй, өөрөөр хэлбэл сөрөг тул <m>S_7-\frac1{2048}&lt;S&lt;S_7</m>, ойролцоогоор <m>0{,}40531&lt;S&lt;0{,}40581</m>. (Зэрэгт цувааны бүлэгт <m>S=\ln\frac32\approx0{,}405465</m> болохыг харна.)</p></solution>
+</exercise>
+<exercise>
+  <statement><p><m>b_n\downarrow0</m> бөгөөд <m>d_n=b_n-b_{n+1}</m> дараалал мөн буурдаг (өөрөөр хэлбэл <m>\{b_n\}</m> гүдгэр) бол <m>S=\sum_{n=1}^\infty(-1)^{n+1}b_n</m>-ийн хувьд
+  <md>\frac{b_{n+1}}{2}\le|S-S_n|\le b_{n+1}</md>
+  гэж батал. Үүнээс <m>1-\frac12+\frac13-\cdots</m>-ийн <m>S_n</m> нь <m>\ln2</m>-оос дор хаяж <m>\frac1{2(n+1)}</m>-ээр зөрнө гэж дүгнэ.</p></statement>
+  <hint><p><m>|S-S_n|=R=d_{n+1}+d_{n+3}+d_{n+5}+\cdots</m> ба <m>R'=d_{n+2}+d_{n+4}+\cdots</m> гэж бичээд <m>R+R'</m>, <m>R-R'</m>-ийг үнэл.</p></hint>
+  <solution><p>Дээд үнэлгээ нь Лейбницийн теорем. Лейбницийн теоремоор <m>S-S_n=(-1)^n R</m>, энд <m>R=b_{n+1}-b_{n+2}+b_{n+3}-\cdots\ge0</m>. Нийлдэг цувааны гишүүдийг хосоор бүлэглэж болох тул
+  <md>R=\sum_{j=0}^\infty\bigl(b_{n+1+2j}-b_{n+2+2j}\bigr)=\sum_{j=0}^\infty d_{n+1+2j},\qquad R'=\sum_{j=0}^\infty d_{n+2+2j}.</md>
+  <m>d_k\ge0</m>, <m>\sum_{k&gt;n}d_k=\lim_{K\to\infty}(b_{n+1}-b_{K+1})=b_{n+1}</m> тул <m>R+R'=b_{n+1}</m>. <m>\{d_k\}</m> буурах тул <m>d_{n+1+2j}\ge d_{n+2+2j}</m>, иймд <m>R\ge R'</m>. Эндээс <m>2R\ge R+R'=b_{n+1}</m>, өөрөөр хэлбэл <m>|S-S_n|=R\ge\frac{b_{n+1}}2</m>.</p>
+  <p><m>b_n=\frac1n</m> үед <m>d_n=\frac1{n(n+1)}</m> буурна, тул <m>|\ln2-S_n|\ge\frac{1}{2(n+1)}</m>. Жишээ нь <m>|\ln2-S_n|&lt;10^{-3}</m> байхын тулд <m>n\ge500</m> гишүүн зайлшгүй хэрэгтэй — цуваа маш удаан нийлдэг.</p></solution>
+</exercise>
+</section>
+
+<section ref="w07-s3">
+<exercise>
+  <statement><p><m>\displaystyle\sum_{n=1}^\infty\frac{\cos\frac{n\pi}{3}}{\ln(n+1)}</m> цуваа нөхцөлт нийлэхийг батал.</p></statement>
+  <hint><p><m>\cos\frac{n\pi}3</m> нь <m>6</m> үетэй бөгөөд нэг үеийн нийлбэр <m>0</m>. <m>\left|\cos\frac{n\pi}{3}\right|\ge\frac12</m>.</p></hint>
+  <solution><p><m>n=1,\dots,6</m> үед <m>\cos\frac{n\pi}3</m> нь <m>\frac12,-\frac12,-1,-\frac12,\frac12,1</m> бөгөөд нийлбэр <m>0</m>, дараа нь давтагдана. Иймд хэсгийн нийлбэрүүд нь <m>\frac12,0,-1,-\frac32,-1,0,\dots</m> утгуудаас л тогтох тул <m>|A_n|\le\frac32</m>. <m>b_n=\frac1{\ln(n+1)}\downarrow0</m> тул Дирихлегийн шинжүүрээр цуваа нийлнэ.</p>
+  <p>Нөгөө талаас <m>\left|\cos\frac{n\pi}3\right|\in\{\frac12,1\}</m> тул <m>|a_n|\ge\frac{1}{2\ln(n+1)}\ge\frac{1}{2n}</m> (<m>\ln(1+n)\le n</m>), иймд <m>\sum|a_n|</m> сарнина. Цуваа нөхцөлт нийлнэ.</p></solution>
+</exercise>
+<exercise>
+  <statement><p><m>\sum a_n</m> нийлдэг бол <m>\displaystyle\sum\frac{a_n}{n}</m> нийлэхийг батал. Эсрэг нь үнэн биш: <m>\sum\frac{a_n}n</m> нийлдэг боловч <m>\sum a_n</m> сарних жишээ гарга.</p></statement>
+  <hint><p>Абелийн шинжүүр. Эсрэг жишээнд <m>a_n=(-1)^n\ln n</m>-ийг сонирхоорой.</p></hint>
+  <solution><p><m>b_n=\frac1n</m> нь монотон ба зааглагдсан тул Абелийн шинжүүрээр <m>\sum a_nb_n=\sum\frac{a_n}n</m> нийлнэ.</p>
+  <p><m>a_n=(-1)^n\ln n</m> гэвэл <m>a_n\not\to0</m> тул <m>\sum a_n</m> сарнина. Харин <m>\frac{a_n}{n}=(-1)^n\frac{\ln n}{n}</m>; <m>\left(\frac{\ln x}x\right)'=\frac{1-\ln x}{x^2}&lt;0</m> (<m>x&gt;e</m>) тул <m>n\ge3</m> үед <m>\frac{\ln n}n\downarrow0</m>, Лейбницийн теоремоор <m>\sum\frac{a_n}n</m> нийлнэ.</p></solution>
+</exercise>
+<exercise>
+  <statement><p><m>\displaystyle\sum_{n=1}^\infty\frac{\sin^3n}{n}</m> цуваа нөхцөлт нийлэхийг батал.</p></statement>
+  <hint><p><m>\sin^3x=\frac{3\sin x-\sin3x}{4}</m>. Абсолют сарнихыг <m>|\sin^3n|\ge\sin^4n</m> ба <m>\sin^4x=\frac38-\frac{\cos2x}2+\frac{\cos4x}8</m>-ээр харуул.</p></hint>
+  <solution><p><m>\sin^3n=\frac34\sin n-\frac14\sin3n</m>. Лемма <xref ref="lem-sin-sum" text="global"/> ба Дирихлегийн шинжүүрээр <m>\sum\frac{\sin n}n</m> ба <m>\sum\frac{\sin3n}n</m> хоёулаа нийлнэ (<m>1,3\ne2\pi m</m>), иймд тэдгээрийн шугаман эвлүүлэг болох өгөгдсөн цуваа нийлнэ.</p>
+  <p><m>|\sin n|\le1</m> тул <m>\frac{|\sin^3n|}{n}\ge\frac{\sin^4n}n=\frac{3}{8n}-\frac{\cos2n}{2n}+\frac{\cos4n}{8n}</m>. Сүүлийн хоёр гишүүний цуваа Дирихлегээр нийлэх, <m>\sum\frac3{8n}</m> сарних тул <m>\sum\frac{\sin^4n}n</m> сарнина, харьцуулах шинжүүрээр <m>\sum\frac{|\sin^3n|}n</m> сарнина. Иймд нөхцөлт нийлнэ.</p></solution>
+</exercise>
+</section>
+
+<section ref="w07-s4">
+<exercise>
+  <statement><p><m>\displaystyle\sum_{n=1}^\infty\arctan\frac{1}{n^2+n+1}</m>-ийн нийлбэрийг ол.</p></statement>
+  <hint><p><m>\arctan a-\arctan b=\arctan\frac{a-b}{1+ab}</m> томьёонд <m>a=n+1</m>, <m>b=n</m> гэж ав.</p></hint>
+  <answer><p><m>\dfrac\pi4</m>.</p></answer>
+  <solution><p><m>a=n+1</m>, <m>b=n</m> гэвэл <m>ab&gt;-1</m> ба <m>\frac{a-b}{1+ab}=\frac{1}{1+n(n+1)}=\frac1{n^2+n+1}</m>. Иймд телескоп:
+  <md>S_N=\sum_{n=1}^N\bigl[\arctan(n+1)-\arctan n\bigr]=\arctan(N+1)-\frac\pi4\to\frac\pi2-\frac\pi4=\frac\pi4.</md></p></solution>
+</exercise>
+<exercise>
+  <statement><p><m>\displaystyle\sum_{n=0}^\infty\frac{1}{(n+2)\,n!}</m>-ийн нийлбэрийг ол.</p></statement>
+  <hint><p><m>\frac{1}{(n+2)n!}=\frac{n+1}{(n+2)!}=\frac{(n+2)-1}{(n+2)!}</m>.</p></hint>
+  <answer><p><m>1</m>.</p></answer>
+  <solution><p><m>\frac{1}{(n+2)\,n!}=\frac{n+1}{(n+2)!}=\frac{1}{(n+1)!}-\frac1{(n+2)!}</m> тул
+  <md>S_N=\sum_{n=0}^N\left(\frac1{(n+1)!}-\frac1{(n+2)!}\right)=1-\frac{1}{(N+2)!}\to1.</md>
+  (Шалгалт: <m>\frac1{(n+2)n!}=\frac1{n!}\int_0^1x^{n+1}dx</m> тул нийлбэр нь <m>\int_0^1xe^x\,dx=1</m> — интегралаар илэрхийлэх арга.)</p></solution>
+</exercise>
+<exercise>
+  <statement><p><m>\displaystyle\sum_{n=1}^\infty\left(\frac1n-\ln\Bigl(1+\frac1n\Bigr)\right)=\gamma</m> гэж батал, энд <m>\gamma</m> нь Эйлерийн тогтмол.</p></statement>
+  <hint><p>Хэсгийн нийлбэрт <m>\ln\left(1+\frac1n\right)=\ln(n+1)-\ln n</m> гишүүд телескоп болно. Лемма <xref ref="lem-euler" text="global"/>.</p></hint>
+  <solution><p>
+  <md>S_N=\sum_{n=1}^N\frac1n-\sum_{n=1}^N\bigl(\ln(n+1)-\ln n\bigr)=H_N-\ln(N+1)=\bigl(H_N-\ln N\bigr)-\ln\Bigl(1+\frac1N\Bigr).</md>
+  Лемма <xref ref="lem-euler" text="global"/>-аар <m>H_N-\ln N\to\gamma</m>, <m>\ln\left(1+\frac1N\right)\to0</m> тул <m>S_N\to\gamma</m>. (Гишүүд эерэг: <m>\ln(1+t)&lt;t</m>, <m>t&gt;0</m>.)</p></solution>
+</exercise>
+</section>
+
+<section ref="w07-s6">
+<exercise>
+  <statement><p><m>\displaystyle\sum_{n=1}^\infty(-1)^n\left(\sqrt[n]{n}-1\right)</m> цуваа нөхцөлт нийлэхийг батал.</p></statement>
+  <hint><p><m>\frac{\ln x}{x}</m> нь <m>x&gt;e</m> үед буурна. <m>\sqrt[n]n-1=e^{\ln n/n}-1\ge\frac{\ln n}{n}</m>.</p></hint>
+  <solution><p><m>b_n=\sqrt[n]{n}-1=e^{\ln n/n}-1</m>. <m>\frac{\ln x}x</m> нь <m>x\ge3</m> үед буурч <m>0</m> руу тэмүүлэх тул <m>n\ge3</m> үед <m>b_n\downarrow0</m>. Эхний хоёр гишүүнийг хаяхад нийлэлт өөрчлөгдөхгүй тул Лейбницийн теоремоор цуваа нийлнэ.</p>
+  <p><m>e^t-1\ge t</m> тул <m>b_n\ge\frac{\ln n}n\ge\frac1n</m> (<m>n\ge3</m>), иймд <m>\sum b_n</m> сарнина. Нөхцөлт нийлнэ.</p></solution>
+</exercise>
+<exercise>
+  <statement><p><m>a_n\to0</m> бөгөөд хосоор бүлэглэсэн <m>\sum_{k=1}^\infty(a_{2k-1}+a_{2k})</m> цуваа <m>S</m> нийлбэртэй нийлдэг бол <m>\sum a_n=S</m> гэж батал. <m>a_n\to0</m> нөхцөлийг орхивол дүгнэлт худал болохыг жишээгээр харуул.</p></statement>
+  <hint><p><m>S_{2k}</m> нь бүлэглэсэн цувааны <m>k</m>-р хэсгийн нийлбэр; <m>S_{2k+1}=S_{2k}+a_{2k+1}</m>.</p></hint>
+  <solution><p>Бүлэглэсэн цувааны <m>k</m>-р хэсгийн нийлбэр нь <m>S_{2k}</m> тул <m>S_{2k}\to S</m>. Мөн <m>S_{2k+1}=S_{2k}+a_{2k+1}\to S+0=S</m>. Тэгш ба сондгой дугаартай дэд дараалал хоёулаа <m>S</m> руу нийлэх тул <m>S_n\to S</m>.</p>
+  <p>Эсрэг жишээ: <m>a_n=(-1)^{n+1}</m>. Тэгвэл <m>(1-1)+(1-1)+\cdots=0</m> нийлнэ, харин <m>a_n\not\to0</m> тул <m>\sum(-1)^{n+1}</m> сарнина.</p></solution>
+</exercise>
+</section>
+
+<homework>
+<exercise>
+  <statement><p><m>x\in\R</m>-ийн утгаас хамааруулан <m>\displaystyle\sum_{n=1}^\infty\frac{(-1)^nx^n}{n}</m> цуваа абсолют нийлэх, нөхцөлт нийлэх, сарних эсэхийг тогтоо.</p></statement>
+  <hint><p><m>|a_n|</m>-д Даламбер; <m>x=\pm1</m>-ийг тусад нь шинжил.</p></hint>
+  <answer><p><m>|x|&lt;1</m> — абсолют; <m>x=1</m> — нөхцөлт; <m>x=-1</m> ба <m>|x|&gt;1</m> — сарнина.</p></answer>
+  <solution><p><m>x\ne0</m> үед <m>\frac{|a_{n+1}|}{|a_n|}=|x|\frac{n}{n+1}\to|x|</m>. <m>|x|&lt;1</m> бол абсолют нийлнэ (<m>x=0</m> үед мэдээж). <m>|x|&gt;1</m> бол <m>|a_n|=\frac{|x|^n}n\to\infty</m>, <m>a_n\not\to0</m> тул сарнина. <m>x=1</m>: <m>\sum\frac{(-1)^n}n</m> Лейбницээр нийлэх ба <m>\sum\frac1n</m> сарних тул нөхцөлт. <m>x=-1</m>: <m>(-1)^n(-1)^n=1</m> тул <m>\sum\frac1n</m> — сарнина.</p></solution>
+</exercise>
+<exercise>
+  <statement><p><m>E(x)=\displaystyle\sum_{n=0}^\infty\frac{x^n}{n!}</m> бүх <m>x</m>-д абсолют нийлэхийг харуулаад, Кошийн үржвэрийн теоремоор <m>E(x)E(y)=E(x+y)</m> гэж батал.</p></statement>
+  <hint><p>Ньютоны бином: <m>\sum_{k=0}^n\frac{x^k}{k!}\cdot\frac{y^{n-k}}{(n-k)!}=\frac{(x+y)^n}{n!}</m>.</p></hint>
+  <solution><p><m>x\ne0</m> үед <m>\frac{|x|^{n+1}/(n+1)!}{|x|^n/n!}=\frac{|x|}{n+1}\to0</m> тул Даламбераар <m>E(x)</m> абсолют нийлнэ. Кошийн үржвэрийн гишүүн
+  <md>c_n=\sum_{k=0}^n\frac{x^k}{k!}\cdot\frac{y^{n-k}}{(n-k)!}=\frac1{n!}\sum_{k=0}^n\binom nkx^ky^{n-k}=\frac{(x+y)^n}{n!}.</md>
+  Хоёр цуваа абсолют нийлэх тул Кошийн теоремоор <m>E(x)E(y)=\sum c_n=E(x+y)</m>.</p></solution>
+</exercise>
+<exercise>
+  <statement><p><m>0&lt;p\le\frac12</m> бол нөхцөлт нийлдэг <m>\displaystyle\sum_{n=0}^\infty\frac{(-1)^n}{(n+1)^p}</m> цувааны өөртэйгөө хийсэн Кошийн үржвэр сарнихыг батал.</p></statement>
+  <hint><p>Бүлгийн жишээний адилаар <m>(k+1)(n-k+1)\le\left(\frac{n+2}{2}\right)^2</m>-ийг ашиглаад, <m>(n+2)^{2p}\le n+2</m> гэдгийг анхаар.</p></hint>
+  <solution><p>Цуваа Лейбницээр нийлэх ба <m>p\le1</m> тул абсолют нийлэхгүй. Кошийн үржвэрийн гишүүн
+  <md>c_n=\sum_{k=0}^n\frac{(-1)^k(-1)^{n-k}}{\bigl((k+1)(n-k+1)\bigr)^p}=(-1)^n\sum_{k=0}^n\frac{1}{\bigl((k+1)(n-k+1)\bigr)^p}.</md>
+  Арифметик-геометр дундажийн тэнцэтгэл бишээр <m>(k+1)(n-k+1)\le\left(\frac{n+2}2\right)^2</m> тул гишүүн бүр <m>\ge\left(\frac{2}{n+2}\right)^{2p}</m>, иймд
+  <md>|c_n|\ge(n+1)\frac{2^{2p}}{(n+2)^{2p}}\ge2^{2p}\,\frac{n+1}{n+2}\ge2^{2p-1}&gt;\frac12,</md>
+  энд <m>0&lt;2p\le1</m> ба <m>n+2\ge1</m> тул <m>(n+2)^{2p}\le n+2</m>-ийг ашиглав. <m>c_n\not\to0</m> тул <m>\sum c_n</m> сарнина.</p></solution>
+</exercise>
+<exercise>
+  <statement><p><m>\displaystyle\sum_{n=1}^\infty\frac{1}{n(n+1)(2n+1)}</m>-ийн нийлбэрийг ол.</p></statement>
+  <hint><p><m>\frac{1}{n(n+1)(2n+1)}=\frac1n+\frac1{n+1}-\frac4{2n+1}</m>. Гишүүн бүрийн цуваа сарних тул хэсгийн нийлбэрийг гармоник тоогоор илэрхийл.</p></hint>
+  <answer><p><m>3-4\ln2\approx0{,}2274</m>.</p></answer>
+  <solution><p>Хялбар бутархайд задлахад <m>\frac{1}{n(n+1)(2n+1)}=\frac1n+\frac1{n+1}-\frac4{2n+1}</m>. Мөн <m>\sum_{n=1}^N\frac1{2n+1}=H_{2N+1}-1-\frac12H_N</m>. Иймд
+  <md>S_N=H_N+\Bigl(H_{N+1}-1\Bigr)-4\Bigl(H_{2N+1}-1-\frac12H_N\Bigr)=4H_N-4H_{2N+1}+3+\frac1{N+1}.</md>
+  Лемма <xref ref="lem-euler" text="global"/>-аар <m>H_{2N+1}-H_N=(H_{2N+1}-H_{2N})+(H_{2N}-H_N)\to0+\ln2</m> тул <m>S_N\to3-4\ln2</m>.</p></solution>
+</exercise>
+<exercise>
+  <statement><p><m>\displaystyle\sum_{n=1}^\infty\frac{(-1)^{n+1}}{n(n+1)(n+2)}</m>-ийн нийлбэрийг ол.</p></statement>
+  <hint><p><m>\frac{1}{n(n+1)(n+2)}=\frac12\left(\frac1n-\frac2{n+1}+\frac1{n+2}\right)</m>. Тэмдэг сөөлжилсэн гурван цуваа бүгд нийлнэ.</p></hint>
+  <answer><p><m>2\ln2-\dfrac54\approx0{,}1363</m>.</p></answer>
+  <solution><p><m>L=\sum_{n\ge1}\frac{(-1)^{n+1}}n=\ln2</m> гэе. Индексийг шилжүүлбэл
+  <md>\sum_{n\ge1}\frac{(-1)^{n+1}}{n+1}=\sum_{m\ge2}\frac{(-1)^m}{m}=-(L-1)=1-L,\qquad\sum_{n\ge1}\frac{(-1)^{n+1}}{n+2}=\sum_{m\ge3}\frac{(-1)^{m+1}}m=L-1+\frac12.</md>
+  Гурван цуваа бүгд нийлэх тул гишүүнчлэн задалж болно:
+  <md>S=\frac12\Bigl(L-2(1-L)+L-\frac12\Bigr)=\frac12\Bigl(4L-\frac52\Bigr)=2\ln2-\frac54.</md></p></solution>
+</exercise>
+</homework>
+</ai>

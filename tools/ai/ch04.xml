@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ai>
+<preview>
+<exploration xml:id="w04-preview">
+  <title>Талбайн функцийн уламжлал (AI)</title>
+  <introduction>
+    <p><m>f\ge 0</m> функцийн графикийн доорх <m>[0,x]</m> хэрчим дээрх талбайг <m>A(x)=\int_0^x f(t)\,dt</m> гэе. Дээд хязгаар <m>x</m> өөрчлөгдөхөд энэ талбай хэрхэн өөрчлөгдөхийг энгийн дүрсүүдийн талбайн томьёогоор ажиглая.</p>
+  </introduction>
+  <task>
+    <statement><p><m>f(t)=2t</m> үед <m>A(x)</m>-ийг гурвалжны талбайн томьёогоор олж, <m>A'(x)</m>-ийг ол.</p></statement>
+    <answer><p><m>A(x)=\frac12\cdot x\cdot 2x=x^2</m>, <m>A'(x)=2x</m>.</p></answer>
+  </task>
+  <task>
+    <statement><p><m>f(t)=t+1</m> үед <m>A(x)</m>-ийг трапецийн талбайн томьёогоор олж, <m>A'(x)</m>-ийг ол.</p></statement>
+    <hint><p>Трапецийн суурь нь <m>f(0)=1</m> ба <m>f(x)=x+1</m>, өндөр нь <m>x</m>.</p></hint>
+    <answer><p><m>A(x)=\frac{1+(x+1)}{2}\,x=x+\frac{x^2}{2}</m>, <m>A'(x)=x+1</m>.</p></answer>
+  </task>
+  <task>
+    <statement><p>Дээрх хоёр тохиолдолд <m>A'(x)</m>-ийг <m>f(x)</m>-тэй харьцуул. <m>A(x+h)-A(x)</m> нь өндөр нь ойролцоогоор <m>f(x)</m>, өргөн нь <m>h</m> зурвасын талбай гэдгийг ашиглан ерөнхий таамаглал дэвшүүл.</p></statement>
+    <answer><p>Хоёр тохиолдолд <m>A'(x)=f(x)</m>. <m>A(x+h)-A(x)\approx f(x)h</m> тул <m>\frac{A(x+h)-A(x)}{h}\to f(x)</m> гэж таамаглана. Энэ нь энэ хичээлийн интеграл тооллын үндсэн теорем юм.</p></answer>
+  </task>
+</exploration>
+</preview>
+
+<section ref="w04-s1">
+<exercise>
+  <statement><p><m>\displaystyle\lim_{x\to0}\frac{1}{x^3}\int_0^x\sin\left(t^2\right)dt</m>-ийг ол.</p></statement>
+  <hint><p>Хүртвэр ба хуваарь хоёулаа <m>0</m> руу тэмүүлнэ. Лопиталын дүрэм ба интеграл тооллын үндсэн теоремыг хэрэглэ.</p></hint>
+  <answer><p><m>\dfrac13</m>.</p></answer>
+  <solution><p><m>\sin(t^2)</m> тасралтгүй тул <m>\left(\int_0^x\sin(t^2)\,dt\right)'=\sin(x^2)</m>. Лопиталын дүрмээр
+  <md>\lim_{x\to0}\frac{\int_0^x\sin(t^2)\,dt}{x^3}=\lim_{x\to0}\frac{\sin(x^2)}{3x^2}=\frac13.</md></p></solution>
+</exercise>
+<exercise>
+  <statement><p><m>\displaystyle F(x)=\int_0^x\frac{t^2-3t+2}{1+t^2}\,dt</m> функцийн локал экстремумын цэгүүдийг олж, төрлийг тодорхойл.</p></statement>
+  <hint><p><m>F'(x)</m>-ийг интеграл тооллын үндсэн теоремоор олоод тэмдгийг шинжил.</p></hint>
+  <answer><p><m>x=1</m> локал максимум, <m>x=2</m> локал минимум.</p></answer>
+  <solution><p>Интеграл доорх функц <m>\R</m> дээр тасралтгүй тул <m>F'(x)=\frac{(x-1)(x-2)}{1+x^2}</m>. Хуваарь эерэг тул <m>F'</m>-ийн тэмдэг нь <m>(x-1)(x-2)</m>-ийнхтэй ижил: <m>x&lt;1</m> үед <m>+</m>, <m>1&lt;x&lt;2</m> үед <m>-</m>, <m>x&gt;2</m> үед <m>+</m>. Иймд <m>F</m> нь <m>x=1</m> цэгт өсөхөөс буурах руу шилжиж локал максимумтай, <m>x=2</m> цэгт буурахаас өсөх руу шилжиж локал минимумтай.</p></solution>
+</exercise>
+<exercise>
+  <statement><p><m>[-1,1]</m> дээр <m>f(t)=\sgn t</m> гэе. <m>F(x)=\int_{-1}^xf(t)\,dt</m>-ийг илэрхий хэлбэрээр олж, <m>F</m> нь <m>x=0</m> цэгт дифференциалчлагдах эсэхийг шалга. Энэ нь <xref ref="thm-ftc" text="global"/>-д харшлах уу?</p></statement>
+  <hint><p><m>x\le 0</m> ба <m>x&gt;0</m> үед аддитив чанарыг ашиглан тусад нь бод. Нэг цэг дээрх утга интегралд нөлөөлөхгүй.</p></hint>
+  <answer><p><m>F(x)=|x|-1</m>; <m>x=0</m> цэгт дифференциалчлагдахгүй. Харшлахгүй.</p></answer>
+  <solution><p><m>x\le0</m> үед <m>F(x)=\int_{-1}^x(-1)\,dt=-(x+1)=-x-1</m>. <m>x&gt;0</m> үед <m>F(x)=\int_{-1}^0(-1)\,dt+\int_0^x1\,dt=-1+x</m>. Иймд <m>F(x)=|x|-1</m>. <m>x=0</m> цэгт зүүн уламжлал <m>-1</m>, баруун уламжлал <m>1</m> тул <m>F'(0)</m> оршихгүй. Теоремын (a) хэсэг ёсоор <m>F</m> Липшицийн (энд <m>K=1</m>) ба тасралтгүй, харин (b) хэсэг нь <m>f</m> тасралтгүй цэгүүдэд л хамаарна; <m>\sgn</m> нь <m>0</m> цэгт тасралтгүй биш тул харшлал байхгүй. <m>x\ne0</m> цэгүүдэд <m>F'(x)=\sgn x=f(x)</m> байна.</p></solution>
+</exercise>
+</section>
+
+<section ref="w04-s2">
+<exercise>
+  <statement><p><m>\displaystyle\int_0^{\pi/4}\tan^2x\,dx</m>-ийг ол.</p></statement>
+  <hint><p><m>\tan^2x=\frac{1}{\cos^2x}-1</m>.</p></hint>
+  <answer><p><m>1-\dfrac\pi4</m>.</p></answer>
+  <solution><p><m>(\tan x-x)'=\frac1{\cos^2x}-1=\tan^2x</m> ба <m>\tan^2x</m> нь <m>[0,\frac\pi4]</m> дээр тасралтгүй тул Ньютон-Лейбницийн томьёогоор
+  <md>\int_0^{\pi/4}\tan^2x\,dx=(\tan x-x)\Big|_0^{\pi/4}=1-\frac\pi4.</md></p></solution>
+</exercise>
+<exercise>
+  <statement><p>Дараах «тооцоо» хаана алдаатай вэ?
+  <md>\int_{-1}^1\frac{dx}{x^2}=\left(-\frac1x\right)\Big|_{-1}^1=-1-1=-2.</md>
+  (Эерэг функцийн интеграл сөрөг гарсанд анхаар.)</p></statement>
+  <hint><p>Ньютон-Лейбницийн томьёоны нөхцлүүдийг шалга.</p></hint>
+  <solution><p><m>f(x)=\frac1{x^2}</m> нь <m>[-1,1]</m> дээр (<m>x=0</m> цэгийн орчинд) зааглагдаагүй тул Риманы утгаар интегралчлагдахгүй; мөн <m>F(x)=-\frac1x</m> нь <m>x=0</m> цэгт тодорхойлогдохгүй тул <m>F'=f</m> бүх <m>[-1,1]</m> дээр биелэхгүй. Ньютон-Лейбницийн теоремын хоёр нөхцөл хоёулаа зөрчигдсөн тул томьёог хэрэглэх эрхгүй. (Энэ интеграл нь хожим үзэх өргөтгөсөн утгаараа ч сарнина.)</p></solution>
+</exercise>
+<exercise>
+  <statement><p><m>\displaystyle\int_0^3\left|x^2-3x+2\right|dx</m>-ийг ол.</p></statement>
+  <hint><p><m>x^2-3x+2=(x-1)(x-2)</m> нь <m>(1,2)</m> дээр сөрөг. Аддитив чанараар гурван хэсэгт хуваа.</p></hint>
+  <answer><p><m>\dfrac{11}{6}</m>.</p></answer>
+  <solution><p><m>F(x)=\frac{x^3}3-\frac{3x^2}2+2x</m> нь <m>x^2-3x+2</m>-ийн эх функц ба <m>F(0)=0</m>, <m>F(1)=\frac56</m>, <m>F(2)=\frac23</m>, <m>F(3)=\frac32</m>. Иймд
+  <md>\int_0^3|x^2-3x+2|\,dx=\bigl(F(1)-F(0)\bigr)-\bigl(F(2)-F(1)\bigr)+\bigl(F(3)-F(2)\bigr)=\frac56+\frac16+\frac56=\frac{11}6.</md></p></solution>
+</exercise>
+</section>
+
+<section ref="w04-s3">
+<exercise>
+  <statement><p><m>\displaystyle\int_0^1x^2e^x\,dx</m>-ийг ол.</p></statement>
+  <hint><p>Хоёр удаа хэсэгчлэн интегралчил: <m>u=x^2</m>, <m>v'=e^x</m>.</p></hint>
+  <answer><p><m>e-2</m>.</p></answer>
+  <solution><p>
+  <md>\int_0^1x^2e^x\,dx=x^2e^x\Big|_0^1-2\int_0^1xe^x\,dx=e-2\left(xe^x\Big|_0^1-\int_0^1e^x\,dx\right)=e-2\bigl(e-(e-1)\bigr)=e-2.</md></p></solution>
+</exercise>
+<exercise>
+  <statement><p>Тэгш хэмийн чанарыг ашиглан <m>\displaystyle I=\int_0^{\pi/2}\frac{\sin x}{\sin x+\cos x}\,dx</m>-ийг ол.</p></statement>
+  <hint><p><m>\int_a^bf(x)\,dx=\int_a^bf(a+b-x)\,dx</m> томьёонд <m>a=0</m>, <m>b=\frac\pi2</m> ав.</p></hint>
+  <answer><p><m>\dfrac\pi4</m>.</p></answer>
+  <solution><p><m>x\mapsto\frac\pi2-x</m> үед <m>\sin x\mapsto\cos x</m>, <m>\cos x\mapsto\sin x</m> тул <m>I=\int_0^{\pi/2}\frac{\cos x}{\cos x+\sin x}\,dx</m>. Хоёр илэрхийллийг нэмбэл
+  <md>2I=\int_0^{\pi/2}\frac{\sin x+\cos x}{\sin x+\cos x}\,dx=\frac\pi2,</md>
+  иймд <m>I=\frac\pi4</m>. (<m>[0,\frac\pi2]</m> дээр <m>\sin x+\cos x\ge1&gt;0</m> тул интеграл доорх функц тасралтгүй.)</p></solution>
+</exercise>
+<exercise>
+  <statement><p><m>\displaystyle\int_0^{\ln2}\sqrt{e^x-1}\,dx</m>-ийг ол.</p></statement>
+  <hint><p><m>t=\sqrt{e^x-1}</m> гэвэл <m>x=\ln(1+t^2)</m>, <m>dx=\frac{2t\,dt}{1+t^2}</m>. Хязгаарууд: <m>x=0\mapsto t=0</m>, <m>x=\ln 2\mapsto t=1</m>.</p></hint>
+  <answer><p><m>2-\dfrac\pi2</m>.</p></answer>
+  <solution><p><m>\varphi(t)=\ln(1+t^2)</m>, <m>t\in[0,1]</m> нь <m>C^1</m>, <m>\varphi(0)=0</m>, <m>\varphi(1)=\ln2</m> ба <m>\sqrt{e^{\varphi(t)}-1}=t</m>. Орлуулах теоремоор
+  <md>\int_0^{\ln2}\sqrt{e^x-1}\,dx=\int_0^1t\cdot\frac{2t}{1+t^2}\,dt=2\int_0^1\left(1-\frac1{1+t^2}\right)dt=2\left(1-\frac\pi4\right)=2-\frac\pi2.</md></p></solution>
+</exercise>
+</section>
+
+<section ref="w04-s4">
+<exercise>
+  <statement><p><m>r=a(1+\cos\varphi)</m>, <m>a&gt;0</m>, <m>\varphi\in[0,2\pi]</m> кардиоидоор хүрээлэгдсэн дүрсийн талбайг ол.</p></statement>
+  <hint><p><m>S=\frac12\int_0^{2\pi}r^2\,d\varphi</m>; <m>\cos^2\varphi=\frac{1+\cos2\varphi}2</m>.</p></hint>
+  <answer><p><m>\dfrac{3\pi a^2}{2}</m>.</p></answer>
+  <solution><p>
+  <md>S=\frac{a^2}2\int_0^{2\pi}\left(1+2\cos\varphi+\cos^2\varphi\right)d\varphi=\frac{a^2}2\left(2\pi+0+\pi\right)=\frac{3\pi a^2}2,</md>
+  учир нь <m>\int_0^{2\pi}\cos\varphi\,d\varphi=0</m>, <m>\int_0^{2\pi}\cos^2\varphi\,d\varphi=\int_0^{2\pi}\frac{1+\cos2\varphi}{2}\,d\varphi=\pi</m>.</p></solution>
+</exercise>
+<exercise>
+  <statement><p><m>y=\cosh x=\frac{e^x+e^{-x}}2</m> гинжин шугамын <m>x\in[0,\ln2]</m> хэсгийн нумын уртыг ол.</p></statement>
+  <hint><p><m>y'=\sinh x</m> ба <m>1+\sinh^2x=\cosh^2x</m>.</p></hint>
+  <answer><p><m>\dfrac34</m>.</p></answer>
+  <solution><p><m>\sqrt{1+y'^2}=\sqrt{1+\sinh^2x}=\cosh x</m> (<m>\cosh x&gt;0</m>). Иймд
+  <md>L=\int_0^{\ln2}\cosh x\,dx=\sinh(\ln2)=\frac{2-\frac12}{2}=\frac34.</md></p></solution>
+</exercise>
+<exercise>
+  <statement><p><m>R</m> радиустай бөмбөрцгийн гадаргуугийн талбай <m>4\pi R^2</m> гэдгийг эргэлтийн гадаргуугийн томьёогоор батал.</p></statement>
+  <hint><p>Бөмбөрцөг нь <m>y=\sqrt{R^2-x^2}</m>, <m>x\in[-R,R]</m> хагас тойргийг <m>Ox</m>-ээр эргүүлж үүснэ. <m>y\sqrt{1+y'^2}</m>-ийг хялбарчил.</p></hint>
+  <solution><p><m>f(x)=\sqrt{R^2-x^2}</m> бол <m>f'(x)=-\frac{x}{\sqrt{R^2-x^2}}</m> (<m>|x|&lt;R</m>) ба
+  <md>f(x)\sqrt{1+f'(x)^2}=\sqrt{R^2-x^2}\cdot\sqrt{\frac{R^2-x^2+x^2}{R^2-x^2}}=R.</md>
+  Энэ нь <m>[-R,R]</m> дээр тасралтгүй (тогтмол) тул
+  <md>A=2\pi\int_{-R}^{R}R\,dx=2\pi R\cdot2R=4\pi R^2.</md>
+  (Төгсгөлийн цэгүүдэд <m>f'</m> оршихгүй ч <m>[-R+\delta,R-\delta]</m> дээр бодоод <m>\delta\to0</m> гэхэд ижил хариу гарна.)</p></solution>
+</exercise>
+</section>
+
+<homework>
+<exercise>
+  <statement><p>Бүх <m>x&gt;0</m>-д
+  <md>6+\int_a^x\frac{f(t)}{t^2}\,dt=2\sqrt x</md>
+  байх тасралтгүй <m>f</m> функц ба <m>a&gt;0</m> тогтмолыг ол.</p></statement>
+  <hint><p>Хоёр талаас уламжлал ав. Дараа нь <m>x=a</m> гэж орлуул.</p></hint>
+  <answer><p><m>f(x)=x^{3/2}</m>, <m>a=9</m>.</p></answer>
+  <solution><p>Интеграл тооллын үндсэн теоремоор зүүн талын уламжлал <m>\frac{f(x)}{x^2}</m>, баруун талынх <m>\frac1{\sqrt x}</m>. Иймд <m>f(x)=\frac{x^2}{\sqrt x}=x^{3/2}</m>. <m>x=a</m> үед интеграл <m>0</m> тул <m>6=2\sqrt a</m>, <m>a=9</m>. Шалгалт: <m>6+\int_9^xt^{-1/2}\,dt=6+2\sqrt x-6=2\sqrt x</m>.</p></solution>
+</exercise>
+<exercise>
+  <statement><p><m>I_n=\displaystyle\int_0^{\pi/2}\sin^nx\,dx</m> (<m>n\ge0</m>) гэе.
+  <ol marker="(a)">
+    <li><p><m>n\ge2</m> үед <m>I_n=\dfrac{n-1}{n}I_{n-2}</m> гэж батал.</p></li>
+    <li><p><m>I_4</m> ба <m>I_5</m>-ийг ол.</p></li>
+  </ol></p></statement>
+  <hint><p><m>u=\sin^{n-1}x</m>, <m>v'=\sin x</m> гэж хэсэгчлэн интегралчлаад <m>\cos^2x=1-\sin^2x</m> ашигла.</p></hint>
+  <answer><p><m>I_4=\dfrac{3\pi}{16}</m>, <m>I_5=\dfrac{8}{15}</m>.</p></answer>
+  <solution><p>(a) <m>u=\sin^{n-1}x</m>, <m>v=-\cos x</m> гэвэл
+  <md>I_n=-\sin^{n-1}x\cos x\Big|_0^{\pi/2}+(n-1)\int_0^{\pi/2}\sin^{n-2}x\cos^2x\,dx=(n-1)\left(I_{n-2}-I_n\right).</md>
+  (Хашилт дахь гишүүн <m>n\ge2</m> үед хоёр төгсгөлд <m>0</m>.) Эндээс <m>nI_n=(n-1)I_{n-2}</m>.</p>
+  <p>(b) <m>I_0=\frac\pi2</m>, <m>I_1=\int_0^{\pi/2}\sin x\,dx=1</m>. Иймд <m>I_4=\frac34\cdot\frac12\cdot\frac\pi2=\frac{3\pi}{16}</m>, <m>I_5=\frac45\cdot\frac23\cdot1=\frac8{15}</m>.</p></solution>
+</exercise>
+<exercise>
+  <statement><p><m>\displaystyle\lim_{x\to+\infty}\frac{\left(\int_0^xe^{t^2}\,dt\right)^2}{\int_0^xe^{2t^2}\,dt}</m>-ийг ол.</p></statement>
+  <hint><p>Лопиталын дүрмийг хоёр удаа хэрэглэ. <m>\int_0^xe^{t^2}dt\ge x</m> тул хүртвэр, хуваарь хоёулаа <m>+\infty</m> руу тэмүүлнэ.</p></hint>
+  <answer><p><m>0</m>.</p></answer>
+  <solution><p><m>e^{t^2}\ge1</m>, <m>e^{2t^2}\ge1</m> тул хоёр интеграл <m>\ge x\to+\infty</m>. Лопиталын дүрэм ба интеграл тооллын үндсэн теоремоор
+  <md>\lim_{x\to+\infty}\frac{2e^{x^2}\int_0^xe^{t^2}dt}{e^{2x^2}}=\lim_{x\to+\infty}\frac{2\int_0^xe^{t^2}dt}{e^{x^2}}=\lim_{x\to+\infty}\frac{2e^{x^2}}{2xe^{x^2}}=\lim_{x\to+\infty}\frac1x=0.</md>
+  Хоёр дахь алхамд дахин <m>\frac\infty\infty</m> хэлбэр тул Лопиталыг хэрэглэв.</p></solution>
+</exercise>
+<exercise>
+  <statement><p><m>[0,2]</m> (метр) хэрчим дээр байрлах саваа <m>\rho(x)=1+x</m> (кг/м) шугаман нягттай. Савааны масс ба массын төвийг ол.</p></statement>
+  <answer><p><m>m=4</m> кг, <m>\bar x=\dfrac76</m> м.</p></answer>
+  <solution><p><m>m=\int_0^2(1+x)\,dx=2+2=4</m>. <m>\int_0^2x(1+x)\,dx=2+\frac83=\frac{14}3</m> тул <m>\bar x=\frac{14/3}{4}=\frac76</m>. Нягт баруун тийшээ өсөх тул массын төв дунд цэг <m>1</m>-ээс баруун тийш шилжсэн нь зөв.</p></solution>
+</exercise>
+<exercise>
+  <statement><p><m>m,n\in\N\cup\{0\}</m> үед
+  <md>\int_0^1x^m(1-x)^n\,dx=\frac{m!\,n!}{(m+n+1)!}</md>
+  гэж батал.</p></statement>
+  <hint><p><m>J(m,n)</m> гэж тэмдэглээд <m>n\ge1</m> үед <m>u=(1-x)^n</m>, <m>v'=x^m</m> гэж хэсэгчлэн интегралчилж <m>J(m,n)=\frac{n}{m+1}J(m+1,n-1)</m>-ийг гарга. <m>n</m>-ээр индукц хий.</p></hint>
+  <solution><p><m>J(m,n)=\int_0^1x^m(1-x)^n\,dx</m>. <m>n=0</m> үед <m>J(m,0)=\frac1{m+1}=\frac{m!\,0!}{(m+1)!}</m>. <m>n\ge1</m> үед <m>u=(1-x)^n</m>, <m>v=\frac{x^{m+1}}{m+1}</m> гэвэл
+  <md>J(m,n)=\frac{x^{m+1}(1-x)^n}{m+1}\Big|_0^1+\frac{n}{m+1}\int_0^1x^{m+1}(1-x)^{n-1}\,dx=\frac{n}{m+1}J(m+1,n-1),</md>
+  учир нь хашилт дахь гишүүн хоёр төгсгөлд <m>0</m>. <m>n-1</m>-ийн хувьд (бүх <m>m</m>-д) томьёо үнэн гэвэл
+  <md>J(m,n)=\frac{n}{m+1}\cdot\frac{(m+1)!\,(n-1)!}{(m+n+1)!}=\frac{m!\,n!}{(m+n+1)!}.</md></p></solution>
+</exercise>
+</homework>
+</ai>

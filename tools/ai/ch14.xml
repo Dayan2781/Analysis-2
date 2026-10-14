@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ai>
+<preview>
+<exploration xml:id="w14-preview">
+  <title>Туйлын тэгш өнцөгтийн талбай (AI)</title>
+  <introduction>
+    <p>Туйлын координатад <m>\{r_1\le r\le r_2,\ \theta_1\le\theta\le\theta_2\}</m> муж нь <m>(r,\theta)</m> хавтгайд тэгш өнцөгт боловч <m>(x,y)</m> хавтгайд цагирагийн хэсэг болдог. Түүний талбай <m>(r,\theta)</m> тэгш өнцөгтийн талбайтай ямар холбоотойг судалъя.</p>
+  </introduction>
+  <task>
+    <statement><p><m>D=\{1\le r\le2,\ 0\le\theta\le\frac\pi2\}</m> цагирагийн дөрөвний нэг хэсгийн талбайг сургуулийн томьёогоор ол. <m>(r,\theta)</m> хавтгай дахь харгалзах тэгш өнцөгт <m>[1,2]\times[0,\frac\pi2]</m>-ийн талбайтай харьцуул.</p></statement>
+    <answer><p><m>|D|=\frac14\pi(2^2-1^2)=\frac{3\pi}4</m>, харин тэгш өнцөгтийн талбай <m>1\cdot\frac\pi2=\frac\pi2</m> — тэнцүү биш, харьцаа <m>\frac32</m> нь <m>r</m>-ийн дундаж утга.</p></answer>
+  </task>
+  <task>
+    <statement><p>Жижиг "туйлын тэгш өнцөгт" <m>\{r\le\rho\le r+\Delta r,\ \theta\le\varphi\le\theta+\Delta\theta\}</m>-ийн талбайг ол. <m>\Delta r\Delta\theta</m>-тэй харьцуулахад ямар үржигдэхүүн гарах вэ?</p></statement>
+    <hint><p>Дугуйн секторын талбай <m>\frac12\rho^2\Delta\theta</m>.</p></hint>
+    <answer><p><m>\frac12\bigl((r+\Delta r)^2-r^2\bigr)\Delta\theta=\left(r+\frac{\Delta r}2\right)\Delta r\,\Delta\theta\approx r\,\Delta r\,\Delta\theta</m>. Үржигдэхүүн нь <m>r</m>.</p></answer>
+  </task>
+  <task>
+    <statement><p>(b)-г ашиглан нэгж дугуйн талбайг <m>\displaystyle\int_0^{2\pi}\!\!\int_0^1r\,dr\,d\theta</m> гэж бичиж болох уу? Тооцоолж шалга.</p></statement>
+    <answer><p><m>\int_0^{2\pi}\int_0^1r\,dr\,d\theta=2\pi\cdot\frac12=\pi</m> — зөв. Энэ бүлэгт үржигдэхүүн <m>r</m> нь <m>(r,\theta)\mapsto(r\cos\theta,r\sin\theta)</m> буулгалтын якобиан гэдгийг харуулна.</p></answer>
+  </task>
+</exploration>
+</preview>
+
+<section ref="w14-s1">
+<exercise>
+  <statement><p><m>(1,1)</m>, <m>(4,2)</m>, <m>(2,5)</m> оройтой гурвалжны талбайг Теорем <xref ref="w14-thm-linear" text="global"/> ашиглан ол.</p></statement>
+  <hint><p>Гурвалжин нь <m>(0,0),(1,0),(0,1)</m> оройтой стандарт гурвалжны <m>x\mapsto(1,1)+Tx</m> буулгалтын дүр; шилжүүлэлт талбайг өөрчлөхгүй.</p></hint>
+  <answer><p><m>\dfrac{11}2</m>.</p></answer>
+  <solution><p>Ирмэгийн векторууд <m>u=(3,1)</m>, <m>v=(1,4)</m>. <m>T=\begin{pmatrix}3&amp;1\\1&amp;4\end{pmatrix}</m> нь стандарт гурвалжныг (талбай <m>\frac12</m>) шилжүүлсэн гурвалжинд буулгана. <m>\det T=12-1=11</m> тул талбай <m>11\cdot\frac12=\frac{11}2</m>.</p></solution>
+</exercise>
+<exercise>
+  <statement><p><m>u=(1,0,1)</m>, <m>v=(2,1,0)</m>, <m>w=(0,1,3)</m> векторуудаар татсан параллелепипедийн эзлэхүүнийг ол.</p></statement>
+  <answer><p><m>5</m>.</p></answer>
+  <solution><p>Параллелепипед нь <m>[0,1]^3</m>-ийн <m>T=(u\ v\ w)</m> (багана болгон) матрицын дүр тул эзлэхүүн <m>|\det T|</m>:
+  <md>\det\begin{pmatrix}1&amp;2&amp;0\\0&amp;1&amp;1\\1&amp;0&amp;3\end{pmatrix}=1\cdot(3-0)-2\cdot(0-1)+0=5.</md></p></solution>
+</exercise>
+<exercise>
+  <statement><p><m>D=\{(x,y):|x+2y|\le1,\ |3x-y|\le2\}</m> параллелограммын талбайг ол.</p></statement>
+  <hint><p><m>S(x,y)=(x+2y,\,3x-y)</m> шугаман буулгалт <m>D</m>-г <m>[-1,1]\times[-2,2]</m> тэгш өнцөгтөд буулгана.</p></hint>
+  <answer><p><m>\dfrac87</m>.</p></answer>
+  <solution><p><m>S=\begin{pmatrix}1&amp;2\\3&amp;-1\end{pmatrix}</m>, <m>\det S=-7\ne0</m>, <m>S(D)=[-1,1]\times[-2,2]</m>, талбай <m>8</m>. Теорем <xref ref="w14-thm-linear" text="global"/>-аар <m>8=|S(D)|=7|D|</m>, иймд <m>|D|=\frac87</m>.</p></solution>
+</exercise>
+</section>
+
+<section ref="w14-s2">
+<exercise>
+  <statement><p><m>x+y=0</m>, <m>x+y=2</m>, <m>x-2y=0</m>, <m>x-2y=3</m> шулуунуудаар хашигдсан <m>D</m> параллелограмм дээр <m>\displaystyle\iint_D(x+y)\,dx\,dy</m>-ийг ол.</p></statement>
+  <hint><p><m>u=x+y</m>, <m>v=x-2y</m>. <m>\frac{\partial(u,v)}{\partial(x,y)}=-3</m>.</p></hint>
+  <answer><p><m>2</m>.</p></answer>
+  <solution><p><m>u=x+y\in[0,2]</m>, <m>v=x-2y\in[0,3]</m>. <m>\frac{\partial(u,v)}{\partial(x,y)}=\det\begin{pmatrix}1&amp;1\\1&amp;-2\end{pmatrix}=-3</m> тул <m>\left|\frac{\partial(x,y)}{\partial(u,v)}\right|=\frac13</m>. Иймд
+  <md>\iint_D(x+y)\,dx\,dy=\frac13\int_0^2u\,du\int_0^3dv=\frac13\cdot2\cdot3=2.</md></p></solution>
+</exercise>
+<exercise>
+  <statement><p>Нэгдүгээр мөчид <m>y=x^2</m>, <m>y=2x^2</m>, <m>x=y^2</m>, <m>x=3y^2</m> муруйнуудаар хашигдсан мужийн талбайг ол.</p></statement>
+  <hint><p><m>u=\frac y{x^2}\in[1,2]</m>, <m>v=\frac x{y^2}\in[1,3]</m>. <m>uv=\frac1{xy}</m> гэдгийг ашиглаж якобианыг <m>u,v</m>-ээр илэрхийл.</p></hint>
+  <answer><p><m>\dfrac19</m>.</p></answer>
+  <solution><p><m>u=yx^{-2}</m>, <m>v=xy^{-2}</m>:
+  <md>\frac{\partial(u,v)}{\partial(x,y)}=\det\begin{pmatrix}-2y/x^3&amp;1/x^2\\1/y^2&amp;-2x/y^3\end{pmatrix}=\frac4{x^2y^2}-\frac1{x^2y^2}=\frac3{x^2y^2}=3u^2v^2,</md>
+  учир нь <m>uv=\frac1{xy}</m>. Буулгалт нь <m>x,y&gt;0</m> дээр нэг-нэгт (<m>x^3=\frac1{u^2v}</m>, <m>y=ux^2</m>). Иймд
+  <md>|D|=\int_1^2\!\!\int_1^3\frac{du\,dv}{3u^2v^2}=\frac13\cdot\frac12\cdot\frac23=\frac19.</md></p></solution>
+</exercise>
+<exercise>
+  <statement><p><m>\varphi(u,v)=(u^2-v^2,\ 2uv)</m> буулгалтын якобианыг олж, <m>Q=[0,1]^2</m> квадратын дүр <m>\varphi(Q)</m>-ийн талбайг ол.</p></statement>
+  <hint><p>Комплекс хэлбэрээр <m>\varphi(w)=w^2</m>; нэгдүгээр мөчид <m>\varphi</m> нь өнцгийг хоёр дахин томруулдаг тул нэг-нэгт. Теорем <xref ref="w14-thm-cov-weak" text="global"/>.</p></hint>
+  <answer><p><m>J_\varphi=4(u^2+v^2)</m>, <m>|\varphi(Q)|=\dfrac83</m>.</p></answer>
+  <solution><p><m>J_\varphi=\det\begin{pmatrix}2u&amp;-2v\\2v&amp;2u\end{pmatrix}=4(u^2+v^2)</m>; энэ нь зөвхөн <m>(0,0)</m> дээр тэг. Туйлын координатад <m>\varphi(\rho e^{i\alpha})=\rho^2e^{2i\alpha}</m>, <m>\alpha\in[0,\frac\pi2]</m> үед <m>2\alpha\in[0,\pi]</m> тул <m>\varphi</m> нь <m>Q\setminus\{0\}</m> дээр нэг-нэгт. Теорем <xref ref="w14-thm-cov-weak" text="global"/>-ээр (<m>Z=\{0\}</m>)
+  <md>|\varphi(Q)|=\iint_Q4(u^2+v^2)\,du\,dv=4\left(\frac13+\frac13\right)=\frac83.</md></p></solution>
+</exercise>
+</section>
+
+<section ref="w14-s3">
+<exercise>
+  <statement><p><m>D=\{1\le x^2+y^2\le4,\ 0\le y\le x\}</m> дээр <m>\displaystyle\iint_D\arctan\frac yx\,dx\,dy</m>-ийг ол.</p></statement>
+  <hint><p>Туйлын координатад <m>D</m> нь <m>[1,2]\times[0,\frac\pi4]</m> тэгш өнцөгт, <m>\arctan\frac yx=\theta</m>.</p></hint>
+  <answer><p><m>\dfrac{3\pi^2}{64}</m>.</p></answer>
+  <solution><p><m>x&gt;0</m> тул <m>\arctan\frac yx=\theta</m>:
+  <md>\int_0^{\pi/4}\theta\,d\theta\int_1^2r\,dr=\frac{\pi^2}{32}\cdot\frac32=\frac{3\pi^2}{64}.</md></p></solution>
+</exercise>
+<exercise>
+  <statement><p><m>r=3\cos\theta</m> тойргийн дотор, <m>r=1+\cos\theta</m> кардиоидын гадна орших мужийн талбайг ол.</p></statement>
+  <hint><p>Огтлолцол: <m>3\cos\theta=1+\cos\theta\iff\cos\theta=\frac12</m>, <m>\theta=\pm\frac\pi3</m>.</p></hint>
+  <answer><p><m>\pi</m>.</p></answer>
+  <solution><p>Муж: <m>|\theta|\le\frac\pi3</m>, <m>1+\cos\theta\le r\le3\cos\theta</m>. Иймд
+  <md><mrow>S&amp;=\frac12\int_{-\pi/3}^{\pi/3}\bigl(9\cos^2\theta-(1+\cos\theta)^2\bigr)d\theta=\frac12\int_{-\pi/3}^{\pi/3}\bigl(8\cos^2\theta-2\cos\theta-1\bigr)d\theta</mrow><mrow>&amp;=\frac12\int_{-\pi/3}^{\pi/3}\bigl(3+4\cos2\theta-2\cos\theta\bigr)d\theta=\frac12\Bigl(2\pi+4\sin\frac{2\pi}3-4\sin\frac\pi3\Bigr)=\pi.</mrow></md></p></solution>
+</exercise>
+<exercise>
+  <statement><p><m>D=\{x^2+y^2\le2y\}</m> дээр <m>\displaystyle\iint_Dx^2\,dx\,dy</m>-ийг ол.</p></statement>
+  <hint><p>Туйлын координатад <m>r\le2\sin\theta</m>, <m>0\le\theta\le\pi</m>. <m>\int_0^\pi\sin^4\theta\cos^2\theta\,d\theta=\frac\pi{16}</m>.</p></hint>
+  <answer><p><m>\dfrac\pi4</m>.</p></answer>
+  <solution><p>
+  <md>\int_0^\pi\cos^2\theta\,d\theta\int_0^{2\sin\theta}r^3\,dr=\int_0^\pi4\sin^4\theta\cos^2\theta\,d\theta=4\cdot\frac\pi{16}=\frac\pi4.</md>
+  (<m>\sin^4\theta\cos^2\theta=\frac18\sin^22\theta(1-\cos2\theta)</m>; <m>[0,\pi]</m> дээр <m>\sin^22\theta\cos2\theta</m>-ийн интеграл <m>0</m>, <m>\sin^22\theta</m>-ийнх <m>\frac\pi2</m>.)</p></solution>
+</exercise>
+</section>
+
+<section ref="w14-s4">
+<exercise>
+  <statement><p><m>z=\sqrt{x^2+y^2}</m> конус ба <m>z=1</m> хавтгайгаар хашигдсан <m>V</m> бие дээр <m>\displaystyle\iiint_V(x^2+y^2)\,dx\,dy\,dz</m>-ийг ол.</p></statement>
+  <hint><p>Цилиндр координатад <m>r\le z\le1</m>, <m>0\le r\le1</m>.</p></hint>
+  <answer><p><m>\dfrac\pi{10}</m>.</p></answer>
+  <solution><p>
+  <md>\int_0^{2\pi}d\theta\int_0^1r^2\cdot r\,dr\int_r^1dz=2\pi\int_0^1(r^3-r^4)\,dr=2\pi\Bigl(\frac14-\frac15\Bigr)=\frac\pi{10}.</md></p></solution>
+</exercise>
+<exercise>
+  <statement><p><m>\displaystyle\iiint_{1\le x^2+y^2+z^2\le4}\frac{dx\,dy\,dz}{x^2+y^2+z^2}</m>-ийг ол.</p></statement>
+  <answer><p><m>4\pi</m>.</p></answer>
+  <solution><p>Бөмбөрцөг координатаар:
+  <md>\int_0^{2\pi}d\theta\int_0^\pi\sin\phi\,d\phi\int_1^2\frac{\rho^2}{\rho^2}\,d\rho=2\pi\cdot2\cdot1=4\pi.</md></p></solution>
+</exercise>
+<exercise>
+  <statement><p><m>x^2+y^2+z^2\le4</m> бөмбөлгийн <m>z\ge1</m> хэсгийн (бөмбөлгийн сегмент) эзлэхүүнийг цилиндр координатаар ол.</p></statement>
+  <hint><p>Огтлолцол: <m>r^2+1=4</m>, <m>r=\sqrt3</m>. <m>1\le z\le\sqrt{4-r^2}</m>.</p></hint>
+  <answer><p><m>\dfrac{5\pi}3</m>.</p></answer>
+  <solution><p>
+  <md>|V|=\int_0^{2\pi}d\theta\int_0^{\sqrt3}\bigl(\sqrt{4-r^2}-1\bigr)r\,dr=2\pi\Bigl[-\frac13(4-r^2)^{3/2}-\frac{r^2}2\Bigr]_0^{\sqrt3}=2\pi\Bigl(-\frac13-\frac32+\frac83\Bigr)=\frac{5\pi}3.</md>
+  (Шалгалт: сегментийн томьёо <m>\frac{\pi h^2(3R-h)}3</m>, <m>R=2</m>, <m>h=1</m>.)</p></solution>
+</exercise>
+</section>
+
+<section ref="w14-s5">
+<exercise>
+  <statement><p><m>\displaystyle\iint_{\R^2}(x^2+y^2)e^{-(x^2+y^2)}\,dx\,dy</m> нийлэхийг шалгаж, утгыг ол.</p></statement>
+  <hint><p>Функц эерэг тул дугуйн шавхалт хангалттай (Теорем <xref ref="w14-thm-improper-pos" text="global"/>).</p></hint>
+  <answer><p><m>\pi</m>.</p></answer>
+  <solution><p>
+  <md>\iint_{r\le R}=2\pi\int_0^Rr^3e^{-r^2}dr\overset{t=r^2}{=}\pi\int_0^{R^2}te^{-t}dt=\pi\bigl(1-(1+R^2)e^{-R^2}\bigr)\to\pi.</md></p></solution>
+</exercise>
+<exercise>
+  <statement><p><m>\alpha&gt;0</m>-ийн ямар утгад <m>\displaystyle\iint_{[0,1]^2\setminus\{(0,0)\}}\frac{dx\,dy}{(x+y)^\alpha}</m> нийлэх вэ?</p></statement>
+  <hint><p><m>x,y\ge0</m> үед <m>r\le x+y\le\sqrt2\,r</m>, <m>r=\sqrt{x^2+y^2}</m>. Мөн <m>\{r\le1,\ x,y\ge0\}\subset[0,1]^2\subset\{r\le\sqrt2,\ x,y\ge0\}</m>.</p></hint>
+  <answer><p><m>\alpha&lt;2</m>.</p></answer>
+  <solution><p>Функц эерэг тул <m>E_k=[0,1]^2\cap\{r\ge\frac1k\}</m> шавхалт хангалттай. Зааврын тэнцэтгэл бишүүдээр
+  <md>2^{-\alpha/2}\iint_{\frac1k\le r\le1,\ x,y\ge0}\frac{dx\,dy}{r^\alpha}\le\iint_{E_k}\frac{dx\,dy}{(x+y)^\alpha}\le\iint_{\frac1k\le r\le\sqrt2,\ x,y\ge0}\frac{dx\,dy}{r^\alpha}.</md>
+  Туйлын координатаар хоёр захын интеграл нь <m>\frac\pi2\int r^{1-\alpha}dr</m> бөгөөд <m>k\to\infty</m> үед <m>\alpha&lt;2</m> бол зааглагдсан, <m>\alpha\ge2</m> бол <m>\infty</m> руу тэмүүлнэ (Жишээ <xref ref="w14-ex-alpha" text="global"/>). Иймд интеграл яг <m>\alpha&lt;2</m> үед нийлнэ.</p></solution>
+</exercise>
+<exercise>
+  <statement><p>Бета функц ашиглан бод:
+  <ol marker="(a)">
+    <li><p><m>\displaystyle\int_0^{\pi/2}\sin^3t\cos^5t\,dt</m>;</p></li>
+    <li><p><m>\displaystyle\int_0^1x^4\sqrt{1-x^2}\,dx</m>.</p></li>
+  </ol></p></statement>
+  <hint><p>(a) <m>\int_0^{\pi/2}\sin^{2a-1}t\cos^{2b-1}t\,dt=\frac12B(a,b)</m>. (b) <m>x=\sqrt v</m> орлуулга. <m>\Gamma(\frac32)=\frac{\sqrt\pi}2</m>, <m>\Gamma(\frac52)=\frac{3\sqrt\pi}4</m>.</p></hint>
+  <answer><p>(a) <m>\dfrac1{24}</m>; (b) <m>\dfrac\pi{32}</m>.</p></answer>
+  <solution><p>(a) <m>2a-1=3</m>, <m>2b-1=5</m>: <m>a=2</m>, <m>b=3</m>. <m>\frac12B(2,3)=\frac12\cdot\frac{\Gamma(2)\Gamma(3)}{\Gamma(5)}=\frac12\cdot\frac{1\cdot2}{24}=\frac1{24}</m>.</p>
+  <p>(b) <m>x=\sqrt v</m>, <m>dx=\frac{dv}{2\sqrt v}</m>:
+  <md>\int_0^1x^4\sqrt{1-x^2}\,dx=\frac12\int_0^1v^{3/2}(1-v)^{1/2}dv=\frac12B\Bigl(\frac52,\frac32\Bigr)=\frac12\cdot\frac{\frac{3\sqrt\pi}4\cdot\frac{\sqrt\pi}2}{\Gamma(4)}=\frac12\cdot\frac{3\pi/8}{6}=\frac\pi{32}.</md></p></solution>
+</exercise>
+</section>
+
+<section ref="w14-s6">
+<exercise>
+  <statement><p><m>\R^n</m>-д <m>\displaystyle\int_{|x|\le1}|x|^2\,dx=\frac{n\,\omega_n}{n+2}</m> гэж батал. <m>n=3</m> үед бөмбөлгийн жишээний хариутай тулга.</p></statement>
+  <hint><p>Өгүүлбэр <xref ref="w14-prop-radial" text="global"/>, <m>g(r)=r^2</m>.</p></hint>
+  <solution><p>Өгүүлбэрээр <m>\int_{|x|\le1}|x|^2dx=n\omega_n\int_0^1r^2\cdot r^{n-1}dr=\frac{n\omega_n}{n+2}</m>. <m>n=3</m>: <m>\frac{3\cdot\frac43\pi}{5}=\frac{4\pi}5</m> нь <m>\iiint_{B_1}(x^2+y^2+z^2)\,dV=\frac{4\pi R^5}5\big|_{R=1}</m>-тэй давхцана.</p></solution>
+</exercise>
+<exercise>
+  <statement><p><m>\alpha</m>-ийн ямар утгад <m>\displaystyle\int_{\R^n}\frac{dx}{(1+|x|^2)^\alpha}</m> нийлэх вэ?</p></statement>
+  <hint><p>Бөмбөлгийн шавхалт ба Өгүүлбэр <xref ref="w14-prop-radial" text="global"/>. Их <m>r</m>-д <m>\frac{r^{n-1}}{(1+r^2)^\alpha}\sim r^{n-1-2\alpha}</m>.</p></hint>
+  <answer><p><m>\alpha&gt;\dfrac n2</m>.</p></answer>
+  <solution><p>Функц эерэг тул <m>E_k=\{|x|\le k\}</m> шавхалт хангалттай: <m>\int_{E_k}=n\omega_n\int_0^k\frac{r^{n-1}dr}{(1+r^2)^\alpha}</m>. <m>r\ge1</m> үед <m>r^2\le1+r^2\le2r^2</m> тул интеграл доорх функц <m>r^{n-1-2\alpha}</m>-тэй харьцуулагдана; <m>\int_1^\infty r^{n-1-2\alpha}dr</m> нь <m>n-1-2\alpha&lt;-1</m>, өөрөөр хэлбэл <m>\alpha&gt;\frac n2</m> үед л нийлнэ. <m>[0,1]</m> дээрх хэсэг төгсгөлөг.</p></solution>
+</exercise>
+<exercise>
+  <statement><p>Тал нь <m>2</m> куб <m>[-1,1]^n</m>-д багтсан нэгж бөмбөлгийн эзлэхүүний эзлэх хувь <m>\frac{\omega_n}{2^n}</m>-ийг <m>n=2,3,10</m> үед ол.</p></statement>
+  <hint><p><m>\omega_{10}=\frac{\pi^5}{5!}</m>.</p></hint>
+  <answer><p><m>\frac\pi4\approx0.785</m>, <m>\frac\pi6\approx0.524</m>, <m>\frac{\pi^5}{120\cdot1024}\approx0.0025</m>.</p></answer>
+  <solution><p>Теорем <xref ref="w14-thm-ball" text="global"/>-аар <m>\omega_2=\pi</m>, <m>\omega_3=\frac{4\pi}3</m>, <m>\omega_{10}=\frac{\pi^5}{\Gamma(6)}=\frac{\pi^5}{120}\approx2.550</m>. Харьцаанууд: <m>\frac\pi4\approx0.785</m>, <m>\frac{4\pi/3}8=\frac\pi6\approx0.524</m>, <m>\frac{2.550}{1024}\approx0.0025</m>. Арван хэмжээст кубын эзлэхүүний <m>0.25\%</m> хүрэхгүй нь л багтсан бөмбөлөгт ногдоно.</p></solution>
+</exercise>
+</section>
+
+<section ref="w14-s7">
+<exercise>
+  <statement><p><m>R</m> радиустай бөмбөлгийн нягт нь төвөөс хүртэлх зайтай тэнцүү (<m>\rho=|r|</m>) бол массыг ол.</p></statement>
+  <answer><p><m>\pi R^4</m>.</p></answer>
+  <solution><p><m>m=\int_0^{2\pi}d\theta\int_0^\pi\sin\phi\,d\phi\int_0^R\rho\cdot\rho^2d\rho=4\pi\cdot\frac{R^4}4=\pi R^4</m>.</p></solution>
+</exercise>
+<exercise>
+  <statement><p>Масс нь <m>M</m> нэгэн төрлийн зузаан бөмбөрцөг давхарга <m>R_1\le|r|\le R_2</m>-ийн диаметрийн хувьд инерцийн моментыг ол. <m>R_1\to R_2=R</m> үед (нимгэн бүрхүүл) хязгаарыг ол.</p></statement>
+  <hint><p>Тэгш хэмээр <m>\iiint(x^2+y^2)=\frac23\iiint|r|^2</m>. <m>\frac{R_2^5-R_1^5}{R_2^3-R_1^3}\to\frac53R^2</m>.</p></hint>
+  <answer><p><m>I=\dfrac25M\dfrac{R_2^5-R_1^5}{R_2^3-R_1^3}</m>; нимгэн бүрхүүлд <m>\dfrac23MR^2</m>.</p></answer>
+  <solution><p>Нягт <m>\rho_0</m> бол <m>M=\frac43\pi\rho_0(R_2^3-R_1^3)</m>,
+  <md>I_z=\rho_0\iiint(x^2+y^2)\,dV=\frac23\rho_0\cdot4\pi\int_{R_1}^{R_2}\rho^4d\rho=\frac{8\pi\rho_0}{15}(R_2^5-R_1^5)=\frac25M\frac{R_2^5-R_1^5}{R_2^3-R_1^3}.</md>
+  <m>R_1\to R</m> үед Лопиталийн дүрмээр (эсвэл <m>\frac{a^5-b^5}{a^3-b^3}</m>-ийг задалж) харьцаа <m>\frac{5R^4}{3R^2}=\frac53R^2</m> руу тэмүүлэх тул <m>I\to\frac23MR^2</m>.</p></solution>
+</exercise>
+<exercise>
+  <statement><p><m>z=x^2+y^2</m> параболоид ба <m>z=4</m> хавтгайгаар хашигдсан нэгэн төрлийн биеийн массын төвийг ол.</p></statement>
+  <hint><p>Эзлэхүүн <m>8\pi</m> (бүлгийн жишээ). Тэгш хэмээр <m>\bar x=\bar y=0</m>.</p></hint>
+  <answer><p><m>\left(0,0,\frac83\right)</m>.</p></answer>
+  <solution><p>Цилиндр координатаар
+  <md>\iiint_Vz\,dV=\int_0^{2\pi}d\theta\int_0^2r\,dr\int_{r^2}^4z\,dz=2\pi\int_0^2\frac{16-r^4}2\,r\,dr=\pi\Bigl(32-\frac{32}3\Bigr)=\frac{64\pi}3.</md>
+  <m>\bar z=\frac{64\pi/3}{8\pi}=\frac83</m>.</p></solution>
+</exercise>
+</section>
+
+<homework>
+<exercise>
+  <statement><p><m>\displaystyle\iint_{\R^2}e^{-(2x^2+2xy+5y^2)}\,dx\,dy</m>-ийг шугаман орлуулгаар ол.</p></statement>
+  <hint><p><m>2x^2+2xy+5y^2=2\left(x+\frac y2\right)^2+\frac92y^2</m>.</p></hint>
+  <answer><p><m>\dfrac\pi3</m>.</p></answer>
+  <solution><p><m>u=\sqrt2\left(x+\frac y2\right)</m>, <m>v=\frac3{\sqrt2}y</m> гэвэл <m>u^2+v^2=2x^2+2xy+5y^2</m>,
+  <md>\frac{\partial(u,v)}{\partial(x,y)}=\det\begin{pmatrix}\sqrt2&amp;\frac{\sqrt2}2\\0&amp;\frac3{\sqrt2}\end{pmatrix}=3.</md>
+  Шугаман орлуулга <m>\R^2</m>-ийн шавхалтыг шавхалт руу буулгах тул <m>\iint e^{-(u^2+v^2)}\frac{du\,dv}3=\frac\pi3</m>. (Ерөнхий томьёо <m>\frac{\pi}{\sqrt{\det A}}</m>, <m>A=\begin{pmatrix}2&amp;1\\1&amp;5\end{pmatrix}</m>, <m>\det A=9</m>-тэй тохирно.)</p></solution>
+</exercise>
+<exercise>
+  <statement><p><m>(x^2+y^2+z^2)^2=z</m> гадаргуугаар хашигдсан биеийн эзлэхүүнийг ол.</p></statement>
+  <hint><p>Бөмбөрцөг координатад <m>\rho^4=\rho\cos\phi</m>, өөрөөр хэлбэл <m>\rho^3=\cos\phi</m>, <m>0\le\phi\le\frac\pi2</m>.</p></hint>
+  <answer><p><m>\dfrac\pi3</m>.</p></answer>
+  <solution><p>Бие: <m>0\le\phi\le\frac\pi2</m>, <m>0\le\rho\le(\cos\phi)^{1/3}</m>. Иймд
+  <md>|V|=\int_0^{2\pi}d\theta\int_0^{\pi/2}\sin\phi\,d\phi\int_0^{(\cos\phi)^{1/3}}\rho^2d\rho=2\pi\int_0^{\pi/2}\frac{\cos\phi\sin\phi}3\,d\phi=2\pi\cdot\frac16=\frac\pi3.</md></p></solution>
+</exercise>
+<exercise>
+  <statement><p>(Дирихлегийн томьёо) <m>p,q&gt;0</m>, <m>T=\{x,y&gt;0,\ x+y&lt;1\}</m> бол
+  <md>\iint_Tx^{p-1}y^{q-1}\,dx\,dy=\frac{\Gamma(p)\Gamma(q)}{\Gamma(p+q+1)}</md>
+  гэж <m>x=uv</m>, <m>y=u(1-v)</m> орлуулгаар батал. <m>p=q=\frac12</m> үед утгыг ол.</p></statement>
+  <hint><p>Теорем <xref ref="w14-thm-beta" text="global"/>-ийн баталгаанд <m>J=-u</m> гэж гарсан; <m>T</m> нь <m>(0,1)\times(0,1)</m> руу буулгагдана.</p></hint>
+  <answer><p><m>p=q=\frac12</m> үед <m>\pi</m>.</p></answer>
+  <solution><p><m>\varphi(u,v)=(uv,u(1-v))</m> нь <m>(0,1)^2</m>-оос <m>T</m> руу диффеоморфизм (<m>u=x+y\in(0,1)</m>, <m>v=\frac x{x+y}</m>), <m>|J|=u</m>. Функц эерэг тул <m>[\frac1k,1-\frac1k]^2</m> шавхалтын дүр нь <m>T</m>-ийн шавхалт болж, Теорем <xref ref="w14-thm-cov" text="global"/> ба Фубиниор
+  <md>\iint_Tx^{p-1}y^{q-1}=\int_0^1u^{p+q-1}du\int_0^1v^{p-1}(1-v)^{q-1}dv=\frac{B(p,q)}{p+q}=\frac{\Gamma(p)\Gamma(q)}{(p+q)\Gamma(p+q)}=\frac{\Gamma(p)\Gamma(q)}{\Gamma(p+q+1)}.</md>
+  <m>p=q=\frac12</m>: <m>\frac{\Gamma(\frac12)^2}{\Gamma(2)}=\pi</m>.</p></solution>
+</exercise>
+<exercise>
+  <statement><p><m>V=\{x,y,z\ge0,\ \sqrt x+\sqrt y+\sqrt z\le1\}</m> биеийн эзлэхүүнийг ол.</p></statement>
+  <hint><p><m>x=u^2</m>, <m>y=v^2</m>, <m>z=w^2</m> (<m>J=8uvw</m>) орлуулаад, <m>\Delta_3=\{u,v,w\ge0,\ u+v+w\le1\}</m> симплекс дээр <m>\iiint uvw</m>-г ол. <m>\iiint_{\Delta_3}uvw=\frac{\Gamma(2)^3}{\Gamma(7)}</m> (өмнөх бодлогын гурван хэмжээст хувилбар) эсвэл шууд Фубиниор.</p></hint>
+  <answer><p><m>\dfrac1{90}</m>.</p></answer>
+  <solution><p>Орлуулга нь <m>\Delta_3</m>-ийн дотоод хэсгээс <m>V</m>-ийн дотоод хэсэг рүү диффеоморфизм, <m>J=8uvw</m>. Иймд <m>|V|=8\iiint_{\Delta_3}uvw</m>. Фубиниор
+  <md>\iiint_{\Delta_3}uvw=\int_0^1u\,du\int_0^{1-u}v\,dv\int_0^{1-u-v}w\,dw=\int_0^1u\,du\int_0^{1-u}\frac{v(1-u-v)^2}2\,dv=\int_0^1\frac{u(1-u)^4}{24}\,du=\frac1{24}\cdot\frac1{30}=\frac1{720}.</md>
+  (<m>\int_0^av(a-v)^2dv=\frac{a^4}{12}</m>, <m>\int_0^1u(1-u)^4du=B(2,5)=\frac1{30}</m>.) <m>|V|=\frac8{720}=\frac1{90}</m>.</p></solution>
+</exercise>
+<exercise>
+  <statement><p>Радиус <m>R</m>, гадаргын нягт <m>\rho_0</m> нэгэн төрлийн дискийн тэнхлэг дээрх (төвөөс <m>h&gt;0</m> зайтай) <m>P</m> цэг дэх потенциал
+  <md>u(P)=\iint_{x^2+y^2\le R^2}\frac{\rho_0\,dx\,dy}{\sqrt{x^2+y^2+h^2}}</md>
+  -ийг ол. <m>h\to\infty</m> үед <m>u(P)\approx\frac Mh</m> (<m>M=\pi R^2\rho_0</m>) гэж харуул.</p></statement>
+  <answer><p><m>u(P)=2\pi\rho_0\left(\sqrt{R^2+h^2}-h\right)</m>.</p></answer>
+  <solution><p>Туйлын координатаар <m>u=2\pi\rho_0\int_0^R\frac{r\,dr}{\sqrt{r^2+h^2}}=2\pi\rho_0\Bigl[\sqrt{r^2+h^2}\Bigr]_0^R=2\pi\rho_0\bigl(\sqrt{R^2+h^2}-h\bigr)</m>. Мөн
+  <md>\sqrt{R^2+h^2}-h=\frac{R^2}{\sqrt{R^2+h^2}+h}=\frac{R^2}{2h}\bigl(1+o(1)\bigr)\quad(h\to\infty),</md>
+  иймд <m>u(P)=\frac{\pi R^2\rho_0}h(1+o(1))=\frac Mh(1+o(1))</m> — алсаас диск цэгэн масс шиг үйлчилнэ.</p></solution>
+</exercise>
+</homework>
+</ai>

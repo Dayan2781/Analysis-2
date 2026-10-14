@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ai>
+<preview>
+<exploration xml:id="w15-preview">
+  <title>Хүчний ажил замаас хамаарах уу? (AI)</title>
+  <introduction>
+    <p>Тогтмол хүч <m>F</m> шулуун замаар <m>\Delta r</m> шилжүүлэхэд хийх ажил <m>F\cdot\Delta r</m>. Хүч цэгээс цэгт өөрчлөгдөж, зам муруй байвал жижиг шилжилтүүд дээрх ажлыг нэмнэ: <m>r(t)</m>, <m>t\in[a,b]</m> замын хувьд ажил <m>\int_a^bF(r(t))\cdot r'(t)\,dt</m>. <m>O(0,0)</m>-оос <m>A(1,1)</m> хүртэл хоёр замыг харьцуулъя: <m>\gamma_1</m>: <m>r(t)=(t,t)</m> ба <m>\gamma_2</m>: <m>r(t)=(t,t^2)</m>, <m>t\in[0,1]</m>.</p>
+  </introduction>
+  <task>
+    <statement><p><m>F=(x,y)</m> хүчний <m>\gamma_1</m> ба <m>\gamma_2</m> замаар хийх ажлыг ол.</p></statement>
+    <answer><p><m>\gamma_1</m>: <m>\int_0^1(t+t)\,dt=1</m>; <m>\gamma_2</m>: <m>\int_0^1(t+t^2\cdot2t)\,dt=\frac12+\frac12=1</m>. Ижил.</p></answer>
+  </task>
+  <task>
+    <statement><p><m>F=(-y,x)</m> хүчний хувьд адил тооцоог хий.</p></statement>
+    <answer><p><m>\gamma_1</m>: <m>\int_0^1(-t+t)\,dt=0</m>; <m>\gamma_2</m>: <m>\int_0^1(-t^2+2t^2)\,dt=\frac13</m>. Ялгаатай.</p></answer>
+  </task>
+  <task>
+    <statement><p><m>\gamma_2</m>-оор <m>A</m> хүрээд <m>\gamma_1</m>-ээр буцаж <m>O</m>-д ирэх битүү замын хувьд <m>F=(-y,x)</m>-ийн ажил хэд вэ? Хоёр муруйн хоорондох мужийн талбайн хоёр дахинтай харьцуул.</p></statement>
+    <hint><p>Буцах замд ажил тэмдгээ өөрчилнө. Талбай <m>\int_0^1(t-t^2)\,dt</m>.</p></hint>
+    <answer><p>Ажил <m>\frac13-0=\frac13</m>; талбай <m>\frac16</m>, хоёр дахин нь <m>\frac13</m> — тэнцүү! Энэ нь энэ бүлгийн Грийний томьёоны (<m>Q_x-P_y=2</m>) илрэл. <m>F=(x,y)=\nabla\frac{x^2+y^2}2</m> үед ажил замаас хамаараагүйг потенциалын онол тайлбарлана.</p></answer>
+  </task>
+</exploration>
+</preview>
+
+<section ref="w15-s1">
+<exercise>
+  <statement><p><m>r(t)=(t^2,\ t^3-3t)</m>, <m>t\in[-2,2]</m> зам гөлгөр үү? Энгийн үү?</p></statement>
+  <hint><p><m>r(t_1)=r(t_2)</m>, <m>t_1\ne t_2</m> бол <m>t_1^2=t_2^2</m> тул <m>t_2=-t_1</m>.</p></hint>
+  <answer><p>Гөлгөр боловч энгийн биш: <m>r(-\sqrt3)=r(\sqrt3)=(3,0)</m>.</p></answer>
+  <solution><p><m>r'(t)=(2t,\ 3t^2-3)</m>. Эхний байгуулагч зөвхөн <m>t=0</m> үед тэг, тэр үед хоёр дахь нь <m>-3\ne0</m>; иймд <m>r'(t)\ne0</m> бүх <m>t</m>-д, <m>r\in C^1</m> — зам гөлгөр. <m>r(t_1)=r(t_2)</m>, <m>t_1\ne t_2</m> бол <m>t_2=-t_1</m> ба <m>t_1^3-3t_1=-(t_1^3-3t_1)</m>, өөрөөр хэлбэл <m>t_1(t_1^2-3)=0</m>; <m>t_1\ne0</m> тул <m>t_1=\pm\sqrt3</m>. Иймд <m>(3,0)</m> цэгт муруй өөрийгөө огтлох тул энгийн биш (гөлгөр чанар нь өөрийгөө огтлохыг хориглодоггүй).</p></solution>
+</exercise>
+<exercise>
+  <statement><p>Мушгиа шугам <m>r(t)=(\cos t,\sin t,t)</m>-ийн <m>t=\frac\pi2</m> цэг дээрх нэгж шүргэгч вектор ба шүргэгч шулууны тэгшитгэлийг ол.</p></statement>
+  <answer><p><m>T=\frac1{\sqrt2}(-1,0,1)</m>; шулуун: <m>\left(0,1,\frac\pi2\right)+s(-1,0,1)</m>, <m>s\in\R</m>.</p></answer>
+  <solution><p><m>r'(t)=(-\sin t,\cos t,1)</m>, <m>r'(\frac\pi2)=(-1,0,1)</m>, <m>|r'|=\sqrt2</m>. Цэг <m>r(\frac\pi2)=(0,1,\frac\pi2)</m>. Шүргэгч шулуун <m>x=-s</m>, <m>y=1</m>, <m>z=\frac\pi2+s</m>.</p></solution>
+</exercise>
+<exercise>
+  <statement><p><m>A</m>-аас <m>B</m> хүртэлх хэрчмийн гөлгөр параметрчлэл <m>r(t)=A+t(B-A)</m>, <m>t\in[0,1]</m> өгөгдөв. <m>\varphi(\tau)=\tau^2</m>, <m>\tau\in[0,1]</m> гэвэл <m>r\circ\varphi</m> нь тодорхойлолтын утгаар дахин параметрчлэл мөн үү? <m>\varphi(\tau)=\frac{\tau+\tau^2}{2}</m> бол?</p></statement>
+  <answer><p>Эхнийх нь биш (<m>\varphi'(0)=0</m>), хоёр дахь нь мөн, чиглэлийг хадгална.</p></answer>
+  <solution><p>Дахин параметрчлэлд <m>\varphi'\ne0</m> хаа сайгүй шаардлагатай. <m>\varphi(\tau)=\tau^2</m>-ийн хувьд <m>\varphi'(0)=0</m> тул тохирохгүй (мөн <m>(r\circ\varphi)'(0)=0</m>, зам гөлгөр биш болно). <m>\varphi(\tau)=\frac{\tau+\tau^2}2</m> нь <m>[0,1]\to[0,1]</m>, <m>\varphi'(\tau)=\frac{1+2\tau}2\ge\frac12&gt;0</m> тул харилцан нэг утгатай, <m>C^1</m>, чиглэл хадгалах дахин параметрчлэл.</p></solution>
+</exercise>
+</section>
+
+<section ref="w15-s2">
+<exercise>
+  <statement><p><m>y=x^{3/2}</m>, <m>0\le x\le4</m> муруйн уртыг ол.</p></statement>
+  <answer><p><m>\dfrac8{27}\left(10\sqrt{10}-1\right)</m>.</p></answer>
+  <solution><p><m>y'=\frac32x^{1/2}</m>, <m>\sqrt{1+y'^2}=\sqrt{1+\frac94x}</m>:
+  <md>L=\int_0^4\sqrt{1+\tfrac94x}\,dx=\frac49\cdot\frac23\Bigl[\bigl(1+\tfrac94x\bigr)^{3/2}\Bigr]_0^4=\frac8{27}\bigl(10^{3/2}-1\bigr).</md></p></solution>
+</exercise>
+<exercise>
+  <statement><p><m>r(t)=(2t,\ t^2,\ \ln t)</m>, <m>t\in[1,e]</m> муруйн уртыг ол.</p></statement>
+  <hint><p><m>|r'(t)|^2=4+4t^2+\frac1{t^2}</m> нь бүтэн квадрат.</p></hint>
+  <answer><p><m>e^2</m>.</p></answer>
+  <solution><p><m>r'=(2,2t,\frac1t)</m>, <m>|r'|^2=4t^2+4+\frac1{t^2}=\left(2t+\frac1t\right)^2</m>. Иймд <m>L=\int_1^e\left(2t+\frac1t\right)dt=\Bigl[t^2+\ln t\Bigr]_1^e=e^2+1-1=e^2</m>.</p></solution>
+</exercise>
+<exercise>
+  <statement><p>Логарифм спираль <m>\rho=e^{-\theta}</m>, <m>\theta\in[0,\infty)</m> нь эх цэгийг хязгааргүй олон удаа тойрно. Түүний урт (<m>\theta\in[0,T]</m> үеийн уртын <m>T\to\infty</m> хязгаар) төгсгөлөг үү?</p></statement>
+  <answer><p>Тийм, <m>\sqrt2</m>.</p></answer>
+  <solution><p>Туйлын координатын уртын томьёогоор <m>\sqrt{\rho^2+\rho'^2}=\sqrt{2e^{-2\theta}}=\sqrt2e^{-\theta}</m>. <m>L_T=\int_0^T\sqrt2e^{-\theta}d\theta=\sqrt2(1-e^{-T})\to\sqrt2</m>.</p></solution>
+</exercise>
+</section>
+
+<section ref="w15-s3">
+<exercise>
+  <statement><p><m>\displaystyle\int_\gamma x\,ds</m>-ийг ол, <m>\gamma</m>: <m>y=x^2</m>, <m>0\le x\le1</m>.</p></statement>
+  <answer><p><m>\dfrac{5\sqrt5-1}{12}</m>.</p></answer>
+  <solution><p><m>r(x)=(x,x^2)</m>, <m>ds=\sqrt{1+4x^2}\,dx</m>:
+  <md>\int_0^1x\sqrt{1+4x^2}\,dx=\frac1{12}\Bigl[(1+4x^2)^{3/2}\Bigr]_0^1=\frac{5\sqrt5-1}{12}.</md></p></solution>
+</exercise>
+<exercise>
+  <statement><p><m>x^2+y^2=a^2</m> тойрог хэлбэртэй утасны нягт <m>\rho=|x|</m> бол массыг ол.</p></statement>
+  <answer><p><m>4a^2</m>.</p></answer>
+  <solution><p><m>x=a\cos t</m>, <m>y=a\sin t</m>, <m>ds=a\,dt</m>: <m>m=\int_0^{2\pi}a|\cos t|\,a\,dt=a^2\cdot4=4a^2</m> (<m>\int_0^{2\pi}|\cos t|\,dt=4</m>).</p></solution>
+</exercise>
+<exercise>
+  <statement><p>Нэгэн төрлийн (<m>\rho\equiv1</m>) мушгиа шугам <m>r(t)=(\cos t,\sin t,t)</m>, <m>t\in[0,2\pi]</m>-ийн <m>Oz</m> тэнхлэгтэй харьцуулсан инерцийн момент ба хүндийн төвийн <m>z_c</m> координатыг ол.</p></statement>
+  <answer><p><m>I_z=2\sqrt2\,\pi</m>, <m>z_c=\pi</m>.</p></answer>
+  <solution><p><m>ds=\sqrt2\,dt</m>, <m>x^2+y^2=1</m>. <m>I_z=\int_0^{2\pi}1\cdot\sqrt2\,dt=2\sqrt2\,\pi</m>. <m>m=2\sqrt2\,\pi</m>, <m>\int_\gamma z\,ds=\sqrt2\int_0^{2\pi}t\,dt=2\sqrt2\,\pi^2</m>, иймд <m>z_c=\pi</m>.</p></solution>
+</exercise>
+</section>
+
+<section ref="w15-s4">
+<exercise>
+  <statement><p><m>\displaystyle\int_\gamma y^2\,dx+x\,dy</m>-ийг <m>O(0,0)</m>-оос <m>A(1,1)</m> хүртэл (a) <m>y=x</m> хэрчмээр; (b) <m>y=x^3</m> муруйгаар ол.</p></statement>
+  <answer><p>(a) <m>\frac56</m>; (b) <m>\frac{25}{28}</m>.</p></answer>
+  <solution><p>(a) <m>x=y=t</m>: <m>\int_0^1(t^2+t)\,dt=\frac13+\frac12=\frac56</m>.</p>
+  <p>(b) <m>x=t</m>, <m>y=t^3</m>: <m>\int_0^1\bigl(t^6+t\cdot3t^2\bigr)dt=\frac17+\frac34=\frac{25}{28}</m>. Хариунууд ялгаатай тул энэ хэлбэр бүтэн дифференциал биш (<m>P_y=2y\ne1=Q_x</m>).</p></solution>
+</exercise>
+<exercise>
+  <statement><p><m>F=(z,x,y)</m> хүчний мушгиа шугам <m>r(t)=(\cos t,\sin t,t)</m>, <m>t</m>: <m>0\to2\pi</m> дагуу хийх ажлыг ол.</p></statement>
+  <answer><p><m>3\pi</m>.</p></answer>
+  <solution><p><m>F(r(t))\cdot r'(t)=t(-\sin t)+\cos t\cdot\cos t+\sin t\cdot1</m>. <m>\int_0^{2\pi}-t\sin t\,dt=\bigl[t\cos t-\sin t\bigr]_0^{2\pi}=2\pi</m>, <m>\int_0^{2\pi}\cos^2t\,dt=\pi</m>, <m>\int_0^{2\pi}\sin t\,dt=0</m>. Нийт <m>3\pi</m>.</p></solution>
+</exercise>
+<exercise>
+  <statement><p><m>C_R</m>: <m>x^2+y^2=R^2</m> тойрог бол
+  <md>\lim_{R\to\infty}\oint_{C_R}\frac{y\,dx-x\,dy}{(x^2+xy+y^2)^2}=0</md>
+  гэж <m>\bigl|\int_\gamma F\cdot dr\bigr|\le\max_\gamma|F|\cdot L(\gamma)</m> үнэлгээгээр батал.</p></statement>
+  <hint><p><m>x^2+xy+y^2\ge\frac12(x^2+y^2)</m>, учир нь <m>|xy|\le\frac12(x^2+y^2)</m>.</p></hint>
+  <solution><p><m>F=\frac{(y,-x)}{(x^2+xy+y^2)^2}</m>, <m>C_R</m> дээр <m>|(y,-x)|=R</m> ба <m>x^2+xy+y^2\ge\frac{R^2}2</m>. Иймд <m>|F|\le\frac{R}{R^4/4}=\frac4{R^3}</m>, <m>L(C_R)=2\pi R</m>, ба
+  <md>\Bigl|\oint_{C_R}F\cdot dr\Bigr|\le\frac4{R^3}\cdot2\pi R=\frac{8\pi}{R^2}\to0.</md></p></solution>
+</exercise>
+</section>
+
+<section ref="w15-s5">
+<exercise>
+  <statement><p>Грийний томьёогоор <m>\displaystyle\oint_\gamma xy\,dx+(x+y)\,dy</m>-ийг ол, <m>\gamma</m> — <m>(0,0)</m>, <m>(1,0)</m>, <m>(0,1)</m> оройтой гурвалжны хүрээ, эерэг чиглэлтэй.</p></statement>
+  <answer><p><m>\dfrac13</m>.</p></answer>
+  <solution><p><m>Q_x-P_y=1-x</m>. <m>D=\{0\le x\le1,\ 0\le y\le1-x\}</m>:
+  <md>\iint_D(1-x)\,dx\,dy=\int_0^1(1-x)^2dx=\frac13.</md></p></solution>
+</exercise>
+<exercise>
+  <statement><p><m>r(t)=(t^2-1,\ t^3-t)</m>, <m>t\in[-1,1]</m> гогцоогоор (<m>y^2=x^2(x+1)</m> муруйн гогцоо) хүрээлэгдсэн мужийн талбайг ол.</p></statement>
+  <hint><p>Мөрдөлгөө <xref ref="w15-cor-area" text="global"/>: <m>S=\frac12\oint x\,dy-y\,dx</m>. <m>x\,dy-y\,dx=(t^2-1)^2dt</m>.</p></hint>
+  <answer><p><m>\dfrac8{15}</m>.</p></answer>
+  <solution><p><m>r(-1)=r(1)=(0,0)</m> тул зам битүү, <m>(-1,1)</m> дээр нэг-нэгт.
+  <md>x\,y'-y\,x'=(t^2-1)(3t^2-1)-(t^3-t)\cdot2t=t^4-2t^2+1=(t^2-1)^2\ge0,</md>
+  иймд муруй цагийн зүүний эсрэг (эерэг) тойрогдоно ба
+  <md>S=\frac12\int_{-1}^1(t^2-1)^2dt=\frac12\Bigl(\frac25-\frac43+2\Bigr)=\frac12\cdot\frac{16}{15}=\frac8{15}.</md>
+  (Шалгалт: <m>S=2\int_{-1}^0|x|\sqrt{x+1}\,dx=\frac8{15}</m>.)</p></solution>
+</exercise>
+<exercise>
+  <statement><p><m>D=\{1\le x^2+y^2\le4\}</m> цагираг, <m>\partial D</m> эерэг чиглэлтэй бол <m>\displaystyle\oint_{\partial D}-y^3\,dx+x^3\,dy</m>-ийг ол.</p></statement>
+  <hint><p>Эерэг чиглэл: гадна тойргийг цагийн зүүний эсрэг, дотор тойргийг цагийн зүүгээр.</p></hint>
+  <answer><p><m>\dfrac{45\pi}2</m>.</p></answer>
+  <solution><p><m>Q_x-P_y=3x^2+3y^2</m>. Грийний томьёо (нүхтэй мужид, тайлбарыг үз) ба туйлын координатаар
+  <md>\iint_D3(x^2+y^2)\,dx\,dy=3\int_0^{2\pi}d\theta\int_1^2r^3dr=6\pi\cdot\frac{15}4=\frac{45\pi}2.</md>
+  Шууд шалгалт: радиус <m>\rho</m> тойрог дээр <m>-y^3x'+x^3y'=\rho^4(\sin^4t+\cos^4t)</m>, <m>\int_0^{2\pi}(\sin^4t+\cos^4t)\,dt=\frac{3\pi}2</m>; иймд <m>\frac{3\pi}2(16-1)=\frac{45\pi}2</m>.</p></solution>
+</exercise>
+</section>
+
+<section ref="w15-s6">
+<exercise>
+  <statement><p><m>(2x\cos y-y^2\sin x)\,dx+(2y\cos x-x^2\sin y)\,dy</m> нь бүтэн дифференциал гэж батлаад, <m>(0,0)</m>-ээс <m>\left(\pi,\frac\pi2\right)</m> хүртэлх интегралыг ол.</p></statement>
+  <answer><p><m>U=x^2\cos y+y^2\cos x</m>; интеграл <m>-\dfrac{\pi^2}4</m>.</p></answer>
+  <solution><p><m>P_y=-2x\sin y-2y\sin x=Q_x</m>, <m>\R^2</m> нэг холбоост тул Теорем <xref ref="w15-thm-closed-exact" text="global"/>-аар бүтэн дифференциал. <m>U_x=P</m>-ээс <m>U=x^2\cos y+y^2\cos x+c(y)</m>, <m>U_y=-x^2\sin y+2y\cos x+c'(y)=Q</m> тул <m>c</m> тогтмол. Интеграл <m>U(\pi,\frac\pi2)-U(0,0)=\pi^2\cdot0+\frac{\pi^2}4\cdot(-1)=-\frac{\pi^2}4</m>.</p></solution>
+</exercise>
+<exercise>
+  <statement><p><m>G=\R^2\setminus\{(0,0)\}</m> дээр <m>\omega=\dfrac{x\,dx+y\,dy}{x^2+y^2}</m> хэлбэр битүү гэж шалга. <m>G</m> нэг холбоост биш боловч <m>\omega</m> нь <m>G</m> дээр бүтэн дифференциал гэж харуул. Энэ нь Жишээ <xref ref="w15-ex-angle" text="global"/>-тэй зөрчилдөх үү?</p></statement>
+  <answer><p><m>\omega=d\left(\frac12\ln(x^2+y^2)\right)</m>; зөрчилдөхгүй.</p></answer>
+  <solution><p><m>P=\frac x{x^2+y^2}</m>, <m>Q=\frac y{x^2+y^2}</m>: <m>P_y=\frac{-2xy}{(x^2+y^2)^2}=Q_x</m>. <m>U=\frac12\ln(x^2+y^2)</m> нь <m>G</m> дээр <m>C^1</m> бөгөөд <m>U_x=P</m>, <m>U_y=Q</m>, иймд <m>\omega=dU</m> ба <m>G</m> дэх дурын битүү замаар интеграл <m>0</m>. Зөрчилгүй: нэг холбоост нөхцөл нь <em>хүрэлцээтэй</em> нөхцөл; нүхтэй мужид битүү хэлбэр бүтэн байж ч болно, байхгүй ч байж болно (өнцгийн хэлбэр — бүтэн биш).</p></solution>
+</exercise>
+<exercise>
+  <statement><p><m>\omega=\dfrac{x\,dy-y\,dx}{x^2+4y^2}</m> нь <m>\R^2\setminus\{0\}</m> дээр битүү гэж шалга. <m>\oint_\gamma\omega</m>-г (a) <m>x^2+4y^2=4</m> эллипс; (b) <m>x^2+y^2=1</m> тойрог (хоёулаа эерэг чиглэлтэй) дээр ол.</p></statement>
+  <hint><p>(a) <m>x=2\cos t</m>, <m>y=\sin t</m>. (b) Хоёр муруйн хоорондох мужид Грийнийг хэрэглэ (Мөрдөлгөө <xref ref="w15-cor-winding" text="global"/>-ийн баталгааны санаа).</p></hint>
+  <answer><p>Хоёулаа <m>\pi</m>.</p></answer>
+  <solution><p><m>P=\frac{-y}{x^2+4y^2}</m>, <m>Q=\frac x{x^2+4y^2}</m>: <m>Q_x=\frac{4y^2-x^2}{(x^2+4y^2)^2}=P_y</m>.</p>
+  <p>(a) <m>x=2\cos t</m>, <m>y=\sin t</m>: <m>x\,dy-y\,dx=(2\cos^2t+2\sin^2t)\,dt=2\,dt</m>, <m>x^2+4y^2=4</m>. Иймд <m>\oint=\int_0^{2\pi}\frac24\,dt=\pi</m>.</p>
+  <p>(b) <m>x^2+4y^2\ge x^2+y^2</m> тул нэгж тойрог эллипсийн дотор оршиж, түүнийг <m>(0,\pm1)</m> цэгүүдэд шүргэнэ. Тэдгээрийн хоорондох хоёр мужид (<m>x\ge0</m> ба <m>x\le0</m> хэсэг) тус бүр Грийний томьёог хэрэглээд нэмбэл <m>Q_x-P_y=0</m> тул <m>\oint_{\text{эллипс}}\omega-\oint_{\text{тойрог}}\omega=0</m>. Иймд <m>\oint_{x^2+y^2=1}\omega=\pi</m>. (Шууд шалгалт: <m>\int_0^{2\pi}\frac{dt}{1+3\sin^2t}=\frac{2\pi}{\sqrt{1\cdot4}}=\pi</m>.)</p></solution>
+</exercise>
+</section>
+
+<homework>
+<exercise>
+  <statement><p><m>r(t)=(3t,\ 3t^2,\ 2t^3)</m>, <m>t\in[0,1]</m> муруйн уртыг ол.</p></statement>
+  <answer><p><m>5</m>.</p></answer>
+  <solution><p><m>r'=(3,6t,6t^2)</m>, <m>|r'|^2=9+36t^2+36t^4=9(1+2t^2)^2</m>. <m>L=\int_0^13(1+2t^2)\,dt=3+2=5</m>.</p></solution>
+</exercise>
+<exercise>
+  <statement><p><m>m</m> тогтмол бол
+  <md>\int_{\gamma}(e^x\sin y-my)\,dx+(e^x\cos y-m)\,dy</md>
+  -ийг ол, <m>\gamma</m> — <m>x^2+y^2=ax</m> (<m>a&gt;0</m>) тойргийн дээд хагас, <m>A(a,0)</m>-аас <m>O(0,0)</m> хүртэл.</p></statement>
+  <hint><p><m>OA</m> хэрчмийг нэмж битүү муруй үүсгээд Грийний томьёо хэрэглэ. <m>OA</m> дээр <m>y=0</m>, <m>dy=0</m>.</p></hint>
+  <answer><p><m>\dfrac{\pi ma^2}8</m>.</p></answer>
+  <solution><p><m>\gamma+OA</m> нь хагас дугуй <m>D</m>-ийн (төв <m>(\frac a2,0)</m>, радиус <m>\frac a2</m>) хил бөгөөд <m>A</m>-аас дээгүүр <m>O</m> хүрээд <m>Ox</m>-ээр <m>A</m>-д буцах нь эерэг чиглэл. <m>Q_x-P_y=e^x\cos y-(e^x\cos y-m)=m</m> тул Грийнээр <m>\oint_{\gamma+OA}=m|D|=m\frac{\pi a^2}8</m>. <m>OA</m> дээр <m>y=0</m>, <m>dy=0</m>, <m>P=e^x\sin0-0=0</m>, иймд <m>\int_{OA}=0</m> ба <m>\int_\gamma=\frac{\pi ma^2}8</m>.</p></solution>
+</exercise>
+<exercise>
+  <statement><p>Грийний томьёо биелэх <m>D</m> мужийн хувьд <m>\displaystyle\iint_Dy\,dx\,dy=-\frac12\oint_{\partial D}y^2\,dx</m> гэж батал. Үүнийг ашиглан <m>x^2+y^2\le R^2</m>, <m>y\ge0</m> нэгэн төрлийн хагас дугуй ялтасын хүндийн төвийг ол.</p></statement>
+  <answer><p><m>\left(0,\dfrac{4R}{3\pi}\right)</m>.</p></answer>
+  <solution><p><m>P=-\frac{y^2}2</m>, <m>Q=0</m> гэвэл <m>Q_x-P_y=y</m>. Хагас дугуйн хилийн хэрчим дээр <m>y=0</m> тул хувь нэмэргүй; нум дээр <m>x=R\cos t</m>, <m>y=R\sin t</m>, <m>t</m>: <m>0\to\pi</m> (эерэг чиглэл):
+  <md>\iint_Dy=-\frac12\int_0^\pi R^2\sin^2t\cdot(-R\sin t)\,dt=\frac{R^3}2\int_0^\pi\sin^3t\,dt=\frac{R^3}2\cdot\frac43=\frac{2R^3}3.</md>
+  <m>|D|=\frac{\pi R^2}2</m> тул <m>\bar y=\frac{2R^3/3}{\pi R^2/2}=\frac{4R}{3\pi}</m>; тэгш хэмээр <m>\bar x=0</m>.</p></solution>
+</exercise>
+<exercise>
+  <statement><p><m>\omega=\dfrac{x\,dy-y\,dx}{x^2+y^2}</m>-ийн интегралыг <m>(1,0)</m>-оос <m>(-1,0)</m> хүртэл (a) нэгж тойргийн дээд хагасаар; (b) доод хагасаар ол. Хариуг <m>\omega</m>-ийн орон нутгийн потенциал (туйлын өнцөг) ашиглан тайлбарла.</p></statement>
+  <answer><p>(a) <m>\pi</m>; (b) <m>-\pi</m>.</p></answer>
+  <solution><p>(a) <m>x=\cos t</m>, <m>y=\sin t</m>, <m>t</m>: <m>0\to\pi</m>; <m>x\,dy-y\,dx=dt</m> тул <m>\pi</m>. (b) <m>t</m>: <m>0\to-\pi</m> тул <m>-\pi</m>.</p>
+  <p>Тайлбар: <m>\R^2\setminus\{(x,0):x\le0\}</m> дээр <m>\omega=d\theta</m> (<m>\theta\in(-\pi,\pi)</m>), харин <m>\R^2\setminus\{(x,0):x\ge0\}</m> дээр <m>\omega=d\tilde\theta</m> (<m>\tilde\theta\in(0,2\pi)</m>). Дээд хагас тойрог <m>\{(x,0):x\ge0\}</m>-ийн дотоод цэгийг дайрахгүй тул (төгсгөлийг хязгаараар) <m>\tilde\theta(-1,0)-\tilde\theta(1,0)=\pi-0=\pi</m>; доод хагас нь хасах хагас тэнхлэгийг дайрахгүй тул <m>\theta(-1,0)-\theta(1,0)=-\pi-0</m> (хязгаараар). Хоёр замын ялгаа <m>2\pi</m> нь эх цэгийг тойрох битүү замын интеграл.</p></solution>
+</exercise>
+<exercise>
+  <statement><p><m>\varphi(0)=0</m> нөхцөлтэй ямар <m>C^1</m> функц <m>\varphi(x)</m>-ийн хувьд <m>y\varphi(x)\,dx+\bigl(\varphi(x)+x^2\bigr)dy</m> нь <m>\R^2</m> дээр бүтэн дифференциал болох вэ? Энэ үед потенциалыг ол.</p></statement>
+  <hint><p>Нөхцөл <m>P_y=Q_x</m> нь <m>\varphi'-\varphi=-2x</m> шугаман дифференциал тэгшитгэл болно.</p></hint>
+  <answer><p><m>\varphi(x)=2x+2-2e^x</m>, <m>U=y\left(x^2+2x+2-2e^x\right)+C</m>.</p></answer>
+  <solution><p><m>P_y=\varphi(x)</m>, <m>Q_x=\varphi'(x)+2x</m>; <m>\R^2</m> нэг холбоост тул нөхцөл нь <m>\varphi'=\varphi-2x</m>. <m>(e^{-x}\varphi)'=-2xe^{-x}</m>-ээс <m>e^{-x}\varphi=2(x+1)e^{-x}+C</m>, <m>\varphi=2x+2+Ce^x</m>; <m>\varphi(0)=0</m> тул <m>C=-2</m>. Потенциал: <m>U_y=\varphi+x^2</m>-ээс <m>U=y(\varphi(x)+x^2)+c(x)</m>; <m>U_x=y(\varphi'+2x)+c'(x)=y\varphi+c'(x)</m> нь <m>P=y\varphi</m>-тэй тэнцэх тул <m>c</m> тогтмол.</p></solution>
+</exercise>
+</homework>
+</ai>
