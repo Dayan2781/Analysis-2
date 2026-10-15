@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: default-modern                 *-->
+<!--*  Palette:                              *-->
+<!--******************************************-->
+
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="theorem theorem-like"><h2 class="heading">
+<span class="type">Теорем</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">11.25</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h2>
+<div class="para logical">
+<div class="para">
+<span class="process-math">\(f\)</span> нь <span class="process-math">\(\R\)</span> дээр абсолют интегралчлагдах бол <span class="process-math">\(\hat f\)</span> нь</div>
+<ol class="decimal" id="thm-ft-basic-1-1-4">
+<li>
+<div class="para">зааглагдсан: <span class="process-math">\(|\hat f(\xi)|\le\int_{-\infty}^{+\infty}|f(x)|\,dx\text{;}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 1"><a tabindex="-1" href="#thm-ft-basic-1-1-4-1" title="Copy heading and permalink for Item 1" aria-label="Copy heading and permalink for Item 1">🔗</a></div>
+</li>
+<li>
+<div class="para">
+<span class="process-math">\(\R\)</span> дээр (жигд) тасралтгүй;</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 2"><a tabindex="-1" href="#thm-ft-basic-1-1-4-2" title="Copy heading and permalink for Item 2" aria-label="Copy heading and permalink for Item 2">🔗</a></div>
+</li>
+<li>
+<div class="para">
+<span class="process-math">\(\lim_{|\xi|\to\infty}\hat f(\xi) = 0\)</span> (<dfn class="terminology">Риман–Лебегийн лемм</dfn> <span class="process-math">\(\R\)</span> дээр).</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 3"><a tabindex="-1" href="#thm-ft-basic-1-1-4-3" title="Copy heading and permalink for Item 3" aria-label="Copy heading and permalink for Item 3">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#thm-ft-basic-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Теорем 11.25"><a tabindex="-1" href="#thm-ft-basic" title="Copy heading and permalink for Теорем 11.25" aria-label="Copy heading and permalink for Теорем 11.25">🔗</a></div>
+</article>
+<details class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h2 class="heading"><span class="type">Баталгаа<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h2></summary>
+<article class="hiddenproof knowl__content">
+<div class="para logical">
+<div class="para">1 нь шууд. 2: <span class="process-math">\(\varepsilon&gt;0\)</span> гэе. <span class="process-math">\(\int_{|x|&gt;A}|f|&lt;\varepsilon\)</span> байх <span class="process-math">\(A\)</span>-г сонгоно. <span class="process-math">\(|e^{-ihx} - 1|\le|hx|\)</span> тул</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/lem-riemann-lebesgue.html">
+\begin{equation*}
+|\hat f(\xi+h) - \hat f(\xi)| \le \int_{-\infty}^{+\infty}|f(x)|\,|e^{-ihx} - 1|\,dx \le |h|A\int_{-A}^{A}|f| + 2\varepsilon,
+\end{equation*}
+</div>
+<div class="para">
+<span class="process-math">\(|h|\)</span> хангалттай бага үед энэ нь <span class="process-math">\(3\varepsilon\)</span>-оос бага; <span class="process-math">\(\xi\)</span>-ээс хамаарахгүй тул жигд тасралтгүй. 3: <span class="process-math">\(A\)</span>-г дээрхтэй адил сонговол <span class="process-math">\(|\hat f(\xi)|\le\varepsilon + \bigl|\int_{-A}^{A}f(x)\cos\xi x\,dx\bigr| + \bigl|\int_{-A}^{A}f(x)\sin\xi x\,dx\bigr|\text{.}\)</span> Хэрчим дээрх Риман–Лебегийн леммээр (Лемм <a href="w11-s3.html#lem-riemann-lebesgue" class="xref" data-knowl="./knowl/xref/lem-riemann-lebesgue.html" data-reveal-label="Харуулах" data-close-label="Хаах" title="Лемм 11.3.1: Риман–Лебег">11.3.1</a>) сүүлийн хоёр гишүүн <span class="process-math">\(|\xi|\to\infty\)</span> үед <span class="process-math">\(0\)</span> руу тэмүүлнэ.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#thm-ft-basic-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Баталгаа 11.25.1"><a tabindex="-1" href="#thm-ft-basic-2" title="Copy heading and permalink for Баталгаа 11.25.1" aria-label="Copy heading and permalink for Баталгаа 11.25.1">🔗</a></div>
+</article></details><span class="incontext"><a class="internal" href="w11-s8.html#thm-ft-basic">In Context</a></span>
+</body>
+</html>

@@ -1,0 +1,1006 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: default-modern                 *-->
+<!--*  Palette:                              *-->
+<!--******************************************-->
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>I төрлийн муруй шугаман интеграл</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="_static/pretext/fonts/material-symbols-outlined.css">
+<link href="_static/pretext/css/theme.css" rel="stylesheet" type="text/css">
+<style>
+@counter-style ptx-marker-1 { system: extends lower-alpha; prefix: '('; suffix: ') '; }
+</style>
+<script type="module">import { startMathJax } from './_static/pretext/js/dist/mathjax_startup.js';
+startMathJax({
+hasWebworkReps: false,
+hasSage: false,
+isReact: false,
+htmlPresentation: false,
+lang: "en-US",
+});
+</script><script defer data-pretext-mathjax="true" onerror="this.dataset.loadFailed = 'true';" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script><meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta name="twitter:title" content="Математик Анализ 2">
+<meta property="og:title" content="Математик Анализ 2">
+<meta property="book:title" content="Математик Анализ 2">
+<meta name="twitter:description" content="MATH302 — лекц, семинар, дасгал (2026 оны намар)">
+<meta property="og:description" content="MATH302 — лекц, семинар, дасгал (2026 оны намар)">
+<meta name="twitter:card" content="summary">
+<script src="_static/pretext/js/jquery.min.js"></script><script src="_static/pretext/js/dist/pretext-core.js?v=2.55"></script><script src="_static/pretext/js/dist/pretext-read-aloud.js?v=2.55"></script><!--** eBookCongig is necessary to configure interactive       **-->
+<!--** Runestone components to run locally in reader's browser **-->
+<!--** No external communication:                              **-->
+<!--**     log level is 0, Runestone Services are disabled     **-->
+<script type="text/javascript">
+eBookConfig = {};
+eBookConfig.useRunestoneServices = false;
+eBookConfig.host = 'http://127.0.0.1:8000';
+eBookConfig.course = 'PTX_Course_Title_Here';
+eBookConfig.basecourse = 'PTX_Base_Course';
+eBookConfig.isLoggedIn = false;
+eBookConfig.email = '';
+eBookConfig.isInstructor = false;
+eBookConfig.logLevel = 0;
+eBookConfig.username = '';
+eBookConfig.readings = null;
+eBookConfig.activities = null;
+eBookConfig.downloadsEnabled = false;
+eBookConfig.allow_pairs = false;
+eBookConfig.enableScratchAC = false;
+eBookConfig.build_info = "";
+eBookConfig.python3 = null;
+eBookConfig.runestone_version = '7.0.0';
+eBookConfig.jobehost = '';
+eBookConfig.proxyuri_runs = '';
+eBookConfig.proxyuri_files = '';
+eBookConfig.enable_chatcodes =  false;
+</script>
+<!--*** Runestone Services ***-->
+<script src="_static/pretext/js/dist/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/dist/pretext_search.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script>
+</head>
+<body id="analysis2-num" class="pretext book ignore-math">
+<a class="assistive" href="#ptx-content">Үндсэн агуулга руу шилжих</a><header id="ptx-masthead" class="ptx-masthead" role="banner"><div class="ptx-banner"><div class="title-container">
+<div class="heading ptx-banner-heading"><a href="analysis2.html"><span class="title">Математик Анализ 2</span> <span class="subtitle">MATH302 — лекц, семинар, дасгал (2026 оны намар)</span></a></div>
+<p class="byline">Даянцолмон</p>
+</div></div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><div class="ptx-navbar-contents">
+<button id="ptx-toc-toggle" type="button" aria-controls="ptx-sidebar" class="toc-toggle button" title="Агуулга"><span class="icon material-symbols-outlined" aria-hidden="true"></span><span class="name">Агуулга</span></button><div class="ptx-search-box">
+<div class="ptx-search-widget"><button id="ptx-search-button" type="button" class="ptx-search-button button" title="Номоос хайх"><span class="icon material-symbols-outlined" aria-hidden="true"></span><span class="name">Номоос хайх</span></button></div>
+<dialog id="ptx-search-dialog" class="ptx-dialog ptx-search-dialog"><div class="ptx-search-dialog-controls">
+<input aria-label="Search term" id="ptx-search-terms" class="ptx-search-terms" type="text" name="terms" placeholder="Search terms"><button aria-label="Хаах" id="ptx-search-close" class="ptx-search-close"><span class="icon material-symbols-outlined" aria-hidden="true"></span></button>
+</div>
+<div id="ptx-search-status" class="ptx-search-status" aria-live="polite" aria-atomic="true"></div>
+<h2 class="heading ptx-search-results-heading">Хайлтын үр дүн: </h2>
+<div id="ptx-search-empty" class="ptx-search-empty"><span>Илэрц олдсонгүй.</span></div>
+<ol id="ptx-search-results" class="ptx-search-results"></ol></dialog>
+</div>
+<span class="nav-other-controls"><button id="ptx-read-aloud-button" class="ptx-read-aloud-button button" title="Read aloud" aria-expanded="false"><span class="icon material-symbols-outlined" aria-hidden="true"></span><span class="name">Read aloud</span></button><div id="ptx-read-aloud-player" class="ptx-read-aloud-player" hidden="hidden" role="group" aria-label="Read aloud">
+<button id="ptx-read-aloud-prev" class="button" title="Previous sentence"><span class="icon material-symbols-outlined" aria-hidden="true"></span></button><button id="ptx-read-aloud-toggle" class="ptx-read-aloud-toggle button" title="Play"><span class="ptx-read-aloud-icon-play"><span class="icon material-symbols-outlined" aria-hidden="true"></span></span><span class="ptx-read-aloud-icon-pause"><span class="icon material-symbols-outlined" aria-hidden="true"></span></span></button><button id="ptx-read-aloud-next" class="button" title="Next sentence"><span class="icon material-symbols-outlined" aria-hidden="true"></span></button><a id="ptx-read-aloud-continue" class="ptx-read-aloud-continue button" hidden="hidden">Continue<span class="icon material-symbols-outlined" aria-hidden="true"></span></a><button id="ptx-read-aloud-settings-button" class="ptx-read-aloud-settings-button button" title="Reading settings"><span class="icon material-symbols-outlined" aria-hidden="true"></span></button>
+</div>
+<dialog class="ptx-dialog ptx-read-aloud-settings-popup" id="ptx-read-aloud-settings-popup"><div class="ptx-readability-options-popup-controls">
+<h2 class="heading">Read aloud settings</h2>
+<button class="ptx-read-aloud-settings-close-button button" id="ptx-read-aloud-settings-close-button" title="Close"><span class="icon material-symbols-outlined" aria-hidden="true"></span></button>
+</div>
+<div class="ptx-readability-options-group">
+<label for="ptx-read-aloud-voice"><span class="icon material-symbols-outlined" aria-hidden="true"></span><span>Voice</span></label><select id="ptx-read-aloud-voice"></select><label class="ptx-readability-slider-label" for="ptx-read-aloud-rate"><span class="icon material-symbols-outlined" aria-hidden="true"></span><span>Reading speed</span><output id="ptx-read-aloud-rate-value" for="ptx-read-aloud-rate">1×</output></label><input type="range" id="ptx-read-aloud-rate" min="0.5" max="2" step="0.1" value="1"><label for="ptx-read-aloud-asides"><span class="icon material-symbols-outlined" aria-hidden="true"></span><span>Collapsed content</span></label><select id="ptx-read-aloud-asides"><option value="skip">Announce, do not read</option>
+<option value="read">Read automatically</option></select><label for="ptx-read-aloud-autoscroll"><input type="checkbox" id="ptx-read-aloud-autoscroll" checked><span>Follow along (auto-scroll)</span></label><label for="ptx-read-aloud-autocontinue"><input type="checkbox" id="ptx-read-aloud-autocontinue"><span>Continue to the next page automatically</span></label>
+</div></dialog><button id="ptx-readability-options-button" class="ptx-readability-options-button button" title="Унших тохиргоо"><span class="icon material-symbols-outlined" aria-hidden="true"></span><span class="name">Унших тохиргоо</span></button><dialog class="ptx-dialog ptx-readability-options-popup" id="ptx-readability-options-popup"><div class="ptx-readability-options-popup-controls">
+<h2 class="heading">Унших тохиргоо</h2>
+<button class="ptx-readability-options-close-button button" id="ptx-readability-options-close-button" title="Хаах"><span class="icon material-symbols-outlined" aria-hidden="true"></span></button>
+</div>
+<div class="ptx-readability-options-group">
+<label class="ptx-readability-slider-label" for="ptx-readability-line-height"><span class="icon material-symbols-outlined" aria-hidden="true"></span><span>Мөрийн өндөр</span><output id="ptx-readability-line-height-value" for="ptx-readability-line-height">1.35</output></label><input type="range" id="ptx-readability-line-height" min="1.10" max="3" step="0.05" value="1.35">
+</div>
+<div class="ptx-readability-options-group">
+<label class="ptx-readability-slider-label" for="ptx-readability-font-size"><span class="icon material-symbols-outlined" aria-hidden="true"></span><span>Үсгийн хэмжээ</span><output id="ptx-readability-font-size-value" for="ptx-readability-font-size">100%</output></label><input type="range" id="ptx-readability-font-size" min="0.8" max="1.5" step="0.05" value="1">
+</div>
+<fieldset class="ptx-readability-options-group ptx-readability-options-group-theme">
+<legend>Загвар</legend>
+<label for="ptx-readability-theme-system"><input type="radio" name="ptx-readability-theme" id="ptx-readability-theme-system" value="system"><span class="icon material-symbols-outlined" aria-hidden="true"></span><span>Системийн</span></label><label for="ptx-readability-theme-light"><input type="radio" name="ptx-readability-theme" id="ptx-readability-theme-light" value="light"><span class="icon material-symbols-outlined" aria-hidden="true"></span><span>Цайвар</span></label><label for="ptx-readability-theme-dark"><input type="radio" name="ptx-readability-theme" id="ptx-readability-theme-dark" value="dark"><span class="icon material-symbols-outlined" aria-hidden="true"></span><span>Бараан</span></label>
+</fieldset>
+<fieldset class="ptx-readability-options-group">
+<legend>Assistive technologies</legend>
+<label for="ptx-readability-accessible-permalinks"><input type="checkbox" id="ptx-readability-accessible-permalinks"><span>🔗</span><span>Expose permalinks</span></label>
+</fieldset>
+<div class="ptx-readability-options-group"><button type="button" class="ptx-readability-reset-button button" id="ptx-readability-reset-button"><span class="icon material-symbols-outlined" aria-hidden="true"></span><span class="name">Бүгдийг сэргээх</span></button></div></dialog></span><span class="treebuttons"><a class="previous-button button" href="w15-s2.html" title="Өмнөх"><span class="icon material-symbols-outlined" aria-hidden="true"></span><span class="name">Өмнөх</span></a><a class="up-button button" href="ch-w15.html" title="Дээш"><span class="icon material-symbols-outlined" aria-hidden="true"></span><span class="name">Дээш</span></a><a class="next-button button" href="w15-s4.html" title="Дараах"><span class="name">Дараах</span><span class="icon material-symbols-outlined" aria-hidden="true"></span></a></span>
+</div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\Sx}{\mathrm{S}}
+\newcommand{\smallbigcup}{\mathop{\textstyle\bigcup}}
+\newcommand{\smallbigcap}{\mathop{\textstyle\bigcap}}
+\newcommand{\arccot}{\mathbf{arccot}}
+\newcommand{\sech}{\operatorname{sech}}
+\newcommand{\csch}{\operatorname{csch}}
+\newcommand{\arcsec}{\operatorname{arcsec}}
+\newcommand{\sgn}{\operatorname{sgn}}
+\newcommand{\diver}{\operatorname{div}}
+\newcommand{\rot}{\operatorname{rot}}
+\newcommand{\grad}{\operatorname{grad}}
+\newcommand{\curl}{\operatorname{curl}}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="ptx-page">
+<div id="ptx-sidebar" role="complementary" class="ptx-sidebar"><nav id="ptx-toc" tabindex="-1" aria-label="Агуулга" class="ptx-toc depth2 focused" data-preexpanded-levels="0" data-max-levels="2"><ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-frontmatter">
+<div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Нүүр хэсэг</span></a></div>
+<ul id="ptx-toc-group-frontmatter" class="structural toc-item-list"><li class="toc-item toc-preface"><div class="toc-title-box"><a href="preface.html" class="internal"><span class="title">Энэ номыг хэрхэн ашиглах вэ</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-w01.html" class="internal"><span class="codenumber">1</span> <span class="title">Тодорхойгүй интеграл ба эх функц</span></a></div>
+<ul id="ptx-toc-group-ch-w01" class="structural toc-item-list">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="ch-w01-2.html" class="internal"><span class="title">Удиртгал</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="w01-s1.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Уламжлалын урвуу үйлдэл. Эх функц</span></a></div>
+<ul id="ptx-toc-group-w01-s1" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="w01-s1.html#w01-s1-ai" class="internal"> <span class="title">Шалгах дасгал (AI)</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="w01-s2.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Тодорхойгүй интегралын үндсэн жагсаалт</span></a></div>
+<ul id="ptx-toc-group-w01-s2" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="w01-s2.html#w01-s2-ai" class="internal"> <span class="title">Шалгах дасгал (AI)</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="w01-s3.html" class="internal"><span class="codenumber">1.3</span> <span class="title">Хэсэгчлэн интегралчлах арга</span></a></div>
+<ul id="ptx-toc-group-w01-s3" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="w01-s3.html#w01-s3-ai" class="internal"> <span class="title">Шалгах дасгал (AI)</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="w01-s4.html" class="internal"><span class="codenumber">1.4</span> <span class="title">Хувьсагч солих (Орлуулах) арга</span></a></div>
+<ul id="ptx-toc-group-w01-s4" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="w01-s4.html#w01-s4-1" class="internal"><span class="title">Түгээмэл хэрэглэгддэг үндсэн орлуулгуудын хэлбэрүүд</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="w01-s4.html#w01-s4-2" class="internal"><span class="title">Тусгай тригонометр орлуулгууд</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="w01-s4.html#w01-s4-ai" class="internal"><span class="title">Шалгах дасгал (AI)</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="w01-s5.html" class="internal"><span class="codenumber">1.5</span> <span class="title">Семинар</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="w01-hw.html" class="internal"><span class="codenumber">1.6</span> <span class="title">Гэрийн даалгавар</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-w02.html" class="internal"><span class="codenumber">2</span> <span class="title">Тодорхойгүй интеграл бодох</span></a></div>
+<ul id="ptx-toc-group-ch-w02" class="structural toc-item-list">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="ch-w02-2.html" class="internal"><span class="title">Удиртгал</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="w02-s1.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Рационал бутархайн интеграл</span></a></div>
+<ul id="ptx-toc-group-w02-s1" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="w02-s1.html#w02-s1-ai" class="internal"> <span class="title">Шалгах дасгал (AI)</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="w02-s2.html" class="internal"><span class="codenumber">2.2</span> <span class="title">Иррационал функцийн интеграл</span></a></div>
+<ul id="ptx-toc-group-w02-s2" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="w02-s2.html#w02-s2-1" class="internal"><span class="title">1. <span class="process-math">\(\sqrt{ax+b}\)</span> хэлбэрийн иррационал интеграл</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="w02-s2.html#w02-s2-2" class="internal"><span class="title">2. <span class="process-math">\(\sqrt{x^2+a^2}\)</span> ба <span class="process-math">\(\sqrt{x^2-a^2}\text{:}\)</span> тригонометр орлуулга</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="w02-s2.html#w02-s2-3" class="internal"><span class="title">3. Дифференциал биномын интеграл (Чебышёвын теорем)</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="w02-s2.html#w02-s2-ai" class="internal"><span class="title">Шалгах дасгал (AI)</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="w02-s3.html" class="internal"><span class="codenumber">2.3</span> <span class="title">Семинар</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="w02-hw.html" class="internal"><span class="codenumber">2.4</span> <span class="title">Гэрийн даалгавар</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-w03.html" class="internal"><span class="codenumber">3</span> <span class="title">Тодорхой интеграл I: Риманы интеграл ба түүний чанарууд</span></a></div>
+<ul id="ptx-toc-group-ch-w03" class="structural toc-item-list">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="ch-w03-2.html" class="internal"><span class="title">Удиртгал</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="w03-s1.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Хуваалт ба Дарбугийн нийлбэрүүд</span></a></div>
+<ul id="ptx-toc-group-w03-s1" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="w03-s1.html#w03-s1-ai" class="internal"> <span class="title">Шалгах дасгал (AI)</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="w03-s2.html" class="internal"><span class="codenumber">3.2</span> <span class="title">Тодорхой интегралын чанарууд</span></a></div>
+<ul id="ptx-toc-group-w03-s2" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="w03-s2.html#w03-s2-ai" class="internal"> <span class="title">Шалгах дасгал (AI)</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="w03-s3.html" class="internal"><span class="codenumber">3.3</span> <span class="title">Интегралчлагдах функцүүдийн ангиуд</span></a></div>
+<ul id="ptx-toc-group-w03-s3" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="w03-s3.html#w03-s3-ai" class="internal"> <span class="title">Шалгах дасгал (AI)</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="w03-s4.html" class="internal"><span class="codenumber">3.4</span> <span class="title">Интегралын дундаж утгын теоремууд</span></a></div>
+<ul id="ptx-toc-group-w03-s4" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="w03-s4.html#w03-s4-ai" class="internal"> <span class="title">Шалгах дасгал (AI)</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="w03-s5.html" class="internal"><span class="codenumber">3.5</span> <span class="title">Семинарын бодлогууд</span></a></div>
+<ul id="ptx-toc-group-w03-s5" class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="w03-s5.html#w03-s5-1" class="internal"><span class="title">А. Дарбугийн нийлбэр ба интегралын чанарууд</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="w03-hw.html" class="internal"> <span class="title">Гэрийн даалгавар</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-w04.html" class="internal"><span class="codenumber">4</span> <span class="title">Тодорхой интеграл II: Интеграл тооллын үндсэн теорем ба хэрэглээ</span></a></div>
+<ul id="ptx-toc-group-ch-w04" class="structural toc-item-list">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="ch-w04-2.html" class="internal"><span class="title">Удиртгал</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="w04-s1.html" class="internal"><span class="codenumber">4.1</span> <span class="title">Хувьсах дээд хязгаартай интеграл. Интеграл тооллын үндсэн теорем</span></a></div>
+<ul id="ptx-toc-group-w04-s1" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="w04-s1.html#w04-s1-ai" class="internal"> <span class="title">Шалгах дасгал (AI)</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="w04-s2.html" class="internal"><span class="codenumber">4.2</span> <span class="title">Ньютон-Лейбницийн томьёо</span></a></div>
+<ul id="ptx-toc-group-w04-s2" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="w04-s2.html#w04-s2-ai" class="internal"> <span class="title">Шалгах дасгал (AI)</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="w04-s3.html" class="internal"><span class="codenumber">4.3</span> <span class="title">Тодорхой интегралыг бодох аргууд</span></a></div>
+<ul id="ptx-toc-group-w04-s3" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="w04-s3.html#w04-s3-1" class="internal"><span class="title">Тэгш хэмийн чанарууд</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="w04-s3.html#w04-s3-ai" class="internal"><span class="title">Шалгах дасгал (AI)</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="w04-s4.html" class="internal"><span class="codenumber">4.4</span> <span class="title">Тодорхой интегралын хэрэглээ</span></a></div>
+<ul id="ptx-toc-group-w04-s4" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="w04-s4.html#w04-s4-1" class="internal"><span class="title">Геометрийн хэрэглээ</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="w04-s4.html#w04-s4-2" class="internal"><span class="title">Физикийн хэрэглээ</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="w04-s4.html#w04-s4-ai" class="internal"><span class="title">Шалгах дасгал (AI)</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="w04-s5.html" class="internal"> <span class="title">Үндсэн үр дүнгийн хураангуй</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="w04-s6.html" class="internal"><span class="codenumber">4.5</span> <span class="title">Семинарын бодлогууд</span></a></div>
+<ul id="ptx-toc-group-w04-s6" class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="w04-s6.html#w04-s6-1" class="internal"><span class="title">Б. Дундаж утга, интеграл функц, орлуулга</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="w04-s7.html" class="internal"><span class="codenumber">4.7</span> <span class="title">Онолын хүнд бодлогууд</span></a></div>
+<ul id="ptx-toc-group-w04-s7" class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="w04-s7.html#w04-s7-1" class="internal"><span class="title">Онолын хүнд бодлогуудын бодолт</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="w04-hw.html" class="internal"><span class="codenumber">4.6</span> <span class="title">Гэрийн даалгавар</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-w05.html" class="internal"><span class="codenumber">5</span> <span class="title">Интеграл сэдвийн нэгтгэсэн материал (Хичээл 1-5)</span></a></div>
+<ul id="ptx-toc-group-ch-w05" class="structural toc-item-list">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="ch-w05-2.html" class="internal"><span class="title">Удиртгал</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="w05-s1.html" class="internal"><span class="codenumber">5.1</span> <span class="title">Эх функц ба тодорхойгүй интеграл</span></a></div>
+<ul id="ptx-toc-group-w05-s1" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="w05-s1.html#w05-s1-ai" class="internal"> <span class="title">Шалгах дасгал (AI)</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="w05-s2.html" class="internal"><span class="codenumber">5.2</span> <span class="title">Риманы тодорхой интеграл</span></a></div>
+<ul id="ptx-toc-group-w05-s2" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="w05-s2.html#w05-s2-1" class="internal"><span class="title">Хуваалт ба Дарбугийн нийлбэрүүд</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="w05-s2.html#w05-s2-ai" class="internal"><span class="title">Шалгах дасгал (AI)</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="w05-s3.html" class="internal"><span class="codenumber">5.3</span> <span class="title">Тодорхой интегралын үндсэн чанарууд</span></a></div>
+<ul id="ptx-toc-group-w05-s3" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="w05-s3.html#w05-s3-ai" class="internal"> <span class="title">Шалгах дасгал (AI)</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="w05-s4.html" class="internal"><span class="codenumber">5.4</span> <span class="title">Интегралчлагдах функцүүдийн ангиуд</span></a></div>
+<ul id="ptx-toc-group-w05-s4" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="w05-s4.html#w05-s4-ai" class="internal"> <span class="title">Шалгах дасгал (AI)</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="w05-s5.html" class="internal"><span class="codenumber">5.5</span> <span class="title">Интеграл тооллын үндсэн теорем</span></a></div>
+<ul id="ptx-toc-group-w05-s5" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="w05-s5.html#w05-s5-ai" class="internal"> <span class="title">Шалгах дасгал (AI)</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="w05-s6.html" class="internal"><span class="codenumber">5.6</span> <span class="title">Ньютон-Лейбницийн томьёо ба интегралчлалын аргууд</span></a></div>
+<ul id="ptx-toc-group-w05-s6" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="w05-s6.html#w05-s6-ai" class="internal"> <span class="title">Шалгах дасгал (AI)</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="w05-s7.html" class="internal"><span class="codenumber">5.7</span> <span class="title">Интегралын дундаж утгын теорем</span></a></div>
+<ul id="ptx-toc-group-w05-s7" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="w05-s7.html#w05-s7-ai" class="internal"> <span class="title">Шалгах дасгал (AI)</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="w05-s8.html" class="internal"><span class="codenumber">5.8</span> <span class="title">Хэрэглээ</span></a></div>
+<ul id="ptx-toc-group-w05-s8" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="w05-s8.html#w05-s8-1" class="internal"><span class="title">Геометрийн хэрэглээ</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="w05-s8.html#w05-s8-2" class="internal"><span class="title">Физикийн хэрэглээ</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="w05-s8.html#w05-s8-ai" class="internal"><span class="title">Шалгах дасгал (AI)</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="w05-s9.html" class="internal"> <span class="title">Үзсэн теоремуудын товч жагсаалт</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="w05-s10.html" class="internal"><span class="codenumber">5.9</span> <span class="title">Бие даан бодох бодлого (Хичээл 1-5)</span></a></div>
+<ul id="ptx-toc-group-w05-s10" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="w05-s10.html#w05-s10-1" class="internal"><span class="title">Хялбар — Мэдлэг шалгах (6 бодлого)</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="w05-s10.html#w05-s10-2" class="internal"><span class="title">Дунд зэрэг — Тооцоо (6 бодлого)</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="w05-s10.html#w05-s10-3" class="internal"><span class="title">Хүнд — Онолын бодлого (6 бодлого)</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="w05-hw.html" class="internal"> <span class="title">Гэрийн даалгавар</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-w06.html" class="internal"><span class="codenumber">6</span> <span class="title">Тоон цуваа: Үндсэн ойлголт ба эерэг цувааны нийлэлт</span></a></div>
+<ul id="ptx-toc-group-ch-w06" class="structural toc-item-list">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="ch-w06-2.html" class="internal"><span class="title">Удиртгал</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="w06-s1.html" class="internal"><span class="codenumber">6.1</span> <span class="title">Үндсэн тодорхойлолтууд</span></a></div>
+<ul id="ptx-toc-group-w06-s1" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="w06-s1.html#w06-s1-ai" class="internal"> <span class="title">Шалгах дасгал (AI)</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="w06-s2.html" class="internal"><span class="codenumber">6.2</span> <span class="title">Нийлэлтийн зайлшгүй нөхцөл</span></a></div>
+<ul id="ptx-toc-group-w06-s2" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="w06-s2.html#w06-s2-ai" class="internal"> <span class="title">Шалгах дасгал (AI)</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="w06-s3.html" class="internal"><span class="codenumber">6.3</span> <span class="title">Кошийн шинжүүр ба шугаман чанар</span></a></div>
+<ul id="ptx-toc-group-w06-s3" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="w06-s3.html#w06-s3-ai" class="internal"> <span class="title">Шалгах дасгал (AI)</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="w06-s4.html" class="internal"><span class="codenumber">6.4</span> <span class="title">Эерэг цувааны үндсэн чанар</span></a></div>
+<ul id="ptx-toc-group-w06-s4" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="w06-s4.html#w06-s4-ai" class="internal"> <span class="title">Шалгах дасгал (AI)</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="w06-s5.html" class="internal"><span class="codenumber">6.5</span> <span class="title">Харьцуулах шинжүүр</span></a></div>
+<ul id="ptx-toc-group-w06-s5" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="w06-s5.html#w06-s5-ai" class="internal"> <span class="title">Шалгах дасгал (AI)</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="w06-s6.html" class="internal"><span class="codenumber">6.6</span> <span class="title"><span class="process-math">\(p\)</span>-цуваа</span></a></div>
+<ul id="ptx-toc-group-w06-s6" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="w06-s6.html#w06-s6-ai" class="internal"> <span class="title">Шалгах дасгал (AI)</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="w06-s7.html" class="internal"><span class="codenumber">6.7</span> <span class="title">Даламбертын (харьцаа) шинжүүр</span></a></div>
+<ul id="ptx-toc-group-w06-s7" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="w06-s7.html#w06-s7-ai" class="internal"> <span class="title">Шалгах дасгал (AI)</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="w06-s8.html" class="internal"><span class="codenumber">6.8</span> <span class="title">Кошийн (язгуур) шинжүүр</span></a></div>
+<ul id="ptx-toc-group-w06-s8" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="w06-s8.html#w06-s8-ai" class="internal"> <span class="title">Шалгах дасгал (AI)</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="w06-s9.html" class="internal"><span class="codenumber">6.9</span> <span class="title">Интеграл шинжүүр</span></a></div>
+<ul id="ptx-toc-group-w06-s9" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="w06-s9.html#w06-s9-ai" class="internal"> <span class="title">Шалгах дасгал (AI)</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="w06-s10.html" class="internal"><span class="codenumber">6.10</span> <span class="title">Семинарын бодлогууд</span></a></div>
+<ul id="ptx-toc-group-w06-s10" class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="w06-s10.html#w06-s10-1" class="internal"><span class="title">Нэмэлт семинарын бодлогууд</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="w06-hw.html" class="internal"> <span class="title">Гэрийн даалгавар — Тоон цуваа (Демидовичаас 16 бодлого)</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-w07.html" class="internal"><span class="codenumber">7</span> <span class="title">Тоон цуваа: дурын тэмдэгтэй цуваа</span></a></div>
+<ul id="ptx-toc-group-ch-w07" class="structural toc-item-list">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="ch-w07-2.html" class="internal"><span class="title">Удиртгал</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="w07-s1.html" class="internal"><span class="codenumber">7.1</span> <span class="title">Дурын тэмдэгтэй цуваа. Абсолют ба нөхцөлт нийлэлт</span></a></div>
+<ul id="ptx-toc-group-w07-s1" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="w07-s1.html#w07-s1-1" class="internal"><span class="title">Эерэг ба сөрөг хэсэг</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="w07-s1.html#w07-s1-2" class="internal"><span class="title">Гишүүдийн байрыг солих</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="w07-s1.html#w07-s1-3" class="internal"><span class="title">Цувааны үржвэр</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="w07-s1.html#w07-s1-ai" class="internal"><span class="title">Шалгах дасгал (AI)</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="w07-s2.html" class="internal"><span class="codenumber">7.2</span> <span class="title">Тэмдэг сөөлжилсэн цуваа</span></a></div>
+<ul id="ptx-toc-group-w07-s2" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="w07-s2.html#w07-s2-ai" class="internal"> <span class="title">Шалгах дасгал (AI)</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="w07-s3.html" class="internal"><span class="codenumber">7.3</span> <span class="title">Абелийн хувиргалт. Дирихле ба Абелийн шинжүүр</span></a></div>
+<ul id="ptx-toc-group-w07-s3" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="w07-s3.html#w07-s3-ai" class="internal"> <span class="title">Шалгах дасгал (AI)</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="w07-s4.html" class="internal"><span class="codenumber">7.4</span> <span class="title">Цувааны нийлбэрийг олох</span></a></div>
+<ul id="ptx-toc-group-w07-s4" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="w07-s4.html#w07-s4-ai" class="internal"> <span class="title">Шалгах дасгал (AI)</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="w07-s5.html" class="internal"><span class="codenumber">7.5</span> <span class="title">Семинарын бодлогууд</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="w07-s6.html" class="internal"><span class="codenumber">7.6</span> <span class="title">Нэмэлт бодлогууд</span></a></div>
+<ul id="ptx-toc-group-w07-s6" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="w07-s6.html#w07-s6-1" class="internal"><span class="title">Нийлэлтийн шинжилгээ</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="w07-s6.html#w07-s6-2" class="internal"><span class="title">Цувааны нийлбэр</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="w07-s6.html#w07-s6-ai" class="internal"><span class="title">Шалгах дасгал (AI)</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="w07-hw.html" class="internal"> <span class="title">Гэрийн даалгавар — Дурын тэмдэгтэй цуваа (16 бодлого)</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-w08.html" class="internal"><span class="codenumber">8</span> <span class="title">Өргөтгөсөн интеграл</span></a></div>
+<ul id="ptx-toc-group-ch-w08" class="structural toc-item-list">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="ch-w08-2.html" class="internal"><span class="title">Удиртгал</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="w08-s1.html" class="internal"><span class="codenumber">8.1</span> <span class="title">Хязгааргүй завсар дээрх интеграл (I төрөл)</span></a></div>
+<ul id="ptx-toc-group-w08-s1" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="w08-s1.html#w08-s1-ai" class="internal"> <span class="title">Шалгах дасгал (AI)</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="w08-s2.html" class="internal"><span class="codenumber">8.2</span> <span class="title">Зааглагдаагүй функцийн интеграл (II төрөл)</span></a></div>
+<ul id="ptx-toc-group-w08-s2" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="w08-s2.html#w08-s2-ai" class="internal"> <span class="title">Шалгах дасгал (AI)</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="w08-s3.html" class="internal"><span class="codenumber">8.3</span> <span class="title">Үндсэн чанарууд</span></a></div>
+<ul id="ptx-toc-group-w08-s3" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="w08-s3.html#w08-s3-ai" class="internal"> <span class="title">Шалгах дасгал (AI)</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="w08-s4.html" class="internal"><span class="codenumber">8.4</span> <span class="title">Кошийн шинжүүр</span></a></div>
+<ul id="ptx-toc-group-w08-s4" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="w08-s4.html#w08-s4-ai" class="internal"> <span class="title">Шалгах дасгал (AI)</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="w08-s5.html" class="internal"><span class="codenumber">8.5</span> <span class="title">Сөрөг биш функцийн интеграл. Жиших шинжүүр</span></a></div>
+<ul id="ptx-toc-group-w08-s5" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="w08-s5.html#w08-s5-ai" class="internal"> <span class="title">Шалгах дасгал (AI)</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="w08-s6.html" class="internal"><span class="codenumber">8.6</span> <span class="title">Абсолют ба нөхцөлт нийлэлт</span></a></div>
+<ul id="ptx-toc-group-w08-s6" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="w08-s6.html#w08-s6-ai" class="internal"> <span class="title">Шалгах дасгал (AI)</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="w08-s7.html" class="internal"><span class="codenumber">8.7</span> <span class="title">Дирихле ба Абелийн шинжүүр</span></a></div>
+<ul id="ptx-toc-group-w08-s7" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="w08-s7.html#w08-s7-ai" class="internal"> <span class="title">Шалгах дасгал (AI)</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="w08-s8.html" class="internal"><span class="codenumber">8.8</span> <span class="title">Өргөтгөсөн интеграл ба цуваа</span></a></div>
+<ul id="ptx-toc-group-w08-s8" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="w08-s8.html#w08-s8-ai" class="internal"> <span class="title">Шалгах дасгал (AI)</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="w08-s9.html" class="internal"><span class="codenumber">8.9</span> <span class="title">Семинарын бодлогууд</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="w08-hw.html" class="internal"> <span class="title">Гэрийн даалгавар — Өргөтгөсөн интеграл</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-w09.html" class="internal"><span class="codenumber">9</span> <span class="title">Функцийн дараалал ба цуваа: жигд нийлэлт ба хязгаарт шилжих</span></a></div>
+<ul id="ptx-toc-group-ch-w09" class="structural toc-item-list">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="ch-w09-2.html" class="internal"><span class="title">Удиртгал</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="w09-s1.html" class="internal"><span class="codenumber">9.1</span> <span class="title">Цэгэн нийлэлт</span></a></div>
+<ul id="ptx-toc-group-w09-s1" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="w09-s1.html#w09-s1-1" class="internal"><span class="title">Цэгэн нийлэлт хангалтгүй — гурван жишээ</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="w09-s1.html#w09-s1-ai" class="internal"><span class="title">Шалгах дасгал (AI)</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="w09-s2.html" class="internal"><span class="codenumber">9.2</span> <span class="title">Жигд нийлэлт ба түүний шинжүүрүүд</span></a></div>
+<ul id="ptx-toc-group-w09-s2" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="w09-s2.html#w09-s2-ai" class="internal"> <span class="title">Шалгах дасгал (AI)</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="w09-s3.html" class="internal"><span class="codenumber">9.3</span> <span class="title">Жигд нийлэлт ба хязгаарт шилжих</span></a></div>
+<ul id="ptx-toc-group-w09-s3" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="w09-s3.html#w09-s3-1" class="internal"><span class="title">Тасралтгүй чанар</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="w09-s3.html#w09-s3-2" class="internal"><span class="title">Гишүүнчлэн интегралчлах</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="w09-s3.html#w09-s3-3" class="internal"><span class="title">Гишүүнчлэн дифференциалчлах</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="w09-s3.html#w09-s3-4" class="internal"><span class="title">Вейерштрассын ойролцоолох теорем</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="w09-s3.html#w09-s3-ai" class="internal"><span class="title">Шалгах дасгал (AI)</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="w09-s4.html" class="internal"><span class="codenumber">9.4</span> <span class="title">Семинарын бодлогууд</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="w09-hw.html" class="internal"> <span class="title">Гэрийн даалгавар — Функцийн дараалал ба цуваа</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-w10.html" class="internal"><span class="codenumber">10</span> <span class="title">Зэрэгт цуваа ба Тейлорын цуваа</span></a></div>
+<ul id="ptx-toc-group-ch-w10" class="structural toc-item-list">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="ch-w10-2.html" class="internal"><span class="title">Удиртгал</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="w10-s1.html" class="internal"><span class="codenumber">10.1</span> <span class="title">Тодорхойлолт. Абелийн лемм</span></a></div>
+<ul id="ptx-toc-group-w10-s1" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="w10-s1.html#w10-s1-ai" class="internal"> <span class="title">Шалгах дасгал (AI)</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="w10-s2.html" class="internal"><span class="codenumber">10.2</span> <span class="title">Нийлэлтийн радиус</span></a></div>
+<ul id="ptx-toc-group-w10-s2" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="w10-s2.html#w10-s2-ai" class="internal"> <span class="title">Шалгах дасгал (AI)</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="w10-s3.html" class="internal"><span class="codenumber">10.3</span> <span class="title">Нийлбэрийн чанарууд</span></a></div>
+<ul id="ptx-toc-group-w10-s3" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="w10-s3.html#w10-s3-ai" class="internal"> <span class="title">Шалгах дасгал (AI)</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="w10-s4.html" class="internal"><span class="codenumber">10.4</span> <span class="title">Абелийн теорем</span></a></div>
+<ul id="ptx-toc-group-w10-s4" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="w10-s4.html#w10-s4-ai" class="internal"> <span class="title">Шалгах дасгал (AI)</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="w10-s5.html" class="internal"><span class="codenumber">10.5</span> <span class="title">Зэрэгт цувааны нийлбэр олох</span></a></div>
+<ul id="ptx-toc-group-w10-s5" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="w10-s5.html#w10-s5-ai" class="internal"> <span class="title">Шалгах дасгал (AI)</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="w10-s6.html" class="internal"><span class="codenumber">10.6</span> <span class="title">Семинарын бодлогууд: зэрэгт цуваа</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="w10-s7.html" class="internal"><span class="codenumber">10.7</span> <span class="title">Тейлорын томьёо ба үлдэгдэл гишүүн</span></a></div>
+<ul id="ptx-toc-group-w10-s7" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="w10-s7.html#w10-s7-ai" class="internal"> <span class="title">Шалгах дасгал (AI)</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="w10-s8.html" class="internal"><span class="codenumber">10.8</span> <span class="title">Тейлорын цуваа</span></a></div>
+<ul id="ptx-toc-group-w10-s8" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="w10-s8.html#w10-s8-ai" class="internal"> <span class="title">Шалгах дасгал (AI)</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="w10-s9.html" class="internal"><span class="codenumber">10.9</span> <span class="title">Үндсэн задаргаанууд</span></a></div>
+<ul id="ptx-toc-group-w10-s9" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="w10-s9.html#w10-s9-1" class="internal"><span class="title">1. Илтгэгч функц</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="w10-s9.html#w10-s9-2" class="internal"><span class="title">2. Синус ба косинус</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="w10-s9.html#w10-s9-3" class="internal"><span class="title">3. Логарифм функц</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="w10-s9.html#w10-s9-4" class="internal"><span class="title">4. Биномын цуваа</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="w10-s9.html#w10-s9-5" class="internal"><span class="title">5. Урвуу тригонометр функцүүд</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="w10-s9.html#w10-s9-6" class="internal"><span class="title">Хураангуй хүснэгт</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="w10-s9.html#w10-s9-ai" class="internal"><span class="title">Шалгах дасгал (AI)</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="w10-s10.html" class="internal"><span class="codenumber">10.10</span> <span class="title">Задаргаа олох аргууд</span></a></div>
+<ul id="ptx-toc-group-w10-s10" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="w10-s10.html#w10-s10-ai" class="internal"> <span class="title">Шалгах дасгал (AI)</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="w10-s11.html" class="internal"><span class="codenumber">10.11</span> <span class="title">Хэрэглээ</span></a></div>
+<ul id="ptx-toc-group-w10-s11" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="w10-s11.html#w10-s11-1" class="internal"><span class="title">Ойролцоо тооцоолол</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="w10-s11.html#w10-s11-2" class="internal"><span class="title">Хязгаар бодох</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="w10-s11.html#w10-s11-3" class="internal"><span class="title">Эх функцээр илэрхийлэгдэхгүй интеграл</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="w10-s11.html#w10-s11-4" class="internal"><span class="title">Тоон цувааны нийлбэр</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="w10-s11.html#w10-s11-ai" class="internal"><span class="title">Шалгах дасгал (AI)</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="w10-s12.html" class="internal"><span class="codenumber">10.12</span> <span class="title">Семинарын бодлогууд: Тейлорын цуваа</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="w10-hw.html" class="internal"> <span class="title">Гэрийн даалгавар — Зэрэгт ба Тейлорын цуваа</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-w11.html" class="internal"><span class="codenumber">11</span> <span class="title">Фурьегийн цуваа ба Фурьегийн хувиргалт</span></a></div>
+<ul id="ptx-toc-group-ch-w11" class="structural toc-item-list">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="ch-w11-2.html" class="internal"><span class="title">Удиртгал</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="w11-s1.html" class="internal"><span class="codenumber">11.1</span> <span class="title">Тригонометр систем ба Фурьегийн коэффициент</span></a></div>
+<ul id="ptx-toc-group-w11-s1" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="w11-s1.html#w11-s1-1" class="internal"><span class="title">Тэгш ба сондгой функц</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="w11-s1.html#w11-s1-2" class="internal"><span class="title"><span class="process-math">\(2l\)</span> үетэй функц</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="w11-s1.html#w11-s1-3" class="internal"><span class="title">Комплекс хэлбэр</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="w11-s1.html#w11-s1-ai" class="internal"><span class="title">Шалгах дасгал (AI)</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="w11-s2.html" class="internal"><span class="codenumber">11.2</span> <span class="title">Үндсэн жишээнүүд</span></a></div>
+<ul id="ptx-toc-group-w11-s2" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="w11-s2.html#w11-s2-ai" class="internal"> <span class="title">Шалгах дасгал (AI)</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="w11-s3.html" class="internal"><span class="codenumber">11.3</span> <span class="title">Бесселийн тэнцэтгэл биш. Риман–Лебегийн лемм</span></a></div>
+<ul id="ptx-toc-group-w11-s3" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="w11-s3.html#w11-s3-ai" class="internal"> <span class="title">Шалгах дасгал (AI)</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="w11-s4.html" class="internal"><span class="codenumber">11.4</span> <span class="title">Дирихлегийн цөм ба хэсгийн нийлбэрийн интеграл илэрхийлэл</span></a></div>
+<ul id="ptx-toc-group-w11-s4" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="w11-s4.html#w11-s4-ai" class="internal"> <span class="title">Шалгах дасгал (AI)</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="w11-s5.html" class="internal"><span class="codenumber">11.5</span> <span class="title">Цэгэн нийлэлтийн теорем</span></a></div>
+<ul id="ptx-toc-group-w11-s5" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="w11-s5.html#w11-s5-ai" class="internal"> <span class="title">Шалгах дасгал (AI)</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="w11-s6.html" class="internal"><span class="codenumber">11.6</span> <span class="title">Жигд нийлэлт. Парсевалийн тэнцэтгэл</span></a></div>
+<ul id="ptx-toc-group-w11-s6" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="w11-s6.html#w11-s6-ai" class="internal"> <span class="title">Шалгах дасгал (AI)</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="w11-s7.html" class="internal"><span class="codenumber">11.7</span> <span class="title">Дирихлегийн интеграл <span class="process-math">\(\int_0^\infty\frac{\sin x}{x}dx = \frac\pi2\)</span></span></a></div>
+<ul id="ptx-toc-group-w11-s7" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="w11-s7.html#w11-s7-ai" class="internal"> <span class="title">Шалгах дасгал (AI)</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="w11-s8.html" class="internal"><span class="codenumber">11.8</span> <span class="title">Фурьегийн интеграл ба Фурьегийн хувиргалт</span></a></div>
+<ul id="ptx-toc-group-w11-s8" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="w11-s8.html#w11-s8-1" class="internal"><span class="title">Урвуу томьёо (Фурьегийн интеграл)</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="w11-s8.html#w11-s8-2" class="internal"><span class="title">Фурьегийн хувиргалтын чанарууд</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="w11-s8.html#w11-s8-3" class="internal"><span class="title">Үндсэн жишээнүүд</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="w11-s8.html#w11-s8-ai" class="internal"><span class="title">Шалгах дасгал (AI)</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="w11-s9.html" class="internal"><span class="codenumber">11.9</span> <span class="title">Семинарын бодлогууд</span></a></div>
+<ul id="ptx-toc-group-w11-s9" class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="w11-s9.html#w11-s9-1" class="internal"><span class="title">Фурьегийн хувиргалт</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="w11-hw.html" class="internal"> <span class="title">Гэрийн даалгавар — Фурьегийн цуваа ба хувиргалт</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-w12.html" class="internal"><span class="codenumber">12</span> <span class="title">Параметрээс хамаарсан интеграл. Эйлерийн Гамма ба Бета функц</span></a></div>
+<ul id="ptx-toc-group-ch-w12" class="structural toc-item-list">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="ch-w12-2.html" class="internal"><span class="title">Удиртгал</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="w12-s1.html" class="internal"><span class="codenumber">12.1</span> <span class="title">Параметрээс хамаарсан энгийн интеграл</span></a></div>
+<ul id="ptx-toc-group-w12-s1" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="w12-s1.html#w12-s1-ai" class="internal"> <span class="title">Шалгах дасгал (AI)</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="w12-s2.html" class="internal"><span class="codenumber">12.2</span> <span class="title">Өргөтгөсөн интегралын жигд нийлэлт</span></a></div>
+<ul id="ptx-toc-group-w12-s2" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="w12-s2.html#w12-s2-ai" class="internal"> <span class="title">Шалгах дасгал (AI)</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="w12-s3.html" class="internal"><span class="codenumber">12.3</span> <span class="title">Өргөтгөсөн интегралд хязгаарт шилжих</span></a></div>
+<ul id="ptx-toc-group-w12-s3" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="w12-s3.html#w12-s3-ai" class="internal"> <span class="title">Шалгах дасгал (AI)</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="w12-s4.html" class="internal"><span class="codenumber">12.4</span> <span class="title">Сонгодог интегралууд</span></a></div>
+<ul id="ptx-toc-group-w12-s4" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="w12-s4.html#w12-s4-ai" class="internal"> <span class="title">Шалгах дасгал (AI)</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="w12-s5.html" class="internal"><span class="codenumber">12.5</span> <span class="title">Эйлерийн Гамма функц</span></a></div>
+<ul id="ptx-toc-group-w12-s5" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="w12-s5.html#w12-s5-ai" class="internal"> <span class="title">Шалгах дасгал (AI)</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="w12-s6.html" class="internal"><span class="codenumber">12.6</span> <span class="title">Эйлерийн Бета функц</span></a></div>
+<ul id="ptx-toc-group-w12-s6" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="w12-s6.html#w12-s6-ai" class="internal"> <span class="title">Шалгах дасгал (AI)</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="w12-s7.html" class="internal"><span class="codenumber">12.7</span> <span class="title">Хэрэглээ: интеграл бодох</span></a></div>
+<ul id="ptx-toc-group-w12-s7" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="w12-s7.html#w12-s7-ai" class="internal"> <span class="title">Шалгах дасгал (AI)</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="w12-s8.html" class="internal"><span class="codenumber">12.8</span> <span class="title">Семинарын бодлогууд</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="w12-hw.html" class="internal"> <span class="title">Гэрийн даалгавар — Параметрээс хамаарсан интеграл</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-w13.html" class="internal"><span class="codenumber">13</span> <span class="title">Олон давхар интеграл. Фубинийн теорем</span></a></div>
+<ul id="ptx-toc-group-ch-w13" class="structural toc-item-list">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="ch-w13-2.html" class="internal"><span class="title">Удиртгал</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="w13-s1.html" class="internal"><span class="codenumber">13.1</span> <span class="title">Брус, хуваалт, Дарбугийн нийлбэр</span></a></div>
+<ul id="ptx-toc-group-w13-s1" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="w13-s1.html#w13-s1-ai" class="internal"> <span class="title">Шалгах дасгал (AI)</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="w13-s2.html" class="internal"><span class="codenumber">13.2</span> <span class="title">Хэмжээ тэг олонлог. Лебегийн шинжүүр</span></a></div>
+<ul id="ptx-toc-group-w13-s2" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="w13-s2.html#w13-s2-ai" class="internal"> <span class="title">Шалгах дасгал (AI)</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="w13-s3.html" class="internal"><span class="codenumber">13.3</span> <span class="title">Жорданы утгаар хэмжигдэхүүнтэй олонлог</span></a></div>
+<ul id="ptx-toc-group-w13-s3" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="w13-s3.html#w13-s3-ai" class="internal"> <span class="title">Шалгах дасгал (AI)</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="w13-s4.html" class="internal"><span class="codenumber">13.4</span> <span class="title">Интегралын чанарууд</span></a></div>
+<ul id="ptx-toc-group-w13-s4" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="w13-s4.html#w13-s4-ai" class="internal"> <span class="title">Шалгах дасгал (AI)</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="w13-s5.html" class="internal"><span class="codenumber">13.5</span> <span class="title">Фубинийн теорем</span></a></div>
+<ul id="ptx-toc-group-w13-s5" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="w13-s5.html#w13-s5-ai" class="internal"> <span class="title">Шалгах дасгал (AI)</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="w13-s6.html" class="internal"><span class="codenumber">13.6</span> <span class="title">Энгийн муж ба давталттай интеграл</span></a></div>
+<ul id="ptx-toc-group-w13-s6" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="w13-s6.html#w13-s6-1" class="internal"><span class="title">Интегралчлалын дарааллыг солих</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="w13-s6.html#w13-s6-ai" class="internal"><span class="title">Шалгах дасгал (AI)</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="w13-s7.html" class="internal"><span class="codenumber">13.7</span> <span class="title">Талбай, эзлэхүүн ба физик хэрэглээ</span></a></div>
+<ul id="ptx-toc-group-w13-s7" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="w13-s7.html#w13-s7-ai" class="internal"> <span class="title">Шалгах дасгал (AI)</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="w13-s8.html" class="internal"><span class="codenumber">13.8</span> <span class="title">Сэрэмжлүүлэх жишээнүүд</span></a></div>
+<ul id="ptx-toc-group-w13-s8" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="w13-s8.html#w13-s8-ai" class="internal"> <span class="title">Шалгах дасгал (AI)</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="w13-s9.html" class="internal"><span class="codenumber">13.9</span> <span class="title">Семинарын бодлогууд</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="w13-hw.html" class="internal"> <span class="title">Гэрийн даалгавар — Олон давхар интеграл</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-w14.html" class="internal"><span class="codenumber">14</span> <span class="title">Олон давхар интегралд хувьсагч солих. Гурав ба <span class="process-math">\(n\)</span> давхар интеграл</span></a></div>
+<ul id="ptx-toc-group-ch-w14" class="structural toc-item-list">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="ch-w14-2.html" class="internal"><span class="title">Удиртгал</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="w14-s1.html" class="internal"><span class="codenumber">14.1</span> <span class="title">Шугаман буулгалт ба эзлэхүүн</span></a></div>
+<ul id="ptx-toc-group-w14-s1" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="w14-s1.html#w14-s1-ai" class="internal"> <span class="title">Шалгах дасгал (AI)</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="w14-s2.html" class="internal"><span class="codenumber">14.2</span> <span class="title">Диффеоморфизм, якобиан ба хувьсагч солих теорем</span></a></div>
+<ul id="ptx-toc-group-w14-s2" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="w14-s2.html#w14-s2-ai" class="internal"> <span class="title">Шалгах дасгал (AI)</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="w14-s3.html" class="internal"><span class="codenumber">14.3</span> <span class="title">Туйлын координат</span></a></div>
+<ul id="ptx-toc-group-w14-s3" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="w14-s3.html#w14-s3-ai" class="internal"> <span class="title">Шалгах дасгал (AI)</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="w14-s4.html" class="internal"><span class="codenumber">14.4</span> <span class="title">Гурван давхар интеграл: цилиндр ба бөмбөрцөг координат</span></a></div>
+<ul id="ptx-toc-group-w14-s4" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="w14-s4.html#w14-s4-ai" class="internal"> <span class="title">Шалгах дасгал (AI)</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="w14-s5.html" class="internal"><span class="codenumber">14.5</span> <span class="title">Өргөтгөсөн олон давхар интеграл</span></a></div>
+<ul id="ptx-toc-group-w14-s5" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="w14-s5.html#w14-s5-ai" class="internal"> <span class="title">Шалгах дасгал (AI)</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="w14-s6.html" class="internal"><span class="codenumber">14.6</span> <span class="title"><span class="process-math">\(n\)</span> хэмжээст бөмбөлгийн эзлэхүүн</span></a></div>
+<ul id="ptx-toc-group-w14-s6" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="w14-s6.html#w14-s6-ai" class="internal"> <span class="title">Шалгах дасгал (AI)</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="w14-s7.html" class="internal"><span class="codenumber">14.7</span> <span class="title">Физик хэрэглээ</span></a></div>
+<ul id="ptx-toc-group-w14-s7" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="w14-s7.html#w14-s7-ai" class="internal"> <span class="title">Шалгах дасгал (AI)</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="w14-s8.html" class="internal"><span class="codenumber">14.8</span> <span class="title">Семинарын бодлогууд</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="w14-hw.html" class="internal"> <span class="title">Гэрийн даалгавар — Олон давхар интегралд хувьсагч солих</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter contains-active">
+<div class="toc-title-box"><a href="ch-w15.html" class="internal"><span class="codenumber">15</span> <span class="title">Муруй шугаман интеграл. Грийний томьёо</span></a></div>
+<ul class="structural toc-item-list contains-active" id="ptx-toc-group-ch-w15">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="ch-w15-2.html" class="internal"><span class="title">Удиртгал</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="w15-s1.html" class="internal"><span class="codenumber">15.1</span> <span class="title">Параметрчилсэн муруй</span></a></div>
+<ul id="ptx-toc-group-w15-s1" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="w15-s1.html#w15-s1-ai" class="internal"> <span class="title">Шалгах дасгал (AI)</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="w15-s2.html" class="internal"><span class="codenumber">15.2</span> <span class="title">Муруйн урт</span></a></div>
+<ul id="ptx-toc-group-w15-s2" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="w15-s2.html#w15-s2-ai" class="internal"> <span class="title">Шалгах дасгал (AI)</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section contains-active">
+<div class="toc-title-box"><a href="w15-s3.html" class="internal"><span class="codenumber">15.3</span> <span class="title">I төрлийн муруй шугаман интеграл</span></a></div>
+<ul class="structural toc-item-list active" id="ptx-toc-group-w15-s3">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="w15-s3.html#w15-s3-1" class="internal"><span class="title">Механик хэрэглээ</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="w15-s3.html#w15-s3-ai" class="internal"><span class="title">Шалгах дасгал (AI)</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="w15-s4.html" class="internal"><span class="codenumber">15.4</span> <span class="title">II төрлийн муруй шугаман интеграл</span></a></div>
+<ul id="ptx-toc-group-w15-s4" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="w15-s4.html#w15-s4-ai" class="internal"> <span class="title">Шалгах дасгал (AI)</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="w15-s5.html" class="internal"><span class="codenumber">15.5</span> <span class="title">Грийний томьёо</span></a></div>
+<ul id="ptx-toc-group-w15-s5" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="w15-s5.html#w15-s5-ai" class="internal"> <span class="title">Шалгах дасгал (AI)</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="w15-sec-potential.html" class="internal"><span class="codenumber">15.6</span> <span class="title">Интеграл замаас хамаарахгүй байх нөхцөл</span></a></div>
+<ul id="ptx-toc-group-w15-sec-potential" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="w15-sec-potential.html#w15-s6-ai" class="internal"> <span class="title">Шалгах дасгал (AI)</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="w15-s7.html" class="internal"><span class="codenumber">15.7</span> <span class="title">Семинарын бодлогууд</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="w15-hw.html" class="internal"> <span class="title">Гэрийн даалгавар — Муруй шугаман интеграл</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-w16.html" class="internal"><span class="codenumber">16</span> <span class="title">Гадаргуугийн интеграл. Гаусс–Остроградский ба Стоксын томьёо</span></a></div>
+<ul id="ptx-toc-group-ch-w16" class="structural toc-item-list">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="ch-w16-2.html" class="internal"><span class="title">Удиртгал</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="w16-s1.html" class="internal"><span class="codenumber">16.1</span> <span class="title">Огторгуй дахь гадаргуу</span></a></div>
+<ul id="ptx-toc-group-w16-s1" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="w16-s1.html#w16-s1-ai" class="internal"> <span class="title">Шалгах дасгал (AI)</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="w16-s2.html" class="internal"><span class="codenumber">16.2</span> <span class="title">Гадаргуугийн чиглэл</span></a></div>
+<ul id="ptx-toc-group-w16-s2" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="w16-s2.html#w16-s2-ai" class="internal"> <span class="title">Шалгах дасгал (AI)</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="w16-s3.html" class="internal"><span class="codenumber">16.3</span> <span class="title">Гадаргуугийн талбай</span></a></div>
+<ul id="ptx-toc-group-w16-s3" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="w16-s3.html#w16-s3-ai" class="internal"> <span class="title">Шалгах дасгал (AI)</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="w16-s4.html" class="internal"><span class="codenumber">16.4</span> <span class="title">I төрлийн гадаргуугийн интеграл</span></a></div>
+<ul id="ptx-toc-group-w16-s4" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="w16-s4.html#w16-s4-ai" class="internal"> <span class="title">Шалгах дасгал (AI)</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="w16-s5.html" class="internal"><span class="codenumber">16.5</span> <span class="title">II төрлийн гадаргуугийн интеграл (урсгал)</span></a></div>
+<ul id="ptx-toc-group-w16-s5" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="w16-s5.html#w16-s5-ai" class="internal"> <span class="title">Шалгах дасгал (AI)</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="w16-s6.html" class="internal"><span class="codenumber">16.6</span> <span class="title">Гаусс–Остроградскийн томьёо</span></a></div>
+<ul id="ptx-toc-group-w16-s6" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="w16-s6.html#w16-s6-ai" class="internal"> <span class="title">Шалгах дасгал (AI)</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="w16-s7.html" class="internal"><span class="codenumber">16.7</span> <span class="title">Стоксын томьёо</span></a></div>
+<ul id="ptx-toc-group-w16-s7" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="w16-s7.html#w16-s7-ai" class="internal"> <span class="title">Шалгах дасгал (AI)</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="w16-s8.html" class="internal"><span class="codenumber">16.8</span> <span class="title">Вектор анализын элементүүд</span></a></div>
+<ul id="ptx-toc-group-w16-s8" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="w16-s8.html#w16-s8-1" class="internal"><span class="title">Координатаас үл хамаарах утга</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="w16-s8.html#w16-s8-2" class="internal"><span class="title">Набла операторын адилтгалууд</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="w16-s8.html#w16-s8-3" class="internal"><span class="title">Потенциалт ба соленоид талбар</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="w16-s8.html#w16-s8-ai" class="internal"><span class="title">Шалгах дасгал (AI)</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="w16-s9.html" class="internal"><span class="codenumber">16.9</span> <span class="title">Нэгдсэн дүр зураг: <span class="process-math">\(\int_{\partial M}\omega = \int_Md\omega\)</span></span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="w16-s10.html" class="internal"><span class="codenumber">16.10</span> <span class="title">Семинарын бодлогууд</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="w16-hw.html" class="internal"> <span class="title">Гэрийн даалгавар — Гадаргуугийн интеграл ба вектор анализ</span></a></div></li>
+</ul>
+</li>
+</ul></nav></div>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content">
+<section class="section" id="w15-s3">
+<h1 class="heading hide-type">
+<span class="type">Хэсэг</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">15.3</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">I төрлийн муруй шугаман интеграл</span>
+</h1>
+<section class="introduction" id="w15-s3-2">
+<div class="para" id="w15-s3-2-1">Нягт нь <span class="process-math">\(\rho(x)\)</span> байх утасны массыг олъё. Муруйг <span class="process-math">\(P\)</span> хуваалтаар хэсэглэж, <span class="process-math">\(\xi_i\in[t_{i-1},t_i]\)</span> гэвэл масс ойролцоогоор <span class="process-math">\(\sum\rho(r(\xi_i))\Delta s_i\text{,}\)</span> энд <span class="process-math">\(\Delta s_i\)</span> нь <span class="process-math">\(i\)</span>-р хэсгийн урт. Дундаж утгын теоремоор <span class="process-math">\(\Delta s_i = |r'(\eta_i)|\Delta t_i\)</span> тул энэ нь <span class="process-math">\(\rho(r(t))|r'(t)|\)</span> функцийн Риманы нийлбэртэй ойролцоо. Үүнээс доорх тодорхойлолт гарна.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#w15-s3-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="definition definition-like" id="w15-s3-2-2"><h2 class="heading">
+<span class="type">Тодорхойлолт</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">15.5</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h2>
+<div class="para logical" id="w15-s3-2-2-1-1">
+<div class="para">
+<span class="process-math">\(\gamma\)</span> нь <span class="process-math">\(r:[a,b]\to\R^n\)</span> гөлгөр замаар өгөгдсөн муруй, <span class="process-math">\(f\)</span> нь <span class="process-math">\(\gamma\)</span>-ийн зураг дээр тасралтгүй функц бол</div>
+<div class="displaymath process-math" id="w15-s3-2-2-1-1-5">
+\begin{equation*}
+\int_\gamma f\,ds = \int_a^bf\bigl(r(t)\bigr)\,|r'(t)|\,dt
+\end{equation*}
+</div>
+<div class="para">тоог <dfn class="terminology">I төрлийн муруй шугаман интеграл</dfn> (нумын уртаар авсан интеграл) гэнэ. Хэсэгчлэн гөлгөр муруйн хувьд гөлгөр хэсгүүд дээрх интегралуудын нийлбэрээр тодорхойлно.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#w15-s3-2-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Тодорхойлолт 15.13"><a tabindex="-1" href="#w15-s3-2-2" title="Copy heading and permalink for Тодорхойлолт 15.13" aria-label="Copy heading and permalink for Тодорхойлолт 15.13">🔗</a></div>
+</article>
+<article class="theorem theorem-like" id="w15-thm-first-invariant"><h2 class="heading">
+<span class="type">Теорем</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">15.2</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h2>
+<div class="para" id="w15-thm-first-invariant-1-1">I төрлийн интеграл нь параметрчлэлийн сонголтоос <em class="emphasis">ба чиглэлээс</em> хамаарахгүй: <span class="process-math">\(\int_{\gamma^-}f\,ds = \int_\gamma f\,ds\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#w15-thm-first-invariant-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Теорем 15.14"><a tabindex="-1" href="#w15-thm-first-invariant" title="Copy heading and permalink for Теорем 15.14" aria-label="Copy heading and permalink for Теорем 15.14">🔗</a></div>
+</article>
+<details id="w15-thm-first-invariant-2" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h2 class="heading"><span class="type">Баталгаа<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h2></summary>
+<article class="hiddenproof knowl__content">
+<div class="para logical" id="w15-thm-first-invariant-2-1">
+<div class="para">
+<span class="process-math">\(\rho = r\circ\varphi\text{,}\)</span> <span class="process-math">\(\varphi:[\alpha,\beta]\to[a,b]\)</span> гэе; <span class="process-math">\(g(t) = f(r(t))|r'(t)|\)</span> тасралтгүй. <span class="process-math">\(\varphi'&gt;0\)</span> бол <span class="process-math">\(\varphi(\alpha) = a\text{,}\)</span> <span class="process-math">\(\varphi(\beta) = b\)</span> ба орлуулах томьёогоор (Теорем <a href="w04-s3.html#thm-subst" class="xref" data-knowl="./knowl/xref/thm-subst.html" data-reveal-label="Харуулах" data-close-label="Хаах" title="Теорем 4.3: Тодорхой интегралд орлуулах">4.3</a>)</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-subst.html" id="w15-thm-first-invariant-2-1-8">
+\begin{equation*}
+\int_\alpha^\beta f(\rho(\tau))|\rho'(\tau)|\,d\tau = \int_\alpha^\beta g(\varphi(\tau))\varphi'(\tau)\,d\tau = \int_a^bg(t)\,dt.
+\end{equation*}
+</div>
+<div class="para">
+<span class="process-math">\(\varphi'&lt;0\)</span> бол <span class="process-math">\(|\varphi'| = -\varphi'\text{,}\)</span> <span class="process-math">\(\varphi(\alpha) = b\text{,}\)</span> <span class="process-math">\(\varphi(\beta) = a\)</span> тул</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-subst.html" id="w15-thm-first-invariant-2-1-13">
+\begin{equation*}
+\int_\alpha^\beta g(\varphi(\tau))\bigl(-\varphi'(\tau)\bigr)\,d\tau = -\int_b^ag(t)\,dt = \int_a^bg(t)\,dt.
+\end{equation*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#w15-thm-first-invariant-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Баталгаа 15.14.1"><a tabindex="-1" href="#w15-thm-first-invariant-2" title="Copy heading and permalink for Баталгаа 15.14.1" aria-label="Copy heading and permalink for Баталгаа 15.14.1">🔗</a></div>
+</article></details>
+<div class="para" id="w15-s3-2-4">I төрлийн интеграл нь Риманы интегралын шугаман, нэмэх чанаруудтай бөгөөд <span class="process-math">\(\bigl|\int_\gamma f\,ds\bigr|\le\max_\gamma|f|\cdot L(\gamma)\text{,}\)</span> <span class="process-math">\(\int_\gamma1\,ds = L(\gamma)\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#w15-s3-2-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div></section>
+<section class="subsection" id="w15-s3-1">
+<h2 class="heading hide-type">
+<span class="type">Дэд хэсэг</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Механик хэрэглээ</span>
+</h2>
+<div class="para logical" id="w15-s3-1-2">
+<div class="para">Нягт нь <span class="process-math">\(\rho\ge0\)</span> байх утасны хувьд</div>
+<div class="displaymath process-math" id="w15-s3-1-2-2">
+\begin{equation*}
+m = \int_\gamma\rho\,ds, \qquad x_c = \frac1m\int_\gamma x\rho\,ds, \quad y_c = \frac1m\int_\gamma y\rho\,ds, \quad z_c = \frac1m\int_\gamma z\rho\,ds,
+\end{equation*}
+</div>
+<div class="para">
+<span class="process-math">\(Oz\)</span> тэнхлэгтэй харьцуулсан инерцийн момент <span class="process-math">\(I_z = \int_\gamma(x^2+y^2)\rho\,ds\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#w15-s3-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="example example-like" id="w15-s3-1-3"><h3 class="heading">
+<span class="type">Жишээ</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">15.3</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3>
+<div class="para logical" id="w15-s3-1-3-1">
+<div class="para">
+<span class="process-math">\(\gamma\text{:}\)</span> <span class="process-math">\(r(t) = (\cos t,\sin t,t)\text{,}\)</span> <span class="process-math">\(t\in[0,2\pi]\)</span> мушгиа шугам бол <span class="process-math">\(|r'| = \sqrt2\)</span> ба</div>
+<div class="displaymath process-math" id="w15-s3-1-3-1-5">
+\begin{equation*}
+\int_\gamma(x^2+y^2+z^2)\,ds = \sqrt2\int_0^{2\pi}(1+t^2)\,dt = \sqrt2\Bigl(2\pi + \frac{8\pi^3}{3}\Bigr).
+\end{equation*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#w15-s3-1-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Жишээ 15.15"><a tabindex="-1" href="#w15-s3-1-3" title="Copy heading and permalink for Жишээ 15.15" aria-label="Copy heading and permalink for Жишээ 15.15">🔗</a></div>
+</article>
+<article class="example example-like" id="w15-s3-1-4"><h3 class="heading">
+<span class="type">Жишээ</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">15.4</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Хагас тойргийн хүндийн төв.</span>
+</h3>
+<div class="para logical" id="w15-s3-1-4-2">
+<div class="para">
+<span class="process-math">\(x^2+y^2 = R^2\text{,}\)</span> <span class="process-math">\(y\ge0\)</span> нэгэн төрлийн (<span class="process-math">\(\rho\equiv1\)</span>) утас: <span class="process-math">\(r(t) = (R\cos t,R\sin t)\text{,}\)</span> <span class="process-math">\(t\in[0,\pi]\text{,}\)</span> <span class="process-math">\(ds = R\,dt\text{.}\)</span> <span class="process-math">\(m = \pi R\text{,}\)</span> тэгш хэмээр <span class="process-math">\(x_c = 0\text{,}\)</span>
+</div>
+<div class="displaymath process-math" id="w15-s3-1-4-2-9">
+\begin{equation*}
+y_c = \frac{1}{\pi R}\int_0^\pi R\sin t\cdot R\,dt = \frac{2R}{\pi}.
+\end{equation*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#w15-s3-1-4-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Жишээ 15.16: Хагас тойргийн хүндийн төв"><a tabindex="-1" href="#w15-s3-1-4" title="Copy heading and permalink for Жишээ 15.16: Хагас тойргийн хүндийн төв" aria-label="Copy heading and permalink for Жишээ 15.16: Хагас тойргийн хүндийн төв">🔗</a></div>
+</article><div class="autopermalink" aria-hidden="true" data-description="Дэд хэсэг: Механик хэрэглээ"><a tabindex="-1" href="#w15-s3-1" title="Copy heading and permalink for Дэд хэсэг: Механик хэрэглээ" aria-label="Copy heading and permalink for Дэд хэсэг: Механик хэрэглээ">🔗</a></div>
+</section>
+<section class="exercises" id="w15-s3-ai">
+<h2 class="heading hide-type">
+<span class="type">Дасгал</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Шалгах дасгал (AI)</span>
+</h2>
+<article class="exercise exercise-like" id="w15-s3-ai-2"><h3 class="heading"><span class="codenumber">1<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3>
+<div class="para" id="w15-s3-ai-2-1-1">
+<span class="process-math">\(\displaystyle\int_\gamma x\,ds\)</span>-ийг ол, <span class="process-math">\(\gamma\text{:}\)</span> <span class="process-math">\(y=x^2\text{,}\)</span> <span class="process-math">\(0\le x\le1\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#w15-s3-ai-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions">
+<details id="w15-s3-ai-2-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Хариу</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="answer solution-like knowl__content">
+<div class="para" id="w15-s3-ai-2-2-1">
+<span class="process-math">\(\dfrac{5\sqrt5-1}{12}\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#w15-s3-ai-2-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Хариу 1.1"><a tabindex="-1" href="#w15-s3-ai-2-2" title="Copy heading and permalink for Хариу 1.1" aria-label="Copy heading and permalink for Хариу 1.1">🔗</a></div>
+</div></details>
+<details id="w15-s3-ai-2-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Бодолт</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
+<div class="para logical" id="w15-s3-ai-2-3-1">
+<div class="para">
+<span class="process-math">\(r(x)=(x,x^2)\text{,}\)</span> <span class="process-math">\(ds=\sqrt{1+4x^2}\,dx\text{:}\)</span>
+</div>
+<div class="displaymath process-math" id="w15-s3-ai-2-3-1-3">
+\begin{equation*}
+\int_0^1x\sqrt{1+4x^2}\,dx=\frac1{12}\Bigl[(1+4x^2)^{3/2}\Bigr]_0^1=\frac{5\sqrt5-1}{12}.
+\end{equation*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#w15-s3-ai-2-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Бодолт 1.1"><a tabindex="-1" href="#w15-s3-ai-2-3" title="Copy heading and permalink for Бодолт 1.1" aria-label="Copy heading and permalink for Бодолт 1.1">🔗</a></div>
+</div></details>
+<details id="w15-s3-ai-2-4" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Бодолт</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Төстэй бодлого (AI)</span></summary>
+<div class="solution solution-like knowl__content">
+<div class="para" id="w15-s3-ai-2-4-2">
+<span class="process-math">\(\displaystyle\int_\gamma x\,ds\)</span>-ийг ол, <span class="process-math">\(\gamma\text{:}\)</span> <span class="process-math">\(y=\frac{x^2}2\text{,}\)</span> <span class="process-math">\(0\le x\le\sqrt3\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#w15-s3-ai-2-4-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="w15-s3-ai-2-4-3">
+<em class="emphasis">Заавар:</em> <span class="process-math">\(ds=\sqrt{1+y'^2}\,dx\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#w15-s3-ai-2-4-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="w15-s3-ai-2-4-4">
+<em class="emphasis">Хариу:</em> <span class="process-math">\(\frac73\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#w15-s3-ai-2-4-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Бодолт 1.2: Төстэй бодлого (AI)"><a tabindex="-1" href="#w15-s3-ai-2-4" title="Copy heading and permalink for Бодолт 1.2: Төстэй бодлого (AI)" aria-label="Copy heading and permalink for Бодолт 1.2: Төстэй бодлого (AI)">🔗</a></div>
+</div></details>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Бодлого 1"><a tabindex="-1" href="#w15-s3-ai-2" title="Copy heading and permalink for Бодлого 1" aria-label="Copy heading and permalink for Бодлого 1">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="w15-s3-ai-3"><h3 class="heading"><span class="codenumber">2<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3>
+<div class="para" id="w15-s3-ai-3-1-1">
+<span class="process-math">\(x^2+y^2=a^2\)</span> тойрог хэлбэртэй утасны нягт <span class="process-math">\(\rho=|x|\)</span> бол массыг ол.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#w15-s3-ai-3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions">
+<details id="w15-s3-ai-3-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Хариу</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="answer solution-like knowl__content">
+<div class="para" id="w15-s3-ai-3-2-1">
+<span class="process-math">\(4a^2\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#w15-s3-ai-3-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Хариу 2.1"><a tabindex="-1" href="#w15-s3-ai-3-2" title="Copy heading and permalink for Хариу 2.1" aria-label="Copy heading and permalink for Хариу 2.1">🔗</a></div>
+</div></details>
+<details id="w15-s3-ai-3-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Бодолт</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
+<div class="para" id="w15-s3-ai-3-3-1">
+<span class="process-math">\(x=a\cos t\text{,}\)</span> <span class="process-math">\(y=a\sin t\text{,}\)</span> <span class="process-math">\(ds=a\,dt\text{:}\)</span> <span class="process-math">\(m=\int_0^{2\pi}a|\cos t|\,a\,dt=a^2\cdot4=4a^2\)</span> (<span class="process-math">\(\int_0^{2\pi}|\cos t|\,dt=4\)</span>).<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#w15-s3-ai-3-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Бодолт 2.1"><a tabindex="-1" href="#w15-s3-ai-3-3" title="Copy heading and permalink for Бодолт 2.1" aria-label="Copy heading and permalink for Бодолт 2.1">🔗</a></div>
+</div></details>
+<details id="w15-s3-ai-3-4" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Бодолт</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Төстэй бодлого (AI)</span></summary>
+<div class="solution solution-like knowl__content">
+<div class="para" id="w15-s3-ai-3-4-2">
+<span class="process-math">\(x^2+y^2=a^2\)</span> тойрог хэлбэртэй утасны нягт <span class="process-math">\(\rho=x^2\)</span> бол массыг ол.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#w15-s3-ai-3-4-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="w15-s3-ai-3-4-3">
+<em class="emphasis">Заавар:</em> Параметрчлэл <span class="process-math">\(x=a\cos t\text{,}\)</span> <span class="process-math">\(y=a\sin t\text{,}\)</span> <span class="process-math">\(ds=a\,dt\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#w15-s3-ai-3-4-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="w15-s3-ai-3-4-4">
+<em class="emphasis">Хариу:</em> <span class="process-math">\(\pi a^3\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#w15-s3-ai-3-4-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Бодолт 2.2: Төстэй бодлого (AI)"><a tabindex="-1" href="#w15-s3-ai-3-4" title="Copy heading and permalink for Бодолт 2.2: Төстэй бодлого (AI)" aria-label="Copy heading and permalink for Бодолт 2.2: Төстэй бодлого (AI)">🔗</a></div>
+</div></details>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Бодлого 2"><a tabindex="-1" href="#w15-s3-ai-3" title="Copy heading and permalink for Бодлого 2" aria-label="Copy heading and permalink for Бодлого 2">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="w15-s3-ai-4"><h3 class="heading"><span class="codenumber">3<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3>
+<div class="para" id="w15-s3-ai-4-1-1">Нэгэн төрлийн (<span class="process-math">\(\rho\equiv1\)</span>) мушгиа шугам <span class="process-math">\(r(t)=(\cos t,\sin t,t)\text{,}\)</span> <span class="process-math">\(t\in[0,2\pi]\)</span>-ийн <span class="process-math">\(Oz\)</span> тэнхлэгтэй харьцуулсан инерцийн момент ба хүндийн төвийн <span class="process-math">\(z_c\)</span> координатыг ол.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#w15-s3-ai-4-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions">
+<details id="w15-s3-ai-4-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Хариу</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="answer solution-like knowl__content">
+<div class="para" id="w15-s3-ai-4-2-1">
+<span class="process-math">\(I_z=2\sqrt2\,\pi\text{,}\)</span> <span class="process-math">\(z_c=\pi\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#w15-s3-ai-4-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Хариу 3.1"><a tabindex="-1" href="#w15-s3-ai-4-2" title="Copy heading and permalink for Хариу 3.1" aria-label="Copy heading and permalink for Хариу 3.1">🔗</a></div>
+</div></details>
+<details id="w15-s3-ai-4-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Бодолт</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
+<div class="para" id="w15-s3-ai-4-3-1">
+<span class="process-math">\(ds=\sqrt2\,dt\text{,}\)</span> <span class="process-math">\(x^2+y^2=1\text{.}\)</span> <span class="process-math">\(I_z=\int_0^{2\pi}1\cdot\sqrt2\,dt=2\sqrt2\,\pi\text{.}\)</span> <span class="process-math">\(m=2\sqrt2\,\pi\text{,}\)</span> <span class="process-math">\(\int_\gamma z\,ds=\sqrt2\int_0^{2\pi}t\,dt=2\sqrt2\,\pi^2\text{,}\)</span> иймд <span class="process-math">\(z_c=\pi\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#w15-s3-ai-4-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Бодолт 3.1"><a tabindex="-1" href="#w15-s3-ai-4-3" title="Copy heading and permalink for Бодолт 3.1" aria-label="Copy heading and permalink for Бодолт 3.1">🔗</a></div>
+</div></details>
+<details id="w15-s3-ai-4-4" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Бодолт</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Төстэй бодлого (AI)</span></summary>
+<div class="solution solution-like knowl__content">
+<div class="para" id="w15-s3-ai-4-4-2">Нэгэн төрлийн (<span class="process-math">\(\rho\equiv1\)</span>) мушгиа шугам <span class="process-math">\(r(t)=(2\cos t,2\sin t,t)\text{,}\)</span> <span class="process-math">\(t\in[0,\pi]\)</span>-ийн <span class="process-math">\(Oz\)</span> тэнхлэгтэй харьцуулсан инерцийн момент ба хүндийн төвийн <span class="process-math">\(z_c\)</span> координатыг ол.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#w15-s3-ai-4-4-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="w15-s3-ai-4-4-3">
+<em class="emphasis">Заавар:</em> <span class="process-math">\(|r'|=\sqrt5\text{,}\)</span> <span class="process-math">\(I=\int(x^2+y^2)\,ds\text{,}\)</span> <span class="process-math">\(z_c=\int z\,ds/L\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#w15-s3-ai-4-4-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="w15-s3-ai-4-4-4">
+<em class="emphasis">Хариу:</em> <span class="process-math">\(I=4\sqrt5\,\pi\text{,}\)</span> <span class="process-math">\(z_c=\frac\pi2\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#w15-s3-ai-4-4-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Бодолт 3.2: Төстэй бодлого (AI)"><a tabindex="-1" href="#w15-s3-ai-4-4" title="Copy heading and permalink for Бодолт 3.2: Төстэй бодлого (AI)" aria-label="Copy heading and permalink for Бодолт 3.2: Төстэй бодлого (AI)">🔗</a></div>
+</div></details>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Бодлого 3"><a tabindex="-1" href="#w15-s3-ai-4" title="Copy heading and permalink for Бодлого 3" aria-label="Copy heading and permalink for Бодлого 3">🔗</a></div>
+</article><div class="autopermalink" aria-hidden="true" data-description="Дасгал: Шалгах дасгал (AI)"><a tabindex="-1" href="#w15-s3-ai" title="Copy heading and permalink for Дасгал: Шалгах дасгал (AI)" aria-label="Copy heading and permalink for Дасгал: Шалгах дасгал (AI)">🔗</a></div>
+</section><div class="autopermalink" aria-hidden="true" data-description="Хэсэг 15.3: I төрлийн муруй шугаман интеграл"><a tabindex="-1" href="#w15-s3" title="Copy heading and permalink for Хэсэг 15.3: I төрлийн муруй шугаман интеграл" aria-label="Copy heading and permalink for Хэсэг 15.3: I төрлийн муруй шугаман интеграл">🔗</a></div>
+</section>
+</div>
+<div id="ptx-content-footer" class="ptx-content-footer">
+<a class="previous-button button" href="w15-s2.html" title="Өмнөх"><span class="icon material-symbols-outlined" aria-hidden="true"></span><span class="name">Өмнөх</span></a><a class="top-button button" href="#" title="Дээш"><span class="icon material-symbols-outlined" aria-hidden="true"></span><span class="name">Дээш</span></a><a class="next-button button" href="w15-s4.html" title="Дараах"><span class="name">Дараах</span><span class="icon material-symbols-outlined" aria-hidden="true"></span></a>
+</div></main>
+</div>
+<div id="ptx-page-footer" class="ptx-page-footer">
+<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" height="100%" viewbox="338 3000 8772 6866" role="img"><title>PreTeXt logo</title><g style="stroke-width:.025in; stroke:currentColor; fill:none"><polyline points="472,3590 472,9732 " style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" alt="Runestone Academy logo" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAHYAAABgCAMAAAD/9nalAAABgFBMVEXqZAYScdXkjhrZKQDpVQvsjRF6aXFYYJFnkJevKwCcRzQxbbGHT1nKLwDeQQo/P38AJP94jYKZmWbhKgD/sBHMmWYAAAABfvYBhP0AfvzSPQr1og/yhwvrRgoAAP/+fgD0lg3/AAAAffUAqv8A///0eAoAfvb1pA4AVf8AfvYAffYAfvb0Rgr8qQPaQAoAffb1Zwq+PgD3WAr//wDGNgXzRgnyhAoAgPrJOQoAh/v2pAwAhfn+VQDyhgkAgfz1pQ4AhfwAg/z1pQ0Ah/oAf7+6NgrSKwDrRgnMOQfLOguqVQDxJAD5VwnyeAn0mg35PQHoRgr0oQ71Zwnyegn0mg0AlP/IOAjzmAwAaP/oJgDpRAvxHQDmRQoAVap/AAC2OBG/fwDHOQr1WAn3VgnyeAn0lgzdQAryiQrEOAnyaQkAkP8BkP/xRwf1eQnylgzaJwDUQg75Zwj1aAn0dwnxmRDxoA4Af38Alf/1WQnyiArxmw7/ugN/fwDTQA/anQD0Ugr9ymCvAAAAgHRSTlMhDVAaUyMOGB0HGhgZhrAEB0oFYP8FAPz9B/z8/vwBA/0BLgMB/NCNA09vr3MF/I39Bf0Bj4p10a0TcC0EirBRbo8uTwSPb08S0AMvjY0QB9GrkHWvLm7MB02sLC8DAnEEUm2rVJHTri9zSP8O0E9YcK/RrXPWAgXMzS4GAokHWscQg/MAAArDSURBVHjavZqJW9rKGodj957l7nfIFEkMRExYpAiCyiIULaJVsa51qbVu97THLlq7ntP+6+ebSQIzkwSw2js+T60KefP75lsnSKjHpWP4B4fD4XH4HsHockvq8XWEE67KgUAgWq6EETJ2/h9YjHAlL7dWCsBKRP/R2AgKAyzgLPh/uUB+vfNDsRgVGKgNzlfobr//YVgd4zxPtclVsDUyDOXHYCMo7qaykqf0H4CNIFN2A8mi38smkC/qXt2xCsZRWWAKkmMAVq4YO4ViPCafMsMYj9OvcNiMpcguY4SvFIsxZtXJcmxcfMmHWvllvg/jq8RGUIql5sF5sYF1RdFhvcc4giPwKlMuo4hydViDJApGaxh9cF1diZBXVS9i5u5YNnhkE214vuwDcGPgBleE5YNHjvsq2gDHi8FNXglW0dn8JMsFxfANM5SXwwq+EizmgkeOIr2jE8R7ltsNy7lxpZPXkBRqosjVYDmHCnfCGkpBjm5g5fJYBbF5ES7aMQUaF5DbEauj8YDM+jF7TS1tLa2NBbm4N7lSZxtz2FiXhLBD5eLLYxUmauUAu7UamtnbW1u7kahLSGN3F2P9sliuvsMVGfupaCx0L0TWKEoz+ftlrKfd7YTFOmfjFCP2KZq5B2t4OBRq/t6Si3WoVuO9lCKp96hlbZxGaxRL5NZRsS039jKFLofFfPGJspumFRu2WGLlFlYx9DjcnnEJrCLkCtaPZ9H/7rWwobaV6a3me/Aqqdd8HMBK+2JFlHVMHAqNfNMWmZxhQnxvKN+L5U1MxEbY6CFiQ3+rU+w++DV7t+DNH74TK1JlVqztUKFtNEqwI8W2lck7q92ThuRL5QYBTiyEzxihHkmzdUK9/xwtsi0OcMERlAtjFReVy7Wa5VChN0idaQJ25GNGY99toArUSOM71Jr8qMVXlrTtUNvgWqNAHbkvsbtLuGaXjk7yHAOqApWvPSjdoDZGT4tom2Ifs1amnVW4c+GQunXG1J+4hFdEe9TGCZKMix+Bev9U1dzRZ3aws+RRdsKCVuECs9ShhocXwbUW0SOCHTxoZyqrUht94Pz+aUPqPlZCDWAb4KdO0JL9LCKJYudR0iUXsrPRM5Z0gDw1rnNjhhO0dVrwtMWP9wE7qCLezLoC1ct/HpO6jpV5rHAHBdrThm1jAgIrU+yBprrK18tYz1hxhpbFgmJXAag7s1a5lyj2DKnuNAeNgdITVlFwgMeKd+wErVNlteLpIGDByqq72TX9xiKp4wztilgwbJqKPZqxN1NFjwE62J9zYRXTf2ZyqY3KgolFsXtUbKuDAitT7CeUcbWdsq9TSUJjzNvYPTxaVWA4JFlbS/T/cUKw/Te9rdwLdoePHqjtQiFxqsDRrNbuIZf7gTpQcmNjrj3yxk7xfiy7uk8raIdDCe33YnpxcVElSyJi+z9JmubWMO49v0idekXo2sQ33W3YxYddJ0DtH7gmZCo6QfkMRVKHxOjeWacKNNF2vf7t+fPnv8Fanh+k2JKYIMlw4pMxRJdiJzyua2OqACk+zRFS32mmGOy3sAMLgjNbm9sdq6CNqOxXAtqt2zC0qImQjaVcugZeCQmSZLyo9+ZK/vHj7rMdh9qEtyVGWmod7Irgy5hcznsUl4Q8yjqULpZLDTXsxJimhXaEE0us/IfLeGZ3rMHGj9sbnCpAxgCtiPbv8zYeCL5zyY3Lqe5YLmzd5nGqAC0+mirtszYGscF1l0+l5KiidDdyuxDIUfFUXEN37zHFR0XFU97GAwOfebm0imL0viu2nS3c1kk7QVt0glg6ZcWC3CEeS3zFO2FIftnC/XLVrgKt4lOkxYcRGzxf4HsbRY96b67kcwxFjIOF2mMNl5AYHUlJJPHY4AM+UxHzxb2O7oR00coWED6KV9CCjZnJQ0UHDBWwQzyW9oPYgyv5JCmwjWBjLW0FbYKdAEjVY8QGg194Z9ZpNZjqiGWTlCtqraAdJjbWuA0vDbTFBoOT2jPeypAf+9zTnyQ6noOtCZnRGeA3eWcFCnDb2CVerULkepwZ+WILaMezCiTax1B0ZYqZ4zY1GBQSJC0H7hNByeeIUVTrVAFIjE+FuMqo6wx2QkiQBop7HJFJPuVWTOGaHbSbrdaN2d6b6y1q8FxMkOSBDharil+WEqJcdRyqrqVdbplENweCDhZC1111XWEhVKCC7N2XO1WAPYNiuZ+DrTUkdpAk92HhKYJfmZejbFegITtoR1Haq0dR0asW9vyL5p4hxZlT8jm25o/K7VnAOq7wWl8Y7mexlSPH6sJDE1+1XE6zB/hQc8ZvTv6KJtpWFrGK66GJX3fBYa0BftjXxpadhxzugnscikMeMFxYO7uzngz9vC4ELVt8XAvS1ZKNnUTP/J8RZTKsWlVNZpASYSoQs7fabGOYuHFTlMGlK/WLxf3Pkmhl0BOFHimiZVSVUat+XqB/TLY/cMB5sjY7dq9xdNSs+ziUY+aFpeD5+bk7hCCGanL+zi0abLQToNjkxNDQxORnBf0jRR+3e/TmM+mZmbtdjk3BFMkvX79+dW+A+q9bUXkD3ZwE0CS5KYqdPbj2ivxmaOLBnVg8StE1LktpzL8duBkHzyKf0Z/vXKPaXh1I5O+Wka/lSvPLwCZ/mbj2z5qZimP1v0nm/RpZ3Z8BZDT4ciGTk/TCrw6W50u5m6REUexiIlG/cZDLlZaXc7l39K4eLFhpL6n2APP0bNW664UHxIzvcrnlUi53cKOeqNt7OzX19+16YnQ0kUjcACz8Nffu3RBlU9dQnyUzF2SqySSHJOvgW4JAvm3v9GE7gNamd3f34E4SwIahdZm+7vCQopMXlM0hD+mVln97TmXV93Z3s3uk6ZAQNmvh23NzTx5mpwH+JkEXYRPlBE3YUiu2e0NOEmSpBB4DRLre7O5OZ9eezF3vK9TCoDZFPqRSrlZWC7/MPfk3ha9Z8EePHs/Pw3sPD5d6kG0jkwS5QpHzjx+NWsTp6ezDJ3OLePVFtUziJCzRjtz6hEy+XK2t4p9AOIFn/3xDNsNmH66sUDZNexlxt1mVKyuUCEiw659Zizgzvlqr5m0OtKUSeSrg/GTDK7XVvpkWHN5N2I/nS8cEPdRy8mdqRkAurawclwiRIHkix4iPw6btkM/FxAMBEf6i8PN1gP+anR7LZi32/NnxsSXbkgu7Tb/ZyOMzS2Q2O0aIW0Cs2Bqd60ZTMfIhPslJRhjgkKBaydGCV0H57bmt1w/hSmNjm5ub+/tv354dr6+vLw3Zu02Q6+ufjs/e7u9vbsKrskTjT75EetgskSNkAzvPAnDBjJWjvHDib4XCLQofo3Bgn518IuwJijx5+9YijmUfzm39UnhRKXNEGYgFbD8lwobOlHmFfChHaSlPxaOi1am/bVF4o3HUbH48PTnp7z85/dhsHjWA+Hpr65ZIDATKKdMm6lOU6HXCqtufCKINbjjmAa/UCji9NUfZjWYzdNRoAHHu+u1CTSBG46maQ8TC4wrPx086hhtzhNdiqaiXv/Vd34IU8+vrres/g6uWAwLRDGOnPcf6RZ7f6syW+/jbi1UnAbSJ5YoZ7rOJEdzbob3HIzADT71v+5todZaYj8ccjTv+xJ6wHv5WMKvxqBP+TnAA0f6wmtGFeAFs29+Mlr9VUiTSAkw4okgvxAtjnedo2IF/CJsXJ9L1F+diDpU1L1tmAAAAAElFTkSuQmCC"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" alt="MathJax logo" src="data:image/png;base64,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"></a>
+</div>
+</body>
+</html>

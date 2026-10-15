@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: default-modern                 *-->
+<!--*  Palette:                              *-->
+<!--******************************************-->
+
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="theorem theorem-like"><h2 class="heading">
+<span class="type">Теорем</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">12.23</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Дирихлегийн интеграл.</span>
+</h2>
+<div class="para logical">
+<div class="displaymath process-math">
+\begin{equation*}
+\int_0^\infty\frac{\sin\alpha x}{x}\,dx = \frac\pi2\operatorname{sign}\alpha.
+\end{equation*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#w12-thm-dirichlet-int-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Теорем 12.23: Дирихлегийн интеграл"><a tabindex="-1" href="#w12-thm-dirichlet-int" title="Copy heading and permalink for Теорем 12.23: Дирихлегийн интеграл" aria-label="Copy heading and permalink for Теорем 12.23: Дирихлегийн интеграл">🔗</a></div>
+</article>
+<details class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h2 class="heading"><span class="type">Баталгаа<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h2></summary>
+<article class="hiddenproof knowl__content">
+<div class="para logical">
+<div class="para">
+<span class="process-math">\(I(t) = \int_0^\infty e^{-tx}\frac{\sin x}{x}\,dx\text{,}\)</span> <span class="process-math">\(t\ge0\)</span> гэе (<span class="process-math">\(x = 0\)</span> дээр интеграл доорх функцийг <span class="process-math">\(1\)</span> гэж тодорхойлбол тасралтгүй).</div>
+<ol class="decimal" id="w12-thm-dirichlet-int-3-1-5">
+<li>
+<div class="para">Жишээ <a href="w12-s2.html#w12-ex-abel-e" class="xref" data-knowl="./knowl/xref/w12-ex-abel-e.html" data-reveal-label="Харуулах" data-close-label="Хаах" title="Жишээ 12.5">12.5</a>-аар <span class="process-math">\([0,\infty)\)</span> дээр жигд нийлэх тул <span class="process-math">\(I\)</span> нь <span class="process-math">\([0,\infty)\)</span> дээр тасралтгүй (Теорем <a href="w12-s3.html#w12-thm-impr-cont" class="xref" data-knowl="./knowl/xref/w12-thm-impr-cont.html" data-reveal-label="Харуулах" data-close-label="Хаах" title="Теорем 12.8: Тасралтгүй чанар">12.8</a>).</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 1"><a tabindex="-1" href="#w12-thm-dirichlet-int-3-1-5-1" title="Copy heading and permalink for Item 1" aria-label="Copy heading and permalink for Item 1">🔗</a></div>
+</li>
+<li>
+<div class="para">
+<span class="process-math">\(t\ge t_0&gt;0\)</span> үед <span class="process-math">\(\bigl|\frac{\partial}{\partial t}\bigl(e^{-tx}\frac{\sin x}{x}\bigr)\bigr| = |e^{-tx}\sin x|\le e^{-t_0x}\)</span> — M-шинжүүрээр жигд. Теорем <a href="w12-s3.html#w12-thm-impr-diff" class="xref" data-knowl="./knowl/xref/w12-thm-impr-diff.html" data-reveal-label="Харуулах" data-close-label="Хаах" title="Теорем 12.10: Дифференциалчлах">12.10</a>-ээр <span class="process-math">\((0,\infty)\)</span> дээр<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/w12-thm-impr-diff.html">
+\begin{equation*}
+I'(t) = -\int_0^\infty e^{-tx}\sin x\,dx = -\frac{1}{1+t^2}.
+\end{equation*}
+</div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 2"><a tabindex="-1" href="#w12-thm-dirichlet-int-3-1-5-2" title="Copy heading and permalink for Item 2" aria-label="Copy heading and permalink for Item 2">🔗</a></div>
+</li>
+<li>
+<div class="para">Иймд <span class="process-math">\(I(t) = C - \arctan t\text{.}\)</span> Гэтэл <span class="process-math">\(\bigl|\frac{\sin x}{x}\bigr|\le1\)</span> тул <span class="process-math">\(|I(t)|\le\int_0^\infty e^{-tx}dx = \frac1t\to0\text{,}\)</span> эндээс <span class="process-math">\(C = \frac\pi2\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 3"><a tabindex="-1" href="#w12-thm-dirichlet-int-3-1-5-3" title="Copy heading and permalink for Item 3" aria-label="Copy heading and permalink for Item 3">🔗</a></div>
+</li>
+</ol>
+<div class="para">1-ээр <span class="process-math">\(I(0) = \lim_{t\to0^+}I(t) = \frac\pi2\text{.}\)</span> <span class="process-math">\(\alpha&gt;0\)</span> үед <span class="process-math">\(\alpha x = u\)</span> орлуулгаар <span class="process-math">\(\int_0^\infty\frac{\sin\alpha x}{x}dx = I(0)\text{;}\)</span> <span class="process-math">\(\alpha&lt;0\)</span> үед сондгой чанараар.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#w12-thm-dirichlet-int-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Баталгаа 12.23.1"><a tabindex="-1" href="#w12-thm-dirichlet-int-3" title="Copy heading and permalink for Баталгаа 12.23.1" aria-label="Copy heading and permalink for Баталгаа 12.23.1">🔗</a></div>
+</article></details><span class="incontext"><a class="internal" href="w12-s4.html#w12-thm-dirichlet-int">In Context</a></span>
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: default-modern                 *-->
+<!--*  Palette:                              *-->
+<!--******************************************-->
+
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="theorem theorem-like"><h2 class="heading">
+<span class="type">Теорем</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">14.7</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Хувьсагч солих.</span>
+</h2>
+<div class="para logical">
+<div class="para">
+<span class="process-math">\(\varphi\colon U\to V\)</span> диффеоморфизм, <span class="process-math">\(D\subset U\)</span> компакт, Жорданы утгаар хэмжигдэхүүнтэй байг. Тэгвэл <span class="process-math">\(\varphi(D)\)</span> компакт, хэмжигдэхүүнтэй бөгөөд <span class="process-math">\(\varphi(D)\)</span> дээр тасралтгүй дурын <span class="process-math">\(f\)</span>-ийн хувьд</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\int_{\varphi(D)}f(x)\,dx = \int_Df\bigl(\varphi(u)\bigr)\,|J_\varphi(u)|\,du.
+\end{equation*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#w14-thm-cov-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Теорем 14.7: Хувьсагч солих"><a tabindex="-1" href="#w14-thm-cov" title="Copy heading and permalink for Теорем 14.7: Хувьсагч солих" aria-label="Copy heading and permalink for Теорем 14.7: Хувьсагч солих">🔗</a></div>
+</article>
+<details class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h2 class="heading"><span class="type">Баталгаа<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h2></summary>
+<article class="hiddenproof knowl__content">
+<div class="para">
+<em class="emphasis">Алхам 0.</em> <span class="process-math">\(\varphi\)</span> гомеоморфизм тул <span class="process-math">\(\varphi(D)\)</span> компакт, <span class="process-math">\(\partial\varphi(D) = \varphi(\partial D)\)</span> нь Лемм <a href="w14-s1.html#w14-lem-lipschitz" class="xref" data-knowl="./knowl/xref/w14-lem-lipschitz.html" data-reveal-label="Харуулах" data-close-label="Хаах" title="Лемм 14.1.1">14.1.1</a>-аар хэмжээ тэг — <span class="process-math">\(\varphi(D)\)</span> хэмжигдэхүүнтэй. <span class="process-math">\(f\)</span>-ийг <span class="process-math">\(V\)</span> дээр тасралтгүй гэж үзье (ерөнхий тохиолдлыг үүн рүү шилжүүлж болно).<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#w14-thm-cov-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical">
+<div class="para">
+<em class="emphasis">Алхам 1: <span class="process-math">\(f\ge0\)</span> үед "<span class="process-math">\(\le\)</span>".</em> <span class="process-math">\(K\subset U\)</span> нь <span class="process-math">\(D\)</span>-г дотроо агуулсан компакт, <span class="process-math">\(\varepsilon&gt;0\text{,}\)</span> <span class="process-math">\(\delta\)</span> нь Лемм <a href="w14-s2.html#w14-lem-cube" class="xref" data-knowl="./knowl/xref/w14-lem-cube.html" data-reveal-label="Харуулах" data-close-label="Хаах" title="Лемм 14.2.1: Гол үнэлгээ">14.2.1</a>-ийнх байг. Огторгуйг тал нь <span class="process-math">\(h&lt;\delta\)</span> кубуудын торонд хувааж, <span class="process-math">\(D\)</span>-тэй огтлолцох кубуудыг <span class="process-math">\(Q_1,\dots,Q_N\)</span> гэе (<span class="process-math">\(h\)</span> бага бол <span class="process-math">\(Q_i\subset K\)</span>). <span class="process-math">\(a_i\)</span> — <span class="process-math">\(Q_i\)</span>-ийн төв, <span class="process-math">\(M_i = \max_{Q_i}f\circ\varphi\text{.}\)</span> <span class="process-math">\(\varphi(D)\subset\bigcup\varphi(Q_i)\text{,}\)</span> <span class="process-math">\(f\ge0\)</span> тул</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/w14-lem-cube.html">
+\begin{equation*}
+\int_{\varphi(D)}f\le\sum_i\int_{\varphi(Q_i)}f\le\sum_iM_i|\varphi(Q_i)|\le(1 + \varepsilon)^n\sum_iM_i\,|J_\varphi(a_i)|\,|Q_i|.
+\end{equation*}
+</div>
+<div class="para">
+<span class="process-math">\(h\to0\)</span> үед хилтэй огтлолцох кубуудын нийт эзлэхүүн <span class="process-math">\(\to0\)</span> (<span class="process-math">\(\partial D\)</span> Жорданы утгаар хэмжээ тэг), харин <span class="process-math">\(D\)</span>-д агуулагдах кубууд дээрх нийлбэр нь <span class="process-math">\(g = (f\circ\varphi)|J_\varphi|\)</span>-ийн дээд Дарбугийн нийлбэр рүү ойртож (жигд тасралтгүй чанар), <span class="process-math">\(\int_Dg\)</span> руу тэмүүлнэ. Иймд <span class="process-math">\(\int_{\varphi(D)}f\le(1 + \varepsilon)^n\int_D(f\circ\varphi)|J_\varphi|\text{;}\)</span> <span class="process-math">\(\varepsilon\to0\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#w14-thm-cov-3-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical">
+<div class="para">
+<em class="emphasis">Алхам 2: "<span class="process-math">\(\ge\)</span>".</em> Алхам 1-ийг <span class="process-math">\(\varphi^{-1}\colon V\to U\text{,}\)</span> <span class="process-math">\(\varphi(D)\)</span> муж, <span class="process-math">\(g = (f\circ\varphi)|J_\varphi|\)</span> функцэд хэрэглэвэл</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\int_D(f\circ\varphi)|J_\varphi| \le \int_{\varphi(D)}f(x)\,\bigl|J_\varphi(\varphi^{-1}(x))\bigr|\,\bigl|J_{\varphi^{-1}}(x)\bigr|\,dx = \int_{\varphi(D)}f,
+\end{equation*}
+</div>
+<div class="para">учир нь <span class="process-math">\(J_\varphi(\varphi^{-1}(x))J_{\varphi^{-1}}(x) = 1\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#w14-thm-cov-3-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para">
+<em class="emphasis">Алхам 3.</em> Дурын тасралтгүй <span class="process-math">\(f = f^+ - f^-\text{,}\)</span> <span class="process-math">\(f^\pm = \max(\pm f,0)\ge0\)</span> тасралтгүй; шугаман чанараар.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#w14-thm-cov-3-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Баталгаа 14.7.1"><a tabindex="-1" href="#w14-thm-cov-3" title="Copy heading and permalink for Баталгаа 14.7.1" aria-label="Copy heading and permalink for Баталгаа 14.7.1">🔗</a></div>
+</article></details><span class="incontext"><a class="internal" href="w14-s2.html#w14-thm-cov">In Context</a></span>
+</body>
+</html>

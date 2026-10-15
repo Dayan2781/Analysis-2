@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: default-modern                 *-->
+<!--*  Palette:                              *-->
+<!--******************************************-->
+
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="theorem theorem-like"><h2 class="heading">
+<span class="type">Теорем</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">11.15</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Дирихле.</span>
+</h2>
+<div class="para logical">
+<div class="para">
+<span class="process-math">\(f\)</span> нь <span class="process-math">\(2\pi\)</span> үетэй, <span class="process-math">\([-\pi,\pi]\)</span> дээр интегралчлагдах ба <span class="process-math">\(x\)</span> цэгт нэг талын хязгаарууд <span class="process-math">\(f(x\pm0)\)</span> оршин байг. Мөн ямар нэг <span class="process-math">\(\delta&gt;0\text{,}\)</span> <span class="process-math">\(M\)</span>-д</div>
+<div class="displaymath process-math">
+\begin{equation*}
+|f(x+t) - f(x+0)|\le Mt, \qquad |f(x-t) - f(x-0)|\le Mt \qquad (0&lt;t&lt;\delta)
+\end{equation*}
+</div>
+<div class="para">байг (жишээ нь <span class="process-math">\(f\)</span> хэсэгчлэн гөлгөр бол энэ нь бүх <span class="process-math">\(x\)</span>-д биелнэ). Тэгвэл</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\lim_{n\to\infty}S_n(x) = \frac{f(x+0) + f(x-0)}{2}.
+\end{equation*}
+</div>
+<div class="para">Ялангуяа <span class="process-math">\(f\)</span> нь <span class="process-math">\(x\)</span> цэгт тасралтгүй бол <span class="process-math">\(S_n(x)\to f(x)\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#thm-fourier-pointwise-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Теорем 11.15: Дирихле"><a tabindex="-1" href="#thm-fourier-pointwise" title="Copy heading and permalink for Теорем 11.15: Дирихле" aria-label="Copy heading and permalink for Теорем 11.15: Дирихле">🔗</a></div>
+</article>
+<details class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h2 class="heading"><span class="type">Баталгаа<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h2></summary>
+<article class="hiddenproof knowl__content">
+<div class="para logical">
+<div class="para">Лемм <a href="w11-s4.html#lem-dirichlet-kernel" class="xref" data-knowl="./knowl/xref/lem-dirichlet-kernel.html" data-reveal-label="Харуулах" data-close-label="Хаах" title="Лемм 11.4.1: Дирихлегийн цөм">11.4.1</a>-ийн <span class="process-math">\(\frac1\pi\int_0^\pi D_n = \frac12\)</span> ба Теорем <a href="w11-s4.html#thm-sn-integral" class="xref" data-knowl="./knowl/xref/thm-sn-integral.html" data-reveal-label="Харуулах" data-close-label="Хаах" title="Теорем 11.2">11.2</a>-аар</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/lem-dirichlet-kernel.html ./knowl/xref/thm-sn-integral.html">
+\begin{equation*}
+S_n(x) - \frac{f(x+0) + f(x-0)}{2} = \frac1\pi\int_0^\pi\bigl[f(x+t) - f(x+0)\bigr]D_n(t)\,dt + \frac1\pi\int_0^\pi\bigl[f(x-t) - f(x-0)\bigr]D_n(t)\,dt.
+\end{equation*}
+</div>
+<div class="para">Эхний интегралыг авч үзье:</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/lem-dirichlet-kernel.html ./knowl/xref/thm-sn-integral.html">
+\begin{equation*}
+\frac1\pi\int_0^\pi g(t)\sin\Bigl(n+\frac12\Bigr)t\,dt, \qquad g(t) = \frac{f(x+t) - f(x+0)}{2\sin\frac t2}.
+\end{equation*}
+</div>
+<div class="para">
+<span class="process-math">\(g\)</span> нь <span class="process-math">\([0,\pi]\)</span> дээр интегралчлагдана: <span class="process-math">\([\eta,\pi]\)</span> бүр дээр интегралчлагдах функцүүдийн (<span class="process-math">\(\sin\frac t2\ge\sin\frac\eta2&gt;0\)</span>) харьцаа, <span class="process-math">\((0,\delta)\)</span> дээр</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/lem-dirichlet-kernel.html ./knowl/xref/thm-sn-integral.html">
+\begin{equation*}
+|g(t)|\le\frac{Mt}{2\sin\frac t2}\le\frac{M\pi}{2}
+\end{equation*}
+</div>
+<div class="para">(<span class="process-math">\(0&lt;t\le\pi\)</span> үед <span class="process-math">\(\sin\frac t2\ge\frac t\pi\)</span>) — зааглагдсан. Зааглагдсан бөгөөд <span class="process-math">\([\eta,\pi]\)</span> бүр дээр интегралчлагдах функц <span class="process-math">\([0,\pi]\)</span> дээр интегралчлагдана. Риман–Лебегийн леммээр (<span class="process-math">\(\lambda = n+\frac12\)</span>) интеграл <span class="process-math">\(0\)</span> руу тэмүүлнэ. Хоёр дахь интеграл ч адил.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#thm-fourier-pointwise-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Баталгаа 11.15.1"><a tabindex="-1" href="#thm-fourier-pointwise-3" title="Copy heading and permalink for Баталгаа 11.15.1" aria-label="Copy heading and permalink for Баталгаа 11.15.1">🔗</a></div>
+</article></details><span class="incontext"><a class="internal" href="w11-s5.html#thm-fourier-pointwise">In Context</a></span>
+</body>
+</html>

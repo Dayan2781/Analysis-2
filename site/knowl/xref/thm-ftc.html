@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: default-modern                 *-->
+<!--*  Palette:                              *-->
+<!--******************************************-->
+
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="theorem theorem-like"><h2 class="heading">
+<span class="type">Теорем</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.3</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Интеграл тооллын үндсэн теорем — Рудин 6.20.</span>
+</h2>
+<div class="para logical">
+<div class="para">
+<span class="process-math">\(f \in \mathcal{R}([a, b])\)</span> бол:</div>
+<ol class="decimal" id="thm-ftc-2-1-2">
+<li>
+<div class="para">
+<span class="process-math">\(F\)</span> нь <span class="process-math">\([a, b]\)</span> дээр Липшицийн нөхцөл хангах тул жигд тасралтгүй;</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 1"><a tabindex="-1" href="#thm-ftc-2-1-2-1" title="Copy heading and permalink for Item 1" aria-label="Copy heading and permalink for Item 1">🔗</a></div>
+</li>
+<li>
+<div class="para">
+<span class="process-math">\(f\)</span> нь <span class="process-math">\(x_0 \in [a, b]\)</span> цэгт тасралтгүй бол <span class="process-math">\(F\)</span> нь <span class="process-math">\(x_0\)</span> цэгт дифференциалчлагдаж <span class="process-math">\(F'(x_0) = f(x_0)\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 2"><a tabindex="-1" href="#thm-ftc-2-1-2-2" title="Copy heading and permalink for Item 2" aria-label="Copy heading and permalink for Item 2">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#thm-ftc-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Теорем 4.3: Интеграл тооллын үндсэн теорем — Рудин 6.20"><a tabindex="-1" href="#thm-ftc" title="Copy heading and permalink for Теорем 4.3: Интеграл тооллын үндсэн теорем — Рудин 6.20" aria-label="Copy heading and permalink for Теорем 4.3: Интеграл тооллын үндсэн теорем — Рудин 6.20">🔗</a></div>
+</article>
+<details class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h2 class="heading"><span class="type">Баталгаа<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h2></summary>
+<article class="hiddenproof knowl__content">
+<div class="para logical">
+<div class="para">
+<dfn class="terminology">(a)</dfn> <span class="process-math">\(|f| \le K\)</span> гэе. <span class="process-math">\(x &lt; y\)</span> бол аддитив ба модулийн чанараар</div>
+<div class="displaymath process-math">
+\begin{equation*}
+|F(y) - F(x)| = \left| \int_x^y f(t) \, dt \right| \le K (y - x).
+\end{equation*}
+</div>
+<div class="para">
+<span class="process-math">\(\delta = \varepsilon/K\)</span> сонголт <span class="process-math">\(x\)</span>-ээс хамаарахгүй тул <span class="process-math">\(F\)</span> жигд тасралтгүй.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#thm-ftc-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical">
+<div class="para">
+<dfn class="terminology">(b)</dfn> <span class="process-math">\(|t - x_0| &lt; \delta \Rightarrow |f(t) - f(x_0)| &lt; \varepsilon\)</span> байх <span class="process-math">\(\delta\)</span>-г авъя. <span class="process-math">\(0 &lt; |x - x_0| &lt; \delta\)</span> бол <span class="process-math">\(\int_{x_0}^x f(x_0)\,dt = f(x_0)(x-x_0)\)</span> тул</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\left|\frac{F(x) - F(x_0)}{x - x_0} - f(x_0)\right| = \left|\frac{1}{x - x_0} \int_{x_0}^{x} \bigl[ f(t) - f(x_0) \bigr] dt\right| \le \varepsilon.
+\end{equation*}
+</div>
+<div class="para">Иймд <span class="process-math">\(F'(x_0) = f(x_0)\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#thm-ftc-3-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Баталгаа 4.3.1"><a tabindex="-1" href="#thm-ftc-3" title="Copy heading and permalink for Баталгаа 4.3.1" aria-label="Copy heading and permalink for Баталгаа 4.3.1">🔗</a></div>
+</article></details><span class="incontext"><a class="internal" href="w04-s1.html#thm-ftc">In Context</a></span>
+</body>
+</html>
