@@ -15,6 +15,7 @@
 <!--********************************************-->
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body class="ignore-math">
@@ -41,14 +42,14 @@ B(x,y) = \frac{\Gamma(x)\Gamma(y)}{\Gamma(x+y)}, \qquad x,y&gt;0.
 \frac{\Gamma(x+y)}{(1+u)^{x+y}} = \int_0^\infty s^{x+y-1}e^{-(1+u)s}\,ds.
 \end{equation*}
 </div>
-<div class="para">Хоёр талыг <span class="process-math">\(u^{x-1}\)</span>-ээр үржүүлж <span class="process-math">\(u\)</span>-ээр интегралчилбал Теорем <a href="w12-s6.html#w12-thm-beta-prop" class="xref" data-knowl="./knowl/xref/w12-thm-beta-prop.html" data-reveal-label="Харуулах" data-close-label="Хаах" title="Теорем 12.39: Бета функцийн чанарууд">12.39</a>.4-өөр</div>
+<div class="para">Хоёр талыг <span class="process-math">\(u^{x-1}\)</span>-ээр үржүүлж <span class="process-math">\(u\)</span>-ээр интегралчилбал Теорем <a href="w12-s6.html#w12-thm-beta-prop" class="xref" data-knowl="./knowl/xref/w12-thm-beta-prop.html" data-reveal-label="Харуулах" data-close-label="Хаах" title="Теорем 12.19: Бета функцийн чанарууд">12.19</a>.4-өөр</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/w12-thm-beta-prop.html ./knowl/xref/w12-thm-impr-swap.html">
 \begin{equation*}
 \Gamma(x+y)B(x,y) = \int_0^\infty du\int_0^\infty f(u,s)\,ds, \qquad f(u,s) = u^{x-1}s^{x+y-1}e^{-(1+u)s}\ge0.
 \end{equation*}
 </div>
 <div class="para">
-<span class="process-math">\(x,y&gt;1\)</span> үед <span class="process-math">\(f\)</span> нь <span class="process-math">\([0,\infty)^2\)</span> дээр тасралтгүй; <span class="process-math">\(\int_0^\infty f\,ds = \Gamma(x+y)\frac{u^{x-1}}{(1+u)^{x+y}}\)</span> нь <span class="process-math">\(u\)</span>-ээр тасралтгүй; <span class="process-math">\(s&gt;0\)</span> үед <span class="process-math">\(\int_0^\infty f\,du = s^{x+y-1}e^{-s}\cdot\frac{\Gamma(x)}{s^x} = \Gamma(x)s^{y-1}e^{-s}\text{,}\)</span> энэ нь <span class="process-math">\(s = 0\)</span>-д ч (<span class="process-math">\(y&gt;1\)</span>) тасралтгүй. Теорем <a href="w12-s3.html#w12-thm-impr-swap" class="xref" data-knowl="./knowl/xref/w12-thm-impr-swap.html" data-reveal-label="Харуулах" data-close-label="Хаах" title="Теорем 12.22: Хоёр өргөтгөсөн интегралын дараалал солих">12.22</a>-ээр</div>
+<span class="process-math">\(x,y&gt;1\)</span> үед <span class="process-math">\(f\)</span> нь <span class="process-math">\([0,\infty)^2\)</span> дээр тасралтгүй; <span class="process-math">\(\int_0^\infty f\,ds = \Gamma(x+y)\frac{u^{x-1}}{(1+u)^{x+y}}\)</span> нь <span class="process-math">\(u\)</span>-ээр тасралтгүй; <span class="process-math">\(s&gt;0\)</span> үед <span class="process-math">\(\int_0^\infty f\,du = s^{x+y-1}e^{-s}\cdot\frac{\Gamma(x)}{s^x} = \Gamma(x)s^{y-1}e^{-s}\text{,}\)</span> энэ нь <span class="process-math">\(s = 0\)</span>-д ч (<span class="process-math">\(y&gt;1\)</span>) тасралтгүй. Теорем <a href="w12-s3.html#w12-thm-impr-swap" class="xref" data-knowl="./knowl/xref/w12-thm-impr-swap.html" data-reveal-label="Харуулах" data-close-label="Хаах" title="Теорем 12.11: Хоёр өргөтгөсөн интегралын дараалал солих">12.11</a>-ээр</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/w12-thm-beta-prop.html ./knowl/xref/w12-thm-impr-swap.html">
 \begin{equation*}
 \Gamma(x+y)B(x,y) = \int_0^\infty\Gamma(x)s^{y-1}e^{-s}\,ds = \Gamma(x)\Gamma(y).
@@ -58,7 +59,7 @@ B(x,y) = \frac{\Gamma(x)\Gamma(y)}{\Gamma(x+y)}, \qquad x,y&gt;0.
 </div>
 <div class="para logical">
 <div class="para">
-<em class="emphasis">2-р алхам: дурын <span class="process-math">\(x,y&gt;0\text{.}\)</span></em> Теорем <a href="w12-s6.html#w12-thm-beta-prop" class="xref" data-knowl="./knowl/xref/w12-thm-beta-prop.html" data-reveal-label="Харуулах" data-close-label="Хаах" title="Теорем 12.39: Бета функцийн чанарууд">12.39</a>.2 ба тэгш хэмээр <span class="process-math">\(B(x,y) = \frac{x+y}{x}B(x+1,y) = \frac{(x+y)(x+y+1)}{xy}B(x+1,y+1)\text{.}\)</span> 1-р алхам ба <span class="process-math">\(\Gamma(z+1) = z\Gamma(z)\)</span>-ээр</div>
+<em class="emphasis">2-р алхам: дурын <span class="process-math">\(x,y&gt;0\text{.}\)</span></em> Теорем <a href="w12-s6.html#w12-thm-beta-prop" class="xref" data-knowl="./knowl/xref/w12-thm-beta-prop.html" data-reveal-label="Харуулах" data-close-label="Хаах" title="Теорем 12.19: Бета функцийн чанарууд">12.19</a>.2 ба тэгш хэмээр <span class="process-math">\(B(x,y) = \frac{x+y}{x}B(x+1,y) = \frac{(x+y)(x+y+1)}{xy}B(x+1,y+1)\text{.}\)</span> 1-р алхам ба <span class="process-math">\(\Gamma(z+1) = z\Gamma(z)\)</span>-ээр</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/w12-thm-beta-prop.html">
 \begin{equation*}
 B(x,y) = \frac{(x+y)(x+y+1)}{xy}\cdot\frac{x\Gamma(x)\cdot y\Gamma(y)}{(x+y+1)(x+y)\Gamma(x+y)} = \frac{\Gamma(x)\Gamma(y)}{\Gamma(x+y)}.

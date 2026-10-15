@@ -484,6 +484,8 @@ def env_xml(nd, ctx, attach=None):
     for e in extra:
         warn(f'extra label {e} in {name}')
     idattr = f' xml:id="{xmlid(lab)}"' if lab else ''
+    if hasattr(nd, 'ltx'):
+        idattr += f' ltx="{nd.ltx}"'   # LaTeX number, used by tools/renumber.py, stripped before build
     tag = THM.get(name)
     attach = attach or []
     if name in ('prof', 'proof'):
@@ -659,7 +661,8 @@ def section_xml(head, nodes, idbase, exmode):
     title = inline(head.title).strip()
     first = next((n.level for n in nodes if n.kind == 'head' and n.level in ('subsection', 'subsubsection')), None)
     pre, subs = split_by(nodes, (first,)) if first else (nodes, [])
-    out = [f'<section{idattr}>', f'<title>{title}</title>']
+    ltx = f' ltx="{head.ltx}"' if hasattr(head, 'ltx') else ''
+    out = [f'<section{idattr}{ltx}>', f'<title>{title}</title>']
     if subs:
         intro = content(pre, exmode)
         if intro.strip():
@@ -672,10 +675,10 @@ def section_xml(head, nodes, idbase, exmode):
     out.append('</section>')
     return '\n'.join(out)
 
-def homework_xml(title, nodes, idbase):
+def homework_xml(title, nodes, idbase, ltx=''):
     """chapter-level <exercises>; section*/subsection* -> subexercises"""
     pre, subs = split_by(nodes, ('section', 'subsection'))
-    out = [f'<exercises xml:id="{idbase}">', f'<title>{inline(title).strip()}</title>']
+    out = [f'<exercises xml:id="{idbase}" ltx="{ltx}">', f'<title>{inline(title).strip()}</title>']
     pre_body, has_ex = exercises_body(pre)
     if subs:
         if pre_body.strip():
@@ -700,9 +703,47 @@ def homework_xml(title, nodes, idbase):
     out.append('</exercises>')
     return '\n'.join(out)
 
-def convert(src, week):
+# LaTeX numbering as in Analysis2_16/main.tex: theorem+corollary, proposition, definition,
+# example per chapter; lemma per section; problem book-wide; remark/note/cor unnumbered.
+LTX_COUNTER = {'theorem': 'thm', 'corollary': 'thm', 'proposition': 'prop', 'definition': 'def',
+               'example': 'ex', 'lemma': 'lem', 'problem': 'prob', 'cor': None, 'remark': None, 'note': None}
+
+def number_ltx(nodes, week, prob0):
+    st = {'sec': 0, 'prob': prob0, 'thm': 0, 'prop': 0, 'def': 0, 'ex': 0, 'lem': 0}
+    def walk(ns):
+        for nd in ns:
+            if nd.kind == 'head' and nd.level == 'section':
+                if not nd.star:
+                    st['sec'] += 1; st['lem'] = 0
+                nd.ltx = '' if nd.star else f"{week}.{st['sec']}"
+            if nd.kind == 'env' and nd.name in LTX_COUNTER:
+                c = LTX_COUNTER[nd.name]
+                if c is None:
+                    nd.ltx = ''
+                else:
+                    st[c] += 1
+                    nd.ltx = (str(st[c]) if c == 'prob' else
+                              f"{week}.{st['sec']}.{st[c]}" if c == 'lem' else f'{week}.{st[c]}')
+            for ch in getattr(nd, 'children', None) or []:
+                if isinstance(ch, Node):
+                    walk([ch])
+    walk(nodes)
+    return st['prob']
+
+def problems_before(path, week):
+    import glob, os
+    n = 0
+    for f in sorted(glob.glob(os.path.join(os.path.dirname(path), 'week*.tex'))):
+        w = int(re.search(r'week(\d+)', os.path.basename(f)).group(1))
+        if w < week:
+            nd, _ = parse(preprocess(open(f, encoding='utf-8').read()))
+            n = number_ltx(nd, w, n)
+    return n
+
+def convert(src, week, prob0=0):
     s = preprocess(src)
     nodes, _ = parse(s)
+    number_ltx(nodes, week, prob0)
     idb = f'w{week:02d}'
     # chapter heading
     pre, chaps = split_by(nodes, ('chapter',))
@@ -719,7 +760,7 @@ def convert(src, week):
     for h, ns in secs:
         t = h.title
         if hw is None and 'Гэрийн даалгавар' in t and not h.star:
-            hw_inline = (t, ns); continue
+            hw_inline = (t, ns, getattr(h, 'ltx', '')); continue
         k += 1
         ex = is_exercise_title(t)
         sx = section_xml(h, ns, f'{idb}-s{k}', ex)
@@ -729,16 +770,16 @@ def convert(src, week):
     if hw is not None:
         out.append(homework_xml(hw[0].title, hw[1], f'{idb}-hw'))
     elif hw_inline is not None:
-        out.append(homework_xml(hw_inline[0], hw_inline[1], f'{idb}-hw'))
+        out.append(homework_xml(hw_inline[0], hw_inline[1], f'{idb}-hw', hw_inline[2]))
     else:
-        out.append(f'<exercises xml:id="{idb}-hw"><title>Гэрийн даалгавар</title>\n<!--AI-HOMEWORK-->\n</exercises>')
+        out.append(f'<exercises xml:id="{idb}-hw" ltx=""><title>Гэрийн даалгавар</title>\n<!--AI-HOMEWORK-->\n</exercises>')
     out.append('</chapter>')
     return '<?xml version="1.0" encoding="UTF-8"?>\n' + '\n'.join(out) + '\n'
 
 if __name__ == '__main__':
     src = open(sys.argv[1], encoding='utf-8').read()
     week = int(sys.argv[3])
-    xml = convert(src, week)
+    xml = convert(src, week, problems_before(sys.argv[1], week))
     open(sys.argv[2], 'w', encoding='utf-8').write(xml)
     for w in sorted(set(WARN)):
         print(f'[w{week:02d}] {w}', file=sys.stderr)
