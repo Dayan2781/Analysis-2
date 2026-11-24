@@ -7,4 +7,4 @@ for n in "$@"; do
   if [ -f sim/gen/sim$n.json ]; then python3 sim/add_similar.py book/source/chapters/ch$n.ptx sim/gen/sim$n.json; fi
   mkdir -p numbers; python3 ltxnum.py extract book/source/chapters/ch$n.ptx numbers/ch$n.json
 done
-# after `pretext build web`: python3 ltxnum.py apply book/output/web numbers   (LaTeX-style numbering)
+# after `pretext build web`: python3 ltxnum.py apply book/output/web numbers && python3 drop_stub.py book/output/web 05

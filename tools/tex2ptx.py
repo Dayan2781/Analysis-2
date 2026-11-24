@@ -731,11 +731,22 @@ def number_ltx(nodes, week, prob0):
     return st['prob']
 
 def problems_before(path, week):
+    """Book-wide problem counter before `week`, following main.tex order
+    (\\input weeks + any \\addtocounter{problem}{K})."""
     import glob, os
+    wdir = os.path.dirname(os.path.abspath(path))
+    main = os.path.join(os.path.dirname(wdir), 'main.tex')
     n = 0
-    for f in sorted(glob.glob(os.path.join(os.path.dirname(path), 'week*.tex'))):
-        w = int(re.search(r'week(\d+)', os.path.basename(f)).group(1))
-        if w < week:
+    for line in open(main, encoding='utf-8'):
+        line = line.split('%')[0]
+        for k in re.findall(r'\\addtocounter\{problem\}\{(-?\d+)\}', line):
+            n += int(k)
+        m = re.search(r'\\input\{weeks/week(\d+)', line)
+        if m:
+            w = int(m.group(1))
+            if w >= week:
+                return n
+            f = glob.glob(os.path.join(wdir, f'week{w:02d}_*.tex'))[0]
             nd, _ = parse(preprocess(open(f, encoding='utf-8').read()))
             n = number_ltx(nd, w, n)
     return n

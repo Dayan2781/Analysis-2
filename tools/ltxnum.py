@@ -55,6 +55,7 @@ def apply(root, numdir):
         nn = int(os.path.basename(f)[2:4]); data = json.load(open(f))
         for sid, num in data['sections'].items():
             secmap[sid] = num
+        secmap[f'ch-w{nn:02d}'] = str(nn)   # chapter number = week (LaTeX may skip a week)
         # chapter pages in TOC order
         li = toc.xpath(f'//nav[contains(@class,"toc")]//li[contains(@class,"toc-chapter")][.//a[starts-with(@href,"ch-w{nn:02d}")]]')[0]
         pages = []
