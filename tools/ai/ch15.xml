@@ -1,187 +1,96 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<ai>
-<preview>
-<exploration xml:id="w15-preview">
-  <title>Хүчний ажил замаас хамаарах уу? (AI)</title>
-  <introduction>
-    <p>Тогтмол хүч <m>F</m> шулуун замаар <m>\Delta r</m> шилжүүлэхэд хийх ажил <m>F\cdot\Delta r</m>. Хүч цэгээс цэгт өөрчлөгдөж, зам муруй байвал жижиг шилжилтүүд дээрх ажлыг нэмнэ: <m>r(t)</m>, <m>t\in[a,b]</m> замын хувьд ажил <m>\int_a^bF(r(t))\cdot r'(t)\,dt</m>. <m>O(0,0)</m>-оос <m>A(1,1)</m> хүртэл хоёр замыг харьцуулъя: <m>\gamma_1</m>: <m>r(t)=(t,t)</m> ба <m>\gamma_2</m>: <m>r(t)=(t,t^2)</m>, <m>t\in[0,1]</m>.</p>
-  </introduction>
-  <task>
-    <statement><p><m>F=(x,y)</m> хүчний <m>\gamma_1</m> ба <m>\gamma_2</m> замаар хийх ажлыг ол.</p></statement>
-    <answer><p><m>\gamma_1</m>: <m>\int_0^1(t+t)\,dt=1</m>; <m>\gamma_2</m>: <m>\int_0^1(t+t^2\cdot2t)\,dt=\frac12+\frac12=1</m>. Ижил.</p></answer>
-  </task>
-  <task>
-    <statement><p><m>F=(-y,x)</m> хүчний хувьд адил тооцоог хий.</p></statement>
-    <answer><p><m>\gamma_1</m>: <m>\int_0^1(-t+t)\,dt=0</m>; <m>\gamma_2</m>: <m>\int_0^1(-t^2+2t^2)\,dt=\frac13</m>. Ялгаатай.</p></answer>
-  </task>
-  <task>
-    <statement><p><m>\gamma_2</m>-оор <m>A</m> хүрээд <m>\gamma_1</m>-ээр буцаж <m>O</m>-д ирэх битүү замын хувьд <m>F=(-y,x)</m>-ийн ажил хэд вэ? Хоёр муруйн хоорондох мужийн талбайн хоёр дахинтай харьцуул.</p></statement>
-    <hint><p>Буцах замд ажил тэмдгээ өөрчилнө. Талбай <m>\int_0^1(t-t^2)\,dt</m>.</p></hint>
-    <answer><p>Ажил <m>\frac13-0=\frac13</m>; талбай <m>\frac16</m>, хоёр дахин нь <m>\frac13</m> — тэнцүү! Энэ нь энэ бүлгийн Грийний томьёоны (<m>Q_x-P_y=2</m>) илрэл. <m>F=(x,y)=\nabla\frac{x^2+y^2}2</m> үед ажил замаас хамаараагүйг потенциалын онол тайлбарлана.</p></answer>
-  </task>
-</exploration>
-</preview>
-
-<section ref="w15-s1">
+<?xml version='1.0' encoding='UTF-8'?>
+<ai><section ref="w15-s1">
 <exercise>
-  <statement><p><m>r(t)=(t^2,\ t^3-3t)</m>, <m>t\in[-2,2]</m> зам гөлгөр үү? Энгийн үү?</p></statement>
-  <hint><p><m>r(t_1)=r(t_2)</m>, <m>t_1\ne t_2</m> бол <m>t_1^2=t_2^2</m> тул <m>t_2=-t_1</m>.</p></hint>
-  <answer><p>Гөлгөр боловч энгийн биш: <m>r(-\sqrt3)=r(\sqrt3)=(3,0)</m>.</p></answer>
-  <solution><p><m>r'(t)=(2t,\ 3t^2-3)</m>. Эхний байгуулагч зөвхөн <m>t=0</m> үед тэг, тэр үед хоёр дахь нь <m>-3\ne0</m>; иймд <m>r'(t)\ne0</m> бүх <m>t</m>-д, <m>r\in C^1</m> — зам гөлгөр. <m>r(t_1)=r(t_2)</m>, <m>t_1\ne t_2</m> бол <m>t_2=-t_1</m> ба <m>t_1^3-3t_1=-(t_1^3-3t_1)</m>, өөрөөр хэлбэл <m>t_1(t_1^2-3)=0</m>; <m>t_1\ne0</m> тул <m>t_1=\pm\sqrt3</m>. Иймд <m>(3,0)</m> цэгт муруй өөрийгөө огтлох тул энгийн биш (гөлгөр чанар нь өөрийгөө огтлохыг хориглодоггүй).</p></solution>
+  <statement><p><m>\Gamma\bigl(\frac52\bigr)</m> ба <m>\Gamma\bigl(-\frac32\bigr)</m>-ийг ол.</p></statement>
+  <hint><p><m>\Gamma(x+1)=x\Gamma(x)</m>, <m>\Gamma(\frac12)=\sqrt\pi</m>; сөрөг аргументыг <m>\Gamma(x)=\frac{\Gamma(x+n)}{x(x+1)\cdots(x+n-1)}</m>-ээр.</p></hint>
+  <answer><p><m>\Gamma\bigl(\frac52\bigr)=\dfrac{3\sqrt\pi}{4}</m>, <m>\Gamma\bigl(-\frac32\bigr)=\dfrac{4\sqrt\pi}{3}</m>.</p></answer>
+  <solution><p><m>\Gamma(\frac52)=\frac32\cdot\frac12\Gamma(\frac12)=\frac{3\sqrt\pi}4</m>. <m>\Gamma(-\frac32)=\frac{\Gamma(\frac12)}{(-\frac32)(-\frac12)}=\frac{\sqrt\pi}{3/4}=\frac{4\sqrt\pi}{3}</m>.</p></solution>
 </exercise>
 <exercise>
-  <statement><p>Мушгиа шугам <m>r(t)=(\cos t,\sin t,t)</m>-ийн <m>t=\frac\pi2</m> цэг дээрх нэгж шүргэгч вектор ба шүргэгч шулууны тэгшитгэлийг ол.</p></statement>
-  <answer><p><m>T=\frac1{\sqrt2}(-1,0,1)</m>; шулуун: <m>\left(0,1,\frac\pi2\right)+s(-1,0,1)</m>, <m>s\in\R</m>.</p></answer>
-  <solution><p><m>r'(t)=(-\sin t,\cos t,1)</m>, <m>r'(\frac\pi2)=(-1,0,1)</m>, <m>|r'|=\sqrt2</m>. Цэг <m>r(\frac\pi2)=(0,1,\frac\pi2)</m>. Шүргэгч шулуун <m>x=-s</m>, <m>y=1</m>, <m>z=\frac\pi2+s</m>.</p></solution>
-</exercise>
-<exercise>
-  <statement><p><m>A</m>-аас <m>B</m> хүртэлх хэрчмийн гөлгөр параметрчлэл <m>r(t)=A+t(B-A)</m>, <m>t\in[0,1]</m> өгөгдөв. <m>\varphi(\tau)=\tau^2</m>, <m>\tau\in[0,1]</m> гэвэл <m>r\circ\varphi</m> нь тодорхойлолтын утгаар дахин параметрчлэл мөн үү? <m>\varphi(\tau)=\frac{\tau+\tau^2}{2}</m> бол?</p></statement>
-  <answer><p>Эхнийх нь биш (<m>\varphi'(0)=0</m>), хоёр дахь нь мөн, чиглэлийг хадгална.</p></answer>
-  <solution><p>Дахин параметрчлэлд <m>\varphi'\ne0</m> хаа сайгүй шаардлагатай. <m>\varphi(\tau)=\tau^2</m>-ийн хувьд <m>\varphi'(0)=0</m> тул тохирохгүй (мөн <m>(r\circ\varphi)'(0)=0</m>, зам гөлгөр биш болно). <m>\varphi(\tau)=\frac{\tau+\tau^2}2</m> нь <m>[0,1]\to[0,1]</m>, <m>\varphi'(\tau)=\frac{1+2\tau}2\ge\frac12&gt;0</m> тул харилцан нэг утгатай, <m>C^1</m>, чиглэл хадгалах дахин параметрчлэл.</p></solution>
+  <statement><p><m>x&gt;0</m> үед <m>\Gamma(x)=2\displaystyle\int_0^\infty u^{2x-1}e^{-u^2}du</m> гэж харуулаад <m>\displaystyle\int_0^\infty x^5e^{-x^2}dx</m>-ийг бод.</p></statement>
+  <hint><p><m>t=u^2</m>.</p></hint>
+  <answer><p><m>1</m>.</p></answer>
+  <solution><p><m>t=u^2</m>, <m>dt=2u\,du</m>: <m>\Gamma(x)=\int_0^\infty u^{2x-2}e^{-u^2}2u\,du=2\int_0^\infty u^{2x-1}e^{-u^2}du</m>. <m>2x-1=5</m>, <m>x=3</m>: <m>\int_0^\infty x^5e^{-x^2}dx=\frac{\Gamma(3)}{2}=\frac{2!}{2}=1</m>.</p></solution>
 </exercise>
 </section>
 
 <section ref="w15-s2">
 <exercise>
-  <statement><p><m>y=x^{3/2}</m>, <m>0\le x\le4</m> муруйн уртыг ол.</p></statement>
-  <answer><p><m>\dfrac8{27}\left(10\sqrt{10}-1\right)</m>.</p></answer>
-  <solution><p><m>y'=\frac32x^{1/2}</m>, <m>\sqrt{1+y'^2}=\sqrt{1+\frac94x}</m>:
-  <md>L=\int_0^4\sqrt{1+\tfrac94x}\,dx=\frac49\cdot\frac23\Bigl[\bigl(1+\tfrac94x\bigr)^{3/2}\Bigr]_0^4=\frac8{27}\bigl(10^{3/2}-1\bigr).</md></p></solution>
+  <statement><p><m>B(3,4)</m>-ийг Гамма функцээр ба тодорхойлолтоор шууд бодож харьцуул. Мөн <m>B\bigl(\frac12,\frac12\bigr)</m>-ийг ол.</p></statement>
+  <answer><p><m>B(3,4)=\dfrac1{60}</m>, <m>B\bigl(\frac12,\frac12\bigr)=\pi</m>.</p></answer>
+  <solution><p><m>B(3,4)=\frac{\Gamma(3)\Gamma(4)}{\Gamma(7)}=\frac{2\cdot6}{720}=\frac1{60}</m>. Шууд: <m>\int_0^1t^2(1-t)^3dt=\int_0^1(t^2-3t^3+3t^4-t^5)dt=\frac13-\frac34+\frac35-\frac16=\frac{1}{60}</m>. <m>B(\frac12,\frac12)=\frac{\Gamma(\frac12)^2}{\Gamma(1)}=\pi</m> (эсвэл тригонометр хэлбэрээр <m>2\int_0^{\pi/2}d\varphi=\pi</m>).</p></solution>
 </exercise>
 <exercise>
-  <statement><p><m>r(t)=(2t,\ t^2,\ \ln t)</m>, <m>t\in[1,e]</m> муруйн уртыг ол.</p></statement>
-  <hint><p><m>|r'(t)|^2=4+4t^2+\frac1{t^2}</m> нь бүтэн квадрат.</p></hint>
-  <answer><p><m>e^2</m>.</p></answer>
-  <solution><p><m>r'=(2,2t,\frac1t)</m>, <m>|r'|^2=4t^2+4+\frac1{t^2}=\left(2t+\frac1t\right)^2</m>. Иймд <m>L=\int_1^e\left(2t+\frac1t\right)dt=\Bigl[t^2+\ln t\Bigr]_1^e=e^2+1-1=e^2</m>.</p></solution>
+  <statement><p><m>a&lt;b</m>, <m>p,q&gt;0</m> үед <md>\int_a^b(x-a)^{p-1}(b-x)^{q-1}dx=(b-a)^{p+q-1}B(p,q)</md> гэж баталж, <m>\displaystyle\int_1^3\sqrt{(x-1)(3-x)}\,dx</m>-ийг бод. Геометр утгаар шалга.</p></statement>
+  <hint><p><m>x=a+(b-a)t</m>.</p></hint>
+  <answer><p><m>\dfrac\pi2</m>.</p></answer>
+  <solution><p><m>x=a+(b-a)t</m>: <m>x-a=(b-a)t</m>, <m>b-x=(b-a)(1-t)</m>, <m>dx=(b-a)dt</m>, иймд интеграл <m>(b-a)^{p-1+q-1+1}\int_0^1t^{p-1}(1-t)^{q-1}dt=(b-a)^{p+q-1}B(p,q)</m>. <m>p=q=\frac32</m>, <m>b-a=2</m>:
+  <md>\int_1^3\sqrt{(x-1)(3-x)}\,dx=2^2B\Bigl(\frac32,\frac32\Bigr)=4\cdot\frac{\Gamma(\frac32)^2}{\Gamma(3)}=4\cdot\frac{\pi/4}{2}=\frac\pi2.</md>
+  <m>y=\sqrt{(x-1)(3-x)}=\sqrt{1-(x-2)^2}</m> нь <m>(2,0)</m> төвтэй нэгж хагас тойрог тул талбай <m>\frac\pi2</m>.</p></solution>
 </exercise>
 <exercise>
-  <statement><p>Логарифм спираль <m>\rho=e^{-\theta}</m>, <m>\theta\in[0,\infty)</m> нь эх цэгийг хязгааргүй олон удаа тойрно. Түүний урт (<m>\theta\in[0,T]</m> үеийн уртын <m>T\to\infty</m> хязгаар) төгсгөлөг үү?</p></statement>
-  <answer><p>Тийм, <m>\sqrt2</m>.</p></answer>
-  <solution><p>Туйлын координатын уртын томьёогоор <m>\sqrt{\rho^2+\rho'^2}=\sqrt{2e^{-2\theta}}=\sqrt2e^{-\theta}</m>. <m>L_T=\int_0^T\sqrt2e^{-\theta}d\theta=\sqrt2(1-e^{-T})\to\sqrt2</m>.</p></solution>
+  <statement><p><m>\displaystyle\int_0^\infty\frac{dx}{\sqrt[3]{x}\,(1+x)}</m>-ийг ол. Мөн <m>\Gamma\bigl(\frac13\bigr)\Gamma\bigl(\frac23\bigr)</m>-ийг ол.</p></statement>
+  <hint><p>Нөхөх томьёо: <m>\int_0^\infty\frac{u^{x-1}}{1+u}du=\frac{\pi}{\sin\pi x}</m>, <m>x=\frac23</m>.</p></hint>
+  <answer><p>Хоёулаа <m>\dfrac{2\pi}{\sqrt3}</m>.</p></answer>
+  <solution><p><m>x^{-1/3}=x^{\frac23-1}</m> тул Теорем <xref ref="w12-thm-reflection" text="global"/>-оор (<m>x=\frac23</m>) интеграл <m>\frac{\pi}{\sin\frac{2\pi}3}=\frac{2\pi}{\sqrt3}</m>; энэ нь мөн <m>\Gamma(\frac23)\Gamma(\frac13)</m>-тэй тэнцүү.</p></solution>
 </exercise>
 </section>
 
 <section ref="w15-s3">
 <exercise>
-  <statement><p><m>\displaystyle\int_\gamma x\,ds</m>-ийг ол, <m>\gamma</m>: <m>y=x^2</m>, <m>0\le x\le1</m>.</p></statement>
-  <answer><p><m>\dfrac{5\sqrt5-1}{12}</m>.</p></answer>
-  <solution><p><m>r(x)=(x,x^2)</m>, <m>ds=\sqrt{1+4x^2}\,dx</m>:
-  <md>\int_0^1x\sqrt{1+4x^2}\,dx=\frac1{12}\Bigl[(1+4x^2)^{3/2}\Bigr]_0^1=\frac{5\sqrt5-1}{12}.</md></p></solution>
+  <statement><p><m>\displaystyle\int_0^{\pi/2}\sin^4\varphi\cos^2\varphi\,d\varphi</m>-ийг Гамма функцээр бод.</p></statement>
+  <answer><p><m>\dfrac{\pi}{32}</m>.</p></answer>
+  <solution><p>Өгүүлбэр <xref ref="w12-prop-sin-cos" text="global"/>-д <m>a=4</m>, <m>b=2</m>:
+  <md>\frac{\Gamma(\frac52)\Gamma(\frac32)}{2\Gamma(4)}=\frac{\frac34\sqrt\pi\cdot\frac12\sqrt\pi}{2\cdot6}=\frac{3\pi/8}{12}=\frac{\pi}{32}.</md></p></solution>
 </exercise>
 <exercise>
-  <statement><p><m>x^2+y^2=a^2</m> тойрог хэлбэртэй утасны нягт <m>\rho=|x|</m> бол массыг ол.</p></statement>
-  <answer><p><m>4a^2</m>.</p></answer>
-  <solution><p><m>x=a\cos t</m>, <m>y=a\sin t</m>, <m>ds=a\,dt</m>: <m>m=\int_0^{2\pi}a|\cos t|\,a\,dt=a^2\cdot4=4a^2</m> (<m>\int_0^{2\pi}|\cos t|\,dt=4</m>).</p></solution>
+  <statement><p><m>\displaystyle\int_0^\infty\frac{dx}{1+x^6}</m>-ийг ол.</p></statement>
+  <hint><p><m>\int_0^\infty\frac{dx}{1+x^n}=\frac{\pi/n}{\sin(\pi/n)}</m>.</p></hint>
+  <answer><p><m>\dfrac\pi3</m>.</p></answer>
+  <solution><p><m>n=6</m>: <m>\frac{\pi/6}{\sin(\pi/6)}=\frac{\pi/6}{1/2}=\frac\pi3</m>. (Томьёо нь <m>t=x^6</m> орлуулга ба нөхөх томьёоноос гарна.)</p></solution>
 </exercise>
 <exercise>
-  <statement><p>Нэгэн төрлийн (<m>\rho\equiv1</m>) мушгиа шугам <m>r(t)=(\cos t,\sin t,t)</m>, <m>t\in[0,2\pi]</m>-ийн <m>Oz</m> тэнхлэгтэй харьцуулсан инерцийн момент ба хүндийн төвийн <m>z_c</m> координатыг ол.</p></statement>
-  <answer><p><m>I_z=2\sqrt2\,\pi</m>, <m>z_c=\pi</m>.</p></answer>
-  <solution><p><m>ds=\sqrt2\,dt</m>, <m>x^2+y^2=1</m>. <m>I_z=\int_0^{2\pi}1\cdot\sqrt2\,dt=2\sqrt2\,\pi</m>. <m>m=2\sqrt2\,\pi</m>, <m>\int_\gamma z\,ds=\sqrt2\int_0^{2\pi}t\,dt=2\sqrt2\,\pi^2</m>, иймд <m>z_c=\pi</m>.</p></solution>
+  <statement><p><m>\displaystyle\int_0^\infty x^3e^{-\sqrt x}\,dx</m>-ийг ол.</p></statement>
+  <hint><p><m>x=t^2</m>.</p></hint>
+  <answer><p><m>2\cdot7!=10080</m>.</p></answer>
+  <solution><p><m>x=t^2</m>, <m>dx=2t\,dt</m>: <m>\int_0^\infty t^6e^{-t}\,2t\,dt=2\int_0^\infty t^7e^{-t}dt=2\Gamma(8)=2\cdot7!=10080</m>.</p></solution>
 </exercise>
 </section>
 
-<section ref="w15-s4">
-<exercise>
-  <statement><p><m>\displaystyle\int_\gamma y^2\,dx+x\,dy</m>-ийг <m>O(0,0)</m>-оос <m>A(1,1)</m> хүртэл (a) <m>y=x</m> хэрчмээр; (b) <m>y=x^3</m> муруйгаар ол.</p></statement>
-  <answer><p>(a) <m>\frac56</m>; (b) <m>\frac{25}{28}</m>.</p></answer>
-  <solution><p>(a) <m>x=y=t</m>: <m>\int_0^1(t^2+t)\,dt=\frac13+\frac12=\frac56</m>.</p>
-  <p>(b) <m>x=t</m>, <m>y=t^3</m>: <m>\int_0^1\bigl(t^6+t\cdot3t^2\bigr)dt=\frac17+\frac34=\frac{25}{28}</m>. Хариунууд ялгаатай тул энэ хэлбэр бүтэн дифференциал биш (<m>P_y=2y\ne1=Q_x</m>).</p></solution>
+<homework><exercise>
+  <statement><p><m>n\in\N</m> үед <md>\int_0^\infty\frac{dx}{(1+x^2)^n}=\frac{\sqrt\pi\,\Gamma\bigl(n-\frac12\bigr)}{2\,\Gamma(n)}=\frac{(2n-3)!!}{(2n-2)!!}\cdot\frac\pi2</md> гэж батал (<m>(-1)!!=0!!=1</m>).</p></statement>
+  <hint><p><m>u=x^2</m> орлуулаад Бета функцийн хагас шулууны хэлбэрийг ашигла.</p></hint>
+  <solution><p><m>x=\sqrt u</m>, <m>dx=\frac{du}{2\sqrt u}</m>:
+  <md>\int_0^\infty\frac{dx}{(1+x^2)^n}=\frac12\int_0^\infty\frac{u^{\frac12-1}}{(1+u)^{\frac12+(n-\frac12)}}du=\frac12B\Bigl(\frac12,n-\frac12\Bigr)=\frac{\Gamma(\frac12)\Gamma(n-\frac12)}{2\Gamma(n)}.</md>
+  <m>\Gamma(n-\frac12)=\frac{(2n-3)!!}{2^{n-1}}\sqrt\pi</m>, <m>\Gamma(n)=(n-1)!</m>, <m>2^{n-1}(n-1)!=(2n-2)!!</m> тул хариу <m>\frac{\pi(2n-3)!!}{2\,(2n-2)!!}</m>. Шалгалт: <m>n=1</m>: <m>\frac\pi2</m>; <m>n=2</m>: <m>\frac\pi4</m>.</p></solution>
 </exercise>
 <exercise>
-  <statement><p><m>F=(z,x,y)</m> хүчний мушгиа шугам <m>r(t)=(\cos t,\sin t,t)</m>, <m>t</m>: <m>0\to2\pi</m> дагуу хийх ажлыг ол.</p></statement>
-  <answer><p><m>3\pi</m>.</p></answer>
-  <solution><p><m>F(r(t))\cdot r'(t)=t(-\sin t)+\cos t\cdot\cos t+\sin t\cdot1</m>. <m>\int_0^{2\pi}-t\sin t\,dt=\bigl[t\cos t-\sin t\bigr]_0^{2\pi}=2\pi</m>, <m>\int_0^{2\pi}\cos^2t\,dt=\pi</m>, <m>\int_0^{2\pi}\sin t\,dt=0</m>. Нийт <m>3\pi</m>.</p></solution>
+  <statement><p><m>|\alpha|&lt;1</m> үед <m>\displaystyle\int_0^{\pi/2}\tan^\alpha\varphi\,d\varphi=\frac{\pi}{2\cos\frac{\pi\alpha}{2}}</m> гэж батал.</p></statement>
+  <hint><p><m>\tan^\alpha\varphi=\sin^\alpha\varphi\cos^{-\alpha}\varphi</m>; Өгүүлбэр <xref ref="w12-prop-sin-cos" text="global"/> ба нөхөх томьёо.</p></hint>
+  <solution><p><m>a=\alpha&gt;-1</m>, <m>b=-\alpha&gt;-1</m> тул Өгүүлбэр <xref ref="w12-prop-sin-cos" text="global"/>-ээр
+  <md>\int_0^{\pi/2}\sin^\alpha\varphi\cos^{-\alpha}\varphi\,d\varphi=\frac{\Gamma\bigl(\frac{1+\alpha}{2}\bigr)\Gamma\bigl(\frac{1-\alpha}{2}\bigr)}{2\Gamma(1)}.</md>
+  <m>s=\frac{1+\alpha}2\in(0,1)</m> ба <m>1-s=\frac{1-\alpha}{2}</m> тул нөхөх томьёогоор <m>\Gamma(s)\Gamma(1-s)=\frac{\pi}{\sin\pi s}=\frac{\pi}{\sin(\frac\pi2+\frac{\pi\alpha}2)}=\frac{\pi}{\cos\frac{\pi\alpha}{2}}</m>.</p></solution>
 </exercise>
 <exercise>
-  <statement><p><m>C_R</m>: <m>x^2+y^2=R^2</m> тойрог бол
-  <md>\lim_{R\to\infty}\oint_{C_R}\frac{y\,dx-x\,dy}{(x^2+xy+y^2)^2}=0</md>
-  гэж <m>\bigl|\int_\gamma F\cdot dr\bigr|\le\max_\gamma|F|\cdot L(\gamma)</m> үнэлгээгээр батал.</p></statement>
-  <hint><p><m>x^2+xy+y^2\ge\frac12(x^2+y^2)</m>, учир нь <m>|xy|\le\frac12(x^2+y^2)</m>.</p></hint>
-  <solution><p><m>F=\frac{(y,-x)}{(x^2+xy+y^2)^2}</m>, <m>C_R</m> дээр <m>|(y,-x)|=R</m> ба <m>x^2+xy+y^2\ge\frac{R^2}2</m>. Иймд <m>|F|\le\frac{R}{R^4/4}=\frac4{R^3}</m>, <m>L(C_R)=2\pi R</m>, ба
-  <md>\Bigl|\oint_{C_R}F\cdot dr\Bigr|\le\frac4{R^3}\cdot2\pi R=\frac{8\pi}{R^2}\to0.</md></p></solution>
-</exercise>
-</section>
-
-<section ref="w15-s5">
-<exercise>
-  <statement><p>Грийний томьёогоор <m>\displaystyle\oint_\gamma xy\,dx+(x+y)\,dy</m>-ийг ол, <m>\gamma</m> — <m>(0,0)</m>, <m>(1,0)</m>, <m>(0,1)</m> оройтой гурвалжны хүрээ, эерэг чиглэлтэй.</p></statement>
-  <answer><p><m>\dfrac13</m>.</p></answer>
-  <solution><p><m>Q_x-P_y=1-x</m>. <m>D=\{0\le x\le1,\ 0\le y\le1-x\}</m>:
-  <md>\iint_D(1-x)\,dx\,dy=\int_0^1(1-x)^2dx=\frac13.</md></p></solution>
+  <statement><p>(Уоллисын томьёо) <m>\ln\Gamma</m>-ийн гүдгэр чанарыг ашиглан
+  <md>\frac{n}{\sqrt{n+\frac12}}\le\frac{\Gamma\bigl(n+\frac12\bigr)}{\Gamma(n)}\le\sqrt n\qquad(n\in\N)</md>
+  гэж батал. Эндээс <m>\displaystyle\lim_{n\to\infty}\frac{(2n-1)!!}{(2n)!!}\sqrt{\pi n}=1</m> гэж гарга.</p></statement>
+  <hint><p>Гүдгэр функцийн хувьд <m>\ln\Gamma\bigl(\frac{u+v}{2}\bigr)\le\frac12\bigl(\ln\Gamma(u)+\ln\Gamma(v)\bigr)</m>. <m>(u,v)=(n,n+1)</m> ба <m>(n+\frac12,n+\frac32)</m> гэж ав.</p></hint>
+  <solution><p><m>u=n</m>, <m>v=n+1</m>: <m>\Gamma(n+\frac12)^2\le\Gamma(n)\Gamma(n+1)=n\Gamma(n)^2</m>, иймд <m>\frac{\Gamma(n+\frac12)}{\Gamma(n)}\le\sqrt n</m>. <m>u=n+\frac12</m>, <m>v=n+\frac32</m>: <m>\Gamma(n+1)^2\le\Gamma(n+\frac12)\Gamma(n+\frac32)=(n+\frac12)\Gamma(n+\frac12)^2</m>, иймд <m>\Gamma(n+\frac12)\ge\frac{n\Gamma(n)}{\sqrt{n+\frac12}}</m>.</p>
+  <p><m>\sqrt n</m>-д хуваавал <m>\sqrt{\frac{n}{n+1/2}}\le\frac{\Gamma(n+\frac12)}{\sqrt n\,\Gamma(n)}\le1</m>, хавчих зарчмаар харьцаа <m>1</m> руу тэмүүлнэ. Нөгөө талаас <m>\Gamma(n+\frac12)=\frac{(2n-1)!!}{2^n}\sqrt\pi</m>, <m>\Gamma(n)=\frac{n!}{n}</m>, <m>2^nn!=(2n)!!</m> тул
+  <md>\frac{\Gamma(n+\frac12)}{\sqrt n\,\Gamma(n)}=\frac{(2n-1)!!\sqrt\pi\,n}{(2n)!!\sqrt n}=\frac{(2n-1)!!}{(2n)!!}\sqrt{\pi n}\to1.</md></p></solution>
 </exercise>
 <exercise>
-  <statement><p><m>r(t)=(t^2-1,\ t^3-t)</m>, <m>t\in[-1,1]</m> гогцоогоор (<m>y^2=x^2(x+1)</m> муруйн гогцоо) хүрээлэгдсэн мужийн талбайг ол.</p></statement>
-  <hint><p>Мөрдөлгөө <xref ref="w15-cor-area" text="global"/>: <m>S=\frac12\oint x\,dy-y\,dx</m>. <m>x\,dy-y\,dx=(t^2-1)^2dt</m>.</p></hint>
-  <answer><p><m>\dfrac8{15}</m>.</p></answer>
-  <solution><p><m>r(-1)=r(1)=(0,0)</m> тул зам битүү, <m>(-1,1)</m> дээр нэг-нэгт.
-  <md>x\,y'-y\,x'=(t^2-1)(3t^2-1)-(t^3-t)\cdot2t=t^4-2t^2+1=(t^2-1)^2\ge0,</md>
-  иймд муруй цагийн зүүний эсрэг (эерэг) тойрогдоно ба
-  <md>S=\frac12\int_{-1}^1(t^2-1)^2dt=\frac12\Bigl(\frac25-\frac43+2\Bigr)=\frac12\cdot\frac{16}{15}=\frac8{15}.</md>
-  (Шалгалт: <m>S=2\int_{-1}^0|x|\sqrt{x+1}\,dx=\frac8{15}</m>.)</p></solution>
+  <statement><p>(Гауссын томьёо) <m>x&gt;0</m> үед
+  <md>\Gamma(x)=\lim_{n\to\infty}\frac{n!\,n^x}{x(x+1)\cdots(x+n)}</md>
+  гэж батал.</p></statement>
+  <hint><p>(1) <m>\int_0^nt^{x-1}\bigl(1-\frac tn\bigr)^ndt=n^xB(x,n+1)</m>. (2) <m>0\le t\le n</m> үед <m>0\le e^{-t}-\bigl(1-\frac tn\bigr)^n\le\frac{t^2e^{-t}}{n}</m>: <m>e^t\ge\bigl(1+\frac tn\bigr)^n</m> ба Бернуллийн тэнцэтгэл биш <m>\bigl(1-\frac{t^2}{n^2}\bigr)^n\ge1-\frac{t^2}{n}</m>-ийг ашигла.</p></hint>
+  <solution><p>(1) <m>t=nu</m> орлуулгаар <m>\int_0^nt^{x-1}(1-\frac tn)^ndt=n^x\int_0^1u^{x-1}(1-u)^ndu=n^xB(x,n+1)=\frac{n^x\Gamma(x)\,n!}{\Gamma(x+n+1)}</m>. <m>\Gamma(x+n+1)=(x+n)(x+n-1)\cdots x\,\Gamma(x)</m> тул энэ нь <m>\frac{n!\,n^x}{x(x+1)\cdots(x+n)}</m>.</p>
+  <p>(2) <m>0\le t\le n</m> үед <m>1-\frac tn\le e^{-t/n}</m> тул <m>(1-\frac tn)^n\le e^{-t}</m>. Мөн <m>e^{t}\ge(1+\frac tn)^n</m> ба Бернуллиар
+  <md>e^t\Bigl(1-\frac tn\Bigr)^n\ge\Bigl(1-\frac{t^2}{n^2}\Bigr)^n\ge1-\frac{t^2}{n},</md>
+  иймд <m>e^{-t}-(1-\frac tn)^n=e^{-t}\bigl[1-e^t(1-\frac tn)^n\bigr]\le\frac{t^2e^{-t}}{n}</m>.</p>
+  <p>(3) Иймд
+  <md>0\le\Gamma(x)-\int_0^nt^{x-1}\Bigl(1-\frac tn\Bigr)^ndt=\int_n^\infty t^{x-1}e^{-t}dt+\int_0^nt^{x-1}\Bigl[e^{-t}-\Bigl(1-\frac tn\Bigr)^n\Bigr]dt\le\int_n^\infty t^{x-1}e^{-t}dt+\frac{\Gamma(x+2)}{n}.</md>
+  Баруун тал нь нийлдэг интегралын үлдэгдэл ба <m>\frac{\Gamma(x+2)}{n}</m> тул <m>0</m> руу тэмүүлнэ. (1)-тэй хослуулбал томьёо батлагдана.</p></solution>
 </exercise>
-<exercise>
-  <statement><p><m>D=\{1\le x^2+y^2\le4\}</m> цагираг, <m>\partial D</m> эерэг чиглэлтэй бол <m>\displaystyle\oint_{\partial D}-y^3\,dx+x^3\,dy</m>-ийг ол.</p></statement>
-  <hint><p>Эерэг чиглэл: гадна тойргийг цагийн зүүний эсрэг, дотор тойргийг цагийн зүүгээр.</p></hint>
-  <answer><p><m>\dfrac{45\pi}2</m>.</p></answer>
-  <solution><p><m>Q_x-P_y=3x^2+3y^2</m>. Грийний томьёо (нүхтэй мужид, тайлбарыг үз) ба туйлын координатаар
-  <md>\iint_D3(x^2+y^2)\,dx\,dy=3\int_0^{2\pi}d\theta\int_1^2r^3dr=6\pi\cdot\frac{15}4=\frac{45\pi}2.</md>
-  Шууд шалгалт: радиус <m>\rho</m> тойрог дээр <m>-y^3x'+x^3y'=\rho^4(\sin^4t+\cos^4t)</m>, <m>\int_0^{2\pi}(\sin^4t+\cos^4t)\,dt=\frac{3\pi}2</m>; иймд <m>\frac{3\pi}2(16-1)=\frac{45\pi}2</m>.</p></solution>
-</exercise>
-</section>
-
-<section ref="w15-s6">
-<exercise>
-  <statement><p><m>(2x\cos y-y^2\sin x)\,dx+(2y\cos x-x^2\sin y)\,dy</m> нь бүтэн дифференциал гэж батлаад, <m>(0,0)</m>-ээс <m>\left(\pi,\frac\pi2\right)</m> хүртэлх интегралыг ол.</p></statement>
-  <answer><p><m>U=x^2\cos y+y^2\cos x</m>; интеграл <m>-\dfrac{\pi^2}4</m>.</p></answer>
-  <solution><p><m>P_y=-2x\sin y-2y\sin x=Q_x</m>, <m>\R^2</m> нэг холбоост тул Теорем <xref ref="w15-thm-closed-exact" text="global"/>-аар бүтэн дифференциал. <m>U_x=P</m>-ээс <m>U=x^2\cos y+y^2\cos x+c(y)</m>, <m>U_y=-x^2\sin y+2y\cos x+c'(y)=Q</m> тул <m>c</m> тогтмол. Интеграл <m>U(\pi,\frac\pi2)-U(0,0)=\pi^2\cdot0+\frac{\pi^2}4\cdot(-1)=-\frac{\pi^2}4</m>.</p></solution>
-</exercise>
-<exercise>
-  <statement><p><m>G=\R^2\setminus\{(0,0)\}</m> дээр <m>\omega=\dfrac{x\,dx+y\,dy}{x^2+y^2}</m> хэлбэр битүү гэж шалга. <m>G</m> нэг холбоост биш боловч <m>\omega</m> нь <m>G</m> дээр бүтэн дифференциал гэж харуул. Энэ нь Жишээ <xref ref="w15-ex-angle" text="global"/>-тэй зөрчилдөх үү?</p></statement>
-  <answer><p><m>\omega=d\left(\frac12\ln(x^2+y^2)\right)</m>; зөрчилдөхгүй.</p></answer>
-  <solution><p><m>P=\frac x{x^2+y^2}</m>, <m>Q=\frac y{x^2+y^2}</m>: <m>P_y=\frac{-2xy}{(x^2+y^2)^2}=Q_x</m>. <m>U=\frac12\ln(x^2+y^2)</m> нь <m>G</m> дээр <m>C^1</m> бөгөөд <m>U_x=P</m>, <m>U_y=Q</m>, иймд <m>\omega=dU</m> ба <m>G</m> дэх дурын битүү замаар интеграл <m>0</m>. Зөрчилгүй: нэг холбоост нөхцөл нь <em>хүрэлцээтэй</em> нөхцөл; нүхтэй мужид битүү хэлбэр бүтэн байж ч болно, байхгүй ч байж болно (өнцгийн хэлбэр — бүтэн биш).</p></solution>
-</exercise>
-<exercise>
-  <statement><p><m>\omega=\dfrac{x\,dy-y\,dx}{x^2+4y^2}</m> нь <m>\R^2\setminus\{0\}</m> дээр битүү гэж шалга. <m>\oint_\gamma\omega</m>-г (a) <m>x^2+4y^2=4</m> эллипс; (b) <m>x^2+y^2=1</m> тойрог (хоёулаа эерэг чиглэлтэй) дээр ол.</p></statement>
-  <hint><p>(a) <m>x=2\cos t</m>, <m>y=\sin t</m>. (b) Хоёр муруйн хоорондох мужид Грийнийг хэрэглэ (Мөрдөлгөө <xref ref="w15-cor-winding" text="global"/>-ийн баталгааны санаа).</p></hint>
-  <answer><p>Хоёулаа <m>\pi</m>.</p></answer>
-  <solution><p><m>P=\frac{-y}{x^2+4y^2}</m>, <m>Q=\frac x{x^2+4y^2}</m>: <m>Q_x=\frac{4y^2-x^2}{(x^2+4y^2)^2}=P_y</m>.</p>
-  <p>(a) <m>x=2\cos t</m>, <m>y=\sin t</m>: <m>x\,dy-y\,dx=(2\cos^2t+2\sin^2t)\,dt=2\,dt</m>, <m>x^2+4y^2=4</m>. Иймд <m>\oint=\int_0^{2\pi}\frac24\,dt=\pi</m>.</p>
-  <p>(b) <m>x^2+4y^2\ge x^2+y^2</m> тул нэгж тойрог эллипсийн дотор оршиж, түүнийг <m>(0,\pm1)</m> цэгүүдэд шүргэнэ. Тэдгээрийн хоорондох хоёр мужид (<m>x\ge0</m> ба <m>x\le0</m> хэсэг) тус бүр Грийний томьёог хэрэглээд нэмбэл <m>Q_x-P_y=0</m> тул <m>\oint_{\text{эллипс}}\omega-\oint_{\text{тойрог}}\omega=0</m>. Иймд <m>\oint_{x^2+y^2=1}\omega=\pi</m>. (Шууд шалгалт: <m>\int_0^{2\pi}\frac{dt}{1+3\sin^2t}=\frac{2\pi}{\sqrt{1\cdot4}}=\pi</m>.)</p></solution>
-</exercise>
-</section>
-
-<homework>
-<exercise>
-  <statement><p><m>r(t)=(3t,\ 3t^2,\ 2t^3)</m>, <m>t\in[0,1]</m> муруйн уртыг ол.</p></statement>
-  <answer><p><m>5</m>.</p></answer>
-  <solution><p><m>r'=(3,6t,6t^2)</m>, <m>|r'|^2=9+36t^2+36t^4=9(1+2t^2)^2</m>. <m>L=\int_0^13(1+2t^2)\,dt=3+2=5</m>.</p></solution>
-</exercise>
-<exercise>
-  <statement><p><m>m</m> тогтмол бол
-  <md>\int_{\gamma}(e^x\sin y-my)\,dx+(e^x\cos y-m)\,dy</md>
-  -ийг ол, <m>\gamma</m> — <m>x^2+y^2=ax</m> (<m>a&gt;0</m>) тойргийн дээд хагас, <m>A(a,0)</m>-аас <m>O(0,0)</m> хүртэл.</p></statement>
-  <hint><p><m>OA</m> хэрчмийг нэмж битүү муруй үүсгээд Грийний томьёо хэрэглэ. <m>OA</m> дээр <m>y=0</m>, <m>dy=0</m>.</p></hint>
-  <answer><p><m>\dfrac{\pi ma^2}8</m>.</p></answer>
-  <solution><p><m>\gamma+OA</m> нь хагас дугуй <m>D</m>-ийн (төв <m>(\frac a2,0)</m>, радиус <m>\frac a2</m>) хил бөгөөд <m>A</m>-аас дээгүүр <m>O</m> хүрээд <m>Ox</m>-ээр <m>A</m>-д буцах нь эерэг чиглэл. <m>Q_x-P_y=e^x\cos y-(e^x\cos y-m)=m</m> тул Грийнээр <m>\oint_{\gamma+OA}=m|D|=m\frac{\pi a^2}8</m>. <m>OA</m> дээр <m>y=0</m>, <m>dy=0</m>, <m>P=e^x\sin0-0=0</m>, иймд <m>\int_{OA}=0</m> ба <m>\int_\gamma=\frac{\pi ma^2}8</m>.</p></solution>
-</exercise>
-<exercise>
-  <statement><p>Грийний томьёо биелэх <m>D</m> мужийн хувьд <m>\displaystyle\iint_Dy\,dx\,dy=-\frac12\oint_{\partial D}y^2\,dx</m> гэж батал. Үүнийг ашиглан <m>x^2+y^2\le R^2</m>, <m>y\ge0</m> нэгэн төрлийн хагас дугуй ялтасын хүндийн төвийг ол.</p></statement>
-  <answer><p><m>\left(0,\dfrac{4R}{3\pi}\right)</m>.</p></answer>
-  <solution><p><m>P=-\frac{y^2}2</m>, <m>Q=0</m> гэвэл <m>Q_x-P_y=y</m>. Хагас дугуйн хилийн хэрчим дээр <m>y=0</m> тул хувь нэмэргүй; нум дээр <m>x=R\cos t</m>, <m>y=R\sin t</m>, <m>t</m>: <m>0\to\pi</m> (эерэг чиглэл):
-  <md>\iint_Dy=-\frac12\int_0^\pi R^2\sin^2t\cdot(-R\sin t)\,dt=\frac{R^3}2\int_0^\pi\sin^3t\,dt=\frac{R^3}2\cdot\frac43=\frac{2R^3}3.</md>
-  <m>|D|=\frac{\pi R^2}2</m> тул <m>\bar y=\frac{2R^3/3}{\pi R^2/2}=\frac{4R}{3\pi}</m>; тэгш хэмээр <m>\bar x=0</m>.</p></solution>
-</exercise>
-<exercise>
-  <statement><p><m>\omega=\dfrac{x\,dy-y\,dx}{x^2+y^2}</m>-ийн интегралыг <m>(1,0)</m>-оос <m>(-1,0)</m> хүртэл (a) нэгж тойргийн дээд хагасаар; (b) доод хагасаар ол. Хариуг <m>\omega</m>-ийн орон нутгийн потенциал (туйлын өнцөг) ашиглан тайлбарла.</p></statement>
-  <answer><p>(a) <m>\pi</m>; (b) <m>-\pi</m>.</p></answer>
-  <solution><p>(a) <m>x=\cos t</m>, <m>y=\sin t</m>, <m>t</m>: <m>0\to\pi</m>; <m>x\,dy-y\,dx=dt</m> тул <m>\pi</m>. (b) <m>t</m>: <m>0\to-\pi</m> тул <m>-\pi</m>.</p>
-  <p>Тайлбар: <m>\R^2\setminus\{(x,0):x\le0\}</m> дээр <m>\omega=d\theta</m> (<m>\theta\in(-\pi,\pi)</m>), харин <m>\R^2\setminus\{(x,0):x\ge0\}</m> дээр <m>\omega=d\tilde\theta</m> (<m>\tilde\theta\in(0,2\pi)</m>). Дээд хагас тойрог <m>\{(x,0):x\ge0\}</m>-ийн дотоод цэгийг дайрахгүй тул (төгсгөлийг хязгаараар) <m>\tilde\theta(-1,0)-\tilde\theta(1,0)=\pi-0=\pi</m>; доод хагас нь хасах хагас тэнхлэгийг дайрахгүй тул <m>\theta(-1,0)-\theta(1,0)=-\pi-0</m> (хязгаараар). Хоёр замын ялгаа <m>2\pi</m> нь эх цэгийг тойрох битүү замын интеграл.</p></solution>
-</exercise>
-<exercise>
-  <statement><p><m>\varphi(0)=0</m> нөхцөлтэй ямар <m>C^1</m> функц <m>\varphi(x)</m>-ийн хувьд <m>y\varphi(x)\,dx+\bigl(\varphi(x)+x^2\bigr)dy</m> нь <m>\R^2</m> дээр бүтэн дифференциал болох вэ? Энэ үед потенциалыг ол.</p></statement>
-  <hint><p>Нөхцөл <m>P_y=Q_x</m> нь <m>\varphi'-\varphi=-2x</m> шугаман дифференциал тэгшитгэл болно.</p></hint>
-  <answer><p><m>\varphi(x)=2x+2-2e^x</m>, <m>U=y\left(x^2+2x+2-2e^x\right)+C</m>.</p></answer>
-  <solution><p><m>P_y=\varphi(x)</m>, <m>Q_x=\varphi'(x)+2x</m>; <m>\R^2</m> нэг холбоост тул нөхцөл нь <m>\varphi'=\varphi-2x</m>. <m>(e^{-x}\varphi)'=-2xe^{-x}</m>-ээс <m>e^{-x}\varphi=2(x+1)e^{-x}+C</m>, <m>\varphi=2x+2+Ce^x</m>; <m>\varphi(0)=0</m> тул <m>C=-2</m>. Потенциал: <m>U_y=\varphi+x^2</m>-ээс <m>U=y(\varphi(x)+x^2)+c(x)</m>; <m>U_x=y(\varphi'+2x)+c'(x)=y\varphi+c'(x)</m> нь <m>P=y\varphi</m>-тэй тэнцэх тул <m>c</m> тогтмол.</p></solution>
-</exercise>
-</homework>
-</ai>
+</homework></ai>

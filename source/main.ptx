@@ -9,8 +9,7 @@
     <xi:include href="./chapters/ch02.ptx"/>
     <xi:include href="./chapters/ch03.ptx"/>
     <xi:include href="./chapters/ch04.ptx"/>
-    <!-- 5-р хичээл 1–4-т шингэсэн; дугаарлалт хадгалах хоосон бүлэг (drop_stub.py вэбээс устгана) -->
-    <chapter xml:id="ch-w05"><title>5-р хичээл (1–4-р хичээлд шингэсэн)</title><p>5-р хичээлийн материал 1–4-р хичээлд шингэсэн.</p></chapter>
+    <xi:include href="./chapters/ch05.ptx"/>
     <xi:include href="./chapters/ch06.ptx"/>
     <xi:include href="./chapters/ch07.ptx"/>
     <xi:include href="./chapters/ch08.ptx"/>

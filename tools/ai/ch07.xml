@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version='1.0' encoding='UTF-8'?>
 <ai>
 <preview>
 <exploration xml:id="w07-preview">
@@ -122,7 +122,27 @@
 </exercise>
 </section>
 
-<section ref="w07-s6">
+<section ref="w07-s5">
+<exercise>
+  <statement><p><m>R_N=\displaystyle\sum_{n=N+1}^\infty\frac1{n^3}</m> үлдэгдлийн хувьд
+  <md>\frac{1}{2(N+1)^2}\le R_N\le\frac1{2N^2}</md>
+  гэж батал. <m>N=10</m> үед <m>\zeta(3)=\sum\frac1{n^3}</m>-ийг агуулах завсар бич (<m>S_{10}\approx1{,}19753</m>).</p></statement>
+  <hint><p><m>f(x)=\frac1{x^3}</m> буурах тул <m>\int_{n}^{n+1}f\le f(n)\le\int_{n-1}^nf</m>.</p></hint>
+  <answer><p><m>1{,}20166\le\zeta(3)\le1{,}20254</m>.</p></answer>
+  <solution><p><m>f</m> буурах тул <m>\int_n^{n+1}f\le f(n)\le\int_{n-1}^nf</m>. <m>n=N+1,N+2,\dots</m>-ээр нийлбэрлэвэл
+  <md>\int_{N+1}^\infty\frac{dx}{x^3}\le R_N\le\int_N^\infty\frac{dx}{x^3},\qquad\text{өөрөөр хэлбэл}\qquad\frac1{2(N+1)^2}\le R_N\le\frac1{2N^2}.</md>
+  <m>N=10</m>: <m>\frac1{242}\approx0{,}00413\le R_{10}\le0{,}005</m>, иймд <m>1{,}20166\le\zeta(3)\le1{,}20254</m>. (Жинхэнэ утга <m>\zeta(3)\approx1{,}20206</m>.)</p></solution>
+</exercise>
+<exercise>
+  <statement><p><m>\displaystyle\lim_{N\to\infty}\Bigl(1+\frac1{\sqrt2}+\frac1{\sqrt3}+\cdots+\frac1{\sqrt N}-2\sqrt N\Bigr)</m> хязгаар оршин байхыг батал.</p></statement>
+  <hint><p>Теорем <xref ref="thm-int-series" text="global"/>-ийг <m>f(x)=\frac1{\sqrt x}</m>-д хэрэглэ.</p></hint>
+  <solution><p><m>f(x)=\frac1{\sqrt x}\ge0</m> буурах тул Теорем <xref ref="thm-int-series" text="global"/>-аар <m>d_N=\sum_{n=1}^N\frac1{\sqrt n}-\int_1^N\frac{dx}{\sqrt x}</m> нь <m>[0,1]</m>-д төгсгөлөг хязгаартай. <m>\int_1^N\frac{dx}{\sqrt x}=2\sqrt N-2</m> тул
+  <md>\sum_{n=1}^N\frac1{\sqrt n}-2\sqrt N=d_N-2</md>
+  мөн хязгаартай (хязгаар нь <m>[-2,-1]</m>-д орших ба ойролцоогоор <m>-1{,}46</m>).</p></solution>
+</exercise>
+</section>
+
+<section ref="w07-s7">
 <exercise>
   <statement><p><m>\displaystyle\sum_{n=1}^\infty(-1)^n\left(\sqrt[n]{n}-1\right)</m> цуваа нөхцөлт нийлэхийг батал.</p></statement>
   <hint><p><m>\frac{\ln x}{x}</m> нь <m>x&gt;e</m> үед буурна. <m>\sqrt[n]n-1=e^{\ln n/n}-1\ge\frac{\ln n}{n}</m>.</p></hint>
